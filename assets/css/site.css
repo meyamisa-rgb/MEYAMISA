@@ -408,7 +408,7 @@ main {
 .series-link:focus-visible .series-overlay {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 220ms;
+  transition-delay: 0ms;
 }
 
 .series-body {
