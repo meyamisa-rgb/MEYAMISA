@@ -24,6 +24,12 @@
   setInterval(updateTime, 30000);
 
   const pageKey = currentPage.replace(/\.html$/, "");
+  const navParents = {
+    "amygdala-body-as-archive": "experimental-design.html",
+    "folding-type-henshin-gallery": "experimental-design.html",
+    "type-juice-mono": "experimental-design.html",
+    "human-typography": "experimental-design.html",
+  };
   const seriesCodes = {
     "body-archive": "BAR",
     "body-alphabet": "BAL",
@@ -72,7 +78,11 @@
 
   document.querySelectorAll("[data-page-link]").forEach((link) => {
     const href = link.getAttribute("href");
-    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+    if (
+      href === currentPage ||
+      (currentPage === "" && href === "index.html") ||
+      navParents[pageKey] === href
+    ) {
       link.classList.add("is-active");
     }
   });
@@ -112,6 +122,88 @@
       if (window.history.length > 1) {
         event.preventDefault();
         window.history.back();
+      }
+    });
+  }
+
+  const typeInput = document.querySelector("[data-type-input]");
+  const typeOutput = document.querySelector("[data-type-output]");
+  const typeScale = document.querySelector("[data-type-scale]");
+  if (typeInput && typeOutput) {
+    const updateTypeOutput = () => {
+      typeOutput.textContent = typeInput.value || "TYPE JUICE MONO";
+      if (typeScale) {
+        typeOutput.style.fontSize = `${typeScale.value}px`;
+      }
+    };
+
+    typeInput.addEventListener("input", updateTypeOutput);
+    if (typeScale) {
+      typeScale.addEventListener("input", updateTypeOutput);
+    }
+    updateTypeOutput();
+  }
+
+  const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
+  if (lightboxTriggers.length) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "media-lightbox";
+    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.innerHTML = `
+      <div class="media-lightbox-inner">
+        <button class="media-lightbox-close" type="button" aria-label="Close media view">x</button>
+        <div class="media-lightbox-content"></div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxContent = lightbox.querySelector(".media-lightbox-content");
+    const closeButton = lightbox.querySelector(".media-lightbox-close");
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxContent.innerHTML = "";
+    };
+
+    lightboxTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const sourceMedia = trigger.querySelector("img, video");
+        if (!sourceMedia) {
+          return;
+        }
+
+        let clone;
+        if (sourceMedia.tagName.toLowerCase() === "video") {
+          clone = document.createElement("video");
+          clone.src = sourceMedia.currentSrc || sourceMedia.src;
+          clone.controls = true;
+          clone.autoplay = true;
+          clone.playsInline = true;
+        } else {
+          clone = document.createElement("img");
+          clone.src = sourceMedia.currentSrc || sourceMedia.src;
+          clone.alt = sourceMedia.alt || "";
+          clone.loading = "eager";
+        }
+
+        lightboxContent.innerHTML = "";
+        lightboxContent.appendChild(clone);
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
       }
     });
   }
