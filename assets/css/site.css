@@ -448,6 +448,28 @@ main {
   max-width: 62ch;
 }
 
+.archive-groups {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+.archive-group {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(14px, 1.8vw, 20px);
+}
+
+.archive-group-heading {
+  margin-bottom: clamp(10px, 1.4vw, 14px);
+}
+
+.archive-group-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
 .legal-content {
   max-width: 84ch;
 }
