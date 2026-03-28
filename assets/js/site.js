@@ -168,23 +168,31 @@
 
     lightboxTriggers.forEach((trigger) => {
       trigger.addEventListener("click", () => {
-        const sourceMedia = trigger.querySelector("img, video");
-        if (!sourceMedia) {
-          return;
-        }
-
         let clone;
-        if (sourceMedia.tagName.toLowerCase() === "video") {
-          clone = document.createElement("video");
-          clone.src = sourceMedia.currentSrc || sourceMedia.src;
-          clone.controls = true;
-          clone.autoplay = true;
-          clone.playsInline = true;
+        if (trigger.dataset.lightboxIframe) {
+          clone = document.createElement("iframe");
+          clone.src = trigger.dataset.lightboxIframe;
+          clone.allow = "autoplay; fullscreen; picture-in-picture";
+          clone.allowFullscreen = true;
+          clone.title = "Expanded media view";
         } else {
-          clone = document.createElement("img");
-          clone.src = sourceMedia.currentSrc || sourceMedia.src;
-          clone.alt = sourceMedia.alt || "";
-          clone.loading = "eager";
+          const sourceMedia = trigger.querySelector("img, video");
+          if (!sourceMedia) {
+            return;
+          }
+
+          if (sourceMedia.tagName.toLowerCase() === "video") {
+            clone = document.createElement("video");
+            clone.src = sourceMedia.currentSrc || sourceMedia.src;
+            clone.controls = true;
+            clone.autoplay = true;
+            clone.playsInline = true;
+          } else {
+            clone = document.createElement("img");
+            clone.src = sourceMedia.currentSrc || sourceMedia.src;
+            clone.alt = sourceMedia.alt || "";
+            clone.loading = "eager";
+          }
         }
 
         lightboxContent.innerHTML = "";
