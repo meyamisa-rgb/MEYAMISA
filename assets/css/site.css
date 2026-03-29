@@ -792,6 +792,13 @@ main {
   align-items: start;
 }
 
+.thesis-side-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+  gap: clamp(16px, 2vw, 24px);
+  align-items: start;
+}
+
 .feature-figure {
   margin: 0;
   border: 1px solid var(--line);
@@ -1034,6 +1041,19 @@ main {
 .pdf-panel-copy p {
   margin: 0;
   color: var(--black);
+}
+
+.pdf-embed-frame {
+  width: 100%;
+  min-height: 460px;
+  background: #f7f7f7;
+}
+
+.pdf-embed-frame iframe {
+  width: 100%;
+  min-height: 460px;
+  border: 0;
+  background: transparent;
 }
 
 .type-juice-console {
@@ -1286,6 +1306,56 @@ main {
 
 .gallery-media.video-frame {
   aspect-ratio: auto;
+}
+
+.amygdala-page .section-jump-nav {
+  position: static;
+  top: auto;
+  z-index: auto;
+  padding: 0 0 14px;
+  background: transparent;
+  border-bottom: 0;
+}
+
+.amygdala-page .section-jump-link {
+  border: 0;
+  background: transparent;
+  padding: 8px 4px;
+}
+
+.amygdala-page .feature-figure,
+.amygdala-page .media-card,
+.amygdala-page .video-card,
+.amygdala-page .embed-frame,
+.amygdala-page .video-frame-local,
+.amygdala-page .pdf-panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.amygdala-page .feature-quote {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.amygdala-page .media-card,
+.amygdala-page .video-card {
+  gap: 12px;
+}
+
+.amygdala-page .pdf-panel-thesis {
+  max-width: none;
+  gap: 14px;
+}
+
+.amygdala-page .pdf-panel-copy {
+  gap: 6px;
+}
+
+.amygdala-page .pdf-panel-copy p:last-child {
+  color: var(--muted);
 }
 
 figcaption {
@@ -1612,14 +1682,14 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
+  .thesis-side-grid {
+    grid-template-columns: 1fr;
+  }
+
   .project-card-media {
     min-height: 240px;
     border-right: none;
     border-bottom: 1px solid var(--line);
-  }
-
-  .section-jump-nav {
-    top: 84px;
   }
 
   .type-juice-output {

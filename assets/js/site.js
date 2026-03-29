@@ -203,17 +203,6 @@
     );
 
     renderInto(
-      "#amygdala-design-grid",
-      Array.from({ length: 11 }, (_, index) =>
-        createImageCard({
-          src: `../assets/images/amygdala-design-${String(index + 1).padStart(2, "0")}.jpeg`,
-          alt: `Amygdala Veritas archivum image ${index + 1}`,
-          gallery: "amygdala-design",
-        })
-      ).join("")
-    );
-
-    renderInto(
       "#amygdala-cansu-grid",
       Array.from({ length: 14 }, (_, index) =>
         createImageCard({
@@ -247,23 +236,35 @@
 
     renderInto(
       "#amygdala-installation-grid",
-      Array.from({ length: 7 }, (_, index) =>
-        createImageCard({
-          src: `../assets/images/amygdala/installation-${String(index + 1).padStart(2, "0")}.jpeg`,
-          alt: `Installation image ${index + 1}`,
+      [
+        {
+          src: "../assets/images/amygdala/installation-02-replacement.jpeg",
+          alt: "Amygdala installation image 1",
           gallery: "amygdala-installation",
-        })
-      ).join("")
+        },
+        {
+          src: "../assets/images/amygdala/installation-03-replacement.jpeg",
+          alt: "Amygdala installation image 2",
+          gallery: "amygdala-installation",
+        },
+        {
+          src: "../assets/images/amygdala/installation-04-replacement.jpeg",
+          alt: "Amygdala installation image 3",
+          gallery: "amygdala-installation",
+        },
+      ]
+        .map(createImageCard)
+        .join("")
     );
 
     renderInto(
       "#amygdala-installation-videos",
-      [1, 3, 4].map((videoNumber) =>
+      [
         createVideoCard({
-          src: `../assets/videos/amygdala/installation-${String(videoNumber).padStart(2, "0")}.mp4`,
+          src: "../assets/videos/amygdala/installation-06-replacement.mp4",
           gallery: "amygdala-installation-videos",
         })
-      ).join("")
+      ].join("")
     );
 
     renderInto(
