@@ -67,12 +67,11 @@
                 <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala thesis image">
                   <img
                     class="gallery-media"
-                    src="../assets/images/amygdala-main.jpg"
-                    alt="Amygdala main thesis image"
+                    src="../assets/images/amygdala/thesis-hero.png"
+                    alt="Amygdala thesis hero image"
                     loading="lazy"
                   />
                 </button>
-                <figcaption>Amygdala main.jpg</figcaption>
               </figure>
               <div class="feature-copy">
                 <p class="feature-lead">
@@ -91,6 +90,9 @@
                   experiences, bypassing traditional communication methods to convey a more
                   authentic and embodied truth.
                 </p>
+                <blockquote class="feature-quote">
+                  “The Amygdala reigns, control if its ever ours, we are the last ones to know.”
+                </blockquote>
               </div>
             </div>
           </section>
@@ -98,14 +100,14 @@
           <section id="motion" class="project-section reveal">
             <div class="section-heading">
               <h2>Motion</h2>
-              <p>Three Vimeo studies displayed at equal size. Each one can be opened wide.</p>
             </div>
             <div class="embed-grid">
               <article class="embed-card">
+                <h3 class="video-card-title">Amygdala - High Road</h3>
                 <div class="embed-frame">
                   <iframe
                     src="https://player.vimeo.com/video/1176887972?title=0&byline=0&portrait=0"
-                    title="Amygdala motion video 01"
+                    title="Amygdala - High Road"
                     loading="lazy"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen
@@ -117,6 +119,7 @@
                     type="button"
                     data-lightbox-trigger
                     data-lightbox-iframe="https://player.vimeo.com/video/1176887972?autoplay=1&title=0&byline=0&portrait=0"
+                    data-gallery="amygdala-motion"
                   >
                     Open wide
                   </button>
@@ -124,21 +127,21 @@
               </article>
 
               <article class="embed-card">
-                <div class="embed-frame">
-                  <iframe
-                    src="https://player.vimeo.com/video/1176887898?title=0&byline=0&portrait=0"
-                    title="Amygdala motion video 02"
-                    loading="lazy"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+                <h3 class="video-card-title">Amygdala - Veritas</h3>
+                <video
+                  class="video-frame-local"
+                  src="../assets/videos/amygdala/exanimationes-incidamus.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
                 <div class="embed-actions">
                   <button
                     class="wide-button"
                     type="button"
                     data-lightbox-trigger
-                    data-lightbox-iframe="https://player.vimeo.com/video/1176887898?autoplay=1&title=0&byline=0&portrait=0"
+                    data-lightbox-video="../assets/videos/amygdala/exanimationes-incidamus.mp4"
+                    data-gallery="amygdala-motion"
                   >
                     Open wide
                   </button>
@@ -146,21 +149,21 @@
               </article>
 
               <article class="embed-card">
-                <div class="embed-frame">
-                  <iframe
-                    src="https://player.vimeo.com/video/1176888620?title=0&byline=0&portrait=0"
-                    title="Amygdala motion video 03"
-                    loading="lazy"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+                <h3 class="video-card-title">Amygdala - In motion</h3>
+                <video
+                  class="video-frame-local"
+                  src="../assets/videos/amygdala/motion-in-motion.mov"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
                 <div class="embed-actions">
                   <button
                     class="wide-button"
                     type="button"
                     data-lightbox-trigger
-                    data-lightbox-iframe="https://player.vimeo.com/video/1176888620?autoplay=1&title=0&byline=0&portrait=0"
+                    data-lightbox-video="../assets/videos/amygdala/motion-in-motion.mov"
+                    data-gallery="amygdala-motion"
                   >
                     Open wide
                   </button>
@@ -172,19 +175,8 @@
           <section id="storyboard" class="project-section reveal">
             <div class="section-heading">
               <h2>Storyboard</h2>
-              <p>Storyboard image displayed as a large clickable board.</p>
             </div>
-            <figure class="feature-figure">
-              <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala storyboard image">
-                <img
-                  class="gallery-media"
-                  src="../assets/images/amygdala-storyboard.png"
-                  alt="Amygdala storyboard board"
-                  loading="lazy"
-                />
-              </button>
-              <figcaption>STORYBOARD_AMYGDALA.png</figcaption>
-            </figure>
+            <div id="amygdala-storyboard-grid" class="uniform-media-grid uniform-media-grid-storyboard"></div>
           </section>
 
           <section id="design" class="project-section reveal">
@@ -192,122 +184,113 @@
               <h2>Design</h2>
               <p>ABSCHLUSS_AYAMEY_BESCHNITT_</p>
             </div>
-            <article class="placeholder-tile pdf-slot">
-              <h3>ABSCHLUSS_AYAMEY_BESCHNITT_</h3>
-              <p>
-                The source PDF appears to still be cloud-only in `Documents`, so this design slot
-                is prepared for it and the photo studies are already added below.
-              </p>
-            </article>
-            <div class="media-wall">
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 1">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-01.jpeg" alt="Amygdala design study 01" loading="lazy" />
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Amygdala -Body as archive</h3>
+              <figure class="feature-figure design-cover-figure">
+                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="amygdala-design-cover" aria-label="Open Amygdala design cover">
+                  <img
+                    class="gallery-media gallery-media-landscape"
+                    src="../assets/images/amygdala/design-cover.jpg"
+                    alt="Amygdala design cover image"
+                    loading="lazy"
+                  />
                 </button>
-                <figcaption>Design image 01</figcaption>
               </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 2">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-02.jpeg" alt="Amygdala design study 02" loading="lazy" />
-                </button>
-                <figcaption>Design image 02</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 3">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-03.jpeg" alt="Amygdala design study 03" loading="lazy" />
-                </button>
-                <figcaption>Design image 03</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 4">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-04.jpeg" alt="Amygdala design study 04" loading="lazy" />
-                </button>
-                <figcaption>Design image 04</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 5">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-05.jpeg" alt="Amygdala design study 05" loading="lazy" />
-                </button>
-                <figcaption>Design image 05</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 6">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-06.jpeg" alt="Amygdala design study 06" loading="lazy" />
-                </button>
-                <figcaption>Design image 06</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 7">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-07.jpeg" alt="Amygdala design study 07" loading="lazy" />
-                </button>
-                <figcaption>Design image 07</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 8">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-08.jpeg" alt="Amygdala design study 08" loading="lazy" />
-                </button>
-                <figcaption>Design image 08</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 9">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-09.jpeg" alt="Amygdala design study 09" loading="lazy" />
-                </button>
-                <figcaption>Design image 09</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 10">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-10.jpeg" alt="Amygdala design study 10" loading="lazy" />
-                </button>
-                <figcaption>Design image 10</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Amygdala design image 11">
-                  <img class="gallery-media" src="../assets/images/amygdala-design-11.jpeg" alt="Amygdala design study 11" loading="lazy" />
-                </button>
-                <figcaption>Design image 11</figcaption>
-              </figure>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Amygdala - Veritas archivum</h3>
+              <div id="amygdala-design-grid" class="uniform-media-grid"></div>
             </div>
           </section>
 
           <section id="process" class="project-section reveal">
             <div class="section-heading">
               <h2>Process</h2>
-              <p>Reserved for process studies, sketches, research boards, and iterative tests.</p>
+              <p>
+                It was a process of uncovering the truth in transmitting emotions, pushing against
+                what I’m accustomed to. Reduce, extract, repeat over and over again.
+              </p>
             </div>
-            <div class="media-wall">
-              <article class="placeholder-tile">
-                <h3>Process image 01</h3>
-                <p>Add a process still or study board here.</p>
-              </article>
-              <article class="placeholder-tile">
-                <h3>Process image 02</h3>
-                <p>Add typography tests, choreography notes, or image sequences.</p>
-              </article>
-              <article class="placeholder-tile">
-                <h3>Process video</h3>
-                <p>Add a making-of clip or animated study here.</p>
-              </article>
+            <div class="process-intro-grid">
+              <figure class="feature-figure">
+                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="amygdala-process-reference" aria-label="Open Amygdala process reference">
+                  <img
+                    class="gallery-media gallery-media-landscape"
+                    src="../assets/images/amygdala/process-reference.png"
+                    alt="Amygdala process reference board"
+                    loading="lazy"
+                  />
+                </button>
+              </figure>
+              <div class="feature-copy">
+                <p>
+                  The process section gathers movement studies, photographed gestures, and the
+                  iterative visual tests that shaped the final archive language.
+                </p>
+              </div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Veritas Corpus</h3>
+              <p class="subgroup-meta">
+                Photography by Cansu Arslan
+                <a href="https://www.instagram.com/works_bycani/" target="_blank" rel="noreferrer">Instagram</a>
+              </p>
+              <div id="amygdala-cansu-grid" class="uniform-media-grid"></div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Veritas exponere</h3>
+              <p class="subgroup-meta">Photography by Mey Amisa</p>
+              <div id="amygdala-meyamisa-grid" class="uniform-media-grid"></div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Process Videos</h3>
+              <div id="amygdala-process-videos" class="video-grid"></div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Amygdala - exanimationes incidamus</h3>
+              <div class="video-card video-card-large">
+                <video
+                  class="video-frame-local video-frame-large"
+                  src="../assets/videos/amygdala/exanimationes-incidamus.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
+                <div class="embed-actions">
+                  <button
+                    class="wide-button"
+                    type="button"
+                    data-lightbox-trigger
+                    data-lightbox-video="../assets/videos/amygdala/exanimationes-incidamus.mp4"
+                    data-gallery="amygdala-process-video-feature"
+                  >
+                    Open wide
+                  </button>
+                </div>
+              </div>
             </div>
           </section>
 
           <section id="installation" class="project-section reveal">
             <div class="section-heading">
-              <h2>Installation</h2>
-              <p>Prepared for installation photographs and exhibition documentation.</p>
+              <h2>06.1.049 HSD DESIGN</h2>
+              <p>
+                Examinationes Incidamus is an exploration of mental dysfunction and emotional
+                disconnection from our very essence. This process appears to be an endless journey
+                that may span a lifetime.
+              </p>
             </div>
-            <div class="media-wall">
-              <article class="placeholder-tile">
-                <h3>Installation photo 01</h3>
-                <p>Add a wall view, projection, or monitor setup image here.</p>
-              </article>
-              <article class="placeholder-tile">
-                <h3>Installation photo 02</h3>
-                <p>Add a second installation angle or audience view here.</p>
-              </article>
-              <article class="placeholder-tile">
-                <h3>Installation video</h3>
-                <p>Add a walkthrough video or documentation clip here.</p>
-              </article>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Installation</h3>
+              <div id="amygdala-installation-grid" class="uniform-media-grid"></div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Installation Motion</h3>
+              <div id="amygdala-installation-videos" class="video-grid"></div>
+            </div>
+            <div class="section-subgroup">
+              <h3 class="subgroup-title">Visitors</h3>
+              <div id="amygdala-visitor-grid" class="uniform-media-grid"></div>
             </div>
           </section>
         </main>

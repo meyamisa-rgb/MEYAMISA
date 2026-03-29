@@ -144,6 +144,140 @@
     updateTypeOutput();
   }
 
+  if (pageKey === "amygdala-body-as-archive") {
+    const createImageCard = (item) => `
+      <article class="media-card">
+        ${item.title ? `<h3 class="media-card-title">${item.title}</h3>` : ""}
+        <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="${item.gallery}" aria-label="Open ${item.alt}">
+          <img class="gallery-media${item.landscape ? " gallery-media-landscape" : ""}" src="${item.src}" alt="${item.alt}" loading="lazy" />
+        </button>
+      </article>
+    `;
+
+    const createVideoCard = (item) => `
+      <article class="video-card">
+        ${item.title ? `<h3 class="video-card-title">${item.title}</h3>` : ""}
+        <video class="video-frame-local" src="${item.src}" controls playsinline preload="metadata"></video>
+        <div class="embed-actions">
+          <button class="wide-button" type="button" data-lightbox-trigger data-lightbox-video="${item.src}" data-gallery="${item.gallery}">
+            Open wide
+          </button>
+        </div>
+      </article>
+    `;
+
+    const renderInto = (selector, markup) => {
+      const target = document.querySelector(selector);
+      if (target) {
+        target.innerHTML = markup;
+      }
+    };
+
+    renderInto(
+      "#amygdala-storyboard-grid",
+      [
+        {
+          title: "Amygdala - High Road Storyboard",
+          src: "../assets/images/amygdala/storyboard-01.png",
+          alt: "Amygdala High Road storyboard",
+          gallery: "amygdala-storyboard",
+          landscape: true,
+        },
+        {
+          title: "Amygdala - Veritas Storyboard",
+          src: "../assets/images/amygdala-storyboard.png",
+          alt: "Amygdala Veritas storyboard",
+          gallery: "amygdala-storyboard",
+          landscape: true,
+        },
+        {
+          title: "Amygdala - In Motion",
+          src: "../assets/images/amygdala/storyboard-02.png",
+          alt: "Amygdala In Motion storyboard",
+          gallery: "amygdala-storyboard",
+          landscape: true,
+        },
+      ]
+        .map(createImageCard)
+        .join("")
+    );
+
+    renderInto(
+      "#amygdala-design-grid",
+      Array.from({ length: 11 }, (_, index) =>
+        createImageCard({
+          src: `../assets/images/amygdala-design-${String(index + 1).padStart(2, "0")}.jpeg`,
+          alt: `Amygdala Veritas archivum image ${index + 1}`,
+          gallery: "amygdala-design",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-cansu-grid",
+      Array.from({ length: 14 }, (_, index) =>
+        createImageCard({
+          src: `../assets/images/amygdala/cansu-${String(index + 1).padStart(2, "0")}.jpeg`,
+          alt: `Veritas Corpus image ${index + 1}`,
+          gallery: "amygdala-cansu",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-meyamisa-grid",
+      Array.from({ length: 19 }, (_, index) =>
+        createImageCard({
+          src: `../assets/images/amygdala/meyamisa-${String(index + 1).padStart(2, "0")}.jpeg`,
+          alt: `Veritas exponere image ${index + 1}`,
+          gallery: "amygdala-meyamisa",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-process-videos",
+      Array.from({ length: 14 }, (_, index) =>
+        createVideoCard({
+          src: `../assets/videos/amygdala/process-${String(index + 1).padStart(2, "0")}.mp4`,
+          gallery: "amygdala-process-videos",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-installation-grid",
+      Array.from({ length: 7 }, (_, index) =>
+        createImageCard({
+          src: `../assets/images/amygdala/installation-${String(index + 1).padStart(2, "0")}.jpeg`,
+          alt: `Installation image ${index + 1}`,
+          gallery: "amygdala-installation",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-installation-videos",
+      Array.from({ length: 4 }, (_, index) =>
+        createVideoCard({
+          src: `../assets/videos/amygdala/installation-${String(index + 1).padStart(2, "0")}.mp4`,
+          gallery: "amygdala-installation-videos",
+        })
+      ).join("")
+    );
+
+    renderInto(
+      "#amygdala-visitor-grid",
+      Array.from({ length: 8 }, (_, index) =>
+        createImageCard({
+          src: `../assets/images/amygdala/visitor-${String(index + 1).padStart(2, "0")}.jpeg`,
+          alt: `Visitor image ${index + 1}`,
+          gallery: "amygdala-visitors",
+        })
+      ).join("")
+    );
+  }
+
   const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
   if (lightboxTriggers.length) {
     const lightbox = document.createElement("div");
@@ -151,6 +285,8 @@
     lightbox.setAttribute("aria-hidden", "true");
     lightbox.innerHTML = `
       <div class="media-lightbox-inner">
+        <button class="media-lightbox-nav media-lightbox-prev is-hidden" type="button" aria-label="Previous media">&#8249;</button>
+        <button class="media-lightbox-nav media-lightbox-next is-hidden" type="button" aria-label="Next media">&#8250;</button>
         <button class="media-lightbox-close" type="button" aria-label="Close media view">x</button>
         <div class="media-lightbox-content"></div>
       </div>
@@ -159,47 +295,111 @@
 
     const lightboxContent = lightbox.querySelector(".media-lightbox-content");
     const closeButton = lightbox.querySelector(".media-lightbox-close");
+    const prevButton = lightbox.querySelector(".media-lightbox-prev");
+    const nextButton = lightbox.querySelector(".media-lightbox-next");
+    let activeGallery = [];
+    let activeIndex = -1;
+
+    const buildClone = (trigger) => {
+      if (trigger.dataset.lightboxIframe) {
+        const iframe = document.createElement("iframe");
+        iframe.src = trigger.dataset.lightboxIframe;
+        iframe.allow = "autoplay; fullscreen; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.title = "Expanded media view";
+        return iframe;
+      }
+
+      if (trigger.dataset.lightboxVideo) {
+        const video = document.createElement("video");
+        video.src = trigger.dataset.lightboxVideo;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        return video;
+      }
+
+      const sourceMedia = trigger.querySelector("img, video");
+      if (!sourceMedia) {
+        return null;
+      }
+
+      if (sourceMedia.tagName.toLowerCase() === "video") {
+        const video = document.createElement("video");
+        video.src = sourceMedia.currentSrc || sourceMedia.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        return video;
+      }
+
+      const image = document.createElement("img");
+      image.src = sourceMedia.currentSrc || sourceMedia.src;
+      image.alt = sourceMedia.alt || "";
+      image.loading = "eager";
+      return image;
+    };
+
+    const updateNav = () => {
+      const hasGallery = activeGallery.length > 1;
+      prevButton.classList.toggle("is-hidden", !hasGallery);
+      nextButton.classList.toggle("is-hidden", !hasGallery);
+    };
+
+    const renderActiveTrigger = () => {
+      const trigger = activeGallery[activeIndex];
+      if (!trigger) {
+        return;
+      }
+      const clone = buildClone(trigger);
+      if (!clone) {
+        return;
+      }
+      lightboxContent.innerHTML = "";
+      lightboxContent.appendChild(clone);
+      updateNav();
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+    };
 
     const closeLightbox = () => {
       lightbox.classList.remove("is-open");
       lightbox.setAttribute("aria-hidden", "true");
       lightboxContent.innerHTML = "";
+      activeGallery = [];
+      activeIndex = -1;
+      updateNav();
     };
 
     lightboxTriggers.forEach((trigger) => {
       trigger.addEventListener("click", () => {
-        let clone;
-        if (trigger.dataset.lightboxIframe) {
-          clone = document.createElement("iframe");
-          clone.src = trigger.dataset.lightboxIframe;
-          clone.allow = "autoplay; fullscreen; picture-in-picture";
-          clone.allowFullscreen = true;
-          clone.title = "Expanded media view";
+        if (trigger.dataset.gallery) {
+          activeGallery = Array.from(
+            document.querySelectorAll(`[data-lightbox-trigger][data-gallery="${trigger.dataset.gallery}"]`)
+          );
+          activeIndex = activeGallery.indexOf(trigger);
         } else {
-          const sourceMedia = trigger.querySelector("img, video");
-          if (!sourceMedia) {
-            return;
-          }
-
-          if (sourceMedia.tagName.toLowerCase() === "video") {
-            clone = document.createElement("video");
-            clone.src = sourceMedia.currentSrc || sourceMedia.src;
-            clone.controls = true;
-            clone.autoplay = true;
-            clone.playsInline = true;
-          } else {
-            clone = document.createElement("img");
-            clone.src = sourceMedia.currentSrc || sourceMedia.src;
-            clone.alt = sourceMedia.alt || "";
-            clone.loading = "eager";
-          }
+          activeGallery = [trigger];
+          activeIndex = 0;
         }
-
-        lightboxContent.innerHTML = "";
-        lightboxContent.appendChild(clone);
-        lightbox.classList.add("is-open");
-        lightbox.setAttribute("aria-hidden", "false");
+        renderActiveTrigger();
       });
+    });
+
+    prevButton.addEventListener("click", () => {
+      if (!activeGallery.length) {
+        return;
+      }
+      activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
+      renderActiveTrigger();
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (!activeGallery.length) {
+        return;
+      }
+      activeIndex = (activeIndex + 1) % activeGallery.length;
+      renderActiveTrigger();
     });
 
     closeButton.addEventListener("click", closeLightbox);
@@ -212,6 +412,14 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
         closeLightbox();
+      }
+      if (event.key === "ArrowLeft" && lightbox.classList.contains("is-open") && activeGallery.length > 1) {
+        activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
+        renderActiveTrigger();
+      }
+      if (event.key === "ArrowRight" && lightbox.classList.contains("is-open") && activeGallery.length > 1) {
+        activeIndex = (activeIndex + 1) % activeGallery.length;
+        renderActiveTrigger();
       }
     });
   }
