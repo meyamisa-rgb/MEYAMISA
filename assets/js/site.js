@@ -263,6 +263,10 @@
         createVideoCard({
           src: "../assets/videos/amygdala/installation-06-replacement.mp4",
           gallery: "amygdala-installation-videos",
+        }),
+        createVideoCard({
+          src: "../assets/videos/amygdala/installation-08-replacement.mp4",
+          gallery: "amygdala-installation-videos",
         })
       ].join("")
     );
