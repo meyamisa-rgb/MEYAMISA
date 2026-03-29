@@ -1397,6 +1397,17 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.amygdala-page #amygdala-installation-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.amygdala-page #amygdala-installation-videos {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
 .amygdala-page .pdf-panel-thesis {
   max-width: none;
   gap: 14px;
