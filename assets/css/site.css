@@ -441,9 +441,9 @@ main {
 
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(240px, 320px) minmax(320px, 520px);
-  gap: clamp(20px, 2.6vw, 32px);
-  align-items: center;
+  grid-template-columns: 320px minmax(320px, 520px);
+  gap: clamp(18px, 2.2vw, 26px);
+  align-items: start;
   justify-content: center;
   max-width: 900px;
   margin-left: auto;
@@ -455,6 +455,7 @@ main {
   margin: 0;
   display: grid;
   gap: 10px;
+  width: 320px;
   max-width: 320px;
 }
 
@@ -471,14 +472,16 @@ main {
   letter-spacing: 0;
   text-transform: none;
   font-style: italic;
-  max-width: 27ch;
+  width: 100%;
+  max-width: 100%;
 }
 
 .about-copy {
   display: grid;
   gap: 14px;
   max-width: 520px;
-  align-content: center;
+  align-content: start;
+  padding-top: 10px;
 }
 
 .about-copy h1 {
