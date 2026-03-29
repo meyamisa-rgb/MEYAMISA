@@ -283,6 +283,36 @@
         })
       ).join("")
     );
+
+    const jumpLinks = Array.from(document.querySelectorAll(".section-jump-link"));
+    const projectSections = Array.from(document.querySelectorAll(".project-section"));
+    const validSectionIds = projectSections.map((section) => section.id);
+
+    const setActiveSection = () => {
+      const hashId = window.location.hash.replace("#", "");
+      const activeId = validSectionIds.includes(hashId) ? hashId : "thesis";
+
+      projectSections.forEach((section) => {
+        section.hidden = section.id !== activeId;
+      });
+
+      jumpLinks.forEach((link) => {
+        const linkId = link.getAttribute("href")?.replace("#", "");
+        link.classList.toggle("is-active", linkId === activeId);
+      });
+    };
+
+    jumpLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute("href")?.replace("#", "") || "thesis";
+        window.history.replaceState(null, "", `#${targetId}`);
+        setActiveSection();
+      });
+    });
+
+    window.addEventListener("hashchange", setActiveSection);
+    setActiveSection();
   }
 
   const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
