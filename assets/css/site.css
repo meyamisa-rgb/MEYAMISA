@@ -1380,6 +1380,16 @@ main {
   padding: 8px 4px;
 }
 
+.amygdala-page .detail-hero {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.amygdala-page .detail-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  text-wrap: balance;
+}
+
 .amygdala-page .feature-figure,
 .amygdala-page .media-card,
 .amygdala-page .video-card,
