@@ -799,6 +799,19 @@ main {
   align-items: start;
 }
 
+.thesis-stack {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.thesis-hero-figure {
+  width: 100%;
+}
+
+.thesis-copy {
+  max-width: 86ch;
+}
+
 .feature-figure {
   margin: 0;
   border: 1px solid var(--line);
