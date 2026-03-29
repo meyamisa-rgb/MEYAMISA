@@ -451,11 +451,11 @@ main {
   margin: 0;
   display: grid;
   gap: 12px;
+  max-width: 420px;
 }
 
 .about-portrait img {
   width: 100%;
-  border: 1px solid var(--line);
 }
 
 .about-portrait figcaption {
@@ -504,7 +504,6 @@ main {
   display: grid;
   gap: 18px;
   align-content: start;
-  border: 1px solid var(--line);
   padding: clamp(18px, 2.2vw, 26px);
   background: var(--white);
 }
