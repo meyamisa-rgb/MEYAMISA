@@ -146,10 +146,10 @@
 
   if (pageKey === "amygdala-body-as-archive") {
     const createImageCard = (item) => `
-      <article class="media-card">
+      <article class="media-card${item.cardClass ? ` ${item.cardClass}` : ""}">
         ${item.title ? `<h3 class="media-card-title">${item.title}</h3>` : ""}
         <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="${item.gallery}" aria-label="Open ${item.alt}">
-          <img class="gallery-media${item.landscape ? " gallery-media-landscape" : ""}" src="${item.src}" alt="${item.alt}" loading="lazy" />
+          <img class="gallery-media${item.landscape ? " gallery-media-landscape" : ""}${item.imageClass ? ` ${item.imageClass}` : ""}" src="${item.src}" alt="${item.alt}" loading="lazy" />
         </button>
       </article>
     `;
@@ -258,9 +258,9 @@
 
     renderInto(
       "#amygdala-installation-videos",
-      Array.from({ length: 4 }, (_, index) =>
+      [1, 3, 4].map((videoNumber) =>
         createVideoCard({
-          src: `../assets/videos/amygdala/installation-${String(index + 1).padStart(2, "0")}.mp4`,
+          src: `../assets/videos/amygdala/installation-${String(videoNumber).padStart(2, "0")}.mp4`,
           gallery: "amygdala-installation-videos",
         })
       ).join("")
@@ -273,6 +273,8 @@
           src: `../assets/images/amygdala/visitor-${String(index + 1).padStart(2, "0")}.jpeg`,
           alt: `Visitor image ${index + 1}`,
           gallery: "amygdala-visitors",
+          cardClass: "visitor-card",
+          imageClass: "gallery-media-uncropped",
         })
       ).join("")
     );

@@ -805,12 +805,8 @@ main {
 
 .feature-copy p {
   margin: 0;
-  color: var(--muted);
-}
-
-.feature-lead {
   color: var(--black) !important;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .feature-quote {
@@ -1013,6 +1009,25 @@ main {
 
 .pdf-slot {
   min-height: auto;
+}
+
+.pdf-panel {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+  padding: clamp(16px, 2vw, 22px);
+  border: 1px solid var(--line);
+  background: #fafafa;
+}
+
+.pdf-panel-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.pdf-panel-copy p {
+  margin: 0;
+  color: var(--black);
 }
 
 .type-juice-console {
@@ -1244,6 +1259,17 @@ main {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   background: #f7f7f7;
+}
+
+.gallery-media-uncropped,
+.visitor-grid .gallery-media {
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--white);
+}
+
+.visitor-card {
+  align-content: start;
 }
 
 .uniform-media-grid-storyboard .gallery-media,
