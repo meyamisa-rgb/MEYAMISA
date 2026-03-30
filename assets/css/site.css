@@ -1312,6 +1312,103 @@ main {
   outline: none;
 }
 
+.deviations-section {
+  display: grid;
+  gap: clamp(24px, 3vw, 40px);
+  margin-bottom: clamp(30px, 4vw, 48px);
+}
+
+.deviations-hero {
+  margin: 0;
+}
+
+.deviations-studio-block {
+  display: grid;
+  gap: 14px;
+}
+
+.deviations-studio-block h2,
+.deviations-dark-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.deviations-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.deviations-item {
+  display: grid;
+  gap: 10px;
+}
+
+.deviations-item p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.deviations-item-right p {
+  text-align: right;
+}
+
+.deviations-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.deviations-overlay {
+  grid-column: 1 / -1;
+}
+
+.deviations-dark-block {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 26px);
+  background: #040404;
+  color: #f2f2f2;
+  padding: clamp(18px, 2.6vw, 34px);
+}
+
+.deviations-dark-header {
+  display: grid;
+  gap: 6px;
+}
+
+.deviations-dark-header p {
+  margin: 0;
+  color: #ea4335;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.deviations-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.deviations-card {
+  display: grid;
+  gap: 10px;
+}
+
+.deviations-card p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.deviations-banner {
+  margin: 0;
+}
+
 .gallery-grid {
   column-width: clamp(210px, 24vw, 320px);
   column-gap: clamp(10px, 1.6vw, 16px);
@@ -1771,6 +1868,12 @@ figcaption {
   .uniform-media-grid,
   .uniform-media-grid-storyboard,
   .media-wall {
+    grid-template-columns: 1fr;
+  }
+
+  .deviations-two-col,
+  .deviations-doc-grid,
+  .deviations-card-grid {
     grid-template-columns: 1fr;
   }
 
