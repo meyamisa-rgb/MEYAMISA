@@ -147,30 +147,32 @@
   if (pageKey === "exhibition") {
     const projectButtons = Array.from(document.querySelectorAll("[data-exhibition-target]"));
     const projectSections = Array.from(document.querySelectorAll("[data-exhibition-project]"));
-    const validProjectIds = projectSections.map((section) => section.id);
+    if (projectButtons.length && projectSections.length) {
+      const validProjectIds = projectSections.map((section) => section.id);
 
-    const setActiveProject = (nextId) => {
-      const activeId = validProjectIds.includes(nextId) ? nextId : "studio-kan";
+      const setActiveProject = (nextId) => {
+        const activeId = validProjectIds.includes(nextId) ? nextId : "studio-kan";
 
-      projectSections.forEach((section) => {
-        section.hidden = section.id !== activeId;
-      });
+        projectSections.forEach((section) => {
+          section.hidden = section.id !== activeId;
+        });
+
+        projectButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.exhibitionTarget === activeId);
+        });
+
+        window.history.replaceState(null, "", `#${activeId}`);
+      };
 
       projectButtons.forEach((button) => {
-        button.classList.toggle("is-active", button.dataset.exhibitionTarget === activeId);
+        button.addEventListener("click", () => {
+          setActiveProject(button.dataset.exhibitionTarget || "studio-kan");
+        });
       });
 
-      window.history.replaceState(null, "", `#${activeId}`);
-    };
-
-    projectButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        setActiveProject(button.dataset.exhibitionTarget || "studio-kan");
-      });
-    });
-
-    const hashId = window.location.hash.replace("#", "");
-    setActiveProject(hashId);
+      const hashId = window.location.hash.replace("#", "");
+      setActiveProject(hashId);
+    }
   }
 
   if (pageKey === "amygdala-body-as-archive") {

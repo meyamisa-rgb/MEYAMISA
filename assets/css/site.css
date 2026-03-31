@@ -1312,187 +1312,57 @@ main {
   outline: none;
 }
 
-.deviations-section {
+.deviations-single {
   display: grid;
-  gap: clamp(24px, 3vw, 40px);
-  margin-bottom: clamp(30px, 4vw, 48px);
+  gap: clamp(24px, 3vw, 42px);
 }
 
-.exhibition-hero-collage {
-  margin: 0 0 clamp(16px, 2.3vw, 26px);
-  border: 1px solid var(--line);
-  background: #f8f8f8;
+.deviations-banner-hero {
+  margin: 0;
 }
 
-.exhibition-ux-shell {
+.deviations-intro-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
-  gap: clamp(14px, 2vw, 26px);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+  gap: clamp(16px, 2.4vw, 28px);
   align-items: start;
 }
 
-.exhibition-nav-rail {
-  position: sticky;
-  top: 102px;
+.deviations-text {
   display: grid;
-  gap: 10px;
+  gap: clamp(10px, 1.6vw, 14px);
   align-content: start;
-  border: 1px solid var(--line);
-  padding: 12px;
-  background: #fff;
 }
 
-.exhibition-nav-item {
-  display: grid;
-  gap: 2px;
-  width: 100%;
-  text-align: left;
-  border: 1px solid var(--line);
-  background: #fff;
-  padding: 10px;
-  cursor: pointer;
-  transition: border-color 160ms ease, transform 160ms ease;
-}
-
-.exhibition-nav-item span {
-  font-family: var(--font-display);
+.deviations-text p {
+  margin: 0;
   font-size: 1rem;
-  letter-spacing: -0.015em;
-}
-
-.exhibition-nav-item small {
-  color: var(--muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.exhibition-nav-item:hover,
-.exhibition-nav-item:focus-visible,
-.exhibition-nav-item.is-active {
-  border-color: var(--black);
-  transform: translateX(2px);
-  outline: none;
-}
-
-.exhibition-projects-panel {
-  border: 1px solid var(--line);
-  padding: clamp(14px, 2vw, 24px);
-  background: #fff;
-}
-
-.exhibition-project {
-  display: grid;
-  gap: clamp(14px, 2vw, 20px);
-}
-
-.exhibition-project-header {
-  display: grid;
-  gap: 4px;
-}
-
-.exhibition-project-header h2 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.3vw, 2rem);
-  letter-spacing: -0.03em;
-}
-
-.exhibition-project-header p {
-  margin: 0;
+  line-height: 1.75;
   color: var(--muted);
 }
 
-.deviations-hero {
-  margin: 0;
-}
-
-.deviations-studio-block {
+.deviations-section-block {
   display: grid;
-  gap: 14px;
+  gap: clamp(12px, 1.8vw, 18px);
 }
 
-.deviations-studio-block h2,
-.deviations-studio-block h3,
-.deviations-dark-header h2 {
+.deviations-section-block h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.2vw, 2rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(1.2rem, 2.1vw, 1.7rem);
+  letter-spacing: -0.02em;
 }
 
 .deviations-two-col {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
-}
-
-.deviations-item {
-  display: grid;
-  gap: 10px;
-}
-
-.deviations-item p {
-  margin: 0;
-  font-family: "Courier New", monospace;
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-.deviations-item-right p {
-  text-align: right;
+  gap: clamp(12px, 1.8vw, 20px);
 }
 
 .deviations-doc-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
-}
-
-.deviations-overlay {
-  grid-column: 1 / -1;
-}
-
-.deviations-dark-block {
-  display: grid;
-  gap: clamp(18px, 2.4vw, 26px);
-  background: #040404;
-  color: #f2f2f2;
-  padding: clamp(18px, 2.6vw, 34px);
-}
-
-.deviations-dark-header {
-  display: grid;
-  gap: 6px;
-}
-
-.deviations-dark-header p {
-  margin: 0;
-  color: #ea4335;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-
-.deviations-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
-}
-
-.deviations-card {
-  display: grid;
-  gap: 10px;
-}
-
-.deviations-card p {
-  margin: 0;
-  font-family: "Courier New", monospace;
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-.deviations-banner {
-  margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.6vw, 16px);
 }
 
 
@@ -1992,6 +1862,7 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
+  .deviations-intro-grid,
   .deviations-two-col,
   .deviations-doc-grid,
   .deviations-card-grid,
