@@ -1318,6 +1318,79 @@ main {
   margin-bottom: clamp(30px, 4vw, 48px);
 }
 
+.exhibition-project-picker {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(8px, 1.2vw, 14px);
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+
+.exhibition-project-tile {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  min-height: clamp(96px, 12vw, 140px);
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.exhibition-project-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.68)), var(--tile-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.92;
+}
+
+.exhibition-project-tile span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  letter-spacing: -0.01em;
+}
+
+.exhibition-project-tile:hover,
+.exhibition-project-tile:focus-visible,
+.exhibition-project-tile.is-active {
+  border-color: var(--black);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.exhibition-projects-panel {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(14px, 2vw, 24px);
+}
+
+.exhibition-project {
+  display: grid;
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.exhibition-project-header {
+  display: grid;
+  gap: 4px;
+}
+
+.exhibition-project-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.3vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.exhibition-project-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .exhibition-subnav {
   display: flex;
   flex-wrap: wrap;
@@ -1347,6 +1420,7 @@ main {
 }
 
 .deviations-studio-block h2,
+.deviations-studio-block h3,
 .deviations-dark-header h2 {
   margin: 0;
   font-family: var(--font-display);
@@ -1989,6 +2063,10 @@ figcaption {
   .deviations-card-grid,
   .exhibition-category-media {
     grid-template-columns: 1fr;
+  }
+
+  .exhibition-project-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .thesis-side-grid {
