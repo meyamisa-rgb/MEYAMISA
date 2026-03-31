@@ -34,211 +34,183 @@
 
         <main>
           <section class="subpage-intro reveal">
+            <p class="eyebrow">Archive Navigation</p>
             <h1>Exhibitions</h1>
-            <p>Choose one project. Open one exhibition at a time.</p>
+            <p>Experimental curation with a modern browsing flow. Select one exhibition to explore its full photo and video body.</p>
           </section>
 
-          <section class="exhibition-project-picker reveal" aria-label="Exhibition project picker">
-            <button class="exhibition-project-tile is-active" type="button" data-exhibition-target="studio-kan" style="--tile-image:url('../assets/images/deviations/deviations-02-studio.png')">
-              <span>Studio Kan</span>
+          <figure class="exhibition-hero-collage reveal">
+            <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="exhibition-hero" aria-label="Open deviations collage hero">
+              <img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/deviations-hero-collage.png" alt="Deviations collage hero composition" loading="lazy" />
             </button>
-            <button class="exhibition-project-tile" type="button" data-exhibition-target="punio-reflection" style="--tile-image:url('../assets/images/ACC._MA-EXP-IMG-003.jpg')">
-              <span>PUNIO Reflection</span>
-            </button>
-            <button class="exhibition-project-tile" type="button" data-exhibition-target="punio-tsukumo" style="--tile-image:url('../assets/images/ACC._MA-EXP-IMG-014.jpg')">
-              <span>PUNIO Tsukumo</span>
-            </button>
-            <button class="exhibition-project-tile" type="button" data-exhibition-target="gyeongnam" style="--tile-image:url('../assets/images/ACC._MA-EXP-IMG-005.jpg')">
-              <span>Gyeongnam Art Fair</span>
-            </button>
-            <button class="exhibition-project-tile" type="button" data-exhibition-target="geoje" style="--tile-image:url('../assets/images/ACC._MA-EXP-IMG-007.jpg')">
-              <span>Geoje Seomkkot</span>
-            </button>
-            <button class="exhibition-project-tile" type="button" data-exhibition-target="aachen" style="--tile-image:url('../assets/images/ACC._MA-EXP-IMG-009.jpg')">
-              <span>Aachen</span>
-            </button>
-          </section>
+          </figure>
 
-          <section class="exhibition-projects-panel reveal" aria-label="Exhibition project detail">
-            <article class="exhibition-project" id="studio-kan" data-exhibition-project>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">06.12 - 11.12.2024</p>
-                <h2>Studio Kan Art Gallery Japan</h2>
-                <p>Kyoto-Umezu Gotocho, Japan</p>
-              </header>
+          <section class="exhibition-ux-shell reveal" aria-label="Exhibition explorer">
+            <aside class="exhibition-nav-rail">
+              <p class="eyebrow">6 Exhibitions</p>
+              <button class="exhibition-nav-item is-active" type="button" data-exhibition-target="studio-kan">
+                <span>Studio Kan</span>
+                <small>Kyoto · 2024</small>
+              </button>
+              <button class="exhibition-nav-item" type="button" data-exhibition-target="punio-reflection">
+                <span>PUNIO Reflection</span>
+                <small>Tokyo · 2024</small>
+              </button>
+              <button class="exhibition-nav-item" type="button" data-exhibition-target="punio-tsukumo">
+                <span>PUNIO Tsukumo</span>
+                <small>Tokyo · 2023</small>
+              </button>
+              <button class="exhibition-nav-item" type="button" data-exhibition-target="gyeongnam">
+                <span>Gyeongnam Art Fair</span>
+                <small>Changwon · 2025</small>
+              </button>
+              <button class="exhibition-nav-item" type="button" data-exhibition-target="geoje">
+                <span>Geoje Seomkkot</span>
+                <small>Geoje · 2025</small>
+              </button>
+              <button class="exhibition-nav-item" type="button" data-exhibition-target="aachen">
+                <span>Aachen</span>
+                <small>Germany · 2025</small>
+              </button>
+            </aside>
 
-              <section class="deviations-section" aria-label="Studio Kan deviations">
-                <figure class="deviations-hero">
-                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open Deviations hero">
-                    <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-01-hero.png" alt="Deviations hero artwork" loading="lazy" />
-                  </button>
-                </figure>
+            <section class="exhibition-projects-panel" aria-label="Exhibition project detail">
+              <article class="exhibition-project" id="studio-kan" data-exhibition-project>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">06.12 - 11.12.2024</p>
+                  <h2>Studio Kan Art Gallery Japan</h2>
+                  <p>Kyoto-Umezu Gotocho, Japan</p>
+                </header>
 
-                <section class="deviations-studio-block">
-                  <h3>Studio Artworks</h3>
-                  <div class="deviations-two-col">
-                    <article class="deviations-item">
-                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open studio artwork left">
-                        <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-02-studio.png" alt="Studio installation with two artworks" loading="lazy" />
-                      </button>
-                      <p>Title left: Amisa<br />Size: A0 x 2<br />Materials: Shodo Brush/Adobe Illustrator<br />Year: 2024</p>
-                    </article>
-                    <article class="deviations-item deviations-item-right">
-                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open studio artwork right">
-                        <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-08-triptych.png" alt="Studio artwork right panel" loading="lazy" />
-                      </button>
-                      <p>Title right: Amygdala<br />Size: A0 x 2<br />Materials: Shodo Brush/Adobe Illustrator<br />Year: 2024</p>
-                    </article>
+                <section class="deviations-section" aria-label="Studio Kan deviations">
+                  <figure class="deviations-hero">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open Deviations hero">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-01-hero.png" alt="Deviations hero artwork" loading="lazy" />
+                    </button>
+                  </figure>
+
+                  <section class="deviations-studio-block">
+                    <h3>Studio Artworks</h3>
+                    <div class="deviations-two-col">
+                      <article class="deviations-item">
+                        <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open studio artwork left">
+                          <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-02-studio.png" alt="Studio installation with two artworks" loading="lazy" />
+                        </button>
+                        <p>Title left: Amisa<br />Size: A0 x 2<br />Materials: Shodo Brush/Adobe Illustrator<br />Year: 2024</p>
+                      </article>
+                      <article class="deviations-item deviations-item-right">
+                        <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open studio artwork right">
+                          <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-08-triptych.png" alt="Studio artwork right panel" loading="lazy" />
+                        </button>
+                        <p>Title right: Amygdala<br />Size: A0 x 2<br />Materials: Shodo Brush/Adobe Illustrator<br />Year: 2024</p>
+                      </article>
+                    </div>
+                  </section>
+
+                  <div class="deviations-doc-grid">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open wall documentation 1">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-03-wall-a.png" alt="Exhibition wall documentation 1" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open wall documentation 2">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-04-wall-b.png" alt="Exhibition wall documentation 2" loading="lazy" />
+                    </button>
                   </div>
+
+                  <article class="exhibition-video-card">
+                    <video controls preload="metadata">
+                      <source src="../assets/videos/ACC._MA-BAR-VID-001.mp4" type="video/mp4" />
+                    </video>
+                    <p>Exhibition video</p>
+                  </article>
                 </section>
+              </article>
 
-                <div class="deviations-doc-grid">
-                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open wall documentation 1">
-                    <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-03-wall-a.png" alt="Exhibition wall documentation 1" loading="lazy" />
+              <article class="exhibition-project" id="punio-reflection" data-exhibition-project hidden>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">28.08 - 02.09.2024</p>
+                  <h2>PUNIO Gallery Japan · Reflection</h2>
+                  <p>Tokyo Kita-senju, Japan · Duo exhibition</p>
+                </header>
+                <div class="exhibition-category-media">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-reflection-gallery" aria-label="Open Reflection photo 1">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-003.jpg" alt="Reflection exhibition photo 1" loading="lazy" />
                   </button>
-                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-full" aria-label="Open wall documentation 2">
-                    <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/deviations-04-wall-b.png" alt="Exhibition wall documentation 2" loading="lazy" />
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-reflection-gallery" aria-label="Open Reflection photo 2">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-004.jpg" alt="Reflection exhibition photo 2" loading="lazy" />
                   </button>
+                  <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
                 </div>
+              </article>
 
-                <article class="exhibition-video-card">
-                  <video controls preload="metadata">
-                    <source src="../assets/videos/ACC._MA-BAR-VID-001.mp4" type="video/mp4" />
-                  </video>
-                  <p>Exhibition video</p>
-                </article>
-              </section>
-            </article>
+              <article class="exhibition-project" id="punio-tsukumo" data-exhibition-project hidden>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">21.09 - 28.09.2023</p>
+                  <h2>PUNIO Gallery Japan · Tsukumo</h2>
+                  <p>Tokyo Kita-senju, Japan · Solo exhibition</p>
+                </header>
+                <div class="exhibition-category-media">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-tsukumo-gallery" aria-label="Open Tsukumo photo 1">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-014.jpg" alt="Tsukumo exhibition photo 1" loading="lazy" />
+                  </button>
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-tsukumo-gallery" aria-label="Open Tsukumo photo 2">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-015.jpg" alt="Tsukumo exhibition photo 2" loading="lazy" />
+                  </button>
+                  <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
+                </div>
+              </article>
 
-            <article class="exhibition-project" id="punio-reflection" data-exhibition-project hidden>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">28.08 - 02.09.2024</p>
-                <h2>PUNIO Gallery Japan · Reflection</h2>
-                <p>Tokyo Kita-senju, Japan · Duo exhibition</p>
-              </header>
-              <div class="exhibition-category-media">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-reflection-gallery" aria-label="Open Reflection photo 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-003.jpg" alt="Reflection exhibition photo 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-reflection-gallery" aria-label="Open Reflection photo 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-004.jpg" alt="Reflection exhibition photo 2" loading="lazy" />
-                </button>
-                <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
-              </div>
-            </article>
+              <article class="exhibition-project" id="gyeongnam" data-exhibition-project hidden>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">11.09 - 14.09.2025</p>
+                  <h2>The 12th Gyeongnam International Art Fair</h2>
+                  <p>Changwon Exhibition and Convention Center, South Korea</p>
+                </header>
+                <div class="exhibition-category-media">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="gyeongnam-gallery" aria-label="Open Gyeongnam photo 1">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-005.jpg" alt="Gyeongnam exhibition photo 1" loading="lazy" />
+                  </button>
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="gyeongnam-gallery" aria-label="Open Gyeongnam photo 2">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-006.jpg" alt="Gyeongnam exhibition photo 2" loading="lazy" />
+                  </button>
+                  <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
+                </div>
+              </article>
 
-            <article class="exhibition-project" id="punio-tsukumo" data-exhibition-project hidden>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">21.09 - 28.09.2023</p>
-                <h2>PUNIO Gallery Japan · Tsukumo</h2>
-                <p>Tokyo Kita-senju, Japan · Solo exhibition</p>
-              </header>
-              <div class="exhibition-category-media">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-tsukumo-gallery" aria-label="Open Tsukumo photo 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-014.jpg" alt="Tsukumo exhibition photo 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-tsukumo-gallery" aria-label="Open Tsukumo photo 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-015.jpg" alt="Tsukumo exhibition photo 2" loading="lazy" />
-                </button>
-                <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
-              </div>
-            </article>
+              <article class="exhibition-project" id="geoje" data-exhibition-project hidden>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">31.10 - 10.11.2025</p>
+                  <h2>Geoje International Seomkkot Art Show</h2>
+                  <p>Geoje-si Island, South Korea</p>
+                </header>
+                <div class="exhibition-category-media">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-gallery" aria-label="Open Geoje photo 1">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-007.jpg" alt="Geoje exhibition photo 1" loading="lazy" />
+                  </button>
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-gallery" aria-label="Open Geoje photo 2">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-008.jpg" alt="Geoje exhibition photo 2" loading="lazy" />
+                  </button>
+                  <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
+                </div>
+              </article>
 
-            <article class="exhibition-project" id="gyeongnam" data-exhibition-project hidden>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">11.09 - 14.09.2025</p>
-                <h2>The 12th Gyeongnam International Art Fair</h2>
-                <p>Changwon Exhibition and Convention Center, South Korea</p>
-              </header>
-              <div class="exhibition-category-media">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="gyeongnam-gallery" aria-label="Open Gyeongnam photo 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-005.jpg" alt="Gyeongnam exhibition photo 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="gyeongnam-gallery" aria-label="Open Gyeongnam photo 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-006.jpg" alt="Gyeongnam exhibition photo 2" loading="lazy" />
-                </button>
-                <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
-              </div>
-            </article>
-
-            <article class="exhibition-project" id="geoje" data-exhibition-project hidden>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">31.10 - 10.11.2025</p>
-                <h2>Geoje International Seomkkot Art Show</h2>
-                <p>Geoje-si Island, South Korea</p>
-              </header>
-              <div class="exhibition-category-media">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-gallery" aria-label="Open Geoje photo 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-007.jpg" alt="Geoje exhibition photo 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-gallery" aria-label="Open Geoje photo 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-008.jpg" alt="Geoje exhibition photo 2" loading="lazy" />
-                </button>
-                <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
-              </div>
-            </article>
-
-            <article class="exhibition-project" id="aachen" data-exhibition-project hidden>
-              <header class="exhibition-project-header">
-                <p class="timeline-date">06.12.2025</p>
-                <h2>Raststätte Kulturraum Aachen</h2>
-                <p>North Rhine-Westphalia, Aachen, Germany</p>
-              </header>
-              <div class="exhibition-category-media">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-gallery" aria-label="Open Aachen photo 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-009.jpg" alt="Aachen exhibition photo 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-gallery" aria-label="Open Aachen photo 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-010.jpg" alt="Aachen exhibition photo 2" loading="lazy" />
-                </button>
-                <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
-              </div>
-            </article>
+              <article class="exhibition-project" id="aachen" data-exhibition-project hidden>
+                <header class="exhibition-project-header">
+                  <p class="timeline-date">06.12.2025</p>
+                  <h2>Raststätte Kulturraum Aachen</h2>
+                  <p>North Rhine-Westphalia, Aachen, Germany</p>
+                </header>
+                <div class="exhibition-category-media">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-gallery" aria-label="Open Aachen photo 1">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-009.jpg" alt="Aachen exhibition photo 1" loading="lazy" />
+                  </button>
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-gallery" aria-label="Open Aachen photo 2">
+                    <img class="gallery-media gallery-media-landscape" src="../assets/images/ACC._MA-EXP-IMG-010.jpg" alt="Aachen exhibition photo 2" loading="lazy" />
+                  </button>
+                  <article class="exhibition-video-card exhibition-video-placeholder"><p>Video slot</p></article>
+                </div>
+              </article>
+            </section>
           </section>
-
-          <section class="exhibition-timeline-section reveal" id="timeline" aria-label="Exhibition timeline">
-            <p class="eyebrow">From Portfolio</p>
-            <h2>Exhibition Timeline</h2>
-            <div class="timeline-list timeline-list-tight">
-              <article>
-                <p class="timeline-date">06.12.2025</p>
-                <h3>Raststätte Kulturraum Aachen</h3>
-                <p>North Rhine-Westphalia, Aachen, Germany</p>
-                <p>Deviations art collection display · Live painting performance</p>
-              </article>
-              <article>
-                <p class="timeline-date">31.10 - 10.11.2025</p>
-                <h3>Geoje International Seomkkot Art Show</h3>
-                <p>Geoje-si Island, South Korea</p>
-                <p>Deviations art collection and Hanguk display · Live painting performance</p>
-              </article>
-              <article>
-                <p class="timeline-date">11.09 - 14.09.2025</p>
-                <h3>The 12th Gyeongnam International Art Fair</h3>
-                <p>Changwon Exhibition and Convention Center, Changwon City, South Korea</p>
-                <p>Deviations artworks exhibited and offered for sale</p>
-              </article>
-              <article>
-                <p class="timeline-date">06.12 - 11.12.2024</p>
-                <h3>Studio Kan Art Gallery Japan</h3>
-                <p>Kyoto-Umezu Gotocho, Japan</p>
-                <p>Deviations art collection and Kotoba to Suisai poems · Exhibition and performance design · Collaboration with Knysh Ksenya (Illustrator)</p>
-              </article>
-              <article>
-                <p class="timeline-date">28.08 - 02.09.2024</p>
-                <h3>PUNIO Gallery Japan</h3>
-                <p>Tokyo Kita-senju, Japan</p>
-                <p>Reflection — a duo exhibition · Book collaboration with Knysh Ksenya (Illustrator)</p>
-              </article>
-              <article>
-                <p class="timeline-date">21.09 - 28.09.2023</p>
-                <h3>PUNIO Gallery Japan</h3>
-                <p>Tokyo Kita-senju, Japan</p>
-                <p>Tsukumo — solo exhibition about experimental typography</p>
-              </article>
-            </div>
-          </section>
-
         </main>
 
         <footer class="site-footer">
