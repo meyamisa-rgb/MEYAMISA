@@ -1644,11 +1644,15 @@ main {
   border: 0;
   background: transparent;
   max-width: 320px;
+  outline: 0;
+  box-shadow: none;
 }
 
 .exhibition-art-card .media-trigger {
   background: transparent;
   border: 0;
+  outline: 0;
+  box-shadow: none;
 }
 
 .exhibition-art-card .gallery-media {
@@ -1661,6 +1665,8 @@ main {
 .exhibition-art-card figcaption {
   border-top: 0;
   padding: 8px 0 0;
+  outline: 0;
+  box-shadow: none;
 }
 
 .exhibition-single-grid {
