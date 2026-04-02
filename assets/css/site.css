@@ -1367,7 +1367,7 @@ main {
 
 .exhibition-ux-shell {
   display: grid;
-  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: clamp(18px, 2.2vw, 30px);
 }
 
@@ -1427,6 +1427,41 @@ main {
   display: grid;
 }
 
+.exhibition-title-nav {
+  display: grid;
+}
+
+.exhibition-title-nav .eyebrow {
+  margin: 0 0 8px;
+}
+
+.exhibition-title-nav .exhibition-title-row {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+  text-align: left;
+  cursor: pointer;
+}
+
+.exhibition-title-nav .exhibition-title-row:first-of-type {
+  border-top: 0;
+}
+
+.exhibition-title-nav .exhibition-title-row.is-active {
+  background: var(--black);
+  color: var(--white);
+}
+
+.exhibition-title-nav .exhibition-title-row.is-active .exhibition-title-index,
+.exhibition-title-nav .exhibition-title-row.is-active .exhibition-title-arrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.exhibition-title-nav .exhibition-title-row.is-active img {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .exhibition-project {
   display: grid;
   gap: clamp(18px, 2.4vw, 30px);
@@ -1468,6 +1503,30 @@ main {
   gap: clamp(12px, 1.8vw, 18px);
 }
 
+.exhibition-structure-panel {
+  display: grid;
+  gap: clamp(12px, 1.8vw, 18px);
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: clamp(12px, 1.8vw, 18px);
+}
+
+.structure-one h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+  letter-spacing: -0.02em;
+}
+
+.structure-two {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.structure-two .text-panel {
+  max-width: none;
+}
+
 .exhibition-cluster-block .section-heading h3 {
   margin: 0;
   font-family: var(--font-display);
@@ -1486,68 +1545,58 @@ main {
   background: var(--white);
 }
 
-.collection-surface {
-  display: grid;
-  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-  gap: clamp(12px, 1.8vw, 18px);
-}
-
-.collection-pickers {
-  display: grid;
-  gap: 8px;
-}
-
-.collection-picker {
-  text-align: left;
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  font-size: 0.77rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 10px 11px;
-  border: 1px solid var(--line-strong);
-  background: var(--white);
-  color: var(--black);
-  cursor: pointer;
-}
-
-.collection-picker.is-active {
-  border-color: var(--black);
-  background: var(--black);
-  color: var(--white);
-}
-
-.collection-preview {
-  border: 1px solid var(--line);
-  background: #fcfcfc;
-  padding: clamp(10px, 1.5vw, 14px);
-  display: grid;
-  gap: 12px;
-}
-
-.collection-preview-media {
-  border: 1px solid var(--line);
-  background: var(--white);
-}
-
-.collection-meta {
-  display: grid;
-  gap: 4px;
-}
-
-.collection-meta p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.collection-meta p strong {
-  color: var(--black);
-}
-
 .exhibition-video-lane {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(12px, 1.6vw, 18px);
+}
+
+.exhibition-title-list {
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.exhibition-title-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 72px 28px;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  border-top: 1px solid var(--line);
+  padding: 6px 8px;
+}
+
+.exhibition-title-row:first-child {
+  border-top: 0;
+}
+
+.exhibition-title-index {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
+.exhibition-title-row h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.7rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.exhibition-title-row img {
+  width: 72px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: #f1f1f1;
+}
+
+.exhibition-title-arrow {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--black);
 }
 
 .exhibition-placeholder-panel {
@@ -1952,7 +2001,7 @@ figcaption {
   }
 
   .exhibition-hero-panel,
-  .collection-surface {
+  .structure-two {
     grid-template-columns: 1fr;
   }
 
@@ -2216,6 +2265,18 @@ figcaption {
   .placeholder-board.three-col,
   .blueprint-grid {
     grid-template-columns: 1fr;
+  }
+
+  .exhibition-title-row {
+    grid-template-columns: 28px minmax(0, 1fr) 52px 20px;
+    min-height: 52px;
+    gap: 8px;
+    padding: 5px 4px;
+  }
+
+  .exhibition-title-row img {
+    width: 52px;
+    height: 32px;
   }
 
   .thesis-side-grid {
