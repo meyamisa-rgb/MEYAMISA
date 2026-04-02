@@ -1634,23 +1634,40 @@ main {
 
 .exhibition-triptych-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(10px, 1.5vw, 14px);
+  grid-template-columns: repeat(3, minmax(220px, 320px));
+  justify-content: start;
+  gap: clamp(14px, 1.8vw, 22px);
 }
 
 .exhibition-art-card {
   margin: 0;
-  border: 1px solid var(--line);
-  background: var(--white);
+  border: 0;
+  background: transparent;
+  max-width: 320px;
 }
 
-.exhibition-art-card .artwork-note {
-  margin: 0;
-  padding: 0 11px 10px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.exhibition-art-card .media-trigger {
+  background: #f3f3f3;
+}
+
+.exhibition-art-card .gallery-media {
+  max-height: 410px;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.exhibition-art-card figcaption {
+  border-top: 0;
+  padding: 8px 0 0;
+}
+
+.exhibition-single-grid {
+  display: grid;
+}
+
+.exhibition-single-grid .exhibition-art-card {
+  max-width: 560px;
 }
 
 .exhibition-video-lane {
