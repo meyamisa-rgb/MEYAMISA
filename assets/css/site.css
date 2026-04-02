@@ -1370,6 +1370,32 @@ main {
   gap: clamp(18px, 2.2vw, 28px);
 }
 
+.exhibition-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.exhibition-quick-button {
+  border: 0;
+  background: transparent;
+  padding: 2px 0;
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 2.9rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.exhibition-quick-button.is-active {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .exhibition-index-list {
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
@@ -2135,6 +2161,14 @@ figcaption {
     padding: 6px;
   }
 
+  .exhibition-quick-nav {
+    gap: 6px 12px;
+  }
+
+  .exhibition-quick-button {
+    font-size: clamp(1rem, 4.8vw, 1.65rem);
+  }
+
   .exhibition-index-row img {
     width: 68px;
     height: 38px;
@@ -2357,6 +2391,15 @@ figcaption {
     min-height: 54px;
     padding: 5px 2px;
     gap: 6px;
+  }
+
+  .exhibition-quick-nav {
+    padding: 10px 0;
+    gap: 5px 10px;
+  }
+
+  .exhibition-quick-button {
+    font-size: clamp(0.95rem, 5vw, 1.2rem);
   }
 
   .exhibition-index-row img {
