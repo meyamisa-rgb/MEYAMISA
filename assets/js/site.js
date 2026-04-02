@@ -173,6 +173,37 @@
       const hashId = window.location.hash.replace("#", "");
       setActiveProject(hashId);
     }
+
+    const artworkButtons = Array.from(document.querySelectorAll("[data-artwork-picker]"));
+    const artworkPreview = document.querySelector("[data-artwork-preview]");
+    const artworkTitle = document.querySelector("[data-artwork-meta-title]");
+    if (artworkButtons.length && artworkPreview && artworkTitle) {
+      const setActiveArtwork = (button) => {
+        if (!button) {
+          return;
+        }
+
+        artworkButtons.forEach((item) => {
+          item.classList.toggle("is-active", item === button);
+        });
+
+        const title = button.dataset.artworkTitle || "";
+        const src = button.dataset.artworkSrc || "";
+        const alt = button.dataset.artworkAlt || title;
+
+        artworkPreview.src = src;
+        artworkPreview.alt = alt;
+        artworkTitle.textContent = title;
+      };
+
+      artworkButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setActiveArtwork(button);
+        });
+      });
+
+      setActiveArtwork(artworkButtons.find((button) => button.classList.contains("is-active")) || artworkButtons[0]);
+    }
   }
 
   if (pageKey === "amygdala-body-as-archive") {

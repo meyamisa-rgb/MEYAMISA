@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exhibitions | Mey Amisa</title>
-    <meta name="description" content="Exhibitions and Deviations artworks from the Mey Amisa archive." />
+    <meta
+      name="description"
+      content="Six exhibitions from the Mey Amisa archive, with Studio KAN featured in full and placeholders for upcoming media."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +22,9 @@
         <header class="site-header">
           <div class="brand-row">
             <a class="brand" href="../index.html">Mey Amisa</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+              Menu
+            </button>
           </div>
           <nav class="site-nav" aria-label="Primary" id="site-nav">
             <a href="about.html" data-page-link>About Me</a>
@@ -34,94 +39,382 @@
 
         <main>
           <section class="subpage-intro reveal">
-            <p class="eyebrow">Exhibition</p>
-            <h1>Deviations</h1>
-            <p>Studio Kan</p>
+            <p class="eyebrow">Exhibitions</p>
+            <h1>Six Places, Six Atmospheres</h1>
+            <p>
+              A guided overview of six exhibitions with one click navigation. Studio KAN is fully populated with live artwork
+              examples, while the other venues are structured placeholders for videos, photos, and short texts.
+            </p>
           </section>
 
-          <section class="deviations-single reveal" aria-label="Deviations Studio Kan">
-            <figure class="deviations-banner-hero">
-              <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open Deviations hero image">
-                <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-main-01.png" alt="Deviations visual composition" loading="lazy" />
+          <section class="exhibition-ux-shell reveal" aria-label="Exhibition Navigator">
+            <aside class="exhibition-nav-rail" aria-label="Exhibition locations">
+              <p class="eyebrow">Venues</p>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="studio-kan">
+                <span>01</span>
+                <strong>Studio KAN</strong>
+                <em>Tokyo, Japan</em>
               </button>
-            </figure>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="punio-gallery">
+                <span>02</span>
+                <strong>Punio Gallery</strong>
+                <em>Placeholder</em>
+              </button>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="seoul-site-a">
+                <span>03</span>
+                <strong>South Korea I</strong>
+                <em>Placeholder</em>
+              </button>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="seoul-site-b">
+                <span>04</span>
+                <strong>South Korea II</strong>
+                <em>Placeholder</em>
+              </button>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="germany-site-a">
+                <span>05</span>
+                <strong>Germany I</strong>
+                <em>Placeholder</em>
+              </button>
+              <button class="exhibition-nav-button" type="button" data-exhibition-target="germany-site-b">
+                <span>06</span>
+                <strong>Germany II</strong>
+                <em>Placeholder</em>
+              </button>
+            </aside>
 
-            <div class="deviations-intro-grid">
-              <article class="deviations-text">
-                <p>
-                  Deviations is an exhibition by Mey Amisa that explores the concept of deviation as both disruption and creation.
-                  Through asemic writing, body language, and motion, the exhibition investigates how systems of language, emotion,
-                  and identity can be reimagined and reshaped.
-                </p>
-                <p>
-                  It invites viewers to embrace deviation as a personal and collective act, using art to break boundaries, challenge
-                  norms, and foster new understandings.
-                </p>
-                <p>
-                  This Exhibition was displayed between 2024 - 2025 in Japan, South Korea and Germany.
-                </p>
+            <div class="exhibition-stage">
+              <article class="exhibition-project" id="studio-kan" data-exhibition-project>
+                <section class="exhibition-hero-panel">
+                  <div class="exhibition-hero-copy">
+                    <p class="eyebrow">Studio KAN</p>
+                    <h2>Deviations</h2>
+                    <p>
+                      Deviations explores deviation as both disruption and creation through asemic writing, body language, and
+                      motion. This presentation gathers documentation, artworks, and media placeholders in one clear flow.
+                    </p>
+                    <p>
+                      This exhibition was displayed between 2024 and 2025 in Japan, South Korea, and Germany.
+                    </p>
+                  </div>
+                  <button
+                    class="media-trigger"
+                    type="button"
+                    data-lightbox-trigger
+                    data-gallery="studio-kan-main"
+                    aria-label="Open Studio KAN key visual"
+                  >
+                    <img
+                      class="gallery-media gallery-media-landscape"
+                      src="../assets/images/deviations/studio-kan/sk-main-01.png"
+                      alt="Studio KAN Deviations exhibition visual"
+                      loading="lazy"
+                    />
+                  </button>
+                </section>
+
+                <section class="exhibition-cluster-block">
+                  <div class="section-heading">
+                    <h3>Featured Cluster | Seen Together</h3>
+                    <p>BAILE, DIE VERAENDERUNG, and THE RIVER'S SORROW shown as one body of work.</p>
+                  </div>
+                  <div class="exhibition-triptych-grid">
+                    <figure class="exhibition-art-card">
+                      <button
+                        class="media-trigger"
+                        type="button"
+                        data-lightbox-trigger
+                        data-gallery="studio-kan-triptych"
+                        aria-label="Open BAILE"
+                      >
+                        <img
+                          class="gallery-media"
+                          src="../assets/images/exhibition/studio-kan/illustrations/baile.jpg"
+                          alt="BAILE illustration"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption>BAILE</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button
+                        class="media-trigger"
+                        type="button"
+                        data-lightbox-trigger
+                        data-gallery="studio-kan-triptych"
+                        aria-label="Open DIE VERAENDERUNG"
+                      >
+                        <img
+                          class="gallery-media"
+                          src="../assets/images/exhibition/studio-kan/illustrations/die-veraenderung.jpg"
+                          alt="DIE VERAENDERUNG illustration"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption>DIE VERAENDERUNG</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button
+                        class="media-trigger"
+                        type="button"
+                        data-lightbox-trigger
+                        data-gallery="studio-kan-triptych"
+                        aria-label="Open THE RIVER'S SORROW"
+                      >
+                        <img
+                          class="gallery-media"
+                          src="../assets/images/exhibition/studio-kan/illustrations/the-rivers-sorrow.jpg"
+                          alt="THE RIVER'S SORROW illustration"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption>THE RIVER'S SORROW</figcaption>
+                    </figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-cluster-block">
+                  <div class="section-heading">
+                    <h3>Interactive Collection Surface</h3>
+                    <p>Select an artwork to preview it with full metadata.</p>
+                  </div>
+
+                  <div class="collection-surface">
+                    <div class="collection-pickers" role="tablist" aria-label="Studio KAN artworks">
+                      <button
+                        class="collection-picker is-active"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="BAILE"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/baile.jpg"
+                        data-artwork-alt="BAILE illustration"
+                      >
+                        BAILE
+                      </button>
+                      <button
+                        class="collection-picker"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="DIE VERAENDERUNG"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/die-veraenderung.jpg"
+                        data-artwork-alt="DIE VERAENDERUNG illustration"
+                      >
+                        DIE VERAENDERUNG
+                      </button>
+                      <button
+                        class="collection-picker"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="THE RIVER'S SORROW"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/the-rivers-sorrow.jpg"
+                        data-artwork-alt="THE RIVER'S SORROW illustration"
+                      >
+                        THE RIVER'S SORROW
+                      </button>
+                      <button
+                        class="collection-picker"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="IN HER MIND"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/in-her-mind.jpg"
+                        data-artwork-alt="IN HER MIND illustration"
+                      >
+                        IN HER MIND
+                      </button>
+                      <button
+                        class="collection-picker"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="CARAS"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/caras.jpg"
+                        data-artwork-alt="CARAS illustration"
+                      >
+                        CARAS
+                      </button>
+                      <button
+                        class="collection-picker"
+                        type="button"
+                        data-artwork-picker
+                        data-artwork-title="ALMA"
+                        data-artwork-src="../assets/images/exhibition/studio-kan/illustrations/alma.jpg"
+                        data-artwork-alt="ALMA illustration"
+                      >
+                        ALMA
+                      </button>
+                    </div>
+
+                    <div class="collection-preview">
+                      <button
+                        class="media-trigger collection-preview-media"
+                        type="button"
+                        data-lightbox-trigger
+                        data-gallery="studio-kan-collection"
+                        aria-label="Open selected artwork"
+                      >
+                        <img
+                          class="gallery-media"
+                          data-artwork-preview
+                          src="../assets/images/exhibition/studio-kan/illustrations/baile.jpg"
+                          alt="BAILE illustration"
+                          loading="lazy"
+                        />
+                      </button>
+
+                      <div class="collection-meta">
+                        <p><strong>Title:</strong> <span data-artwork-meta-title>BAILE</span></p>
+                        <p><strong>Materials:</strong> Quill, Shodo brush</p>
+                        <p><strong>Dimension:</strong> 11.7 x 16.5 inches</p>
+                        <p><strong>Year:</strong> 2024</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="exhibition-cluster-block">
+                  <div class="section-heading">
+                    <h3>Studio KAN Documentation + Video Placeholders</h3>
+                    <p>Real images are included here. Video cards are placeholders so you can replace links later.</p>
+                  </div>
+                  <div class="deviations-doc-grid">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-docs" aria-label="Open Studio KAN documentation image one">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-01.png" alt="Studio KAN documentation image one" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-docs" aria-label="Open Studio KAN documentation image two">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-02.png" alt="Studio KAN documentation image two" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-docs" aria-label="Open Studio KAN documentation image three">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-03.png" alt="Studio KAN documentation image three" loading="lazy" />
+                    </button>
+                  </div>
+                  <div class="exhibition-video-lane">
+                    <article class="exhibition-video-card exhibition-video-placeholder">
+                      <p>Video Placeholder A</p>
+                      <p>Suggested: Installation walkthrough (16:9)</p>
+                    </article>
+                    <article class="exhibition-video-card exhibition-video-placeholder">
+                      <p>Video Placeholder B</p>
+                      <p>Suggested: Artist talk excerpt (16:9)</p>
+                    </article>
+                  </div>
+                </section>
               </article>
-              <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open Deviations Studio Kan portrait">
-                <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-main-02.png" alt="Mey Amisa at Studio Kan exhibition" loading="lazy" />
-              </button>
+
+              <article class="exhibition-project" id="punio-gallery" data-exhibition-project hidden>
+                <section class="exhibition-placeholder-panel exhibition-style-ledger">
+                  <div class="section-heading">
+                    <h2>Punio Gallery</h2>
+                    <p>Concept style: archive ledger. This section uses stacked entries and compact cards for an editorial flow.</p>
+                  </div>
+                  <div class="ledger-stack">
+                    <details open>
+                      <summary>Short Description Placeholder</summary>
+                      <p>Write 3 to 4 lines about the exhibition concept and why this venue mattered.</p>
+                    </details>
+                    <details>
+                      <summary>Photo Set Placeholder</summary>
+                      <p>Add 6 to 12 venue photos here. Keep one close-up, one room shot, one audience moment.</p>
+                    </details>
+                    <details>
+                      <summary>Video Placeholder</summary>
+                      <p>Add one main exhibition video and one behind-the-scenes clip.</p>
+                    </details>
+                  </div>
+                  <div class="placeholder-board two-col">
+                    <article class="placeholder-tile">
+                      <h3>Hero Photo Slot</h3>
+                      <p>Recommended ratio: 4:5</p>
+                    </article>
+                    <article class="placeholder-tile">
+                      <h3>Video Slot</h3>
+                      <p>Recommended ratio: 16:9</p>
+                    </article>
+                  </div>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="seoul-site-a" data-exhibition-project hidden>
+                <section class="exhibition-placeholder-panel exhibition-style-route">
+                  <div class="section-heading">
+                    <h2>South Korea I</h2>
+                    <p>Concept style: visitor route. This section can narrate the exhibition as a sequence of moments.</p>
+                  </div>
+                  <div class="route-steps">
+                    <article>
+                      <h3>Step 1: Entry Scene</h3>
+                      <p>Short text placeholder for first impression and setup.</p>
+                    </article>
+                    <article>
+                      <h3>Step 2: Core Works</h3>
+                      <p>Short text placeholder for featured collection and wall arrangement.</p>
+                    </article>
+                    <article>
+                      <h3>Step 3: Audience Interaction</h3>
+                      <p>Short text placeholder for talk, performance, or public response.</p>
+                    </article>
+                  </div>
+                  <div class="placeholder-board three-col">
+                    <article class="placeholder-tile"><h3>Photo 01</h3><p>Venue view</p></article>
+                    <article class="placeholder-tile"><h3>Photo 02</h3><p>Close detail</p></article>
+                    <article class="placeholder-tile"><h3>Video 01</h3><p>Movement clip</p></article>
+                  </div>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="seoul-site-b" data-exhibition-project hidden>
+                <section class="exhibition-placeholder-panel exhibition-style-scroll">
+                  <div class="section-heading">
+                    <h2>South Korea II</h2>
+                    <p>Concept style: horizontal scene strip. Swipe through media blocks from left to right.</p>
+                  </div>
+                  <div class="gallery-strip">
+                    <article class="strip-card placeholder-tile"><h3>Scene 01</h3><p>Main hall photo</p></article>
+                    <article class="strip-card placeholder-tile"><h3>Scene 02</h3><p>Audience snapshot</p></article>
+                    <article class="strip-card placeholder-tile"><h3>Scene 03</h3><p>Video embed slot</p></article>
+                    <article class="strip-card placeholder-tile"><h3>Scene 04</h3><p>Detail close-up</p></article>
+                  </div>
+                  <article class="text-panel">
+                    <h3>Short Description Placeholder</h3>
+                    <p>Add 3 to 5 lines describing the curatorial context and how this second Korea venue differed from the first.</p>
+                  </article>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="germany-site-a" data-exhibition-project hidden>
+                <section class="exhibition-placeholder-panel exhibition-style-mosaic">
+                  <div class="section-heading">
+                    <h2>Germany I</h2>
+                    <p>Concept style: modular mosaic. A dense visual board for installation photos and process snippets.</p>
+                  </div>
+                  <div class="placeholder-board mosaic">
+                    <article class="placeholder-tile"><h3>Photo A</h3><p>Wide room shot</p></article>
+                    <article class="placeholder-tile"><h3>Photo B</h3><p>Artwork detail</p></article>
+                    <article class="placeholder-tile"><h3>Video C</h3><p>Projection clip</p></article>
+                    <article class="placeholder-tile"><h3>Photo D</h3><p>Audience interaction</p></article>
+                    <article class="placeholder-tile"><h3>Photo E</h3><p>Opening moment</p></article>
+                  </div>
+                  <article class="text-panel">
+                    <h3>Short Description Placeholder</h3>
+                    <p>Introduce the city, venue identity, and one key difference from other Deviations displays.</p>
+                  </article>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="germany-site-b" data-exhibition-project hidden>
+                <section class="exhibition-placeholder-panel exhibition-style-blueprint">
+                  <div class="section-heading">
+                    <h2>Germany II</h2>
+                    <p>Concept style: blueprint panel. Structured blocks for text, stills, and one headline video.</p>
+                  </div>
+                  <div class="blueprint-grid">
+                    <article class="placeholder-tile"><h3>Main Statement</h3><p>Short curatorial text slot.</p></article>
+                    <article class="placeholder-tile"><h3>Hero Still</h3><p>Primary image placeholder.</p></article>
+                    <article class="placeholder-tile"><h3>Video Highlight</h3><p>Main video placeholder.</p></article>
+                    <article class="placeholder-tile"><h3>Details Set</h3><p>Secondary photo set placeholder.</p></article>
+                  </div>
+                </section>
+              </article>
             </div>
-
-            <section class="deviations-section-block">
-              <h2>Studio Kan Views</h2>
-              <div class="deviations-two-col">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open Studio Kan view one">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-main-03.png" alt="Studio Kan exhibition room view one" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open Studio Kan view two">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-main-04.png" alt="Studio Kan exhibition room view two" loading="lazy" />
-                </button>
-              </div>
-            </section>
-
-            <section class="deviations-section-block">
-              <h2>Documentation</h2>
-              <div class="deviations-doc-grid">
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 1">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-01.png" alt="Documentation image 1" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 2">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-02.png" alt="Documentation image 2" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 3">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-03.png" alt="Documentation image 3" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 4">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-04.png" alt="Documentation image 4" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 5">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-05.png" alt="Documentation image 5" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 6">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-06.png" alt="Documentation image 6" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 7">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-07.png" alt="Documentation image 7" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 8">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-08.png" alt="Documentation image 8" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 9">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-09.png" alt="Documentation image 9" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 10">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-10.png" alt="Documentation image 10" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 11">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-11.png" alt="Documentation image 11" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 12">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-12.png" alt="Documentation image 12" loading="lazy" />
-                </button>
-                <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="deviations-all" aria-label="Open documentation image 13">
-                  <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-doc-13.png" alt="Documentation image 13" loading="lazy" />
-                </button>
-              </div>
-            </section>
           </section>
         </main>
 
