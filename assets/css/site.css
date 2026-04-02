@@ -1647,11 +1647,12 @@ main {
 }
 
 .exhibition-art-card .media-trigger {
-  background: #f3f3f3;
+  background: transparent;
+  border: 0;
 }
 
 .exhibition-art-card .gallery-media {
-  max-height: 410px;
+  max-height: 360px;
   width: auto;
   margin: 0 auto;
   object-fit: contain;
@@ -1668,6 +1669,10 @@ main {
 
 .exhibition-single-grid .exhibition-art-card {
   max-width: 560px;
+}
+
+.exhibition-single-grid .exhibition-art-card .gallery-media {
+  max-height: 440px;
 }
 
 .exhibition-video-lane {
