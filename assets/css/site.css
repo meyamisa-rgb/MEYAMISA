@@ -1634,16 +1634,14 @@ main {
 
 .exhibition-triptych-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 320px));
-  justify-content: start;
-  gap: clamp(14px, 1.8vw, 22px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
 }
 
 .exhibition-art-card {
   margin: 0;
   border: 0;
   background: transparent;
-  max-width: 320px;
   outline: 0;
   box-shadow: none;
 }
@@ -1656,9 +1654,9 @@ main {
 }
 
 .exhibition-art-card .gallery-media {
-  max-height: 410px;
-  width: auto;
-  margin: 0 auto;
+  width: 100%;
+  height: clamp(420px, 40vw, 640px);
+  margin: 0;
   object-fit: contain;
 }
 
@@ -1678,7 +1676,8 @@ main {
 }
 
 .exhibition-single-grid .exhibition-art-card .gallery-media {
-  max-height: 440px;
+  height: auto;
+  max-height: clamp(460px, 45vw, 720px);
 }
 
 .exhibition-video-lane {
