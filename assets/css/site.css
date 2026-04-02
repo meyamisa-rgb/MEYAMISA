@@ -1365,6 +1365,79 @@ main {
   gap: clamp(10px, 1.6vw, 16px);
 }
 
+.exhibition-index-shell {
+  display: grid;
+  gap: clamp(18px, 2.2vw, 28px);
+}
+
+.exhibition-index-list {
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  background: #efefef;
+}
+
+.exhibition-index-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 88px 34px;
+  align-items: center;
+  gap: 10px;
+  min-height: 72px;
+  border: 0;
+  border-top: 1px solid #c9c9c9;
+  background: transparent;
+  color: var(--black);
+  text-align: left;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.exhibition-index-row:first-child {
+  border-top: 0;
+}
+
+.exhibition-index-number {
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.exhibition-index-row strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.7vw, 2.8rem);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.exhibition-index-row img {
+  width: 88px;
+  height: 46px;
+  object-fit: cover;
+  border: 1px solid #cfcfcf;
+  background: #f5f5f5;
+}
+
+.exhibition-index-arrow {
+  text-align: center;
+  font-size: 1.48rem;
+  line-height: 1;
+}
+
+.exhibition-index-row.is-active {
+  background: #101010;
+  color: var(--white);
+}
+
+.exhibition-index-row.is-active .exhibition-index-number {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.exhibition-index-row.is-active img {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .exhibition-ux-shell {
   display: grid;
   grid-template-columns: 1fr;
@@ -2055,6 +2128,18 @@ figcaption {
     grid-auto-columns: minmax(240px, 80vw);
   }
 
+  .exhibition-index-row {
+    grid-template-columns: 28px minmax(0, 1fr) 68px 24px;
+    min-height: 62px;
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .exhibition-index-row img {
+    width: 68px;
+    height: 38px;
+  }
+
   .exhibition-ux-shell {
     grid-template-columns: 1fr;
   }
@@ -2265,6 +2350,22 @@ figcaption {
   .placeholder-board.three-col,
   .blueprint-grid {
     grid-template-columns: 1fr;
+  }
+
+  .exhibition-index-row {
+    grid-template-columns: 24px minmax(0, 1fr) 50px 18px;
+    min-height: 54px;
+    padding: 5px 2px;
+    gap: 6px;
+  }
+
+  .exhibition-index-row img {
+    width: 50px;
+    height: 30px;
+  }
+
+  .exhibition-index-row strong {
+    font-size: clamp(0.95rem, 5.6vw, 1.35rem);
   }
 
   .exhibition-title-row {
