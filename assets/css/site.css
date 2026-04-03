@@ -1662,6 +1662,48 @@ main {
   max-width: none;
 }
 
+.studio-kan-intro-panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  gap: clamp(20px, 2.4vw, 30px);
+  align-items: start;
+}
+
+.studio-kan-intro-text {
+  border: 0;
+  padding: 0;
+  max-width: 46ch;
+  gap: 10px;
+}
+
+.studio-kan-intro-text h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.studio-kan-intro-text p {
+  color: var(--black);
+  font-size: clamp(1.02rem, 1.18vw, 1.2rem);
+  line-height: 1.28;
+}
+
+.studio-kan-intro-image {
+  border: 0;
+  background: transparent;
+}
+
+.studio-kan-intro-image .gallery-media {
+  width: 100%;
+  height: clamp(360px, 38vw, 620px);
+  object-fit: cover;
+  object-position: center;
+}
+
 .exhibition-hero-minimal {
   grid-template-columns: 1fr;
 }
