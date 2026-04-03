@@ -2281,6 +2281,20 @@ main {
   gap: 12px;
 }
 
+.amygdala-page #amygdala-cansu-grid .media-trigger {
+  display: grid;
+  place-items: center;
+  background: #f7f7f7;
+}
+
+.amygdala-page #amygdala-cansu-grid .gallery-media {
+  aspect-ratio: auto;
+  width: 100%;
+  height: clamp(300px, 30vw, 440px);
+  object-fit: contain;
+  background: var(--white);
+}
+
 .amygdala-page #amygdala-installation-videos {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
