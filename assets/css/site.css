@@ -1619,6 +1619,12 @@ main {
   gap: clamp(12px, 1.8vw, 18px);
 }
 
+#deviations-artwork {
+  scroll-margin-top: 110px;
+  padding-top: clamp(10px, 1.5vw, 18px);
+  border-top: 1px solid var(--line);
+}
+
 .exhibition-structure-panel {
   display: grid;
   gap: clamp(12px, 1.8vw, 18px);
