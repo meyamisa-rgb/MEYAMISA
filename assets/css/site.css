@@ -1681,6 +1681,7 @@ main {
   padding: clamp(12px, 1.8vw, 18px);
   gap: clamp(20px, 2.4vw, 30px);
   align-items: start;
+  margin-top: clamp(16px, 2.2vw, 28px);
 }
 
 .studio-kan-intro-stack {
@@ -1724,7 +1725,8 @@ main {
 .studio-kan-statement-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(10px, 1.5vw, 16px);
+  gap: clamp(16px, 2.2vw, 28px);
+  margin-top: clamp(8px, 1.2vw, 14px);
 }
 
 .studio-kan-statement-gallery .media-trigger {
@@ -1735,8 +1737,9 @@ main {
 
 .studio-kan-statement-gallery .gallery-media {
   width: 100%;
-  height: clamp(220px, 24vw, 360px);
+  height: clamp(340px, 33vw, 520px);
   object-fit: cover;
+  object-position: center;
 }
 
 .exhibition-hero-minimal {
