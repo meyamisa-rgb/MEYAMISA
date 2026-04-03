@@ -1662,6 +1662,29 @@ main {
   max-width: none;
 }
 
+.exhibition-hero-minimal {
+  grid-template-columns: 1fr;
+}
+
+.studio-kan-intro-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 16px);
+  margin-top: clamp(10px, 1.6vw, 18px);
+}
+
+.studio-kan-intro-gallery .media-trigger {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.studio-kan-intro-gallery .gallery-media {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .exhibition-cluster-block .section-heading h3 {
   margin: 0;
   font-family: var(--font-display);
@@ -2172,7 +2195,8 @@ figcaption {
   }
 
   .exhibition-hero-panel,
-  .structure-two {
+  .structure-two,
+  .studio-kan-intro-gallery {
     grid-template-columns: 1fr;
   }
 
