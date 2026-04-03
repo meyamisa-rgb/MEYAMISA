@@ -1804,6 +1804,11 @@ main {
   padding: 0;
 }
 
+.studio-kan-structure-single {
+  display: block;
+  width: 100%;
+}
+
 .studio-kan-structure-gallery-two .gallery-media {
   width: 100%;
   height: clamp(360px, 34vw, 560px);
@@ -1821,6 +1826,7 @@ main {
 .structure-four-hero-card {
   max-width: none;
   width: 100%;
+  margin: 0;
 }
 
 .structure-four-hero-card figcaption {
