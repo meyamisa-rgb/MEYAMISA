@@ -1902,15 +1902,17 @@ main {
 
 .exhibition-single-grid {
   display: grid;
+  justify-items: center;
 }
 
 .exhibition-single-grid .exhibition-art-card {
-  max-width: 980px;
+  max-width: 1240px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .exhibition-single-grid .exhibition-art-card .gallery-media {
-  height: clamp(620px, 62vw, 980px);
+  height: clamp(760px, 74vw, 1180px);
   max-height: none;
   object-fit: contain;
 }
