@@ -458,11 +458,11 @@ main {
 
 .about-hero {
   display: grid;
-  grid-template-columns: 320px minmax(320px, 520px);
-  gap: clamp(18px, 2.2vw, 26px);
+  grid-template-columns: minmax(420px, 0.95fr) minmax(460px, 1.05fr);
+  gap: clamp(26px, 3vw, 44px);
   align-items: start;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: clamp(24px, 3vw, 38px);
@@ -471,13 +471,15 @@ main {
 .about-portrait {
   margin: 0;
   display: grid;
-  gap: 10px;
-  width: 320px;
-  max-width: 320px;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
 }
 
 .about-portrait img {
   width: 100%;
+  min-height: clamp(520px, 56vw, 840px);
+  object-fit: cover;
 }
 
 .about-portrait figcaption {
@@ -495,30 +497,31 @@ main {
 
 .about-copy {
   display: grid;
-  gap: 14px;
-  max-width: 520px;
+  gap: 12px;
+  max-width: 720px;
   align-content: start;
-  padding-top: 10px;
+  padding-top: 6px;
 }
 
 .about-copy h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.1rem, 4.4vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
 .about-text-flow {
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
 .about-text-flow p {
   margin: 0;
-  color: var(--muted);
-  font-size: clamp(0.88rem, 0.95vw, 0.96rem);
-  line-height: 1.58;
+  color: var(--black);
+  font-size: clamp(1rem, 1.15vw, 1.2rem);
+  line-height: 1.44;
+  max-width: 62ch;
 }
 
 .about-grid {
