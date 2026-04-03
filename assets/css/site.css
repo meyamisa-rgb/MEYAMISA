@@ -1813,13 +1813,14 @@ main {
 
 .studio-kan-structure-single .gallery-media {
   width: 100%;
-  height: clamp(620px, 62vw, 980px);
+  height: clamp(820px, 78vw, 1280px);
   object-fit: cover;
   filter: grayscale(100%);
 }
 
 .structure-four-hero-card {
-  max-width: 1200px;
+  max-width: none;
+  width: 100%;
 }
 
 .structure-four-hero-card figcaption {
