@@ -1886,12 +1886,14 @@ main {
 }
 
 .exhibition-single-grid .exhibition-art-card {
-  max-width: 560px;
+  max-width: 980px;
+  width: 100%;
 }
 
 .exhibition-single-grid .exhibition-art-card .gallery-media {
-  height: auto;
-  max-height: clamp(460px, 45vw, 720px);
+  height: clamp(620px, 62vw, 980px);
+  max-height: none;
+  object-fit: contain;
 }
 
 .exhibition-video-lane {
