@@ -1683,6 +1683,10 @@ main {
   align-items: start;
 }
 
+.studio-kan-intro-stack {
+  grid-template-columns: 1fr;
+}
+
 .studio-kan-intro-text {
   border: 0;
   padding: 0;
@@ -1715,6 +1719,24 @@ main {
   height: clamp(360px, 38vw, 620px);
   object-fit: cover;
   object-position: center;
+}
+
+.studio-kan-statement-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.5vw, 16px);
+}
+
+.studio-kan-statement-gallery .media-trigger {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.studio-kan-statement-gallery .gallery-media {
+  width: 100%;
+  height: clamp(220px, 24vw, 360px);
+  object-fit: cover;
 }
 
 .exhibition-hero-minimal {
@@ -2261,7 +2283,8 @@ figcaption {
 
   .exhibition-hero-panel,
   .structure-two,
-  .studio-kan-intro-gallery {
+  .studio-kan-intro-gallery,
+  .studio-kan-statement-gallery {
     grid-template-columns: 1fr;
   }
 
