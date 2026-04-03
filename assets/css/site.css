@@ -2282,17 +2282,17 @@ main {
 }
 
 .amygdala-page #amygdala-cansu-grid .media-trigger {
-  display: grid;
-  place-items: center;
-  background: #f7f7f7;
+  display: block;
+  background: transparent;
 }
 
 .amygdala-page #amygdala-cansu-grid .gallery-media {
   aspect-ratio: auto;
   width: 100%;
-  height: clamp(300px, 30vw, 440px);
+  height: auto;
+  max-height: none;
   object-fit: contain;
-  background: var(--white);
+  background: transparent;
 }
 
 .amygdala-page #amygdala-installation-videos {
