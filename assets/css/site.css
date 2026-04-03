@@ -1610,10 +1610,18 @@ main {
   padding: clamp(12px, 1.8vw, 18px);
 }
 
+.structure-one {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  gap: clamp(10px, 1.2vw, 14px);
+}
+
 .studio-kan-cover-copy {
   display: grid;
-  gap: 4px;
-  padding: 4px 0 0;
+  gap: 2px;
+  padding: 0;
+  margin-top: 0;
 }
 
 .studio-kan-cover-copy h2 {
@@ -1633,9 +1641,16 @@ main {
 
 .studio-kan-cover-image {
   width: 100%;
-  height: clamp(280px, 42vw, 560px);
+  display: block;
+  height: clamp(300px, 39vw, 560px);
+  aspect-ratio: 16 / 6;
   object-fit: cover;
-  object-position: top center;
+  object-position: 50% 44%;
+}
+
+.studio-kan-cover-image.gallery-media-landscape {
+  object-fit: cover;
+  aspect-ratio: 16 / 6;
 }
 
 .structure-two {
