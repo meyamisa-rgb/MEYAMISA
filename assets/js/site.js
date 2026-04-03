@@ -235,7 +235,7 @@
 
     renderInto(
       "#amygdala-cansu-grid",
-      Array.from({ length: 14 }, (_, index) =>
+      Array.from({ length: 12 }, (_, index) =>
         createImageCard({
           src: `../assets/images/amygdala/cansu-${String(index + 1).padStart(2, "0")}.jpeg`,
           alt: `Veritas Corpus image ${index + 1}`,
