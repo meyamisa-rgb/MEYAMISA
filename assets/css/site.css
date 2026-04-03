@@ -1813,9 +1813,17 @@ main {
 
 .studio-kan-structure-single .gallery-media {
   width: 100%;
-  height: clamp(430px, 42vw, 720px);
+  height: clamp(620px, 62vw, 980px);
   object-fit: cover;
   filter: grayscale(100%);
+}
+
+.structure-four-hero-card {
+  max-width: 1200px;
+}
+
+.structure-four-hero-card figcaption {
+  padding-top: 10px;
 }
 
 .exhibition-hero-minimal {
@@ -1905,6 +1913,31 @@ main {
   height: clamp(620px, 62vw, 980px);
   max-height: none;
   object-fit: contain;
+}
+
+.visitors-section {
+  border: 0;
+  background: transparent;
+  padding: clamp(10px, 1.6vw, 18px) 0 0;
+}
+
+.visitors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 20px);
+}
+
+.visitors-grid .media-trigger {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.visitors-grid .gallery-media {
+  width: 100%;
+  height: clamp(280px, 30vw, 500px);
+  object-fit: cover;
+  filter: grayscale(100%);
 }
 
 .exhibition-video-lane {
@@ -2658,6 +2691,7 @@ figcaption {
 
   .exhibition-video-lane,
   .exhibition-triptych-grid,
+  .visitors-grid,
   .placeholder-board.two-col,
   .placeholder-board.three-col,
   .blueprint-grid {
