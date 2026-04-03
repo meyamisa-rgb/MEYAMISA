@@ -167,6 +167,10 @@ main {
   padding: clamp(18px, 2.5vw, 36px);
 }
 
+.exhibition-page main {
+  padding-top: clamp(8px, 1.1vw, 14px);
+}
+
 .eyebrow {
   margin: 0;
   text-transform: uppercase;
@@ -737,15 +741,15 @@ main {
 }
 
 .section-jump-nav {
-  position: sticky;
-  top: 95px;
-  z-index: 20;
+  position: static;
+  top: auto;
+  z-index: 1;
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding: 10px 0 14px;
-  margin-bottom: clamp(14px, 2vw, 22px);
-  background: rgba(255, 255, 255, 0.97);
+  padding: 10px 0 10px;
+  margin-bottom: clamp(8px, 1.4vw, 14px);
+  background: transparent;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1642,15 +1646,15 @@ main {
 .studio-kan-cover-image {
   width: 100%;
   display: block;
-  height: clamp(300px, 39vw, 560px);
-  aspect-ratio: 16 / 6;
+  height: clamp(270px, 33vw, 480px);
+  aspect-ratio: 16 / 5.1;
   object-fit: cover;
-  object-position: 50% 44%;
+  object-position: 50% 62%;
 }
 
 .studio-kan-cover-image.gallery-media-landscape {
   object-fit: cover;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 16 / 5.1;
 }
 
 .structure-two {
@@ -1706,6 +1710,16 @@ main {
 
 .exhibition-hero-minimal {
   grid-template-columns: 1fr;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: clamp(4px, 0.8vw, 8px);
+}
+
+.exhibition-hero-minimal .eyebrow {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--black);
 }
 
 .studio-kan-intro-gallery {
