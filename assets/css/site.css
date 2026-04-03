@@ -1631,6 +1631,13 @@ main {
   line-height: 1.15;
 }
 
+.studio-kan-cover-image {
+  width: 100%;
+  height: clamp(280px, 42vw, 560px);
+  object-fit: cover;
+  object-position: top center;
+}
+
 .structure-two {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
