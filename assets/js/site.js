@@ -26,6 +26,7 @@
   const pageKey = currentPage.replace(/\.html$/, "");
   const navParents = {
     "amygdala-body-as-archive": "experimental-design.html",
+    "amygdala-body-as-archive-v2": "experimental-design.html",
     "folding-type-henshin-gallery": "experimental-design.html",
     "type-juice-mono": "experimental-design.html",
     "human-typography": "experimental-design.html",
@@ -175,7 +176,7 @@
     }
   }
 
-  if (pageKey === "amygdala-body-as-archive") {
+  if (pageKey === "amygdala-body-as-archive" || pageKey === "amygdala-body-as-archive-v2") {
     const createImageCard = (item) => `
       <article class="media-card${item.cardClass ? ` ${item.cardClass}` : ""}">
         ${item.title ? `<h3 class="media-card-title">${item.title}</h3>` : ""}
@@ -188,7 +189,14 @@
     const createVideoCard = (item) => `
       <article class="video-card">
         ${item.title ? `<h3 class="video-card-title">${item.title}</h3>` : ""}
-        <video class="video-frame-local" src="${item.src}" controls playsinline preload="metadata"></video>
+        <video
+          class="video-frame-local"
+          src="${item.src}"
+          controls
+          playsinline
+          preload="metadata"
+          ${item.autoplayMuted ? "autoplay loop muted data-click-unmute" : ""}
+        ></video>
         <div class="embed-actions">
           <button class="wide-button" type="button" data-lightbox-trigger data-lightbox-video="${item.src}" data-gallery="${item.gallery}">
             Open wide
@@ -302,6 +310,42 @@
       ].join("")
     );
 
+    const bodyMotionVideos = [
+      { title: "Der Zwang", src: "../assets/videos/amygdala/body-in-motion/01-der-zwang.mp4" },
+      { title: "Emotionen im Sein", src: "../assets/videos/amygdala/body-in-motion/02-emotionen-im-sein-18.mp4" },
+      { title: "Es kommt wieder", src: "../assets/videos/amygdala/body-in-motion/03-es-kommt-wieder.mp4" },
+      { title: "Friedensuchend", src: "../assets/videos/amygdala/body-in-motion/04-friedensuchend.mp4" },
+      { title: "Greifbar", src: "../assets/videos/amygdala/body-in-motion/05-greifbar.mp4" },
+      { title: "Nicht sein", src: "../assets/videos/amygdala/body-in-motion/06-nicht-sein.mp4" },
+      { title: "Nichtsein", src: "../assets/videos/amygdala/body-in-motion/07-nichtsein.mp4" },
+      { title: "Stehen nicht stehen", src: "../assets/videos/amygdala/body-in-motion/08-stehen-nicht-stehen.mp4" },
+      { title: "Suchen nach der Wahrheit", src: "../assets/videos/amygdala/body-in-motion/09-suchen-nach-der-wahrheit.mp4" },
+      { title: "Tic", src: "../assets/videos/amygdala/body-in-motion/10-tic.mp4" },
+      { title: "Tourette", src: "../assets/videos/amygdala/body-in-motion/11-tourette.mp4" },
+      { title: "Trance", src: "../assets/videos/amygdala/body-in-motion/12-trance.mp4" },
+      { title: "WhatsApp Video", src: "../assets/videos/amygdala/body-in-motion/13-whatsapp-video.mp4" },
+      { title: "Wo der Frieden lebt", src: "../assets/videos/amygdala/body-in-motion/14-wo-der-frieden-lebt.mp4" },
+      { title: "zwangzwangzwang", src: "../assets/videos/amygdala/body-in-motion/15-zwangzwangzwang.mp4" },
+      { title: "die seele", src: "../assets/videos/amygdala/body-in-motion/16-die-seele.mp4" },
+      { title: "Die Wahrheit finden", src: "../assets/videos/amygdala/body-in-motion/17-die-wahrheit-finden.mp4" },
+      { title: "Da ist es", src: "../assets/videos/amygdala/body-in-motion/18-da-ist-es.mp4" },
+      { title: "das was in mir lebt", src: "../assets/videos/amygdala/body-in-motion/19-das-was-in-mir-lebt.mp4" },
+      { title: "der Koerper", src: "../assets/videos/amygdala/body-in-motion/20-der-koerper.mp4" },
+    ];
+
+    renderInto(
+      "#amygdala-body-motion-videos",
+      bodyMotionVideos
+        .map((item) =>
+          createVideoCard({
+            ...item,
+            gallery: "amygdala-body-motion-videos",
+            autoplayMuted: true,
+          })
+        )
+        .join("")
+    );
+
     renderInto(
       "#amygdala-visitor-grid",
       Array.from({ length: 8 }, (_, index) =>
@@ -344,6 +388,22 @@
 
     window.addEventListener("hashchange", setActiveSection);
     setActiveSection();
+
+    document.querySelectorAll("video[data-click-unmute]").forEach((video) => {
+      const enableSoundOnClick = () => {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 1;
+        }
+      };
+
+      video.addEventListener("click", enableSoundOnClick);
+      video.addEventListener("play", () => {
+        if (video.muted) {
+          video.play().catch(() => {});
+        }
+      });
+    });
   }
 
   const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
