@@ -2233,6 +2233,11 @@ main {
   border-bottom: 0;
 }
 
+.amygdala-page .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 .amygdala-page .section-jump-link {
   border: 0;
   background: transparent;
