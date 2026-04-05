@@ -187,10 +187,10 @@
     `;
 
     const createVideoCard = (item) => `
-      <article class="video-card">
+      <article class="video-card${item.cardClass ? ` ${item.cardClass}` : ""}">
         ${item.title ? `<h3 class="video-card-title">${item.title}</h3>` : ""}
         <video
-          class="video-frame-local"
+          class="video-frame-local${item.frameClass ? ` ${item.frameClass}` : ""}"
           src="${item.src}"
           controls
           playsinline
@@ -269,16 +269,19 @@
           src: "../assets/images/amygdala/installation-02-replacement.jpeg",
           alt: "Amygdala installation image 1",
           gallery: "amygdala-installation",
+          imageClass: "gallery-media-uncropped",
         },
         {
           src: "../assets/images/amygdala/installation-03-replacement.jpeg",
           alt: "Amygdala installation image 2",
           gallery: "amygdala-installation",
+          imageClass: "gallery-media-uncropped",
         },
         {
           src: "../assets/images/amygdala/installation-04-replacement.jpeg",
           alt: "Amygdala installation image 3",
           gallery: "amygdala-installation",
+          imageClass: "gallery-media-uncropped",
         },
       ]
         .map(createImageCard)
@@ -291,11 +294,23 @@
         createVideoCard({
           src: "../assets/videos/amygdala/installation-06-replacement.mp4",
           gallery: "amygdala-installation-videos",
+          autoplayMuted: true,
         }),
         createVideoCard({
           src: "../assets/videos/amygdala/installation-08-replacement.mp4",
           gallery: "amygdala-installation-videos",
-        })
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          src: "../assets/videos/amygdala/installation-04.mp4",
+          gallery: "amygdala-installation-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          src: "../assets/videos/amygdala/amygdala-in-type.mp4",
+          gallery: "amygdala-installation-videos",
+          autoplayMuted: true,
+        }),
       ].join("")
     );
 
@@ -312,7 +327,7 @@
       { title: "Tic", src: "../assets/videos/amygdala/body-in-motion/10-tic.mp4" },
       { title: "Tourette", src: "../assets/videos/amygdala/body-in-motion/11-tourette.mp4" },
       { title: "Trance", src: "../assets/videos/amygdala/body-in-motion/12-trance.mp4" },
-      { title: "WhatsApp Video", src: "../assets/videos/amygdala/body-in-motion/13-whatsapp-video.mp4" },
+      { title: "Iterare", src: "../assets/videos/amygdala/body-in-motion/13-whatsapp-video.mp4" },
       { title: "Wo der Frieden lebt", src: "../assets/videos/amygdala/body-in-motion/14-wo-der-frieden-lebt.mp4" },
       { title: "zwangzwangzwang", src: "../assets/videos/amygdala/body-in-motion/15-zwangzwangzwang.mp4" },
       { title: "die seele", src: "../assets/videos/amygdala/body-in-motion/16-die-seele.mp4" },
@@ -320,6 +335,19 @@
       { title: "Da ist es", src: "../assets/videos/amygdala/body-in-motion/18-da-ist-es.mp4" },
       { title: "das was in mir lebt", src: "../assets/videos/amygdala/body-in-motion/19-das-was-in-mir-lebt.mp4" },
       { title: "der Koerper", src: "../assets/videos/amygdala/body-in-motion/20-der-koerper.mp4" },
+      { title: "Leid", src: "../assets/videos/amygdala/body-in-motion/21-leid.mp4" },
+      {
+        title: "Dort wo die Gedanken leben",
+        src: "../assets/videos/amygdala/body-in-motion/22-dort-wo-die-gedanken-leben.mp4",
+        cardClass: "body-motion-fullwidth",
+        frameClass: "video-frame-large",
+      },
+      {
+        title: "Dort wo die Gedanken ueberleben",
+        src: "../assets/videos/amygdala/body-in-motion/23-dort-wo-die-gedanken-ueberleben.mp4",
+        cardClass: "body-motion-fullwidth",
+        frameClass: "video-frame-large",
+      },
     ];
 
     renderInto(
@@ -337,15 +365,27 @@
 
     renderInto(
       "#amygdala-visitor-grid",
-      Array.from({ length: 8 }, (_, index) =>
-        createImageCard({
-          src: `../assets/images/amygdala/visitor-${String(index + 1).padStart(2, "0")}.jpeg`,
-          alt: `Visitor image ${index + 1}`,
-          gallery: "amygdala-visitors",
-          cardClass: "visitor-card",
-          imageClass: "gallery-media-uncropped",
-        })
-      ).join("")
+      [
+        "../assets/images/amygdala/visitor-01.jpeg",
+        "../assets/images/amygdala/visitor-02.jpeg",
+        "../assets/images/amygdala/visitor-03.jpeg",
+        "../assets/images/amygdala/visitor-04.jpeg",
+        "../assets/images/amygdala/visitor-05.jpeg",
+        "../assets/images/amygdala/visitor-06.jpeg",
+        "../assets/images/amygdala/visitor-07.jpeg",
+        "../assets/images/amygdala/visitor-08.jpeg",
+        "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
+      ]
+        .map((src, index) =>
+          createImageCard({
+            src,
+            alt: `Visitor image ${index + 1}`,
+            gallery: "amygdala-visitors",
+            cardClass: "visitor-card",
+            imageClass: "gallery-media-uncropped",
+          })
+        )
+        .join("")
     );
 
     const jumpLinks = Array.from(document.querySelectorAll(".section-jump-link"));
