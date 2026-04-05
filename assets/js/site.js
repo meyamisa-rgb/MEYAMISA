@@ -282,6 +282,7 @@
           alt: "Amygdala installation image 3",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
+          cardClass: "installation-feature",
         },
       ]
         .map(createImageCard)
@@ -297,17 +298,12 @@
           autoplayMuted: true,
         }),
         createVideoCard({
-          src: "../assets/videos/amygdala/installation-08-replacement.mp4",
+          src: "../assets/videos/amygdala/amygdala-in-type.mp4",
           gallery: "amygdala-installation-videos",
           autoplayMuted: true,
         }),
         createVideoCard({
           src: "../assets/videos/amygdala/installation-04.mp4",
-          gallery: "amygdala-installation-videos",
-          autoplayMuted: true,
-        }),
-        createVideoCard({
-          src: "../assets/videos/amygdala/amygdala-in-type.mp4",
           gallery: "amygdala-installation-videos",
           autoplayMuted: true,
         }),

@@ -2328,7 +2328,8 @@ main {
 
 .amygdala-page #amygdala-installation-grid {
   grid-template-columns: minmax(0, 1fr);
-  max-width: 980px;
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -2340,8 +2341,24 @@ main {
 }
 
 .amygdala-page #amygdala-installation-videos {
-  max-width: 980px;
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
+}
+
+.amygdala-page #amygdala-installation-videos .video-frame-local {
+  min-height: clamp(360px, 44vw, 680px);
+}
+
+.amygdala-page #amygdala-installation-grid .installation-feature {
+  justify-self: center;
+  width: min(100%, 1400px);
+}
+
+.amygdala-page #amygdala-installation-grid .installation-feature .gallery-media {
+  width: 100%;
+  min-height: clamp(360px, 44vw, 680px);
+  object-fit: contain;
 }
 
 .amygdala-page #amygdala-body-motion-videos .body-motion-fullwidth {
