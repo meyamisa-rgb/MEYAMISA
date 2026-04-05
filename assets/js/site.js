@@ -253,17 +253,6 @@
     );
 
     renderInto(
-      "#amygdala-meyamisa-grid",
-      [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19].map((imageNumber) =>
-        createImageCard({
-          src: `../assets/images/amygdala/meyamisa-${String(imageNumber).padStart(2, "0")}.jpeg`,
-          alt: `Veritas exponere image ${imageNumber}`,
-          gallery: "amygdala-meyamisa",
-        })
-      ).join("")
-    );
-
-    renderInto(
       "#amygdala-process-videos",
       Array.from({ length: 14 }, (_, index) =>
         createVideoCard({
