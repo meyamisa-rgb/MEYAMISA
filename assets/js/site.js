@@ -192,16 +192,17 @@
         <video
           class="video-frame-local${item.frameClass ? ` ${item.frameClass}` : ""}"
           src="${item.src}"
-          controls
+          ${item.controls === false ? "" : "controls"}
           playsinline
           preload="metadata"
-          ${item.autoplayMuted ? "autoplay loop muted data-click-unmute" : ""}
+          ${item.autoplayMuted ? "autoplay loop muted" : ""}
+          ${item.allowUnmute ? "data-click-unmute" : ""}
         ></video>
-        <div class="embed-actions">
+        ${item.hideOpenButton ? "" : `<div class="embed-actions">
           <button class="wide-button" type="button" data-lightbox-trigger data-lightbox-video="${item.src}" data-gallery="${item.gallery}">
             Open wide
           </button>
-        </div>
+        </div>`}
       </article>
     `;
 
@@ -249,26 +250,30 @@
           src: "../assets/videos/amygdala/directors-cut-01-high-road.mp4",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
+          allowUnmute: true,
         }),
         createVideoCard({
           title: "Amygdala - Type in motion",
           src: "../assets/videos/amygdala/amygdala-typeinmotion.mov",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
+          allowUnmute: true,
         }),
         createVideoCard({
           title: "Sehnsucht",
           src: "../assets/videos/amygdala/directors-cut-03-sehnsucht.mp4",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
+          allowUnmute: true,
           cardClass: "director-center-card",
           frameClass: "director-white-frame",
         }),
         createVideoCard({
-          title: "WhatsApp Video 2026 04 05",
+          title: "Amygdala - End credits",
           src: "../assets/videos/amygdala/directors-cut-04-whatsapp-2026-04-05.mp4",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
+          allowUnmute: true,
         }),
       ].join("")
     );
@@ -288,34 +293,46 @@
       "#amygdala-process-extra-videos",
       [
         createVideoCard({
-          title: "Zwei Gesichter",
-          src: "../assets/videos/amygdala/process-extra-01-zwei-gesichter.mp4",
+          title: "Suchen",
+          src: "../assets/videos/amygdala/directors-cut-04-end-credits.mp4",
           gallery: "amygdala-process-extra-videos",
           autoplayMuted: true,
-        }),
-        createVideoCard({
-          title: "Sehnsucht",
-          src: "../assets/videos/amygdala/process-extra-02-sehnsucht.mp4",
-          gallery: "amygdala-process-extra-videos",
-          autoplayMuted: true,
+          controls: false,
+          hideOpenButton: true,
+          cardClass: "process-top-card",
         }),
         createVideoCard({
           title: "Die Gefuehle im Raum",
           src: "../assets/videos/amygdala/process-extra-03-die-gefuehle-im-raum.mp4",
           gallery: "amygdala-process-extra-videos",
           autoplayMuted: true,
+          controls: false,
+          hideOpenButton: true,
+          cardClass: "process-top-card",
+        }),
+        createVideoCard({
+          title: "Sehnsucht",
+          src: "../assets/videos/amygdala/process-extra-02-sehnsucht.mp4",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+          allowUnmute: true,
+          cardClass: "process-bottom-card",
+        }),
+        createVideoCard({
+          title: "Zwei Gesichter",
+          src: "../assets/videos/amygdala/process-extra-01-zwei-gesichter.mp4",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+          allowUnmute: true,
+          cardClass: "process-bottom-card",
         }),
         createVideoCard({
           title: "Das Innere",
           src: "../assets/videos/amygdala/process-extra-04-das-innere.mov",
           gallery: "amygdala-process-extra-videos",
           autoplayMuted: true,
-        }),
-        createVideoCard({
-          title: "End credits",
-          src: "../assets/videos/amygdala/directors-cut-04-end-credits.mp4",
-          gallery: "amygdala-process-extra-videos",
-          autoplayMuted: true,
+          allowUnmute: true,
+          cardClass: "process-bottom-card",
         }),
       ].join("")
     );
@@ -340,17 +357,17 @@
           imageClass: "gallery-media-uncropped",
         },
         {
-          src: "../assets/images/amygdala/installation-03-replacement.jpeg",
+          src: "../assets/images/amygdala/installation-05-aya.png",
           alt: "Amygdala installation image 2",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
+          cardClass: "installation-feature",
         },
         {
           src: "../assets/images/amygdala/installation-04-replacement.jpeg",
           alt: "Amygdala installation image 3",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
-          cardClass: "installation-feature",
         },
       ]
         .map(createImageCard)
@@ -439,10 +456,10 @@
         "../assets/images/amygdala/visitor-07.jpeg",
         "../assets/images/amygdala/visitor-08.jpeg",
         "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
+        "../assets/images/amygdala/visitor-13-friends.jpeg",
         "../assets/images/amygdala/visitor-10-daniela-001.jpeg",
         "../assets/images/amygdala/visitor-12-rena-and-mey.jpeg",
         "../assets/images/amygdala/visitor-11-daniela-002.jpeg",
-        "../assets/images/amygdala/visitor-13-friends.jpeg",
       ]
         .map((src, index) =>
           createImageCard({
