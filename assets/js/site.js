@@ -197,6 +197,7 @@
           preload="metadata"
           ${item.autoplayMuted ? "autoplay loop muted" : ""}
           ${item.allowUnmute ? "data-click-unmute" : ""}
+          ${typeof item.endAtSeconds === "number" ? `data-end-at="${item.endAtSeconds}"` : ""}
         ></video>
         ${item.hideOpenButton ? "" : `<div class="embed-actions">
           <button class="wide-button" type="button" data-lightbox-trigger data-lightbox-video="${item.src}" data-gallery="${item.gallery}">
@@ -274,6 +275,7 @@
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
           allowUnmute: true,
+          endAtSeconds: 36,
         }),
       ].join("")
     );
@@ -515,6 +517,20 @@
       video.addEventListener("play", () => {
         if (video.muted) {
           video.play().catch(() => {});
+        }
+      });
+    });
+
+    document.querySelectorAll("video[data-end-at]").forEach((video) => {
+      const endAt = Number(video.dataset.endAt);
+      if (!Number.isFinite(endAt) || endAt <= 0) {
+        return;
+      }
+
+      video.addEventListener("timeupdate", () => {
+        if (video.currentTime >= endAt) {
+          video.pause();
+          video.currentTime = endAt;
         }
       });
     });
