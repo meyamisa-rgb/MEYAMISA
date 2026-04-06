@@ -242,6 +242,38 @@
     );
 
     renderInto(
+      "#amygdala-directors-cut-videos",
+      [
+        createVideoCard({
+          title: "Amygdala - High Road",
+          src: "../assets/videos/amygdala/directors-cut-01-high-road.mp4",
+          gallery: "amygdala-directors-cut-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "Type in motion",
+          src: "../assets/videos/amygdala/amygdala-in-type.mp4",
+          gallery: "amygdala-directors-cut-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "Sehnsucht",
+          src: "../assets/videos/amygdala/directors-cut-03-sehnsucht.mp4",
+          gallery: "amygdala-directors-cut-videos",
+          autoplayMuted: true,
+          cardClass: "director-center-card",
+          frameClass: "director-white-frame",
+        }),
+        createVideoCard({
+          title: "End credits",
+          src: "../assets/videos/amygdala/directors-cut-04-end-credits.mp4",
+          gallery: "amygdala-directors-cut-videos",
+          autoplayMuted: true,
+        }),
+      ].join("")
+    );
+
+    renderInto(
       "#amygdala-cansu-grid",
       Array.from({ length: 12 }, (_, index) =>
         createImageCard({
@@ -250,6 +282,36 @@
           gallery: "amygdala-cansu",
         })
       ).join("")
+    );
+
+    renderInto(
+      "#amygdala-process-extra-videos",
+      [
+        createVideoCard({
+          title: "Zwei Gesichter",
+          src: "../assets/videos/amygdala/process-extra-01-zwei-gesichter.mp4",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "Sehnsucht",
+          src: "../assets/videos/amygdala/process-extra-02-sehnsucht.mp4",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "Die Gefuehle im Raum",
+          src: "../assets/videos/amygdala/process-extra-03-die-gefuehle-im-raum.mp4",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "Das Innere",
+          src: "../assets/videos/amygdala/process-extra-04-das-innere.mov",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+        }),
+      ].join("")
     );
 
     renderInto(
@@ -371,6 +433,8 @@
         "../assets/images/amygdala/visitor-07.jpeg",
         "../assets/images/amygdala/visitor-08.jpeg",
         "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
+        "../assets/images/amygdala/visitor-10-daniela-001.jpeg",
+        "../assets/images/amygdala/visitor-11-daniela-002.jpeg",
       ]
         .map((src, index) =>
           createImageCard({
