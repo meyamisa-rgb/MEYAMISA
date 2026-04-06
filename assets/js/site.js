@@ -353,20 +353,19 @@
       "#amygdala-installation-grid",
       [
         {
-          src: "../assets/images/amygdala/installation-02-replacement.jpeg",
+          src: "../assets/images/amygdala/installation-06-a-installation-002.jpeg",
           alt: "Amygdala installation image 1",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
         },
         {
-          src: "../assets/images/amygdala/installation-05-aya.png",
+          src: "../assets/images/amygdala/installation-04-replacement.jpeg",
           alt: "Amygdala installation image 2",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
-          cardClass: "installation-feature",
         },
         {
-          src: "../assets/images/amygdala/installation-04-replacement.jpeg",
+          src: "../assets/images/amygdala/installation-02-replacement.jpeg",
           alt: "Amygdala installation image 3",
           gallery: "amygdala-installation",
           imageClass: "gallery-media-uncropped",
@@ -457,8 +456,8 @@
         "../assets/images/amygdala/visitor-06.jpeg",
         "../assets/images/amygdala/visitor-07.jpeg",
         "../assets/images/amygdala/visitor-08.jpeg",
-        "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
         "../assets/images/amygdala/visitor-13-friends.jpeg",
+        "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
         "../assets/images/amygdala/visitor-10-daniela-001.jpeg",
         "../assets/images/amygdala/visitor-12-rena-and-mey.jpeg",
         "../assets/images/amygdala/visitor-11-daniela-002.jpeg",

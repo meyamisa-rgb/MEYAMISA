@@ -2393,17 +2393,6 @@ main {
   min-height: clamp(260px, 30vw, 460px);
 }
 
-.amygdala-page #amygdala-installation-grid .installation-feature {
-  justify-self: center;
-  width: min(100%, 980px);
-}
-
-.amygdala-page #amygdala-installation-grid .installation-feature .gallery-media {
-  width: 100%;
-  max-height: clamp(300px, 34vw, 520px);
-  object-fit: contain;
-}
-
 .amygdala-page #amygdala-body-motion-videos .body-motion-fullwidth {
   grid-column: 1 / -1;
 }
