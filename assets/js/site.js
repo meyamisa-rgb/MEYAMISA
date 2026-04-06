@@ -230,7 +230,7 @@
           landscape: true,
         },
         {
-          title: "Amygdala - In Motion",
+          title: "Amygdala - In Motion Storyboard",
           src: "../assets/images/amygdala/storyboard-02.png",
           alt: "Amygdala In Motion storyboard",
           gallery: "amygdala-storyboard",
@@ -251,8 +251,8 @@
           autoplayMuted: true,
         }),
         createVideoCard({
-          title: "Type in motion",
-          src: "../assets/videos/amygdala/amygdala-in-type.mp4",
+          title: "Amygdala - Type in motion",
+          src: "../assets/videos/amygdala/amygdala-typeinmotion.mov",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
         }),
@@ -265,8 +265,8 @@
           frameClass: "director-white-frame",
         }),
         createVideoCard({
-          title: "End credits",
-          src: "../assets/videos/amygdala/directors-cut-04-end-credits.mp4",
+          title: "WhatsApp Video 2026 04 05",
+          src: "../assets/videos/amygdala/directors-cut-04-whatsapp-2026-04-05.mp4",
           gallery: "amygdala-directors-cut-videos",
           autoplayMuted: true,
         }),
@@ -308,6 +308,12 @@
         createVideoCard({
           title: "Das Innere",
           src: "../assets/videos/amygdala/process-extra-04-das-innere.mov",
+          gallery: "amygdala-process-extra-videos",
+          autoplayMuted: true,
+        }),
+        createVideoCard({
+          title: "End credits",
+          src: "../assets/videos/amygdala/directors-cut-04-end-credits.mp4",
           gallery: "amygdala-process-extra-videos",
           autoplayMuted: true,
         }),
@@ -434,7 +440,9 @@
         "../assets/images/amygdala/visitor-08.jpeg",
         "../assets/images/amygdala/visitor-09-zwei-profs.jpeg",
         "../assets/images/amygdala/visitor-10-daniela-001.jpeg",
+        "../assets/images/amygdala/visitor-12-rena-and-mey.jpeg",
         "../assets/images/amygdala/visitor-11-daniela-002.jpeg",
+        "../assets/images/amygdala/visitor-13-friends.jpeg",
       ]
         .map((src, index) =>
           createImageCard({

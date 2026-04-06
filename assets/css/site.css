@@ -2357,36 +2357,42 @@ main {
 
 .amygdala-page #amygdala-installation-grid {
   grid-template-columns: minmax(0, 1fr);
-  max-width: none;
-  width: 100%;
+  max-width: 1160px;
+  width: min(100%, 1160px);
   margin: 0 auto;
+}
+
+.amygdala-page #amygdala-installation-grid .media-card {
+  width: min(100%, 980px);
+  justify-self: center;
 }
 
 .amygdala-page #amygdala-installation-grid .gallery-media {
   aspect-ratio: auto;
   height: auto;
+  max-height: clamp(300px, 34vw, 520px);
   object-fit: contain;
   background: var(--white);
 }
 
 .amygdala-page #amygdala-installation-videos {
-  max-width: none;
-  width: 100%;
+  max-width: 1160px;
+  width: min(100%, 1160px);
   margin: 0 auto;
 }
 
 .amygdala-page #amygdala-installation-videos .video-frame-local {
-  min-height: clamp(360px, 44vw, 680px);
+  min-height: clamp(260px, 30vw, 460px);
 }
 
 .amygdala-page #amygdala-installation-grid .installation-feature {
   justify-self: center;
-  width: min(100%, 1400px);
+  width: min(100%, 980px);
 }
 
 .amygdala-page #amygdala-installation-grid .installation-feature .gallery-media {
   width: 100%;
-  min-height: clamp(360px, 44vw, 680px);
+  max-height: clamp(300px, 34vw, 520px);
   object-fit: contain;
 }
 
