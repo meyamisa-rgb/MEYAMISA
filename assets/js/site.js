@@ -174,6 +174,30 @@
       const hashId = window.location.hash.replace("#", "");
       setActiveProject(hashId);
     }
+
+    const geojeButtons = Array.from(document.querySelectorAll("[data-geoje-target]"));
+    const geojeSections = Array.from(document.querySelectorAll("[data-geoje-section]"));
+    if (geojeButtons.length && geojeSections.length) {
+      const validGeojeIds = geojeSections.map((section) => section.id);
+
+      const setActiveGeoje = (nextId) => {
+        const activeId = validGeojeIds.includes(nextId) ? nextId : "geoje-seomkot";
+        geojeSections.forEach((section) => {
+          section.hidden = section.id !== activeId;
+        });
+        geojeButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.geojeTarget === activeId);
+        });
+      };
+
+      geojeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setActiveGeoje(button.dataset.geojeTarget || "geoje-seomkot");
+        });
+      });
+
+      setActiveGeoje("geoje-seomkot");
+    }
   }
 
   if (pageKey === "amygdala-body-as-archive" || pageKey === "amygdala-body-as-archive-v2") {
