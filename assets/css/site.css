@@ -2922,3 +2922,163 @@ figcaption {
     transition-delay: 0ms !important;
   }
 }
+
+.punio-header-panel .project-kicker {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6a6a6a;
+}
+
+.punio-poster-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+}
+
+.punio-poster-grid .media-trigger,
+.punio-poster-grid .gallery-media {
+  width: 100%;
+}
+
+.punio-poster-grid .gallery-media {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.punio-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.punio-language-grid .text-panel h4 {
+  margin: 0 0 8px;
+}
+
+.punio-language-grid .text-panel p {
+  margin: 0;
+}
+
+.punio-install-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.punio-install-card .media-trigger,
+.punio-install-card .gallery-media {
+  width: 100%;
+}
+
+.punio-install-card .gallery-media {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.punio-motion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.punio-motion-card video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #fff;
+}
+
+.punio-visitors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.punio-visitor-card .gallery-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.punio-process-lead {
+  margin-bottom: 14px;
+}
+
+.punio-process-card .gallery-media {
+  width: 100%;
+  object-fit: cover;
+}
+
+.punio-process-card.lead .gallery-media {
+  aspect-ratio: 16 / 9;
+}
+
+.punio-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.punio-process-grid .gallery-media {
+  aspect-ratio: 5 / 4;
+}
+
+.punio-curation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 460px);
+  justify-content: center;
+}
+
+.punio-curation-card .gallery-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.punio-curation-card figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4b4b4b;
+}
+
+.punio-end-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.punio-end-card .gallery-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+  .punio-install-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .punio-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .punio-poster-grid,
+  .punio-language-grid,
+  .punio-motion-grid,
+  .punio-visitors-grid,
+  .punio-end-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .punio-install-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
