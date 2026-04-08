@@ -54,22 +54,21 @@
                 try your font directly in-browser.
               </p>
             </div>
-            <div class="type-juice-console type-juice-console-advanced" data-type-tester>
+            <div class="type-juice-console type-juice-console-advanced" data-type-tester data-type-glyph-sheet="../assets/images/type-juice-glyph-grid.jpeg">
               <div class="type-juice-panel">
                 <label class="type-juice-label" for="type-juice-input">Type Here</label>
                 <textarea
                   id="type-juice-input"
                   class="type-juice-input"
                   data-type-input
+                  placeholder="Type here to test your font..."
                   rows="4"
-                >TYPE JUICE MONO
-TRY MY FONT
-MAKE IT MOVE</textarea>
+                ></textarea>
 
                 <div class="type-juice-row">
                   <label class="type-juice-label" for="type-juice-font-upload">Upload Font</label>
                   <input id="type-juice-font-upload" class="type-juice-file" data-type-font-upload type="file" accept=".otf,.ttf,.woff,.woff2" />
-                  <p class="type-juice-help" data-type-font-name>Using default display font</p>
+                  <p class="type-juice-help" data-type-font-name>Using glyph-grid font system (built from your image)</p>
                 </div>
 
                 <div class="type-juice-controls-grid">
@@ -92,6 +91,13 @@ MAKE IT MOVE</textarea>
                 </div>
 
                 <div class="type-juice-controls-grid">
+                  <label class="type-juice-control">
+                    <span>Engine</span>
+                    <select class="type-juice-select" data-type-engine>
+                      <option value="glyph" selected>Glyph Grid Font</option>
+                      <option value="text">TypeJuice Font (OTF)</option>
+                    </select>
+                  </label>
                   <label class="type-juice-control">
                     <span>Align</span>
                     <select class="type-juice-select" data-type-align>
@@ -124,7 +130,8 @@ MAKE IT MOVE</textarea>
               </div>
 
               <div class="type-juice-stage" data-type-stage>
-                <div class="type-juice-output" data-type-output aria-live="polite">TYPE JUICE MONO</div>
+                <div class="type-juice-glyph-output" data-type-glyph-output aria-live="polite"></div>
+                <div class="type-juice-output" data-type-output aria-live="polite"></div>
               </div>
             </div>
           </section>

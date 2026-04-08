@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "TypeJuiceCustom";
+  src: url("../fonts/type-juice-custom.otf") format("opentype");
+  font-display: swap;
+}
+
 :root {
   --black: #090909;
   --white: #ffffff;
@@ -1407,6 +1413,37 @@ main {
   white-space: pre-wrap;
   transform: skewX(var(--type-skew, 0deg));
   color: #090909;
+}
+
+.type-juice-glyph-output {
+  min-height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: clamp(16px, 2.8vw, 30px);
+  overflow: auto;
+  transform: skewX(var(--type-skew, 0deg));
+}
+
+.type-juice-glyph-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.type-juice-glyph {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  image-rendering: auto;
+}
+
+.type-juice-glyph-space {
+  display: inline-block;
+}
+
+.type-juice-glyph-output.mode-ticker {
+  animation: type-juice-ticker 16s linear infinite;
 }
 
 .type-juice-stage.is-inverted .type-juice-output {

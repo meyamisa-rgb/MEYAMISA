@@ -133,6 +133,8 @@
   if (typeInput && typeOutput) {
     const typeTester = document.querySelector("[data-type-tester]");
     const typeStage = document.querySelector("[data-type-stage]");
+    const typeGlyphOutput = document.querySelector("[data-type-glyph-output]");
+    const typeEngine = document.querySelector("[data-type-engine]");
     const typeTracking = document.querySelector("[data-type-tracking]");
     const typeLeading = document.querySelector("[data-type-leading]");
     const typeWeight = document.querySelector("[data-type-weight]");
@@ -142,6 +144,8 @@
     const typeSkew = document.querySelector("[data-type-skew]");
     const typeFontUpload = document.querySelector("[data-type-font-upload]");
     const typeFontName = document.querySelector("[data-type-font-name]");
+    const glyphSheet = typeTester ? typeTester.getAttribute("data-type-glyph-sheet") : "";
+    const builtInFontFamily = '"TypeJuiceCustom", var(--font-display)';
 
     let uploadedFontUrl = null;
     let customStyleTag = document.querySelector("#type-juice-custom-font");
@@ -153,19 +157,90 @@
 
     const modeToText = (value, mode) => {
       if (mode === "ticker") {
-        return value.replace(/\s+/g, " ").trim() || "TYPE JUICE MONO";
+        const condensed = value.replace(/\s+/g, " ").trim();
+        return condensed ? `${condensed}   ${condensed}` : "";
       }
       if (mode === "stack") {
         const words = value.trim().split(/\s+/).filter(Boolean);
-        return words.length ? words.join("\n") : "TYPE\nJUICE\nMONO";
+        return words.length ? words.join("\n") : "";
       }
-      return value || "TYPE JUICE MONO";
+      return value || "";
+    };
+
+    const glyphIndexForChar = (char) => {
+      const codePoint = char.codePointAt(0) || 0;
+      return Math.abs((codePoint * 17 + 13) % 24);
+    };
+
+    const renderGlyphOutput = (value, mode, selectedAlign, size, tracking, leading, skew) => {
+      if (!typeGlyphOutput) {
+        return;
+      }
+      typeGlyphOutput.innerHTML = "";
+      typeGlyphOutput.classList.toggle("mode-ticker", mode === "ticker");
+      typeGlyphOutput.style.justifyContent =
+        selectedAlign === "left" ? "flex-start" : selectedAlign === "right" ? "flex-end" : "center";
+      typeGlyphOutput.style.setProperty("--type-skew", `${skew}deg`);
+
+      const glyphLines = value ? value.split("\n") : [];
+      if (!glyphLines.length) {
+        return;
+      }
+
+      const glyphSize = Math.max(24, Math.round(size * 0.58));
+      const gap = Math.round((tracking + 40) / 8);
+      const lineGap = Math.max(8, Math.round((leading / 100) * 14));
+
+      glyphLines.forEach((line) => {
+        const row = document.createElement("div");
+        row.className = "type-juice-glyph-row";
+        row.style.gap = `${Math.max(2, gap)}px`;
+        row.style.marginBottom = `${lineGap}px`;
+
+        const characters = Array.from(line);
+        if (!characters.length) {
+          const spacer = document.createElement("span");
+          spacer.className = "type-juice-glyph-space";
+          spacer.style.width = `${Math.round(glyphSize * 0.8)}px`;
+          spacer.style.height = `${glyphSize}px`;
+          row.appendChild(spacer);
+        } else {
+          characters.forEach((char) => {
+            if (char === " ") {
+              const spacer = document.createElement("span");
+              spacer.className = "type-juice-glyph-space";
+              spacer.style.width = `${Math.round(glyphSize * 0.45)}px`;
+              spacer.style.height = `${glyphSize}px`;
+              row.appendChild(spacer);
+              return;
+            }
+
+            const index = glyphIndexForChar(char);
+            const cols = 4;
+            const rows = 6;
+            const col = index % cols;
+            const rowIndex = Math.floor(index / cols);
+
+            const glyph = document.createElement("span");
+            glyph.className = "type-juice-glyph";
+            glyph.style.width = `${glyphSize}px`;
+            glyph.style.height = `${glyphSize}px`;
+            glyph.style.backgroundImage = `url("${glyphSheet}")`;
+            glyph.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
+            glyph.style.backgroundPosition = `${(col / (cols - 1)) * 100}% ${(rowIndex / (rows - 1)) * 100}%`;
+            row.appendChild(glyph);
+          });
+        }
+
+        typeGlyphOutput.appendChild(row);
+      });
     };
 
     const updateTypeOutput = () => {
       const mode = typeMode ? typeMode.value : "poster";
       const selectedCase = typeCase ? typeCase.value : "as-typed";
-      let text = typeInput.value || "TYPE JUICE MONO";
+      const selectedEngine = typeEngine ? typeEngine.value : "glyph";
+      let text = typeInput.value || "";
 
       if (selectedCase === "uppercase") {
         text = text.toUpperCase();
@@ -195,6 +270,29 @@
       if (typeSkew) {
         typeOutput.style.setProperty("--type-skew", `${typeSkew.value}deg`);
       }
+
+      if (selectedEngine === "glyph") {
+        typeOutput.style.display = "none";
+        if (typeGlyphOutput) {
+          typeGlyphOutput.style.display = "grid";
+        }
+        renderGlyphOutput(
+          modeToText(text, mode),
+          mode,
+          typeAlign ? typeAlign.value : "center",
+          Number(typeScale ? typeScale.value : 140),
+          Number(typeTracking ? typeTracking.value : -10),
+          Number(typeLeading ? typeLeading.value : 90),
+          Number(typeSkew ? typeSkew.value : 0)
+        );
+      } else {
+        typeOutput.style.fontFamily = builtInFontFamily;
+        typeOutput.style.display = "grid";
+        if (typeGlyphOutput) {
+          typeGlyphOutput.style.display = "none";
+        }
+      }
+
       if (typeStage) {
         typeStage.classList.toggle("is-inverted", mode === "ticker");
       }
@@ -223,6 +321,11 @@
       });
     }
 
+    if (typeFontName) {
+      typeFontName.textContent = "Using glyph-grid font system (built from your image)";
+    }
+    typeOutput.style.fontFamily = builtInFontFamily;
+
     const reactiveFields = [
       typeInput,
       typeScale,
@@ -232,6 +335,7 @@
       typeAlign,
       typeCase,
       typeMode,
+      typeEngine,
       typeSkew,
     ];
 
