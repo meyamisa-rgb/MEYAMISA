@@ -1141,6 +1141,39 @@ main {
   filter: contrast(1.1) saturate(0.95);
 }
 
+.henshin-gallery-page .henshin-gallery-title {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding-top: 0;
+}
+
+.henshin-gallery-page .henshin-gallery-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.henshin-gallery-page .henshin-gallery-title h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3.6vw, 2.6rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.henshin-gallery-page .henshin-video-grid .video-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%);
+}
+
+.henshin-gallery-page .henshin-video-grid .video-frame-local {
+  border: 0;
+  background: #000;
+}
+
 .strip-card {
   margin: 0;
   border: 1px solid var(--line);
