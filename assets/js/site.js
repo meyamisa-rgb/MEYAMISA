@@ -131,17 +131,124 @@
   const typeOutput = document.querySelector("[data-type-output]");
   const typeScale = document.querySelector("[data-type-scale]");
   if (typeInput && typeOutput) {
+    const typeTester = document.querySelector("[data-type-tester]");
+    const typeStage = document.querySelector("[data-type-stage]");
+    const typeTracking = document.querySelector("[data-type-tracking]");
+    const typeLeading = document.querySelector("[data-type-leading]");
+    const typeWeight = document.querySelector("[data-type-weight]");
+    const typeAlign = document.querySelector("[data-type-align]");
+    const typeCase = document.querySelector("[data-type-case]");
+    const typeMode = document.querySelector("[data-type-mode]");
+    const typeSkew = document.querySelector("[data-type-skew]");
+    const typeFontUpload = document.querySelector("[data-type-font-upload]");
+    const typeFontName = document.querySelector("[data-type-font-name]");
+
+    let uploadedFontUrl = null;
+    let customStyleTag = document.querySelector("#type-juice-custom-font");
+    if (!customStyleTag) {
+      customStyleTag = document.createElement("style");
+      customStyleTag.id = "type-juice-custom-font";
+      document.head.appendChild(customStyleTag);
+    }
+
+    const modeToText = (value, mode) => {
+      if (mode === "ticker") {
+        return value.replace(/\s+/g, " ").trim() || "TYPE JUICE MONO";
+      }
+      if (mode === "stack") {
+        const words = value.trim().split(/\s+/).filter(Boolean);
+        return words.length ? words.join("\n") : "TYPE\nJUICE\nMONO";
+      }
+      return value || "TYPE JUICE MONO";
+    };
+
     const updateTypeOutput = () => {
-      typeOutput.textContent = typeInput.value || "TYPE JUICE MONO";
+      const mode = typeMode ? typeMode.value : "poster";
+      const selectedCase = typeCase ? typeCase.value : "as-typed";
+      let text = typeInput.value || "TYPE JUICE MONO";
+
+      if (selectedCase === "uppercase") {
+        text = text.toUpperCase();
+      } else if (selectedCase === "lowercase") {
+        text = text.toLowerCase();
+      }
+
+      typeOutput.textContent = modeToText(text, mode);
+      typeOutput.classList.toggle("mode-stack", mode === "stack");
+      typeOutput.classList.toggle("mode-ticker", mode === "ticker");
+
       if (typeScale) {
         typeOutput.style.fontSize = `${typeScale.value}px`;
       }
+      if (typeTracking) {
+        typeOutput.style.letterSpacing = `${Number(typeTracking.value) / 100}em`;
+      }
+      if (typeLeading) {
+        typeOutput.style.lineHeight = `${Number(typeLeading.value) / 100}`;
+      }
+      if (typeWeight) {
+        typeOutput.style.fontWeight = typeWeight.value;
+      }
+      if (typeAlign) {
+        typeOutput.style.textAlign = typeAlign.value;
+      }
+      if (typeSkew) {
+        typeOutput.style.setProperty("--type-skew", `${typeSkew.value}deg`);
+      }
+      if (typeStage) {
+        typeStage.classList.toggle("is-inverted", mode === "ticker");
+      }
     };
 
-    typeInput.addEventListener("input", updateTypeOutput);
-    if (typeScale) {
-      typeScale.addEventListener("input", updateTypeOutput);
+    if (typeFontUpload && typeFontName) {
+      typeFontUpload.addEventListener("change", () => {
+        const file = typeFontUpload.files && typeFontUpload.files[0];
+        if (!file) {
+          return;
+        }
+        if (uploadedFontUrl) {
+          URL.revokeObjectURL(uploadedFontUrl);
+        }
+        uploadedFontUrl = URL.createObjectURL(file);
+        customStyleTag.textContent = `
+          @font-face {
+            font-family: "TypeJuiceCustom";
+            src: url("${uploadedFontUrl}");
+            font-display: swap;
+          }
+        `;
+        typeOutput.style.fontFamily = '"TypeJuiceCustom", var(--font-display)';
+        typeFontName.textContent = `Loaded: ${file.name}`;
+        updateTypeOutput();
+      });
     }
+
+    const reactiveFields = [
+      typeInput,
+      typeScale,
+      typeTracking,
+      typeLeading,
+      typeWeight,
+      typeAlign,
+      typeCase,
+      typeMode,
+      typeSkew,
+    ];
+
+    reactiveFields.forEach((field) => {
+      if (field) {
+        field.addEventListener("input", updateTypeOutput);
+        field.addEventListener("change", updateTypeOutput);
+      }
+    });
+
+    if (!typeTester) {
+      typeInput.addEventListener("input", updateTypeOutput);
+      if (typeScale) {
+        typeScale.addEventListener("input", updateTypeOutput);
+      }
+    }
+
     updateTypeOutput();
   }
 
