@@ -1242,6 +1242,151 @@ main {
   border: 0;
 }
 
+.knysh-books-page .detail-hero {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.knysh-books-page .detail-hero h1 {
+  max-width: 18ch;
+}
+
+.knysh-shelf-wrap {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #f8f8f8 0%, #f1f1f1 100%);
+  padding: clamp(16px, 2.4vw, 28px);
+}
+
+.knysh-shelf-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 32vw);
+  gap: clamp(12px, 1.8vw, 20px);
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+}
+
+.knysh-book-card {
+  display: grid;
+  gap: 10px;
+  scroll-snap-align: start;
+}
+
+.knysh-book-mockup {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  min-height: 340px;
+  transform: perspective(1200px) rotateY(-10deg);
+  transform-origin: left center;
+}
+
+.knysh-book-spine {
+  background: linear-gradient(180deg, #111 0%, #313131 100%);
+  border: 1px solid #202020;
+  border-right: 0;
+}
+
+.knysh-book-cover {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #202020;
+  background: linear-gradient(140deg, #0f0f0f 0%, #2b2b2b 56%, #101010 100%);
+  color: #f8f8f8;
+}
+
+.knysh-book-cover-art {
+  align-content: stretch;
+  gap: 10px;
+  padding: 12px;
+}
+
+.knysh-book-spread {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  min-height: 244px;
+  background: #f7f8f4;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.knysh-book-spread::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 9px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.05) 45%, rgba(255, 255, 255, 0.35));
+  pointer-events: none;
+}
+
+.knysh-book-page {
+  margin: 0;
+  border: 1px solid rgba(13, 14, 13, 0.12);
+  background: #ffffff;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.knysh-book-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.knysh-book-art-meta {
+  display: grid;
+  gap: 8px;
+}
+
+.knysh-book-cover h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.1vw, 1.7rem);
+  line-height: 1.08;
+}
+
+.knysh-book-cover p {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.knysh-book-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.62rem !important;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.knysh-book-cover.is-placeholder {
+  background: linear-gradient(140deg, #eeeeee 0%, #dbdbdb 100%);
+  color: #1f1f1f;
+  border-color: #bcbcbc;
+}
+
+.knysh-book-cover.is-placeholder .knysh-book-kicker {
+  color: #5d5d5d;
+}
+
+.knysh-book-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.knysh-book-actions .wide-button {
+  text-align: center;
+  text-decoration: none;
+}
+
 .strip-card {
   margin: 0;
   border: 1px solid var(--line);
@@ -3520,5 +3665,22 @@ figcaption {
   .human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 1),
   .human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 3) {
     transform: none;
+  }
+
+  .knysh-shelf-track {
+    grid-auto-columns: minmax(230px, 84vw);
+  }
+
+  .knysh-book-mockup {
+    min-height: 300px;
+    transform: none;
+  }
+
+  .knysh-book-spread {
+    min-height: 230px;
+  }
+
+  .knysh-book-actions {
+    grid-template-columns: 1fr;
   }
 }
