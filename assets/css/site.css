@@ -1391,6 +1391,7 @@ main {
   padding: clamp(14px, 2.4vw, 28px);
   overflow: hidden;
   display: grid;
+  position: relative;
 }
 
 .type-juice-stage.is-inverted {
@@ -1425,6 +1426,35 @@ main {
   transform: skewX(var(--type-skew, 0deg));
 }
 
+.type-juice-board {
+  position: absolute;
+  inset: clamp(14px, 2.4vw, 28px);
+  display: none;
+  overflow: hidden;
+}
+
+.type-juice-board.is-active {
+  display: block;
+}
+
+.type-juice-board-glyph {
+  position: absolute;
+  object-fit: contain;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  filter: contrast(1.06);
+}
+
+.type-juice-board-glyph.is-dragging {
+  cursor: grabbing;
+  z-index: 3;
+}
+
+.type-juice-reshuffle {
+  width: 100%;
+}
+
 .type-juice-glyph-row {
   display: flex;
   justify-content: center;
@@ -1433,9 +1463,10 @@ main {
 
 .type-juice-glyph {
   display: inline-block;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  image-rendering: auto;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  filter: contrast(1.03);
 }
 
 .type-juice-glyph-space {

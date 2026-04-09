@@ -54,7 +54,7 @@
                 try your font directly in-browser.
               </p>
             </div>
-            <div class="type-juice-console type-juice-console-advanced" data-type-tester data-type-glyph-sheet="../assets/images/type-juice-glyph-grid.jpeg">
+            <div class="type-juice-console type-juice-console-advanced" data-type-tester data-type-glyph-dir="../assets/images/type-juice/udetype" data-type-glyph-count="26">
               <div class="type-juice-panel">
                 <label class="type-juice-label" for="type-juice-input">Type Here</label>
                 <textarea
@@ -92,9 +92,16 @@
 
                 <div class="type-juice-controls-grid">
                   <label class="type-juice-control">
+                    <span>System</span>
+                    <select class="type-juice-select" data-type-system>
+                      <option value="typeset" selected>Live Typeset</option>
+                      <option value="board">Type Board</option>
+                    </select>
+                  </label>
+                  <label class="type-juice-control">
                     <span>Engine</span>
                     <select class="type-juice-select" data-type-engine>
-                      <option value="glyph" selected>Glyph Grid Font</option>
+                      <option value="glyph" selected>UDType Glyph Font</option>
                       <option value="text">TypeJuice Font (OTF)</option>
                     </select>
                   </label>
@@ -126,10 +133,12 @@
                     <span>Skew</span>
                     <input class="type-juice-slider" data-type-skew type="range" min="-18" max="18" value="0" />
                   </label>
+                  <button class="wide-button type-juice-reshuffle" type="button" data-type-reshuffle>Reshuffle Board</button>
                 </div>
               </div>
 
               <div class="type-juice-stage" data-type-stage>
+                <div class="type-juice-board" data-type-board aria-live="polite"></div>
                 <div class="type-juice-glyph-output" data-type-glyph-output aria-live="polite"></div>
                 <div class="type-juice-output" data-type-output aria-live="polite"></div>
               </div>

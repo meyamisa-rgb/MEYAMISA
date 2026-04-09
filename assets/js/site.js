@@ -134,6 +134,9 @@
     const typeTester = document.querySelector("[data-type-tester]");
     const typeStage = document.querySelector("[data-type-stage]");
     const typeGlyphOutput = document.querySelector("[data-type-glyph-output]");
+    const typeBoard = document.querySelector("[data-type-board]");
+    const typeSystem = document.querySelector("[data-type-system]");
+    const typeReshuffle = document.querySelector("[data-type-reshuffle]");
     const typeEngine = document.querySelector("[data-type-engine]");
     const typeTracking = document.querySelector("[data-type-tracking]");
     const typeLeading = document.querySelector("[data-type-leading]");
@@ -144,7 +147,12 @@
     const typeSkew = document.querySelector("[data-type-skew]");
     const typeFontUpload = document.querySelector("[data-type-font-upload]");
     const typeFontName = document.querySelector("[data-type-font-name]");
-    const glyphSheet = typeTester ? typeTester.getAttribute("data-type-glyph-sheet") : "";
+    const glyphDir = typeTester ? typeTester.getAttribute("data-type-glyph-dir") || "" : "";
+    const glyphCount = typeTester ? Number(typeTester.getAttribute("data-type-glyph-count") || 0) : 0;
+    const glyphUrls = Array.from({ length: glyphCount }, (_, idx) => {
+      const number = String(idx + 1).padStart(2, "0");
+      return `${glyphDir}/udetype-${number}.png`;
+    });
     const builtInFontFamily = '"TypeJuiceCustom", var(--font-display)';
 
     let uploadedFontUrl = null;
@@ -168,8 +176,11 @@
     };
 
     const glyphIndexForChar = (char) => {
+      if (!glyphCount) {
+        return 0;
+      }
       const codePoint = char.codePointAt(0) || 0;
-      return Math.abs((codePoint * 17 + 13) % 24);
+      return Math.abs((codePoint * 17 + 13) % glyphCount);
     };
 
     const renderGlyphOutput = (value, mode, selectedAlign, size, tracking, leading, skew) => {
@@ -216,18 +227,14 @@
             }
 
             const index = glyphIndexForChar(char);
-            const cols = 4;
-            const rows = 6;
-            const col = index % cols;
-            const rowIndex = Math.floor(index / cols);
-
-            const glyph = document.createElement("span");
+            const glyph = document.createElement("img");
             glyph.className = "type-juice-glyph";
-            glyph.style.width = `${glyphSize}px`;
-            glyph.style.height = `${glyphSize}px`;
-            glyph.style.backgroundImage = `url("${glyphSheet}")`;
-            glyph.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
-            glyph.style.backgroundPosition = `${(col / (cols - 1)) * 100}% ${(rowIndex / (rows - 1)) * 100}%`;
+            glyph.width = glyphSize;
+            glyph.height = glyphSize;
+            glyph.loading = "lazy";
+            glyph.decoding = "async";
+            glyph.alt = "";
+            glyph.src = glyphUrls[index] || glyphUrls[0] || "";
             row.appendChild(glyph);
           });
         }
@@ -236,8 +243,99 @@
       });
     };
 
+    const buildTypeBoard = (rawText, size) => {
+      if (!typeBoard) {
+        return;
+      }
+      const cleaned = (rawText || "").replace(/\s+/g, "");
+      const chars = Array.from(cleaned).slice(0, 120);
+      typeBoard.innerHTML = "";
+      if (!chars.length) {
+        return;
+      }
+
+      const rect = typeBoard.getBoundingClientRect();
+      const baseSize = Math.max(34, Math.min(180, Math.round(size * 0.46)));
+
+      chars.forEach((char, idx) => {
+        const glyph = document.createElement("img");
+        glyph.className = "type-juice-board-glyph";
+        glyph.src = glyphUrls[glyphIndexForChar(char)] || glyphUrls[0] || "";
+        glyph.alt = "";
+        glyph.loading = "lazy";
+        glyph.decoding = "async";
+
+        const variance = ((idx * 37) % 24) - 12;
+        const glyphSize = Math.max(28, baseSize + variance);
+        const maxX = Math.max(0, rect.width - glyphSize);
+        const maxY = Math.max(0, rect.height - glyphSize);
+        const x = Math.round((idx * 53) % (maxX + 1 || 1));
+        const y = Math.round((idx * 97) % (maxY + 1 || 1));
+
+        glyph.style.width = `${glyphSize}px`;
+        glyph.style.height = `${glyphSize}px`;
+        glyph.style.left = `${x}px`;
+        glyph.style.top = `${y}px`;
+        glyph.dataset.x = String(x);
+        glyph.dataset.y = String(y);
+        glyph.dataset.dragId = `glyph-${idx}`;
+        glyph.style.transform = `rotate(${((idx * 19) % 44) - 22}deg)`;
+
+        typeBoard.appendChild(glyph);
+      });
+    };
+
+    let dragTarget = null;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    if (typeBoard) {
+      typeBoard.addEventListener("pointerdown", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement) || !target.classList.contains("type-juice-board-glyph")) {
+          return;
+        }
+        dragTarget = target;
+        dragTarget.classList.add("is-dragging");
+        const rect = dragTarget.getBoundingClientRect();
+        dragOffsetX = event.clientX - rect.left;
+        dragOffsetY = event.clientY - rect.top;
+        dragTarget.setPointerCapture(event.pointerId);
+      });
+
+      typeBoard.addEventListener("pointermove", (event) => {
+        if (!dragTarget) {
+          return;
+        }
+        const boardRect = typeBoard.getBoundingClientRect();
+        const glyphWidth = dragTarget.offsetWidth;
+        const glyphHeight = dragTarget.offsetHeight;
+        const maxX = Math.max(0, boardRect.width - glyphWidth);
+        const maxY = Math.max(0, boardRect.height - glyphHeight);
+        const nextX = Math.max(0, Math.min(maxX, event.clientX - boardRect.left - dragOffsetX));
+        const nextY = Math.max(0, Math.min(maxY, event.clientY - boardRect.top - dragOffsetY));
+        dragTarget.style.left = `${Math.round(nextX)}px`;
+        dragTarget.style.top = `${Math.round(nextY)}px`;
+      });
+
+      const stopDragging = (event) => {
+        if (!dragTarget) {
+          return;
+        }
+        dragTarget.classList.remove("is-dragging");
+        if (event && dragTarget.hasPointerCapture(event.pointerId)) {
+          dragTarget.releasePointerCapture(event.pointerId);
+        }
+        dragTarget = null;
+      };
+
+      typeBoard.addEventListener("pointerup", stopDragging);
+      typeBoard.addEventListener("pointercancel", stopDragging);
+      typeBoard.addEventListener("pointerleave", stopDragging);
+    }
+
     const updateTypeOutput = () => {
       const mode = typeMode ? typeMode.value : "poster";
+      const systemMode = typeSystem ? typeSystem.value : "typeset";
       const selectedCase = typeCase ? typeCase.value : "as-typed";
       const selectedEngine = typeEngine ? typeEngine.value : "glyph";
       let text = typeInput.value || "";
@@ -272,6 +370,22 @@
       }
 
       if (selectedEngine === "glyph") {
+        if (typeBoard) {
+          typeBoard.classList.toggle("is-active", systemMode === "board");
+        }
+        if (typeReshuffle) {
+          typeReshuffle.disabled = systemMode !== "board";
+        }
+
+        if (systemMode === "board") {
+          typeOutput.style.display = "none";
+          if (typeGlyphOutput) {
+            typeGlyphOutput.style.display = "none";
+          }
+          buildTypeBoard(text, Number(typeScale ? typeScale.value : 140));
+          return;
+        }
+
         typeOutput.style.display = "none";
         if (typeGlyphOutput) {
           typeGlyphOutput.style.display = "grid";
@@ -286,6 +400,12 @@
           Number(typeSkew ? typeSkew.value : 0)
         );
       } else {
+        if (typeBoard) {
+          typeBoard.classList.remove("is-active");
+        }
+        if (typeReshuffle) {
+          typeReshuffle.disabled = true;
+        }
         typeOutput.style.fontFamily = builtInFontFamily;
         typeOutput.style.display = "grid";
         if (typeGlyphOutput) {
@@ -335,6 +455,7 @@
       typeAlign,
       typeCase,
       typeMode,
+      typeSystem,
       typeEngine,
       typeSkew,
     ];
@@ -351,6 +472,12 @@
       if (typeScale) {
         typeScale.addEventListener("input", updateTypeOutput);
       }
+    }
+
+    if (typeReshuffle) {
+      typeReshuffle.addEventListener("click", () => {
+        buildTypeBoard(typeInput ? typeInput.value : "", Number(typeScale ? typeScale.value : 140));
+      });
     }
 
     updateTypeOutput();
