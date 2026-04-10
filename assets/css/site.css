@@ -1431,6 +1431,37 @@ main {
   text-decoration: none;
 }
 
+.performance-page .detail-hero {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.performance-page .detail-hero h1 {
+  max-width: 12ch;
+}
+
+.performance-page .section-jump-nav {
+  border-bottom: 0;
+  padding-top: 0;
+}
+
+.performance-page .section-jump-link {
+  border: 0;
+  background: transparent;
+  padding: 8px 4px;
+}
+
+.performance-page .performance-body-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.performance-page .performance-weltkurz-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.performance-page .performance-video-embed {
+  max-width: 1040px;
+}
+
 .strip-card {
   margin: 0;
   border: 1px solid var(--line);
@@ -3727,5 +3758,10 @@ figcaption {
 
   .knysh-book-actions {
     grid-template-columns: 1fr;
+  }
+
+  .performance-page .performance-body-grid,
+  .performance-page .performance-weltkurz-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
