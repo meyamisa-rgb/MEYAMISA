@@ -149,6 +149,7 @@
     const typeMotionA = document.querySelector("[data-type-motion-a]");
     const typeMotionB = document.querySelector("[data-type-motion-b]");
     const typeMotionC = document.querySelector("[data-type-motion-c]");
+    const typeClickHint = document.querySelector("[data-type-click-hint]");
     const typeFontUpload = document.querySelector("[data-type-font-upload]");
     const typeFontName = document.querySelector("[data-type-font-name]");
     const glyphDir = typeTester ? typeTester.getAttribute("data-type-glyph-dir") || "" : "";
@@ -183,6 +184,13 @@
         return words.length ? words.join("\n") : "";
       }
       return value || "";
+    };
+
+    const updateTypeHint = (value) => {
+      if (!typeClickHint) {
+        return;
+      }
+      typeClickHint.hidden = Boolean((value || "").trim());
     };
 
     const stopMotion = () => {
@@ -505,6 +513,7 @@
       if (typeStage) {
         typeStage.classList.toggle("is-inverted", mode === "ticker");
       }
+      updateTypeHint(text);
     };
 
     if (typeFontUpload && typeFontName) {
@@ -566,6 +575,25 @@
     if (typeReshuffle) {
       typeReshuffle.addEventListener("click", () => {
         buildTypeBoard(typeInput ? typeInput.value : "", Number(typeScale ? typeScale.value : 140));
+      });
+    }
+
+    if (typeStage && typeInput) {
+      const focusInput = () => {
+        typeInput.focus({ preventScroll: true });
+      };
+      typeStage.addEventListener("pointerdown", (event) => {
+        const target = event.target;
+        if (target instanceof HTMLElement && target.closest("button, a, input, select, textarea")) {
+          return;
+        }
+        focusInput();
+      });
+      typeStage.addEventListener("keydown", (event) => {
+        if (event.key === "Tab") {
+          return;
+        }
+        focusInput();
       });
     }
 

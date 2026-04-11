@@ -54,7 +54,7 @@
               <div class="type-juice-panel">
                 <textarea
                   id="type-juice-input"
-                  class="type-juice-input"
+                  class="type-juice-input type-juice-input-hidden"
                   data-type-input
                   placeholder="Type..."
                   rows="1"
@@ -75,7 +75,8 @@ TYPE JUICE</textarea>
                 </div>
               </div>
 
-              <div class="type-juice-stage" data-type-stage>
+              <div class="type-juice-stage type-juice-stage-canvas" data-type-stage tabindex="0" role="textbox" aria-label="Click and type using UDType glyphs">
+                <p class="type-juice-click-hint" data-type-click-hint>Click anywhere and type</p>
                 <div class="type-juice-glyph-output" data-type-glyph-output aria-live="polite"></div>
                 <div class="type-juice-output" data-type-output aria-live="polite" style="display: none;"></div>
               </div>
