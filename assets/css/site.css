@@ -1259,6 +1259,12 @@ main {
   padding-top: 0;
 }
 
+.henshin-gallery-page main > .project-section:first-of-type {
+  border-top: 0 !important;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .henshin-gallery-page .henshin-video-grid .video-card {
   border: 0;
   background: transparent;
