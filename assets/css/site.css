@@ -777,16 +777,16 @@ main {
 .experimental-design-page .project-card-image-contain {
   object-fit: contain;
   object-position: center;
-  padding: clamp(2px, 0.6vw, 6px);
+  padding: clamp(10px, 1.5vw, 18px);
   background: transparent;
 }
 
 .experimental-design-page .project-card-image-folding {
-  transform: scale(1.03);
+  transform: none;
 }
 
 .experimental-design-page .project-card-image-human {
-  transform: scale(1.06);
+  transform: none;
 }
 
 .experimental-design-page .project-card-type-sample {
@@ -1743,11 +1743,15 @@ main {
 }
 
 .type-juice-page .type-juice-input {
-  min-height: 76px;
+  min-height: 46px;
+  line-height: 1.2;
   border: 0;
-  border-bottom: 1px solid var(--line);
-  padding: 10px 0;
+  padding: 8px 0;
   resize: none;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  letter-spacing: 0.01em;
 }
 
 .type-juice-page .type-juice-help {
@@ -1783,6 +1787,51 @@ main {
 
 .type-juice-page .type-juice-glyph-row {
   justify-content: flex-start;
+}
+
+.type-juice-page .type-juice-glyph {
+  animation: type-juice-shimmer 1.8s ease-in-out infinite, type-juice-jitter 2.2s linear infinite;
+  transform-origin: 50% 60%;
+}
+
+.type-juice-page .type-juice-glyph-row .type-juice-glyph:nth-child(2n) {
+  animation-delay: 120ms, 80ms;
+}
+
+.type-juice-page .type-juice-glyph-row .type-juice-glyph:nth-child(3n) {
+  animation-delay: 240ms, 160ms;
+}
+
+.type-juice-page .type-juice-glyph-row .type-juice-glyph:nth-child(5n) {
+  animation-delay: 360ms, 210ms;
+}
+
+@keyframes type-juice-shimmer {
+  0%,
+  100% {
+    filter: contrast(1.02) brightness(0.98);
+    opacity: 0.95;
+  }
+  50% {
+    filter: contrast(1.12) brightness(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes type-juice-jitter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(0.4px, -0.2px) rotate(-0.3deg);
+  }
+  50% {
+    transform: translate(-0.3px, 0.3px) rotate(0.28deg);
+  }
+  75% {
+    transform: translate(0.2px, 0.2px) rotate(-0.22deg);
+  }
 }
 
 .type-juice-panel {
