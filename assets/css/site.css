@@ -1212,6 +1212,9 @@ main {
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: clamp(10px, 1.4vw, 16px);
 }
 
 .henshin-gallery-page .detail-hero h1 {
