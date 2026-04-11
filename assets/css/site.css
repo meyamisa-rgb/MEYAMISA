@@ -778,12 +778,17 @@ main {
 .experimental-design-page .project-card-image-contain {
   width: auto;
   height: auto;
-  max-width: 74%;
-  max-height: 74%;
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
   object-position: center;
   padding: 0;
   background: transparent;
+}
+
+.experimental-design-page .project-card-image-amygdala {
+  max-width: 84%;
+  max-height: 84%;
 }
 
 .experimental-design-page .project-card-image-folding {
@@ -791,6 +796,8 @@ main {
 }
 
 .experimental-design-page .project-card-image-human {
+  max-width: 78%;
+  max-height: 78%;
   transform: none;
 }
 
@@ -3908,9 +3915,21 @@ figcaption {
   color: #6a6a6a;
 }
 
+.exhibition-page #punio-gallery .exhibition-structure-panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.exhibition-page #punio-gallery .section-heading h3 {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .punio-poster-grid {
   display: grid;
-  gap: 24px;
+  gap: 22px;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: start;
 }
@@ -3921,28 +3940,42 @@ figcaption {
 }
 
 .punio-poster-grid .gallery-media {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #fff;
 }
 
-.punio-language-grid {
+.punio-info-copy {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 8px;
+  max-width: 72ch;
+  border: 0;
+  padding: 0;
 }
 
-.punio-language-grid .text-panel h4 {
-  margin: 0 0 8px;
+.punio-info-copy h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
 }
 
-.punio-language-grid .text-panel p {
+.punio-info-copy p {
   margin: 0;
+}
+
+.punio-statement-copy {
+  max-width: 78ch;
+}
+
+.punio-statement-copy p {
+  margin: 0;
+  line-height: 1.65;
 }
 
 .punio-install-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .punio-install-card .media-trigger,
@@ -3951,27 +3984,27 @@ figcaption {
 }
 
 .punio-install-card .gallery-media {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
 .punio-motion-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 12px;
 }
 
 .punio-motion-card video {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
   background: #fff;
 }
 
 .punio-visitors-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px;
 }
 
 .punio-visitor-card .gallery-media {
@@ -3981,7 +4014,7 @@ figcaption {
 }
 
 .punio-process-lead {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .punio-process-card .gallery-media {
@@ -3990,17 +4023,26 @@ figcaption {
 }
 
 .punio-process-card.lead .gallery-media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 5;
 }
 
 .punio-process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .punio-process-grid .gallery-media {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 5;
+}
+
+.punio-process-card .media-trigger {
+  overflow: hidden;
+  background: #fff;
+}
+
+.punio-process-card .gallery-media {
+  transform: scale(1.02);
 }
 
 .punio-curation-grid {
@@ -4012,14 +4054,15 @@ figcaption {
 .punio-curation-card .gallery-media {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
 }
 
 .punio-curation-card figcaption {
   margin-top: 10px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  text-transform: none;
   text-align: center;
   color: #4b4b4b;
 }
@@ -4027,7 +4070,7 @@ figcaption {
 .punio-end-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 10px;
 }
 
 .punio-end-card .gallery-media {
@@ -4038,7 +4081,7 @@ figcaption {
 
 @media (max-width: 1000px) {
   .punio-install-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .punio-process-grid {
@@ -4048,7 +4091,6 @@ figcaption {
 
 @media (max-width: 760px) {
   .punio-poster-grid,
-  .punio-language-grid,
   .punio-motion-grid,
   .punio-visitors-grid,
   .punio-end-grid {
