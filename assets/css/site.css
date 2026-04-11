@@ -3915,6 +3915,23 @@ figcaption {
   color: #6a6a6a;
 }
 
+.exhibition-page .section-jump-nav {
+  border-bottom: 0;
+}
+
+.exhibition-page .section-jump-link {
+  border: 0;
+  background: transparent;
+  padding: 8px 2px;
+  color: #5b5b5b;
+}
+
+.exhibition-page .section-jump-link.is-active {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 .exhibition-page #punio-gallery .exhibition-structure-panel {
   border: 0;
   background: transparent;
@@ -3929,8 +3946,8 @@ figcaption {
 
 .punio-poster-grid {
   display: grid;
-  gap: 22px;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
   align-items: start;
 }
 
@@ -3940,7 +3957,7 @@ figcaption {
 }
 
 .punio-poster-grid .gallery-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: contain;
   background: #fff;
 }
@@ -3974,7 +3991,7 @@ figcaption {
 
 .punio-install-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -3984,8 +4001,9 @@ figcaption {
 }
 
 .punio-install-card .gallery-media {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #fff;
 }
 
 .punio-motion-grid {
@@ -4003,18 +4021,22 @@ figcaption {
 
 .punio-visitors-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
 .punio-visitor-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #fff;
 }
 
 .punio-process-lead {
   margin-bottom: 10px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .punio-process-card .gallery-media {
@@ -4023,7 +4045,7 @@ figcaption {
 }
 
 .punio-process-card.lead .gallery-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
 }
 
 .punio-process-grid {
@@ -4033,7 +4055,7 @@ figcaption {
 }
 
 .punio-process-grid .gallery-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
 }
 
 .punio-process-card .media-trigger {
@@ -4042,18 +4064,20 @@ figcaption {
 }
 
 .punio-process-card .gallery-media {
-  transform: scale(1.02);
+  transform: none;
+  object-fit: contain;
+  background: #fff;
 }
 
 .punio-curation-grid {
   display: grid;
-  grid-template-columns: minmax(0, 460px);
+  grid-template-columns: minmax(0, 560px);
   justify-content: center;
 }
 
 .punio-curation-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: contain;
   background: #fff;
 }
@@ -4075,8 +4099,9 @@ figcaption {
 
 .punio-end-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #fff;
 }
 
 @media (max-width: 1000px) {
@@ -4084,8 +4109,9 @@ figcaption {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .punio-visitors-grid,
   .punio-process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -4098,6 +4124,19 @@ figcaption {
   }
 
   .punio-install-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .punio-visitors-grid,
+  .punio-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .punio-install-grid,
+  .punio-visitors-grid,
+  .punio-process-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -4110,21 +4149,22 @@ figcaption {
 }
 
 .geoje-subnav-link {
-  border: 1px solid var(--line);
-  background: #fff;
-  color: #222;
+  border: 0;
+  background: transparent;
+  color: #666;
   font-family: var(--font-sans);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 11px 14px;
+  padding: 8px 0;
   cursor: pointer;
 }
 
 .geoje-subnav-link.is-active {
-  background: #111;
-  border-color: #111;
-  color: #fff;
+  background: transparent;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .geoje-meta {
