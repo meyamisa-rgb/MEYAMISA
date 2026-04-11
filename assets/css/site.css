@@ -1241,7 +1241,10 @@ main {
 
 .henshin-gallery-page .henshin-video-grid .video-frame-local {
   border: 0;
-  background: #000;
+  background: transparent;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .henshin-gallery-page .text-panel {
