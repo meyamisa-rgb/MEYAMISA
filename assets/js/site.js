@@ -145,6 +145,10 @@
     const typeCase = document.querySelector("[data-type-case]");
     const typeMode = document.querySelector("[data-type-mode]");
     const typeSkew = document.querySelector("[data-type-skew]");
+    const typeMotion = document.querySelector("[data-type-motion]");
+    const typeMotionA = document.querySelector("[data-type-motion-a]");
+    const typeMotionB = document.querySelector("[data-type-motion-b]");
+    const typeMotionC = document.querySelector("[data-type-motion-c]");
     const typeFontUpload = document.querySelector("[data-type-font-upload]");
     const typeFontName = document.querySelector("[data-type-font-name]");
     const glyphDir = typeTester ? typeTester.getAttribute("data-type-glyph-dir") || "" : "";
@@ -156,6 +160,9 @@
     const builtInFontFamily = '"TypeJuiceCustom", var(--font-display)';
 
     let uploadedFontUrl = null;
+    let motionTimer = null;
+    let motionWords = [];
+    let motionIndex = 0;
     let customStyleTag = document.querySelector("#type-juice-custom-font");
     if (!customStyleTag) {
       customStyleTag = document.createElement("style");
@@ -164,6 +171,9 @@
     }
 
     const modeToText = (value, mode) => {
+      if (mode === "motion") {
+        return value.replace(/\n+/g, " ").replace(/\s+/g, " ").trim();
+      }
       if (mode === "ticker") {
         const condensed = value.replace(/\s+/g, " ").trim();
         return condensed ? `${condensed}   ${condensed}` : "";
@@ -173,6 +183,57 @@
         return words.length ? words.join("\n") : "";
       }
       return value || "";
+    };
+
+    const stopMotion = () => {
+      if (motionTimer) {
+        window.clearInterval(motionTimer);
+        motionTimer = null;
+      }
+    };
+
+    const updateMotionWord = () => {
+      if (!typeMotion || !typeMotionA || !typeMotionB || !typeMotionC || !typeStage) {
+        return;
+      }
+      if (!motionWords.length) {
+        typeMotionA.textContent = "";
+        typeMotionB.textContent = "";
+        typeMotionC.textContent = "";
+        return;
+      }
+
+      const word = motionWords[motionIndex % motionWords.length];
+      const before = motionWords[(motionIndex - 1 + motionWords.length) % motionWords.length];
+      const after = motionWords[(motionIndex + 1) % motionWords.length];
+      const beat = motionIndex % 4;
+
+      typeMotionA.textContent = word;
+      typeMotionB.textContent = before;
+      typeMotionC.textContent = after;
+      typeStage.style.setProperty("--motion-angle", `${beat % 2 === 0 ? -2.2 : 2.2}deg`);
+      typeStage.style.setProperty("--motion-scale", beat === 0 ? "1.06" : beat === 2 ? "0.98" : "1.02");
+
+      typeMotion.classList.remove("is-beat");
+      // Trigger the pulse animation each time the word shifts.
+      void typeMotion.offsetWidth;
+      typeMotion.classList.add("is-beat");
+      motionIndex += 1;
+    };
+
+    const startMotion = (value) => {
+      if (!typeMotion) {
+        return;
+      }
+      const words = value.split(/\s+/).filter(Boolean).slice(0, 40);
+      motionWords = words.length ? words : ["TYPE", "JUICE"];
+      motionIndex = 0;
+      updateMotionWord();
+      stopMotion();
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+      motionTimer = window.setInterval(updateMotionWord, 360);
     };
 
     const glyphIndexForChar = (char) => {
@@ -368,6 +429,34 @@
       if (typeSkew) {
         typeOutput.style.setProperty("--type-skew", `${typeSkew.value}deg`);
       }
+
+      const motionMode = mode === "motion";
+      if (typeStage) {
+        typeStage.classList.toggle("is-motion", motionMode);
+      }
+      if (typeMotion) {
+        typeMotion.style.display = motionMode ? "grid" : "none";
+      }
+
+      if (motionMode) {
+        if (typeBoard) {
+          typeBoard.classList.remove("is-active");
+        }
+        if (typeReshuffle) {
+          typeReshuffle.disabled = true;
+        }
+        typeOutput.style.display = "none";
+        if (typeGlyphOutput) {
+          typeGlyphOutput.style.display = "none";
+        }
+        startMotion(modeToText(text, "motion"));
+        if (typeStage) {
+          typeStage.classList.remove("is-inverted");
+        }
+        return;
+      }
+
+      stopMotion();
 
       if (selectedEngine === "glyph") {
         if (typeBoard) {
