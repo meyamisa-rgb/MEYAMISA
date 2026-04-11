@@ -768,6 +768,19 @@ main {
   background: linear-gradient(180deg, #171717 0%, #111 100%);
 }
 
+.experimental-design-page .project-card-media-icon {
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.experimental-design-page .project-card-image-contain {
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(8px, 1.2vw, 14px);
+  background: transparent;
+}
+
 .experimental-design-page .project-card-type-sample {
   font-size: clamp(1.8rem, 4.2vw, 3.4rem);
   line-height: 0.9;
@@ -1695,6 +1708,26 @@ main {
   gap: clamp(16px, 2vw, 24px);
   align-items: start;
   background: linear-gradient(120deg, #f6f6f6 0%, #fdfdfd 50%, #f1f1f1 100%);
+}
+
+.type-juice-page .type-juice-console,
+.type-juice-page .type-juice-console-advanced,
+.type-juice-page .type-juice-panel,
+.type-juice-page .type-juice-stage {
+  background: #fff;
+}
+
+.type-juice-page .type-juice-stage {
+  border-color: var(--line);
+}
+
+.type-juice-page .type-juice-stage.is-inverted {
+  background: #fff;
+  border-color: var(--line);
+}
+
+.type-juice-page .type-juice-stage.is-inverted .type-juice-output {
+  color: #090909;
 }
 
 .type-juice-panel {
