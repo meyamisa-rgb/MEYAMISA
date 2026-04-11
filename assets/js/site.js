@@ -482,7 +482,7 @@
         renderGlyphOutput(
           modeToText(text, mode),
           mode,
-          typeAlign ? typeAlign.value : "center",
+          typeAlign ? typeAlign.value : "left",
           Number(typeScale ? typeScale.value : 140),
           Number(typeTracking ? typeTracking.value : -10),
           Number(typeLeading ? typeLeading.value : 90),

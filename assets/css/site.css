@@ -777,8 +777,16 @@ main {
 .experimental-design-page .project-card-image-contain {
   object-fit: contain;
   object-position: center;
-  padding: clamp(8px, 1.2vw, 14px);
+  padding: clamp(2px, 0.6vw, 6px);
   background: transparent;
+}
+
+.experimental-design-page .project-card-image-folding {
+  transform: scale(1.03);
+}
+
+.experimental-design-page .project-card-image-human {
+  transform: scale(1.06);
 }
 
 .experimental-design-page .project-card-type-sample {
@@ -1717,8 +1725,44 @@ main {
   background: #fff;
 }
 
+.type-juice-page .type-juice-console {
+  border: 0;
+  padding: 0;
+}
+
+.type-juice-page .type-juice-console-advanced {
+  grid-template-columns: 1fr;
+  gap: clamp(10px, 1.4vw, 16px);
+}
+
+.type-juice-page .type-juice-panel {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.type-juice-page .type-juice-input {
+  min-height: 76px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  resize: none;
+}
+
+.type-juice-page .type-juice-help {
+  font-size: 0.72rem;
+}
+
+.type-juice-page .type-juice-controls-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 420px;
+}
+
 .type-juice-page .type-juice-stage {
-  border-color: var(--line);
+  border: 0;
+  min-height: 72vh;
+  padding: 0;
 }
 
 .type-juice-page .type-juice-stage.is-inverted {
@@ -1728,6 +1772,17 @@ main {
 
 .type-juice-page .type-juice-stage.is-inverted .type-juice-output {
   color: #090909;
+}
+
+.type-juice-page .type-juice-glyph-output {
+  min-height: 100%;
+  align-content: start;
+  justify-content: start;
+  padding: 4px 0 0;
+}
+
+.type-juice-page .type-juice-glyph-row {
+  justify-content: flex-start;
 }
 
 .type-juice-panel {

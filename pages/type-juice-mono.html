@@ -48,11 +48,7 @@
 
           <section class="project-section reveal">
             <div class="section-heading">
-              <h2>Type System Playground</h2>
-              <p>
-                A live public tester for your type system. People can type, tune the settings, and
-                try your font directly in-browser.
-              </p>
+              <h2>Type</h2>
             </div>
             <div class="type-juice-console type-juice-console-advanced" data-type-tester data-type-glyph-dir="../assets/images/type-juice/udetype" data-type-glyph-count="26">
               <div class="type-juice-panel">
@@ -77,64 +73,12 @@ TYPE JUICE</textarea>
                     <span>Tracking</span>
                     <input class="type-juice-slider" data-type-tracking type="range" min="-30" max="120" value="-10" />
                   </label>
-                  <label class="type-juice-control">
-                    <span>Leading</span>
-                    <input class="type-juice-slider" data-type-leading type="range" min="70" max="220" value="90" />
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Weight</span>
-                    <input class="type-juice-slider" data-type-weight type="range" min="100" max="900" step="100" value="600" />
-                  </label>
-                </div>
-
-                <div class="type-juice-controls-grid">
-                  <label class="type-juice-control">
-                    <span>System</span>
-                    <select class="type-juice-select" data-type-system>
-                      <option value="typeset" selected>Live Typeset</option>
-                      <option value="board">Type Board</option>
-                    </select>
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Align</span>
-                    <select class="type-juice-select" data-type-align>
-                      <option value="left">Left</option>
-                      <option value="center" selected>Center</option>
-                      <option value="right">Right</option>
-                    </select>
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Mode</span>
-                    <select class="type-juice-select" data-type-mode>
-                      <option value="poster" selected>Poster</option>
-                      <option value="stack">Stack</option>
-                    </select>
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Case</span>
-                    <select class="type-juice-select" data-type-case>
-                      <option value="as-typed" selected>As Typed</option>
-                      <option value="uppercase">Uppercase</option>
-                      <option value="lowercase">Lowercase</option>
-                    </select>
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Skew</span>
-                    <input class="type-juice-slider" data-type-skew type="range" min="-18" max="18" value="0" />
-                  </label>
-                  <button class="wide-button type-juice-reshuffle" type="button" data-type-reshuffle>Reshuffle Board</button>
                 </div>
               </div>
 
               <div class="type-juice-stage" data-type-stage>
-                <div class="type-juice-board" data-type-board aria-live="polite"></div>
                 <div class="type-juice-glyph-output" data-type-glyph-output aria-live="polite"></div>
-                <div class="type-juice-output" data-type-output aria-live="polite"></div>
-                <div class="type-juice-motion" data-type-motion aria-live="polite">
-                  <span class="type-juice-motion-word type-juice-motion-word-a" data-type-motion-a></span>
-                  <span class="type-juice-motion-word type-juice-motion-word-b" data-type-motion-b></span>
-                  <span class="type-juice-motion-word type-juice-motion-word-c" data-type-motion-c></span>
-                </div>
+                <div class="type-juice-output" data-type-output aria-live="polite" style="display: none;"></div>
               </div>
             </div>
           </section>
