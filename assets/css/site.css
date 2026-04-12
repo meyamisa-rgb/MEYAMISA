@@ -417,12 +417,6 @@ main {
   text-transform: none;
 }
 
-.human-title-placeholder {
-  margin: 0;
-  color: var(--muted);
-  text-align: center;
-}
-
 .human-typography-placeholder-copy {
   width: 100%;
   text-align: center;
@@ -530,18 +524,18 @@ main {
 }
 
 .human-textarchive-small-section {
-  width: min(100%, 980px);
+  width: min(100%, 1240px);
 }
 
 .human-textarchive-small-section .human-textarchive-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.6vw, 32px);
 }
 
 .human-textarchive-small-section .human-identity-card img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  background: transparent;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #fff;
 }
 
 .human-video-placeholder {
@@ -564,7 +558,7 @@ main {
 }
 
 .human-whatsapp-section {
-  width: min(100%, 980px);
+  width: min(100%, 1240px);
   justify-self: center;
   display: grid;
   gap: 14px;
@@ -581,16 +575,28 @@ main {
 
 .human-whatsapp-video-wrap .video-frame-local {
   border: 0;
-  background: #fff;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
-  max-height: 72vh;
+  background: transparent;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  max-height: min(80vh, 860px);
 }
 
 .human-whatsapp-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: clamp(20px, 2.6vw, 32px);
+}
+
+.human-whatsapp-grid .human-identity-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.human-whatsapp-note {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
 }
 
 @media (max-width: 760px) {
