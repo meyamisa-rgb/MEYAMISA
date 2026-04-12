@@ -377,32 +377,88 @@ main {
   gap: 10px;
 }
 
-.human-typography-intro {
+.human-typography-page main {
   display: grid;
-  gap: clamp(14px, 2vw, 20px);
-  justify-items: center;
+  gap: clamp(28px, 4vw, 54px);
 }
 
-.human-typography-intro-image-wrap {
+.human-typography-opening-image-wrap {
   margin: 0;
-  width: min(100%, 980px);
+  width: min(100%, 1200px);
 }
 
-.human-typography-intro-image {
+.human-typography-opening-image {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
+.human-typography-title-block {
+  width: min(100%, 820px);
+  justify-self: center;
+  display: grid;
+  gap: 10px;
+  text-align: center;
+}
+
+.human-typography-title-block h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
 .human-typography-placeholder-copy {
-  width: min(100%, 760px);
+  width: 100%;
   text-align: center;
 }
 
 .human-typography-placeholder-copy p {
   margin: 0;
   color: var(--muted);
+}
+
+.human-identity-section {
+  width: 100%;
+  display: grid;
+  gap: clamp(16px, 2.2vw, 24px);
+}
+
+.human-identity-section h2 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.human-identity-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 38px);
+  align-items: start;
+}
+
+.human-identity-card {
+  margin: 0;
+  background: #fff;
+}
+
+.human-identity-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .human-identity-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
 }
 
 .series-grid {
