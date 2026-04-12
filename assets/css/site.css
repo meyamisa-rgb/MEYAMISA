@@ -1373,47 +1373,45 @@ main {
 }
 
 .human-typography-page .project-section {
-  border-top: 1px solid var(--line);
-  padding-top: clamp(18px, 2.4vw, 30px);
+  border-top: 0;
+  padding-top: clamp(22px, 3vw, 40px);
+  margin-top: 0;
 }
 
 .human-typography-page .section-heading h2 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  margin-bottom: 4px;
 }
 
 .human-typography-page .human-body-text-section {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.025), transparent 38%);
-}
-
-.human-typography-page .human-text-section {
-  background: linear-gradient(180deg, rgba(20, 20, 20, 0.04), transparent 42%);
-}
-
-.human-typography-page .human-textbody-section {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent 40%);
-}
-
-.human-typography-page .human-gallery-grid {
-  column-count: 3;
-  column-gap: clamp(10px, 1.5vw, 16px);
-}
-
-.human-typography-page .human-gallery-grid .gallery-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 clamp(10px, 1.5vw, 16px);
-  break-inside: avoid;
-  border: 0;
   background: transparent;
 }
 
-.human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 1) {
-  transform: translateY(6px);
+.human-typography-page .human-text-section {
+  background: transparent;
 }
 
-.human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 3) {
-  transform: translateY(-6px);
+.human-typography-page .human-textbody-section {
+  background: transparent;
+}
+
+.human-typography-page .human-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 42px);
+  column-count: unset;
+  column-gap: 0;
+}
+
+.human-typography-page .human-gallery-grid .gallery-item {
+  display: block;
+  width: 100%;
+  margin: 0;
+  break-inside: auto;
+  border: 0;
+  background: transparent;
 }
 
 .human-typography-page .human-gallery-grid .gallery-media {
@@ -1427,11 +1425,27 @@ main {
   border: 0;
   background: transparent;
   padding: 0;
-  margin-bottom: clamp(14px, 2vw, 20px);
+  margin-bottom: clamp(22px, 3vw, 36px);
 }
 
 .human-typography-page .human-text-video-card .video-frame-local {
   border: 0;
+  background: #fff;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+
+.human-typography-page .detail-hero {
+  border-bottom: 0;
+  padding-bottom: clamp(12px, 1.8vw, 18px);
+  margin-bottom: clamp(8px, 1.2vw, 14px);
+}
+
+.human-typography-page .detail-hero h1 {
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
 }
 
 .knysh-books-page .detail-hero {
@@ -4281,7 +4295,7 @@ figcaption {
   }
 
   .human-typography-page .human-gallery-grid {
-    column-count: 2;
+    gap: clamp(16px, 2.4vw, 26px);
   }
 }
 
@@ -4291,12 +4305,8 @@ figcaption {
   }
 
   .human-typography-page .human-gallery-grid {
-    column-count: 1;
-  }
-
-  .human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 1),
-  .human-typography-page .human-gallery-grid .gallery-item:nth-child(4n + 3) {
-    transform: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .knysh-about-layout {
