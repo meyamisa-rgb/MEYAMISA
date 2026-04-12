@@ -597,30 +597,11 @@ main {
   color: var(--muted);
 }
 
-.human-a-stack-section {
-  width: min(100%, 1240px);
-  justify-self: center;
-}
-
-.human-a-stack {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(20px, 2.6vw, 32px);
-}
-
-.human-a-stack .human-identity-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: contain;
-  background: #fff;
-}
-
 @media (max-width: 760px) {
   .human-identity-gallery,
   .human-screen-grid,
   .human-textarchive-grid,
-  .human-whatsapp-grid,
-  .human-a-stack {
+  .human-whatsapp-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
