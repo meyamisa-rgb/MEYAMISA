@@ -382,9 +382,14 @@ main {
   gap: clamp(28px, 4vw, 54px);
 }
 
+.human-typography-opening {
+  width: 100%;
+}
+
 .human-typography-opening-image-wrap {
   margin: 0;
-  width: min(100%, 1200px);
+  width: 100%;
+  max-width: none;
 }
 
 .human-typography-opening-image {
