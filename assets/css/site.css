@@ -377,6 +377,34 @@ main {
   gap: 10px;
 }
 
+.human-typography-intro {
+  display: grid;
+  gap: clamp(14px, 2vw, 20px);
+  justify-items: center;
+}
+
+.human-typography-intro-image-wrap {
+  margin: 0;
+  width: min(100%, 980px);
+}
+
+.human-typography-intro-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.human-typography-placeholder-copy {
+  width: min(100%, 760px);
+  text-align: center;
+}
+
+.human-typography-placeholder-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .series-grid {
   column-width: clamp(240px, 26vw, 380px);
   column-gap: clamp(12px, 1.6vw, 18px);
