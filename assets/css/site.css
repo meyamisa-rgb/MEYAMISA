@@ -428,7 +428,7 @@ main {
 }
 
 .human-identity-section {
-  width: min(100%, 980px);
+  width: min(100%, 1240px);
   justify-self: center;
   display: grid;
   gap: clamp(22px, 3vw, 34px);
@@ -443,32 +443,25 @@ main {
   font-weight: 600;
 }
 
-.human-identity-group {
-  display: grid;
-  gap: clamp(14px, 2vw, 20px);
-}
-
-.human-identity-group h3 {
-  margin: 0;
-  text-align: center;
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .human-identity-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 38px);
+  gap: clamp(20px, 2.6vw, 32px);
   align-items: start;
 }
 
 .human-identity-card {
   margin: 0;
   background: #fff;
+}
+
+.human-identity-card .media-trigger {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  cursor: zoom-in;
 }
 
 .human-identity-card img {
