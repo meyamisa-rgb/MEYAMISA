@@ -417,6 +417,20 @@ main {
   text-transform: none;
 }
 
+.human-project-description {
+  width: min(100%, 980px);
+  justify-self: center;
+  display: grid;
+  gap: 12px;
+}
+
+.human-project-description p {
+  margin: 0;
+  color: #202020;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
 .human-typography-placeholder-copy {
   width: 100%;
   text-align: center;
@@ -472,7 +486,6 @@ main {
 }
 
 .human-screen-section,
-.human-black-section,
 .human-textarchive-section {
   width: min(100%, 1240px);
   justify-self: center;
@@ -481,7 +494,6 @@ main {
 }
 
 .human-screen-section h2,
-.human-black-section h2,
 .human-textarchive-section h2 {
   margin: 0;
   text-align: center;
@@ -492,7 +504,6 @@ main {
 }
 
 .human-screen-grid,
-.human-black-gallery,
 .human-textarchive-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -508,19 +519,6 @@ main {
   background: #fff;
   aspect-ratio: 16 / 10;
   object-fit: contain;
-}
-
-.human-black-gallery .human-identity-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: #fff;
-}
-
-.human-black-gallery {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 820px;
-  justify-self: center;
 }
 
 .human-textarchive-small-section {
@@ -599,12 +597,30 @@ main {
   color: var(--muted);
 }
 
+.human-a-stack-section {
+  width: min(100%, 1240px);
+  justify-self: center;
+}
+
+.human-a-stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(20px, 2.6vw, 32px);
+}
+
+.human-a-stack .human-identity-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #fff;
+}
+
 @media (max-width: 760px) {
   .human-identity-gallery,
   .human-screen-grid,
-  .human-black-gallery,
   .human-textarchive-grid,
-  .human-whatsapp-grid {
+  .human-whatsapp-grid,
+  .human-a-stack {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
