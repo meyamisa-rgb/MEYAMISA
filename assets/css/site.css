@@ -472,7 +472,8 @@ main {
 }
 
 .human-screen-section,
-.human-black-section {
+.human-black-section,
+.human-textarchive-section {
   width: min(100%, 1240px);
   justify-self: center;
   display: grid;
@@ -480,7 +481,8 @@ main {
 }
 
 .human-screen-section h2,
-.human-black-section h2 {
+.human-black-section h2,
+.human-textarchive-section h2 {
   margin: 0;
   text-align: center;
   font-family: var(--font-display);
@@ -490,7 +492,8 @@ main {
 }
 
 .human-screen-grid,
-.human-black-gallery {
+.human-black-gallery,
+.human-textarchive-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(20px, 2.6vw, 32px);
@@ -507,10 +510,37 @@ main {
   object-fit: contain;
 }
 
+.human-black-gallery .human-identity-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #fff;
+}
+
+.human-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--line-strong);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  background: #fbfbfb;
+}
+
+.human-text-placeholder {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+}
+
 @media (max-width: 760px) {
   .human-identity-gallery,
   .human-screen-grid,
-  .human-black-gallery {
+  .human-black-gallery,
+  .human-textarchive-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
