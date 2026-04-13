@@ -402,32 +402,34 @@ main {
 }
 
 .human-typography-title-block {
-  width: min(100%, 820px);
+  width: min(100%, 980px);
   justify-self: center;
   display: grid;
   gap: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .human-typography-title-block h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.55rem, 3.2vw, 2.5rem);
   letter-spacing: -0.02em;
   text-transform: none;
 }
 
 .human-project-description {
-  width: min(100%, 980px);
+  width: min(100%, 860px);
   justify-self: center;
   display: grid;
-  gap: 12px;
+  gap: 10px;
+  text-align: left;
 }
 
 .human-project-description p {
   margin: 0;
   color: #202020;
-  line-height: 1.65;
+  line-height: 1.58;
+  font-size: clamp(0.9rem, 1.35vw, 1rem);
   text-wrap: pretty;
 }
 
