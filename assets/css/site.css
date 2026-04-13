@@ -379,7 +379,11 @@ main {
 
 .human-typography-page main {
   display: grid;
-  gap: clamp(28px, 4vw, 54px);
+  gap: clamp(18px, 2.8vw, 30px);
+  justify-items: start;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding-top: clamp(16px, 3vw, 28px);
 }
 
 .human-typography-opening {
@@ -402,34 +406,36 @@ main {
 }
 
 .human-typography-title-block {
-  width: min(100%, 760px);
-  justify-self: center;
+  width: min(100%, 620px);
+  justify-self: start;
   display: grid;
-  gap: 10px;
+  gap: 6px;
   text-align: left;
 }
 
 .human-typography-title-block h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.8vw, 2rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+  letter-spacing: 0.02em;
+  font-weight: 600;
   text-transform: none;
 }
 
 .human-project-description {
-  width: min(100%, 760px);
-  justify-self: center;
+  width: min(100%, 620px);
+  justify-self: start;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   text-align: left;
 }
 
 .human-project-description p {
   margin: 0;
-  color: #202020;
-  line-height: 1.52;
-  font-size: clamp(0.86rem, 1.15vw, 0.96rem);
+  color: #111;
+  line-height: 1.48;
+  font-size: clamp(0.8rem, 1.05vw, 0.9rem);
+  max-width: 62ch;
   text-wrap: pretty;
 }
 
