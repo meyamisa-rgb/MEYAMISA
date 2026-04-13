@@ -660,61 +660,104 @@
     if (slider) {
       const slides = Array.from(slider.querySelectorAll("[data-human-slide]"));
       const counter = slider.querySelector("[data-human-slide-counter]");
+      const track = slider.querySelector("[data-human-slide-track]");
       const prevButton = slider.querySelector('[data-human-slide-action="prev"]');
       const nextButton = slider.querySelector('[data-human-slide-action="next"]');
-      let currentIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
-      let touchStartX = 0;
-      let touchActive = false;
+      let currentIndex = 0;
+      let pointerStartX = 0;
+      let pointerDeltaX = 0;
+      let dragging = false;
+      let autoTimer = null;
 
       const updateSlider = (nextIndex) => {
-        if (!slides.length) {
+        if (!slides.length || !track) {
           return;
         }
         currentIndex = (nextIndex + slides.length) % slides.length;
         slides.forEach((slide, index) => {
           slide.classList.toggle("is-active", index === currentIndex);
+          slide.setAttribute("aria-hidden", index === currentIndex ? "false" : "true");
         });
+        track.style.transform = `translate3d(${-100 * currentIndex}%, 0, 0)`;
         if (counter) {
           counter.textContent = `${currentIndex + 1} / ${slides.length}`;
         }
       };
 
+      const startAuto = () => {
+        window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => {
+          updateSlider(currentIndex + 1);
+        }, 4200);
+      };
+
+      const restartAuto = () => {
+        startAuto();
+      };
+
       prevButton?.addEventListener("click", () => {
         updateSlider(currentIndex - 1);
+        restartAuto();
       });
 
       nextButton?.addEventListener("click", () => {
         updateSlider(currentIndex + 1);
+        restartAuto();
       });
 
-      slider.addEventListener("touchstart", (event) => {
-        if (!event.touches.length) {
+      slider.addEventListener("pointerdown", (event) => {
+        if (!(event.target instanceof HTMLElement) || !track) {
           return;
         }
-        touchStartX = event.touches[0].clientX;
-        touchActive = true;
-      }, { passive: true });
+        if (event.target.closest("[data-human-slide-action]")) {
+          return;
+        }
+        pointerStartX = event.clientX;
+        pointerDeltaX = 0;
+        dragging = true;
+        slider.classList.add("is-dragging");
+      });
 
-      slider.addEventListener("touchend", (event) => {
-        if (!touchActive || !event.changedTouches.length) {
+      slider.addEventListener("pointermove", (event) => {
+        if (!dragging || !track) {
           return;
         }
-        const deltaX = event.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(deltaX) > 44) {
-          updateSlider(currentIndex + (deltaX < 0 ? 1 : -1));
+        pointerDeltaX = event.clientX - pointerStartX;
+        const width = slider.clientWidth || 1;
+        const offsetPercent = (pointerDeltaX / width) * 100;
+        track.style.transform = `translate3d(calc(${-100 * currentIndex}% + ${offsetPercent}%), 0, 0)`;
+      });
+
+      const finishDrag = () => {
+        if (!dragging || !track) {
+          return;
         }
-        touchActive = false;
-      }, { passive: true });
+        slider.classList.remove("is-dragging");
+        dragging = false;
+        if (Math.abs(pointerDeltaX) > 46) {
+          updateSlider(currentIndex + (pointerDeltaX < 0 ? 1 : -1));
+        } else {
+          updateSlider(currentIndex);
+        }
+        restartAuto();
+      };
+
+      slider.addEventListener("pointerup", finishDrag);
+      slider.addEventListener("pointercancel", finishDrag);
+      slider.addEventListener("pointerleave", finishDrag);
 
       slider.addEventListener("keydown", (event) => {
         if (event.key === "ArrowLeft") {
           updateSlider(currentIndex - 1);
+          restartAuto();
         } else if (event.key === "ArrowRight") {
           updateSlider(currentIndex + 1);
+          restartAuto();
         }
       });
 
       updateSlider(currentIndex);
+      startAuto();
     }
   }
 
