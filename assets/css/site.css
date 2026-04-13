@@ -385,38 +385,74 @@ main {
   padding-top: clamp(10px, 2vw, 18px);
 }
 
-.human-reference-hero {
+.human-touch-slideshow {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.05fr 2.1fr 0.46fr;
-  gap: clamp(10px, 1.2vw, 16px);
-  align-items: stretch;
-}
-
-.human-hero-panel {
-  margin: 0;
+  position: relative;
+  min-height: clamp(320px, 46vw, 680px);
   background: #ececec;
   overflow: hidden;
-  min-height: clamp(320px, 46vw, 680px);
 }
 
-.human-hero-panel img {
-  display: block;
+.human-slide-track {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
-.human-hero-panel-left img {
-  object-position: 72% center;
+.human-slide {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
 }
 
-.human-hero-panel-center img {
-  object-position: center 44%;
+.human-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.human-hero-panel-right img {
-  object-position: center;
+.human-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.human-slide-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  z-index: 3;
+  border: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.human-slide-zone:focus-visible {
+  outline: none;
+}
+
+.human-slide-zone-left {
+  left: 0;
+}
+
+.human-slide-zone-right {
+  right: 0;
+}
+
+.human-slide-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #111;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 2px 6px;
 }
 
 .human-index-divider {
@@ -424,7 +460,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-top: 1px solid var(--line-strong);
+  border-top: 0;
   padding-top: clamp(8px, 1.2vw, 12px);
   font-size: clamp(0.95rem, 1.25vw, 1.12rem);
   letter-spacing: 0.01em;
@@ -648,11 +684,7 @@ main {
 }
 
 @media (max-width: 760px) {
-  .human-reference-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .human-hero-panel {
+  .human-touch-slideshow {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }

@@ -655,6 +655,69 @@
     }
   }
 
+  if (pageKey === "human-typography") {
+    const slider = document.querySelector("[data-human-slider]");
+    if (slider) {
+      const slides = Array.from(slider.querySelectorAll("[data-human-slide]"));
+      const counter = slider.querySelector("[data-human-slide-counter]");
+      const prevButton = slider.querySelector('[data-human-slide-action="prev"]');
+      const nextButton = slider.querySelector('[data-human-slide-action="next"]');
+      let currentIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+      let touchStartX = 0;
+      let touchActive = false;
+
+      const updateSlider = (nextIndex) => {
+        if (!slides.length) {
+          return;
+        }
+        currentIndex = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("is-active", index === currentIndex);
+        });
+        if (counter) {
+          counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+        }
+      };
+
+      prevButton?.addEventListener("click", () => {
+        updateSlider(currentIndex - 1);
+      });
+
+      nextButton?.addEventListener("click", () => {
+        updateSlider(currentIndex + 1);
+      });
+
+      slider.addEventListener("touchstart", (event) => {
+        if (!event.touches.length) {
+          return;
+        }
+        touchStartX = event.touches[0].clientX;
+        touchActive = true;
+      }, { passive: true });
+
+      slider.addEventListener("touchend", (event) => {
+        if (!touchActive || !event.changedTouches.length) {
+          return;
+        }
+        const deltaX = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(deltaX) > 44) {
+          updateSlider(currentIndex + (deltaX < 0 ? 1 : -1));
+        }
+        touchActive = false;
+      }, { passive: true });
+
+      slider.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          updateSlider(currentIndex - 1);
+        } else if (event.key === "ArrowRight") {
+          updateSlider(currentIndex + 1);
+        }
+      });
+
+      updateSlider(currentIndex);
+    }
+  }
+
   if (pageKey === "amygdala-body-as-archive" || pageKey === "amygdala-body-as-archive-v2") {
     const createImageCard = (item) => `
       <article class="media-card${item.cardClass ? ` ${item.cardClass}` : ""}">
