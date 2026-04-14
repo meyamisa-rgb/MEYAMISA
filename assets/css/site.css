@@ -380,15 +380,16 @@ main {
 .human-typography-page main {
   display: grid;
   gap: clamp(24px, 3.4vw, 40px);
-  width: min(100%, 1480px);
+  width: min(100%, 1280px);
   margin: 0 auto;
   padding-top: clamp(10px, 2vw, 18px);
 }
 
 .human-touch-slideshow {
-  width: 100%;
+  width: min(100%, 1180px);
+  justify-self: center;
   position: relative;
-  min-height: clamp(250px, 38vw, 520px);
+  min-height: clamp(200px, 30vw, 430px);
   background: #ececec;
   overflow: hidden;
   touch-action: pan-y;
@@ -485,6 +486,13 @@ main {
   margin: 0;
 }
 
+.human-index-meta a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  word-break: break-word;
+}
+
 .human-meta-title {
   font-size: clamp(1.05rem, 1.7vw, 1.45rem);
   line-height: 1.04;
@@ -515,6 +523,26 @@ main {
   line-height: 1.32;
   max-width: 68ch;
   text-wrap: pretty;
+}
+
+.human-followup-videos {
+  width: min(100%, 860px);
+  justify-self: center;
+  display: grid;
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.human-followup-video-card {
+  margin: 0;
+}
+
+.human-followup-video-card .video-frame-local {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
+  object-fit: contain;
+  border: 0;
+  background: #ececec;
 }
 
 .human-typography-placeholder-copy {
