@@ -388,7 +388,7 @@ main {
 .human-touch-slideshow {
   width: 100%;
   position: relative;
-  min-height: clamp(320px, 46vw, 680px);
+  min-height: clamp(250px, 38vw, 520px);
   background: #ececec;
   overflow: hidden;
   touch-action: pan-y;
@@ -486,7 +486,7 @@ main {
 }
 
 .human-meta-title {
-  font-size: clamp(1.28rem, 2.2vw, 2rem);
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
   line-height: 1.04;
   letter-spacing: -0.01em;
 }
@@ -503,7 +503,7 @@ main {
 
 .human-index-text h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-size: clamp(1.45rem, 2.35vw, 2.1rem);
   line-height: 1.02;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -511,8 +511,8 @@ main {
 
 .human-index-text p {
   margin: 0;
-  font-size: clamp(0.95rem, 1.24vw, 1.06rem);
-  line-height: 1.34;
+  font-size: clamp(0.86rem, 1.02vw, 0.95rem);
+  line-height: 1.32;
   max-width: 68ch;
   text-wrap: pretty;
 }
@@ -1161,24 +1161,12 @@ main {
 }
 
 .experimental-design-page .project-card-link {
-  grid-template-columns: minmax(170px, 220px) minmax(0, 1fr);
-  gap: clamp(14px, 1.7vw, 20px);
+  grid-template-columns: 1fr;
   color: inherit;
-  align-items: stretch;
 }
 
 .experimental-design-page .project-card-media {
-  display: block;
-  min-height: 0;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #efefef;
-}
-
-.experimental-design-page .project-card-media .project-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: none;
 }
 
 .experimental-design-page .project-card-body {
