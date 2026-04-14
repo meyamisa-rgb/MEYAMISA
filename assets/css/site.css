@@ -386,10 +386,10 @@ main {
 }
 
 .human-touch-slideshow {
-  width: min(100%, 1180px);
+  width: min(100%, 980px);
   justify-self: center;
   position: relative;
-  min-height: clamp(200px, 30vw, 430px);
+  min-height: clamp(170px, 24vw, 340px);
   background: #ececec;
   overflow: hidden;
   touch-action: pan-y;
@@ -526,10 +526,13 @@ main {
 }
 
 .human-followup-videos {
-  width: min(100%, 860px);
+  width: min(100%, 980px);
   justify-self: center;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 22px);
+  border-top: 1px solid var(--line-strong);
+  padding-top: clamp(14px, 2vw, 20px);
 }
 
 .human-followup-video-card {
@@ -539,7 +542,7 @@ main {
 .human-followup-video-card .video-frame-local {
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 420px;
+  max-height: 280px;
   object-fit: contain;
   border: 0;
   background: #ececec;
@@ -737,6 +740,10 @@ main {
   .human-whatsapp-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
+  }
+
+  .human-followup-videos {
+    grid-template-columns: 1fr;
   }
 
   .human-textarchive-small-section .human-textarchive-grid {
