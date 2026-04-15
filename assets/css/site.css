@@ -542,10 +542,10 @@ main {
 .human-followup-video-card .video-frame-local {
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 280px;
+  max-height: 360px;
   object-fit: contain;
   border: 0;
-  background: #ececec;
+  background: #fff;
 }
 
 .human-typography-placeholder-copy {
@@ -3322,6 +3322,13 @@ main {
   min-height: 60px;
   border-top: 1px solid var(--line);
   padding: 6px 8px;
+  width: 100%;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  background: var(--white);
+  text-align: left;
+  cursor: pointer;
 }
 
 .exhibition-title-row:first-child {
@@ -3355,6 +3362,20 @@ main {
   text-align: center;
   font-size: 1.25rem;
   color: var(--black);
+}
+
+.exhibition-title-row.is-active {
+  background: var(--black);
+  color: var(--white);
+}
+
+.exhibition-title-row.is-active .exhibition-title-index,
+.exhibition-title-row.is-active .exhibition-title-arrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.exhibition-title-row.is-active img {
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .exhibition-placeholder-panel {
