@@ -3,100 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Mey Amisa</title>
-    <meta
-      name="description"
-      content="About Mey Amisa, interdisciplinary experimental designer and visual artist."
-    />
+    <title>About me | Mey Amisa</title>
+    <meta name="description" content="About Mey Amisa." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/css/site-v2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/studio.css" />
   </head>
   <body>
     <div class="site-shell">
       <div class="site-frame">
         <header class="site-header">
-          <div class="brand-row">
-            <a class="brand" href="open.html">Mey Amisa</a>
+          <div class="header-inner">
+            <a class="brand" href="../index.html">Mey Amisa</a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Primary">
+              <a href="about.html" data-page-link>About me</a>
+              <a href="experimental-design.html" data-page-link>Experimental design</a>
+              <a href="exhibition.html" data-page-link>Exhibitions</a>
+              <a href="projects.html" data-page-link>Projects</a>
+              <a href="words-on-ink.html" data-page-link>Words on ink</a>
+              <a href="contact.html" data-page-link>Contact</a>
+            </nav>
           </div>
-          <nav class="site-nav" aria-label="Primary" id="site-nav">
-            <a href="about.html" data-page-link>About</a>
-            <a href="experimental-design.html" data-page-link>Experimental Design</a>
-            <a href="exhibition.html" data-page-link>Exhibitions</a>
-            <a href="../index.html" data-page-link>Projects</a>
-            <a href="contact.html" data-page-link>Contact</a>
-            <a class="mobile-only-nav-link mobile-legal-first" href="impressum.html" data-page-link>Impressum</a>
-            <a class="mobile-only-nav-link" href="datenschutz.html" data-page-link>Datenschutz</a>
-          </nav>
         </header>
 
         <main>
-          <section class="about-hero reveal">
-            <figure class="about-portrait">
-              <img src="../assets/images/mey-amisa-about.jpeg" alt="Portrait of Mey Amisa" loading="lazy" />
-              <figcaption>
-                "Art tells the truth and lies and between them we begin to understand."
-              </figcaption>
-            </figure>
-            <div class="about-copy">
-              <p class="eyebrow">About</p>
-              <h1>Mey Amisa</h1>
-              <p>
-                Cuban-German interdisciplinary designer and artist based in Germany.
-                Her practice combines experimental typography, visual storytelling,
-                filmmaking, performance, and installation.
-              </p>
-              <p>
-                Her work explores how movement, language, and emotion can exist as one system.
-                Through exhibitions in Germany, Japan, and South Korea, she develops visual
-                worlds that connect body and text.
-              </p>
-            </div>
+          <section class="page-intro">
+            <p class="eyebrow">About me</p>
+            <h1>Body, text, and emotional visual language.</h1>
+            <p>
+              This page introduces my artistic direction, personal practice, and the language
+              systems I work with.
+            </p>
           </section>
 
-          <section class="about-grid reveal" aria-label="About details">
-            <article class="about-panel">
-              <h2>Languages</h2>
-              <p>German (Native), Spanish (Native), English (C1), Japanese (N4-N3)</p>
+          <section class="about-layout">
+            <article class="about-text-block">
+              <h2>Artist note</h2>
+              <p class="cipher-text" data-cipher-text="I work between movement and typography.\nMy projects begin with emotion and instinct.\nThen they become systems, images, and exhibitions.\nThis is placeholder text for your final artist statement."></p>
             </article>
 
-            <article class="about-panel">
-              <h2>Focus</h2>
-              <p>Experimental typography, exhibition design, visual writing systems, and body-led image research.</p>
+            <article class="about-image-block">
+              <h2>Portrait</h2>
+              <img src="../assets/images/mey-amisa-about.jpeg" alt="Portrait of Mey Amisa" />
             </article>
+          </section>
 
-            <article class="about-panel">
-              <h2>Education</h2>
-              <p>Peter Behrens School of Arts, University of Applied Sciences Dusseldorf (B.A. Communication Design, 2020-2026)</p>
-              <p>Doshisha Women's College, Kyoto (Exchange Program, 2024)</p>
+          <section class="language-grid" aria-label="Languages">
+            <article>
+              <h2>German</h2>
+              <p>Native</p>
             </article>
-
-            <article class="about-panel">
-              <h2>Selected Exhibitions</h2>
-              <p>Raststätte Kulturraum Aachen (2025), Geoje International Seomkkot Art Show (2025), Studio Kan Kyoto (2024), PUNIO Tokyo (2023-2024)</p>
+            <article>
+              <h2>Spanish</h2>
+              <p>Native</p>
+            </article>
+            <article>
+              <h2>English</h2>
+              <p>C2</p>
+            </article>
+            <article>
+              <h2>Japanese</h2>
+              <p>N4-N3</p>
             </article>
           </section>
         </main>
 
         <footer class="site-footer">
-          <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
+          <span>meyamisa02@gmail.com</span>
           <div class="footer-links">
-            <a href="https://www.instagram.com/mey.amisa/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://www.behance.net/meyamisa1#" target="_blank" rel="noreferrer">Behance</a>
-            <a class="legal-link" href="impressum.html">Impressum</a>
-            <a class="legal-link" href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <a class="floating-back" href="../index.html" data-back-link>Back</a>
+    <a class="back-link" href="../index.html">Back</a>
 
-    <script src="../assets/js/site.js"></script>
+    <script src="../assets/js/studio.js"></script>
   </body>
 </html>
