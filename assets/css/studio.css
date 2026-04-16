@@ -242,6 +242,8 @@ main {
 
 .about-minimal {
   display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.9fr);
+  align-items: start;
   gap: clamp(22px, 3.4vw, 46px);
 }
 
@@ -254,13 +256,13 @@ main {
 }
 
 .about-text-visual img {
-  width: 100%;
+  width: min(100%, 920px);
   height: auto;
   object-fit: contain;
 }
 
 .about-photo-visual {
-  max-width: 520px;
+  max-width: 460px;
 }
 
 .about-photo-visual img {
@@ -501,6 +503,10 @@ main {
   .hero-opening,
   .about-layout,
   .exhibition-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-minimal {
     grid-template-columns: 1fr;
   }
 
