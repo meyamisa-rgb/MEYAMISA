@@ -3,121 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Type juice- mono | Mey Amisa</title>
-    <meta
-      name="description"
-      content="Type juice- mono, Dysfunctionfunction 2023 by Mey Amisa."
-    />
+    <title>Type Juice Mono</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/css/site-v2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/studio.css" />
   </head>
-  <body class="type-juice-page">
+  <body>
     <div class="site-shell">
       <div class="site-frame">
         <header class="site-header">
-          <div class="brand-row">
-            <a class="brand" href="open.html">Mey Amisa</a>
+          <div class="header-inner">
+            <a class="brand" href="../index.html">Mey Amisa</a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Primary">
+              <a href="about.html" data-page-link>About me</a>
+              <a href="experimental-design.html" data-page-link>Experimental design</a>
+              <a href="exhibition.html" data-page-link>Exhibitions</a>
+              <a href="projects.html" data-page-link>Projects</a>
+              <a href="words-on-ink.html" data-page-link>Words on ink</a>
+              <a href="contact.html" data-page-link>Contact</a>
+            </nav>
           </div>
-          <nav class="site-nav" aria-label="Primary" id="site-nav">
-            <a href="about.html" data-page-link>About Me</a>
-            <a href="experimental-design.html" data-page-link>Experimental Design</a>
-            <a href="exhibition.html" data-page-link>Exhibitions</a>
-            <a href="../index.html" data-page-link>Projects</a>
-            <a href="contact.html" data-page-link>Contact</a>
-            <a class="mobile-only-nav-link mobile-legal-first" href="impressum.html" data-page-link>Impressum</a>
-            <a class="mobile-only-nav-link" href="datenschutz.html" data-page-link>Datenschutz</a>
-          </nav>
         </header>
 
         <main>
-          <section class="detail-hero reveal">
-            <div>
-              <p class="eyebrow">Dysfunctionfunction 2023</p>
-              <h1>Type juice- mono</h1>
-            </div>
-            <div class="detail-meta">
-              <p><strong>Description:</strong> Just type</p>
-            </div>
+          <section class="page-intro">
+            <p class="eyebrow">Project 03</p>
+            <h1>Type Juice Mono</h1>
+            <p>New placeholder-ready page structure for interactive type systems.</p>
           </section>
-
-          <section class="project-section reveal">
-            <div class="section-heading">
-              <h2>Type</h2>
-            </div>
-            <div class="type-juice-console type-juice-console-advanced" data-type-tester data-type-glyph-dir="../assets/images/type-juice/udetype" data-type-glyph-count="26">
-              <div class="type-juice-panel">
-                <textarea
-                  id="type-juice-input"
-                  class="type-juice-input type-juice-input-hidden"
-                  data-type-input
-                  placeholder="Type..."
-                  rows="1"
-                >UDTYPE SYSTEM
-TYPE JUICE</textarea>
-
-                <p class="type-juice-help" data-type-font-name>Using UDType glyph font system</p>
-
-                <div class="type-juice-controls-grid">
-                  <label class="type-juice-control">
-                    <span>Size</span>
-                    <input class="type-juice-slider" data-type-scale type="range" min="36" max="280" value="140" />
-                  </label>
-                  <label class="type-juice-control">
-                    <span>Tracking</span>
-                    <input class="type-juice-slider" data-type-tracking type="range" min="-30" max="120" value="-10" />
-                  </label>
-                </div>
-              </div>
-
-              <div class="type-juice-stage type-juice-stage-canvas" data-type-stage tabindex="0" role="textbox" aria-label="Click and type using UDType glyphs">
-                <p class="type-juice-click-hint" data-type-click-hint>Click anywhere and type</p>
-                <div class="type-juice-glyph-output" data-type-glyph-output aria-live="polite"></div>
-                <div class="type-juice-output" data-type-output aria-live="polite" style="display: none;"></div>
-              </div>
-            </div>
-          </section>
-
-          <section class="project-section reveal">
-            <div class="section-heading">
-              <h2>Glyph System</h2>
-              <p>Your alphabet sheet anchors the visual logic behind the live tester.</p>
-            </div>
-            <div class="media-wall">
-              <figure class="gallery-item">
-                <button class="media-trigger" type="button" data-lightbox-trigger aria-label="Open Type juice glyph system">
-                  <img
-                    class="gallery-media"
-                    src="../assets/images/type-juice-glyph-grid.jpeg"
-                    alt="Type juice glyph system reference"
-                    loading="lazy"
-                  />
-                </button>
-                <figcaption>Custom glyph grid</figcaption>
-              </figure>
-            </div>
+          <section class="content-panel">
+            <img src="../assets/images/type-juice-glyph-grid.jpeg" alt="Type Juice placeholder visual" />
+            <p>Placeholder text: live type mechanics, visitor interaction, and motion behavior.</p>
           </section>
         </main>
 
         <footer class="site-footer">
-          <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
+          <span>meyamisa02@gmail.com</span>
           <div class="footer-links">
-            <a href="https://www.instagram.com/mey.amisa/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://www.behance.net/meyamisa1#" target="_blank" rel="noreferrer">Behance</a>
-            <a class="legal-link" href="impressum.html">Impressum</a>
-            <a class="legal-link" href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
           </div>
         </footer>
       </div>
     </div>
-
-    <a class="floating-back" href="experimental-design.html" data-back-link>Back</a>
-
-    <script src="../assets/js/site.js"></script>
+    <a class="back-link" href="experimental-design.html">Back</a>
+    <script src="../assets/js/studio.js"></script>
   </body>
 </html>
