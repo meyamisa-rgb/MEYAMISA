@@ -3,49 +3,266 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mey Amisa — Opening</title>
-    <meta name="description" content="Opening page for Mey Amisa portfolio." />
+    <title>Mey Amisa</title>
+    <meta
+      name="description"
+      content="Portfolio index with grouped image series and dedicated subpages."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/studio.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
   </head>
-  <body class="opening-page">
+  <body>
     <div class="site-shell">
       <div class="site-frame">
         <header class="site-header">
-          <div class="header-inner">
-            <a class="brand" href="index.html">Mey Amisa</a>
+          <div class="brand-row">
+            <a class="brand" href="pages/open.html">Mey Amisa</a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
-            <nav class="site-nav" id="site-nav" aria-label="Primary">
-              <a href="pages/about.html" data-page-link>About me</a>
-              <a href="pages/experimental-design.html" data-page-link>Experimental design</a>
-              <a href="pages/exhibition.html" data-page-link>Exhibitions</a>
-              <a href="pages/projects.html" data-page-link>Projects</a>
-              <a href="pages/words-on-ink.html" data-page-link>Words on ink</a>
-              <a href="pages/contact.html" data-page-link>Contact</a>
-            </nav>
           </div>
+          <nav class="site-nav" aria-label="Primary" id="site-nav">
+            <a href="pages/about.html" data-page-link>About Me</a>
+            <a href="pages/experimental-design.html" data-page-link>Experimental Design</a>
+            <a href="pages/exhibition.html" data-page-link>Exhibitions</a>
+            <a href="index.html" data-page-link>Projects</a>
+            <a href="pages/contact.html" data-page-link>Contact</a>
+            <a class="mobile-only-nav-link mobile-legal-first" href="pages/impressum.html" data-page-link>Impressum</a>
+            <a class="mobile-only-nav-link" href="pages/datenschutz.html" data-page-link>Datenschutz</a>
+          </nav>
         </header>
 
         <main>
-          <section class="hero-opening opening-stage" aria-label="Opening">
-            <figure class="opening-artwork">
-              <img src="assets/images/opening/artstorytelling023.png" alt="Experimental design opening artwork" />
-            </figure>
+          <section class="landing-canvas reveal" aria-label="Landing canvas">
+            <div class="canvas-title">
+              <p class="eyebrow">Mey Amisa</p>
+              <h1>Projects</h1>
+              <p>
+                A tighter project overview focused on experimental design, exhibitions, and
+                performance work.
+              </p>
+              <div class="canvas-actions">
+                <a class="mono-button" href="pages/experimental-design.html">Open Experimental Design</a>
+                <a class="mono-link" href="#series-index">All Projects</a>
+              </div>
+            </div>
+            <div class="canvas-artworks">
+              <img
+                class="floating-shot shot-a"
+                src="assets/images/ACC._MA-EXP-IMG-003.jpg"
+                alt="Exhibition detail from archive"
+                loading="lazy"
+              />
+              <img
+                class="floating-shot shot-b"
+                src="assets/images/ACC._MA-EXP-IMG-007.jpg"
+                alt="Expo detail from archive"
+                loading="lazy"
+              />
+              <img
+                class="floating-shot shot-c"
+                src="assets/images/ACC._MA-PRF-IMG-003.jpg"
+                alt="Tanztruppe detail from archive"
+                loading="lazy"
+              />
+              <img
+                class="floating-shot shot-d"
+                src="assets/images/ACC._MA-XTP-IMG-002.jpg"
+                alt="Experimental typography detail"
+                loading="lazy"
+              />
+              <img
+                class="floating-shot shot-e"
+                src="assets/images/amygdala-main.jpg"
+                alt="Experimental design detail"
+                loading="lazy"
+              />
+              <img
+                class="floating-shot shot-f"
+                src="assets/images/ACC._MA-XTP-IMG-004.jpg"
+                alt="Type studies detail from archive"
+                loading="lazy"
+              />
+            </div>
+          </section>
+
+          <section id="series-index" class="series-grid" aria-label="Series index">
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/maverick-froggery.html">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/projects/maverick-froggery/environment/01-otara-pano-wide.jpg"
+                    alt="Maverick Froggery project cover"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Maverick Froggery</h3>
+                    <p class="series-overlay-subtitle">
+                      Worldbuilding project with environment design, story sections, and credits.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Maverick Froggery</h2>
+                  <p>Worldbuilding project with environment design, story sections, and credits.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/knysh-ksenya-and-mey-amisa.html#reflection-exhibition">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/projects/reflection-exhibition/reflection-01.jpeg"
+                    alt="Reflection Exhibition project cover"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Reflection Exhibition</h3>
+                    <p class="series-overlay-subtitle">
+                      Books and exhibition archive moments from the Reflection duo presentation.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Reflection Exhibition</h2>
+                  <p>Books and exhibition archive moments from the Reflection duo presentation.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/knysh-ksenya-and-mey-amisa.html#memories">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/projects/memories-of-the-wind/book-cover.png"
+                    alt="Memories of the Wind project cover"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Memories of the Wind</h3>
+                    <p class="series-overlay-subtitle">
+                      Book project from the Knysh Ksenya and Mey Amisa collaboration.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Memories of the Wind</h2>
+                  <p>Book project from the Knysh Ksenya and Mey Amisa collaboration.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/knysh-ksenya-and-mey-amisa.html">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/projects/knysh-ksenya-and-mey-amisa/collaboration-illustration.png"
+                    alt="Knysh Ksenya and Mey Amisa collaboration artwork"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Knysh Ksenya and Mey Amisa</h3>
+                    <p class="series-overlay-subtitle">
+                      Collaborative book projects and watercolor narratives.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Knysh Ksenya and Mey Amisa</h2>
+                  <p>Collaborative book projects and watercolor narratives.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/exhibition.html">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/ACC._MA-EXP-IMG-012.jpg"
+                    alt="Expo cover accession ACC. MA-XTP-IMG-004"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Exhibitions</h3>
+                    <p class="series-overlay-subtitle">
+                      Exhibition documentation and installation perspectives.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Exhibitions</h2>
+                  <p>Exhibition documentation and installation perspectives.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/performance.html">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/ACC._MA-PRF-IMG-005.jpg"
+                    alt="Performance cover accession ACC. MA-PRF-IMG-005"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Performance</h3>
+                    <p class="series-overlay-subtitle">Group choreography and rehearsal observations.</p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Performance</h2>
+                  <p>Group choreography and rehearsal observations.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="series-card reveal">
+              <a class="series-link" href="pages/experimental-design.html">
+                <div class="series-media">
+                  <img
+                    class="series-cover"
+                    src="assets/images/amygdala-main.jpg"
+                    alt="Experimental Design cover showing Amygdala project preview"
+                    loading="lazy"
+                  />
+                  <div class="series-overlay" aria-hidden="true">
+                    <h3 class="series-overlay-title">Experimental Design</h3>
+                    <p class="series-overlay-subtitle">
+                      Thesis, gallery, live type, and human typography projects.
+                    </p>
+                  </div>
+                </div>
+                <div class="series-body">
+                  <h2>Experimental Design</h2>
+                  <p>Thesis, gallery, live type, and human typography projects.</p>
+                </div>
+              </a>
+            </article>
           </section>
         </main>
 
         <footer class="site-footer">
-          <span>meyamisa02@gmail.com</span>
+          <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
           <div class="footer-links">
-            <a href="pages/impressum.html">Impressum</a>
-            <a href="pages/datenschutz.html">Datenschutz</a>
+            <a href="https://www.instagram.com/mey.amisa/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.behance.net/meyamisa1#" target="_blank" rel="noreferrer">Behance</a>
+            <a class="legal-link" href="pages/impressum.html">Impressum</a>
+            <a class="legal-link" href="pages/datenschutz.html">Datenschutz</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <script src="assets/js/studio.js"></script>
+    <script src="assets/js/site.js"></script>
   </body>
 </html>

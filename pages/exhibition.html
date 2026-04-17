@@ -4,94 +4,498 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exhibitions | Mey Amisa</title>
-    <meta name="description" content="Exhibition archive by Mey Amisa." />
+    <meta name="description" content="Exhibition index and documentation from the Mey Amisa archive." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/studio.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/site.css?v=2026-04-15-exh-1" />
   </head>
-  <body>
+  <body class="exhibition-page">
     <div class="site-shell">
       <div class="site-frame">
         <header class="site-header">
-          <div class="header-inner">
-            <a class="brand" href="../index.html">Mey Amisa</a>
+          <div class="brand-row">
+            <a class="brand" href="open.html">Mey Amisa</a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
-            <nav class="site-nav" id="site-nav" aria-label="Primary">
-              <a href="about.html" data-page-link>About me</a>
-              <a href="experimental-design.html" data-page-link>Experimental design</a>
-              <a href="exhibition.html" data-page-link>Exhibitions</a>
-              <a href="projects.html" data-page-link>Projects</a>
-              <a href="words-on-ink.html" data-page-link>Words on ink</a>
-              <a href="contact.html" data-page-link>Contact</a>
-            </nav>
           </div>
+          <nav class="site-nav" aria-label="Primary" id="site-nav">
+            <a href="about.html" data-page-link>About Me</a>
+            <a href="experimental-design.html" data-page-link>Experimental Design</a>
+            <a href="exhibition.html" data-page-link>Exhibitions</a>
+            <a href="../index.html" data-page-link>Projects</a>
+            <a href="contact.html" data-page-link>Contact</a>
+            <a class="mobile-only-nav-link mobile-legal-first" href="impressum.html" data-page-link>Impressum</a>
+            <a class="mobile-only-nav-link" href="datenschutz.html" data-page-link>Datenschutz</a>
+          </nav>
         </header>
 
         <main>
-          <section class="page-intro exhibition-selection-intro">
-            <p class="eyebrow">Exhibitions</p>
-            <h1>Exhibition project selection</h1>
-            <p>
-              Four projects. One sentence each. Select a box to enter the full exhibition page.
-            </p>
+          <section class="detail-hero exhibition-hero-minimal reveal">
+            <div>
+              <p class="eyebrow">EXHIBITIONS 2023 - 2025</p>
+            </div>
           </section>
 
-          <section class="exhibition-selection-grid" aria-label="Exhibition project selection">
-            <a class="exhibition-card-link" href="exhibition-deviations.html">
-              <article class="exhibition-selection-card">
-                <figure>
-                  <img src="../assets/images/deviations/studio-kan/sk-intro-portrait.png" alt="Deviations exhibition preview" />
-                </figure>
-                <h2>Deviations</h2>
-                <p>Alternative language systems through body traces, asemic writing, and installation.</p>
-              </article>
-            </a>
+          <section class="exhibition-index-shell reveal" aria-label="Exhibition index">
+            <nav class="exhibition-title-list" aria-label="Exhibition sections">
+              <button class="exhibition-title-row is-active" type="button" data-exhibition-target="studio-kan">
+                <span class="exhibition-title-index">01</span>
+                <h4>Studio Kan</h4>
+                <img src="../assets/images/deviations/studio-kan/sk-main-01.png" alt="Studio Kan preview" loading="lazy" />
+                <span class="exhibition-title-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="exhibition-title-row" type="button" data-exhibition-target="punio-gallery">
+                <span class="exhibition-title-index">02</span>
+                <h4>Punio Gallery</h4>
+                <img src="../assets/images/exhibition/punio/punio-poster.png" alt="Punio Gallery preview" loading="lazy" />
+                <span class="exhibition-title-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="exhibition-title-row" type="button" data-exhibition-target="geoje-gallery">
+                <span class="exhibition-title-index">03</span>
+                <h4>Gallery Geoje</h4>
+                <img src="../assets/images/exhibition/geoje/titles/title-seomkot.png" alt="Gallery Geoje preview" loading="lazy" />
+                <span class="exhibition-title-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="exhibition-title-row" type="button" data-exhibition-target="raststaette-aachen">
+                <span class="exhibition-title-index">04</span>
+                <h4>Raststatte Aachen</h4>
+                <img src="../assets/images/exhibition/raststaette/installation/press-01.png" alt="Raststatte Aachen preview" loading="lazy" />
+                <span class="exhibition-title-arrow" aria-hidden="true">→</span>
+              </button>
+            </nav>
 
-            <a class="exhibition-card-link" href="exhibition-punio.html">
-              <article class="exhibition-selection-card">
-                <figure>
-                  <img src="../assets/images/exhibition/punio/installation/install-001.png" alt="Punio exhibition preview" />
-                </figure>
-                <h2>PUNIO Gallery — TSUKUMO</h2>
-                <p>A solo exhibition where movement, memory, and typographic marks unfold in space.</p>
-              </article>
-            </a>
+            <div class="exhibition-stage">
+              <article class="exhibition-project" id="studio-kan" data-exhibition-project>
+                <section class="exhibition-structure-panel structure-one">
+                  <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure one cover">
+                    <img class="gallery-media gallery-media-landscape studio-kan-cover-image" src="../assets/images/deviations/studio-kan/sk-main-01.png" alt="Deviations cover composition" loading="lazy" />
+                  </button>
+                  <div class="studio-kan-cover-copy">
+                    <h2>Deviations - The art of writing</h2>
+                    <p>Curated by Chikako Yamazaki</p>
+                  </div>
+                </section>
 
-            <a class="exhibition-card-link" href="exhibition-geoje.html">
-              <article class="exhibition-selection-card">
-                <figure>
-                  <img src="../assets/images/exhibition/geoje/seomkot/seomkot-001.png" alt="Gallery Geoje exhibition preview" />
-                </figure>
-                <h2>Gallery Geoje — Seomkkot / GIAF</h2>
-                <p>Deviation language systems adapted across gallery and art fair contexts.</p>
-              </article>
-            </a>
+                <section class="exhibition-structure-panel structure-two studio-kan-intro-panel studio-kan-intro-stack">
+                  <article class="text-panel studio-kan-intro-text">
+                    <h3>DEVIATIONS SOLO EXHIBITION BY MEY AMISA</h3>
+                    <p>
+                      Departing from what is known, I move into the system as an intentional act of deviation.
+                      This exhibition follows the first movements of change, where writing becomes resistance and form
+                      becomes a way to challenge established norms.
+                    </p>
+                    <p>
+                      Through these works, different crafts and gestures come together: writing systems, emotional states,
+                      and bodily expression. Each piece traces how language can be disrupted, rebuilt, and felt physically.
+                    </p>
+                    <p>
+                      We all know moments when inner balance is interrupted. Something enters, shifts us, and transforms how we act.
+                      That disturbance moves outward and touches others around us.
+                    </p>
+                    <p>Isn't that exactly what we need?</p>
+                  </article>
+                  <div class="studio-kan-statement-gallery">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open statement image one">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-intro-01.png" alt="Studio Kan installation corner view" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open statement image two">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-intro-02.png" alt="Deviations collage composition" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open statement image three">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-intro-03.png" alt="Studio Kan line-up installation view" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open statement image four">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-intro-04.png" alt="Studio Kan wall grid installation view" loading="lazy" />
+                    </button>
+                  </div>
+                </section>
 
-            <a class="exhibition-card-link" href="exhibition-raststaette.html">
-              <article class="exhibition-selection-card">
-                <figure>
-                  <img src="../assets/images/exhibition/raststaette/installation/press-01.png" alt="Raststatte Aachen exhibition preview" />
-                </figure>
-                <h2>Raststatte Aachen</h2>
-                <p>Installation and live presentation translating movement into visual form.</p>
+                <section class="exhibition-structure-panel structure-three">
+                  <div class="studio-kan-structure-gallery">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure gallery image one">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure3-01.jpg" alt="Studio Kan structure image one" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure gallery image two">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure3-02.jpg" alt="Studio Kan structure image two" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure gallery image three">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure3-03.jpg" alt="Studio Kan structure image three" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure gallery image four">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure3-04.jpg" alt="Studio Kan structure image four" loading="lazy" />
+                    </button>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel structure-four">
+                  <div class="studio-kan-structure-gallery-two">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure four image one">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure4-01.png" alt="Studio Kan performance image one" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure four image two">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure4-02.png" alt="Studio Kan performance image two" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure four image three">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure4-03.png" alt="Studio Kan performance image three" loading="lazy" />
+                    </button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure four image four">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure4-04.png" alt="Studio Kan performance image four" loading="lazy" />
+                    </button>
+                  </div>
+                  <figure class="exhibition-art-card structure-four-hero-card">
+                    <button class="media-trigger studio-kan-structure-single" type="button" data-lightbox-trigger data-gallery="studio-kan-structure" aria-label="Open structure four image five">
+                      <img class="gallery-media gallery-media-landscape" src="../assets/images/deviations/studio-kan/sk-structure4-05.png" alt="Studio Kan performance multi-exposure image" loading="lazy" />
+                    </button>
+                    <figcaption>Title: AMYGDALA | Dimension: A0 x2 (66.2 x 46.8 inches)</figcaption>
+                  </figure>
+                </section>
+
+                <section class="exhibition-cluster-block" id="deviations-artwork">
+                  <div class="section-heading">
+                    <h3>Deviations Artwork</h3>
+                  </div>
+
+                  <div class="exhibition-triptych-grid">
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open BAILE">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/baile.jpg" alt="BAILE illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: BAILE | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open DIE VERAENDERUNG">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/die-veraenderung.jpg" alt="DIE VERAENDERUNG illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: DIE VERAENDERUNG | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open THE RIVER'S SORROW">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/the-rivers-sorrow.jpg" alt="THE RIVER'S SORROW illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: THE RIVER'S SORROW | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="exhibition-triptych-grid">
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open IN HER MIND">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/in-her-mind.jpg" alt="IN HER MIND illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: IN HER MIND | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open CARAS">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/caras.jpg" alt="CARAS illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: CARAS | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open ALMA">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/alma.jpg" alt="ALMA illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: ALMA | Materials: Quill, Shodo brush | Dimension: 11.7 x 16.5 inches | Year: 2024</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="exhibition-single-grid">
+                    <figure class="exhibition-art-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-triptych" aria-label="Open AMYGDALA">
+                        <img class="gallery-media" src="../assets/images/exhibition/studio-kan/illustrations/amygdala.jpg" alt="AMYGDALA illustration" loading="lazy" />
+                      </button>
+                      <figcaption>Title: AMYGDALA | Materials: Quill, Shodo brush | Dimension: A0 x2 (66.2 x 46.8 inches) | Year: 2024</figcaption>
+                    </figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel visitors-section" id="visitors">
+                  <div class="section-heading">
+                    <h3>Visitors</h3>
+                  </div>
+                  <div class="visitors-grid">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo one"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-01.jpg" alt="Visitors photo one" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo two"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-02.jpg" alt="Visitors photo two" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo three"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-03.jpg" alt="Visitors photo three" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo four"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-04.jpg" alt="Visitors photo four" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo five"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-05.jpg" alt="Visitors photo five" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo six"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-06.jpg" alt="Visitors photo six" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo seven"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-07.jpg" alt="Visitors photo seven" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo eight"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-08.jpg" alt="Visitors photo eight" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo nine"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-09.jpg" alt="Visitors photo nine" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo ten"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-10.jpg" alt="Visitors photo ten" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo eleven"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-11.jpg" alt="Visitors photo eleven" loading="lazy" /></button>
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="studio-kan-visitors" aria-label="Open visitor photo twelve"><img class="gallery-media" src="../assets/images/deviations/studio-kan/visitors/visitor-12.jpg" alt="Visitors photo twelve" loading="lazy" /></button>
+                  </div>
+                </section>
               </article>
-            </a>
+
+              <article class="exhibition-project" id="punio-gallery" data-exhibition-project hidden>
+                <section class="exhibition-structure-panel punio-header-panel">
+                  <div class="studio-kan-cover-copy">
+                    <h2>TSUKUMO SOLO EXHIBITION</h2>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-poster-panel">
+                  <div class="punio-poster-grid">
+                    <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-poster" aria-label="Open Tsukumo exhibition poster">
+                      <img class="gallery-media" src="../assets/images/exhibition/punio/punio-poster.png" alt="Tsukumo Solo Exhibition poster" loading="lazy" />
+                    </button>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-statement-panel">
+                  <div class="section-heading">
+                    <h3>Artist Statement</h3>
+                  </div>
+                  <div class="punio-statement-copy">
+                    <p>
+                      TSUKUMO is a study of incomplete language. Through experimental typography,
+                      contemporary dance, and asemic writing, the work creates a space where memory,
+                      emotion, and body can speak before words become fixed.
+                    </p>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-installation-panel">
+                  <div class="section-heading">
+                    <h3>Tsukumo Installation</h3>
+                  </div>
+                  <div class="punio-install-grid">
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 001"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-001.png" alt="Tsukumo installation image 001" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 002"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-002.png" alt="Tsukumo installation image 002" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 003"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-003.png" alt="Tsukumo installation image 003" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 004"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-004.png" alt="Tsukumo installation image 004" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 005"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-005.png" alt="Tsukumo installation image 005" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 006"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-006.png" alt="Tsukumo installation image 006" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 007"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-007.png" alt="Tsukumo installation image 007" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 008"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-008.png" alt="Tsukumo installation image 008" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 009"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-009.png" alt="Tsukumo installation image 009" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 010"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0010.png" alt="Tsukumo installation image 010" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 011"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0011.png" alt="Tsukumo installation image 011" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 012"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0012.png" alt="Tsukumo installation image 012" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 013"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0013.png" alt="Tsukumo installation image 013" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 014"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0014.png" alt="Tsukumo installation image 014" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 015"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0015.png" alt="Tsukumo installation image 015" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 016"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0016.png" alt="Tsukumo installation image 016" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 017"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0017.png" alt="Tsukumo installation image 017" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 018"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0018.png" alt="Tsukumo installation image 018" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 019"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0019.png" alt="Tsukumo installation image 019" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 020"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0020.png" alt="Tsukumo installation image 020" loading="lazy" /></button></figure>
+                    <figure class="punio-install-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-installation" aria-label="Open Tsukumo installation 022"><img class="gallery-media" src="../assets/images/exhibition/punio/installation/install-0022.png" alt="Tsukumo installation image 022" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-motion-panel">
+                  <div class="section-heading">
+                    <h3>Tsukumo in Motion</h3>
+                  </div>
+                  <div class="punio-motion-grid">
+                    <figure class="punio-motion-card">
+                      <video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline>
+                        <source src="../assets/videos/exhibition/punio/motion-01.mp4" type="video/mp4" />
+                      </video>
+                    </figure>
+                    <figure class="punio-motion-card">
+                      <video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline>
+                        <source src="../assets/videos/exhibition/punio/motion-02.mp4" type="video/mp4" />
+                      </video>
+                    </figure>
+                    <figure class="punio-motion-card">
+                      <video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline data-end-at="42">
+                        <source src="../assets/videos/exhibition/punio/motion-03.mp4" type="video/mp4" />
+                      </video>
+                    </figure>
+                    <figure class="punio-motion-card">
+                      <video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline>
+                        <source src="../assets/videos/exhibition/punio/motion-04.mp4" type="video/mp4" />
+                      </video>
+                    </figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-visitors-panel">
+                  <div class="section-heading">
+                    <h3>Visitors</h3>
+                  </div>
+                  <div class="punio-visitors-grid">
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 001"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-001.jpeg" alt="Punio visitor image 001" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 002"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-002.jpeg" alt="Punio visitor image 002" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 003"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-003.jpeg" alt="Punio visitor image 003" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 004"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-004.jpeg" alt="Punio visitor image 004" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 005"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-005.jpeg" alt="Punio visitor image 005" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 006"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-006.jpeg" alt="Punio visitor image 006" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 007"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-007.jpeg" alt="Punio visitor image 007" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 009"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-009.jpeg" alt="Punio visitor image 009" loading="lazy" /></button></figure>
+                    <figure class="punio-visitor-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-visitors" aria-label="Open Punio visitor image 010"><img class="gallery-media" src="../assets/images/exhibition/punio/visitors/visitor-010.jpeg" alt="Punio visitor image 010" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-process-panel">
+                  <div class="section-heading">
+                    <h3>Process</h3>
+                  </div>
+                  <div class="punio-process-lead">
+                    <figure class="punio-process-card lead">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-process" aria-label="Open Punio process lead image">
+                        <img class="gallery-media" src="../assets/images/exhibition/punio/process/process-01.jpeg" alt="Punio process lead image" loading="lazy" />
+                      </button>
+                    </figure>
+                  </div>
+                  <div class="punio-process-grid">
+                    <figure class="punio-process-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-process" aria-label="Open Punio process image 002"><img class="gallery-media" src="../assets/images/exhibition/punio/process/process-02.jpeg" alt="Punio process image 002" loading="lazy" /></button></figure>
+                    <figure class="punio-process-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-process" aria-label="Open Punio process image 003"><img class="gallery-media" src="../assets/images/exhibition/punio/process/process-03.jpeg" alt="Punio process image 003" loading="lazy" /></button></figure>
+                    <figure class="punio-process-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-process" aria-label="Open Punio process image 004"><img class="gallery-media" src="../assets/images/exhibition/punio/process/process-04.jpeg" alt="Punio process image 004" loading="lazy" /></button></figure>
+                    <figure class="punio-process-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-process" aria-label="Open Punio process image 005"><img class="gallery-media" src="../assets/images/exhibition/punio/process/process-05.jpeg" alt="Punio process image 005" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-curation-panel">
+                  <div class="section-heading">
+                    <h3>Curation</h3>
+                  </div>
+                  <div class="punio-curation-grid">
+                    <figure class="punio-curation-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-curation" aria-label="Open curation portrait">
+                        <img class="gallery-media" src="../assets/images/exhibition/punio/curation/curator.jpeg" alt="Curator portrait for Tsukumo exhibition" loading="lazy" />
+                      </button>
+                      <figcaption>Chichiro Kusakari</figcaption>
+                    </figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel punio-end-panel">
+                  <div class="punio-end-grid">
+                    <figure class="punio-end-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-end" aria-label="Open final image one"><img class="gallery-media" src="../assets/images/exhibition/punio/end/the-end-01.jpeg" alt="Final image one" loading="lazy" /></button></figure>
+                    <figure class="punio-end-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="punio-end" aria-label="Open final image two"><img class="gallery-media" src="../assets/images/exhibition/punio/end/the-end-02.jpeg" alt="Final image two" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="geoje-gallery" data-exhibition-project hidden>
+                <section class="exhibition-structure-panel geoje-header-panel">
+                  <div class="studio-kan-cover-copy">
+                    <h2>Gallery Geoje</h2>
+                    <p>Deviations exhibition</p>
+                  </div>
+                  <nav class="geoje-subnav" aria-label="Gallery Geoje sections">
+                    <button class="geoje-subnav-link is-active" type="button" data-geoje-target="geoje-seomkot">Geoje International Seomkot art show</button>
+                    <button class="geoje-subnav-link" type="button" data-geoje-target="geoje-giaf">GIAF2025</button>
+                  </nav>
+                </section>
+
+                <section class="exhibition-structure-panel geoje-subsection" id="geoje-seomkot" data-geoje-section>
+                  <div class="section-heading">
+                    <h3>Geoje International Seomkot art show</h3>
+                  </div>
+                  <p class="geoje-meta">Deviations exhibition | 01.11 - 09.11.2025</p>
+
+                  <div class="geoje-title-grid">
+                    <figure class="geoje-title-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-titles" aria-label="Open Seomkot title image">
+                        <img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/titles/title-seomkot.png" alt="Geoje International Seomkot art show title visual" loading="lazy" />
+                      </button>
+                    </figure>
+                    <figure class="geoje-title-card">
+                      <button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-titles" aria-label="Open second title image">
+                        <img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/titles/title-giaf.jpeg" alt="GIAF title visual" loading="lazy" />
+                      </button>
+                    </figure>
+                  </div>
+
+                  <div class="geoje-gallery-grid">
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 001"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-001.png" alt="Seomkot exhibition image 001" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 002"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-002.png" alt="Seomkot exhibition image 002" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 003"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-003.png" alt="Seomkot exhibition image 003" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 004"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-004.png" alt="Seomkot exhibition image 004" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 006"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-006.png" alt="Seomkot exhibition image 006" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 007"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-007.png" alt="Seomkot exhibition image 007" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 008"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-008.png" alt="Seomkot exhibition image 008" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 009"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-009.png" alt="Seomkot exhibition image 009" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 011"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-011.png" alt="Seomkot exhibition image 011" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-seomkot-gallery" aria-label="Open Seomkot image 012"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/seomkot/seomkot-012.png" alt="Seomkot exhibition image 012" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel geoje-subsection" id="geoje-giaf" data-geoje-section hidden>
+                  <div class="section-heading">
+                    <h3>GIAF2025</h3>
+                  </div>
+                  <p class="geoje-meta">Deviations exhibition | The 12th gyeongnam international art fair | represented by Gallery Geoje | 01.11 - 09.11.2025</p>
+
+                  <div class="geoje-gallery-grid giaf-grid">
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-giaf-gallery" aria-label="Open GIAF image 001"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/giaf/giaf-001.png" alt="GIAF 2025 image 001" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-giaf-gallery" aria-label="Open GIAF image 002"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/giaf/giaf-002.png" alt="GIAF 2025 image 002" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-giaf-gallery" aria-label="Open GIAF image 003"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/giaf/giaf-003.png" alt="GIAF 2025 image 003" loading="lazy" /></button></figure>
+                    <figure class="geoje-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="geoje-giaf-gallery" aria-label="Open GIAF image 004"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/geoje/giaf/giaf-004.png" alt="GIAF 2025 image 004" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+              </article>
+
+              <article class="exhibition-project" id="raststaette-aachen" data-exhibition-project hidden>
+                <section class="exhibition-structure-panel geoje-header-panel">
+                  <div class="studio-kan-cover-copy">
+                    <h2>Raststatte Aachen</h2>
+                    <p>Deviations exhibition</p>
+                  </div>
+                  <p class="geoje-meta">Emotionen statt Worte | Erste Ausstellung von Mey Amisa in Deutschland</p>
+                </section>
+
+                <section class="exhibition-structure-panel">
+                  <div class="section-heading">
+                    <h3>Installation</h3>
+                  </div>
+                  <div class="aachen-gallery-grid">
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1608"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1608.HEIC" alt="Raststatte Aachen installation image 1608" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1615"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1615.HEIC" alt="Raststatte Aachen installation image 1615" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1637"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1637.HEIC" alt="Raststatte Aachen installation image 1637" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1650"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1650.HEIC" alt="Raststatte Aachen installation image 1650" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1653"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1653.HEIC" alt="Raststatte Aachen installation image 1653" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1656"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1656.HEIC" alt="Raststatte Aachen installation image 1656" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1658"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1658.HEIC" alt="Raststatte Aachen installation image 1658" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1673"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1673.HEIC" alt="Raststatte Aachen installation image 1673" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen installation image 1685"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/IMG_1685.HEIC" alt="Raststatte Aachen installation image 1685" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen press image one"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/press-01.png" alt="Raststatte Aachen press and stage image one" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen press image two"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/press-02.png" alt="Raststatte Aachen press and stage image two" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen press image three"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/press-03.png" alt="Raststatte Aachen press and stage image three" loading="lazy" /></button></figure>
+                    <figure class="aachen-gallery-card"><button class="media-trigger" type="button" data-lightbox-trigger data-gallery="aachen-installation" aria-label="Open Aachen press image four"><img class="gallery-media gallery-media-landscape" src="../assets/images/exhibition/raststaette/installation/press-04.png" alt="Raststatte Aachen press and stage image four" loading="lazy" /></button></figure>
+                  </div>
+                </section>
+
+                <section class="exhibition-structure-panel">
+                  <div class="section-heading">
+                    <h3>Motion</h3>
+                  </div>
+                  <div class="aachen-motion-grid">
+                    <figure class="punio-motion-card"><video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline><source src="../assets/videos/exhibition/raststaette/motion/motion-04.mov" type="video/quicktime" /></video></figure>
+                    <figure class="punio-motion-card"><video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline><source src="../assets/videos/exhibition/raststaette/motion/motion-05.mov" type="video/quicktime" /></video></figure>
+                    <figure class="punio-motion-card"><video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline><source src="../assets/videos/exhibition/raststaette/motion/motion-06.mov" type="video/quicktime" /></video></figure>
+                    <figure class="punio-motion-card"><video class="gallery-media" controls preload="metadata" autoplay muted loop playsinline><source src="../assets/videos/exhibition/raststaette/motion/motion-07.mov" type="video/quicktime" /></video></figure>
+                  </div>
+                </section>
+              </article>
+            </div>
           </section>
         </main>
 
         <footer class="site-footer">
-          <span>meyamisa02@gmail.com</span>
+          <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
           <div class="footer-links">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a class="legal-link" href="impressum.html">Impressum</a>
+            <a class="legal-link" href="datenschutz.html">Datenschutz</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <a class="back-link" href="../index.html">Back</a>
+    <a class="floating-back" href="../index.html" data-back-link>Back</a>
 
-    <script src="../assets/js/studio.js"></script>
+    <script src="../assets/js/site.js?v=2026-04-15-exh-1"></script>
   </body>
 </html>
