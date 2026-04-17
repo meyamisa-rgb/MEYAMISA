@@ -4441,8 +4441,9 @@ figcaption {
 }
 
 .punio-story-card-poster .gallery-media {
-  max-height: 94vh;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .punio-story-title {
