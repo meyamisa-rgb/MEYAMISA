@@ -147,6 +147,26 @@ main {
   align-items: start;
 }
 
+.hero-opening.opening-stage {
+  display: block;
+}
+
+.opening-artwork {
+  margin: 0;
+  border: 1px solid var(--line);
+  min-height: clamp(440px, 62vw, 860px);
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.opening-artwork img {
+  width: 100%;
+  height: clamp(440px, 62vw, 860px);
+  object-fit: cover;
+  object-position: right top;
+  display: block;
+}
+
 .landscape-illustration {
   border: 1px solid var(--line);
   min-height: clamp(420px, 56vw, 740px);
@@ -363,6 +383,102 @@ main {
   font-size: 0.68rem;
   border-bottom: 1px solid var(--line-strong);
   padding-bottom: 2px;
+}
+
+.experimental-intro {
+  margin-bottom: clamp(20px, 3.2vw, 42px);
+}
+
+.exp-scroll-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0 12px;
+  margin-bottom: clamp(14px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 248, 248, 0.96);
+  backdrop-filter: blur(4px);
+}
+
+.exp-scroll-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+}
+
+.exp-scroll-nav a:hover,
+.exp-scroll-nav a:focus-visible {
+  color: var(--ink);
+  border-color: var(--line-strong);
+  outline: none;
+}
+
+.exp-onepager {
+  border-top: 1px solid var(--line);
+}
+
+.exp-project {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1fr) minmax(260px, 0.95fr);
+  gap: clamp(14px, 2.2vw, 30px);
+  padding: clamp(18px, 2.6vw, 30px) 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 72px;
+  align-items: start;
+}
+
+.exp-project-kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.exp-project-meta h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+.exp-project-small {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.exp-project-copy p {
+  margin: 0;
+  color: #1f1f1f;
+  line-height: 1.62;
+}
+
+.exp-project-copy blockquote {
+  margin: 12px 0 0;
+  padding-left: 10px;
+  border-left: 2px solid var(--line-strong);
+  color: #1f1f1f;
+  font-size: 0.95rem;
+}
+
+.exp-project-image {
+  margin: 0;
+}
+
+.exp-project-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 .exhibition-layout {
@@ -586,6 +702,11 @@ main {
 
   .about-minimal {
     grid-template-columns: 1fr;
+  }
+
+  .exp-project {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .exhibition-rd-item {
