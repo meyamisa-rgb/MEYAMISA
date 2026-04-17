@@ -2994,7 +2994,7 @@ main {
   border: 0;
   background: transparent;
   padding: 0;
-  gap: clamp(10px, 1.2vw, 14px);
+  gap: clamp(16px, 1.8vw, 24px);
   margin-bottom: clamp(10px, 1.4vw, 16px);
 }
 
@@ -3023,15 +3023,15 @@ main {
 .studio-kan-cover-image {
   width: 100%;
   display: block;
-  height: clamp(300px, 34vw, 520px);
-  aspect-ratio: 16 / 6;
+  height: clamp(360px, 42vw, 760px);
+  aspect-ratio: 16 / 8;
   object-fit: cover;
   object-position: center;
 }
 
 .studio-kan-cover-image.gallery-media-landscape {
   object-fit: cover;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 16 / 8;
 }
 
 .structure-two {
@@ -3330,6 +3330,10 @@ main {
 .exhibition-title-list {
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
+}
+
+.exhibition-page .exhibition-title-list {
+  display: none;
 }
 
 .exhibition-title-scroll-nav {
@@ -4376,9 +4380,9 @@ figcaption {
 
 .punio-poster-grid {
   display: grid;
-  gap: 18px;
-  grid-template-columns: minmax(0, 420px);
-  justify-content: center;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
   align-items: center;
 }
 
@@ -4388,8 +4392,8 @@ figcaption {
 }
 
 .punio-poster-grid .gallery-media {
-  aspect-ratio: 3 / 4;
-  object-fit: contain;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   background: #fff;
 }
 
@@ -4408,8 +4412,13 @@ figcaption {
 
 .punio-install-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.punio-install-card:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .punio-install-card .media-trigger,
@@ -4418,8 +4427,8 @@ figcaption {
 }
 
 .punio-install-card .gallery-media {
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   background: #fff;
 }
 
@@ -4438,22 +4447,22 @@ figcaption {
 
 .punio-visitors-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .punio-visitor-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   background: #fff;
 }
 
 .punio-process-lead {
-  margin-bottom: 10px;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 14px;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .punio-process-card .gallery-media {
@@ -4462,17 +4471,17 @@ figcaption {
 }
 
 .punio-process-card.lead .gallery-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 
 .punio-process-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .punio-process-grid .gallery-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 
 .punio-process-card .media-trigger {
@@ -4488,14 +4497,14 @@ figcaption {
 
 .punio-curation-grid {
   display: grid;
-  grid-template-columns: minmax(0, 560px);
-  justify-content: center;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
 }
 
 .punio-curation-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   background: #fff;
 }
 
@@ -4511,13 +4520,13 @@ figcaption {
 .punio-end-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 14px;
 }
 
 .punio-end-card .gallery-media {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   background: #fff;
 }
 
@@ -4529,6 +4538,12 @@ figcaption {
   .punio-visitors-grid,
   .punio-process-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .punio-install-card:first-child,
+  .geoje-gallery-card:first-child {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
@@ -4594,25 +4609,29 @@ figcaption {
 .geoje-title-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 
 .geoje-title-card .gallery-media {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
 .geoje-gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 18px;
+}
+
+.geoje-gallery-card:first-child {
+  grid-column: span 2;
 }
 
 .geoje-gallery-card .gallery-media {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
