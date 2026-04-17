@@ -167,6 +167,44 @@ main {
   display: block;
 }
 
+.opening-page .site-shell {
+  padding: 0;
+}
+
+.opening-page .site-frame {
+  min-height: 100vh;
+  border: 0;
+  background: #fff;
+}
+
+.opening-page .site-header,
+.opening-page .site-footer {
+  border: 0;
+}
+
+.opening-page main {
+  padding: 0;
+}
+
+.opening-page .hero-opening {
+  gap: 0;
+}
+
+.opening-page .opening-artwork {
+  border: 0;
+  min-height: calc(100vh - 112px);
+}
+
+.opening-page .opening-artwork img {
+  height: calc(100vh - 112px);
+}
+
+.opening-page .site-nav a:hover,
+.opening-page .site-nav a:focus-visible,
+.opening-page .site-nav a.is-active {
+  border-color: transparent;
+}
+
 .landscape-illustration {
   border: 1px solid var(--line);
   min-height: clamp(420px, 56vw, 740px);
