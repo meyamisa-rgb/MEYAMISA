@@ -3219,6 +3219,15 @@ main {
   color: var(--black);
 }
 
+.exhibition-hero-collage {
+  display: block;
+  width: 100%;
+  margin-top: clamp(10px, 1.6vw, 20px);
+  height: clamp(220px, 30vw, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
 .studio-kan-intro-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4392,9 +4401,15 @@ figcaption {
 }
 
 .punio-poster-grid .gallery-media {
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  aspect-ratio: auto;
+  max-height: 92vh;
+  object-fit: contain;
   background: #fff;
+}
+
+.punio-title-under-poster .studio-kan-cover-copy {
+  text-align: center;
+  justify-items: center;
 }
 
 .punio-statement-copy {
@@ -4412,13 +4427,28 @@ figcaption {
 
 .punio-install-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 
-.punio-install-card:first-child {
+.punio-install-card:nth-child(1),
+.punio-install-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+.punio-install-card:nth-child(3),
+.punio-install-card:nth-child(4),
+.punio-install-card:nth-child(5) {
   grid-column: span 2;
-  grid-row: span 2;
+}
+
+.punio-install-card:nth-child(6),
+.punio-install-card:nth-child(7) {
+  grid-column: span 3;
+}
+
+.punio-install-card:nth-child(n + 8) {
+  grid-column: span 2;
 }
 
 .punio-install-card .media-trigger,
@@ -4428,7 +4458,7 @@ figcaption {
 
 .punio-install-card .gallery-media {
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
   background: #fff;
 }
 
@@ -4454,7 +4484,7 @@ figcaption {
 .punio-visitor-card .gallery-media {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
   background: #fff;
 }
 
@@ -4504,7 +4534,7 @@ figcaption {
 .punio-curation-card .gallery-media {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
   background: #fff;
 }
 
@@ -4523,10 +4553,14 @@ figcaption {
   gap: 14px;
 }
 
+.punio-end-card:first-child {
+  grid-column: span 2;
+}
+
 .punio-end-card .gallery-media {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   background: #fff;
 }
 
@@ -4540,10 +4574,20 @@ figcaption {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .punio-install-card:first-child,
+  .punio-install-card:nth-child(1),
+  .punio-install-card:nth-child(2),
+  .punio-install-card:nth-child(3),
+  .punio-install-card:nth-child(4),
+  .punio-install-card:nth-child(5),
+  .punio-install-card:nth-child(6),
+  .punio-install-card:nth-child(7),
   .geoje-gallery-card:first-child {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  .punio-end-card:first-child {
+    grid-column: span 1;
   }
 }
 
