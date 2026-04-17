@@ -371,6 +371,76 @@ main {
   gap: clamp(16px, 2.5vw, 34px);
 }
 
+.exhibition-rd-intro {
+  max-width: 960px;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.exhibition-rd-intro h1 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.exhibition-rd-intro p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 66ch;
+}
+
+.exhibition-rd-list {
+  border-top: 1px solid var(--line);
+}
+
+.exhibition-rd-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1fr) minmax(260px, 0.95fr);
+  gap: clamp(14px, 2.2vw, 30px);
+  padding: clamp(18px, 2.6vw, 30px) 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.exhibition-rd-meta h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+.exhibition-rd-kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.exhibition-rd-small {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.exhibition-rd-text p {
+  margin: 0;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+.exhibition-rd-image {
+  margin: 0;
+}
+
+.exhibition-rd-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
 .exhibition-menu {
   position: sticky;
   top: 16px;
@@ -516,6 +586,15 @@ main {
 
   .about-minimal {
     grid-template-columns: 1fr;
+  }
+
+  .exhibition-rd-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .exhibition-rd-image img {
+    aspect-ratio: 16 / 10;
   }
 
   .exhibition-menu {
