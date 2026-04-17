@@ -2935,6 +2935,9 @@ main {
 .exhibition-project {
   display: grid;
   gap: clamp(18px, 2.4vw, 30px);
+  scroll-margin-top: 120px;
+  padding-top: clamp(18px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
 }
 
 .exhibition-project[hidden] {
@@ -3020,15 +3023,15 @@ main {
 .studio-kan-cover-image {
   width: 100%;
   display: block;
-  height: clamp(270px, 33vw, 480px);
-  aspect-ratio: 16 / 5.1;
+  height: clamp(300px, 34vw, 520px);
+  aspect-ratio: 16 / 6;
   object-fit: cover;
-  object-position: 50% 62%;
+  object-position: center;
 }
 
 .studio-kan-cover-image.gallery-media-landscape {
   object-fit: cover;
-  aspect-ratio: 16 / 5.1;
+  aspect-ratio: 16 / 6;
 }
 
 .structure-two {
@@ -3072,6 +3075,7 @@ main {
 .deviations-statement-after .deviations-statement {
   margin-bottom: 0;
   text-align: left;
+  max-width: min(100%, 96ch);
 }
 
 .studio-kan-intro-text h3 {
@@ -3086,7 +3090,7 @@ main {
 .studio-kan-intro-text p {
   color: var(--black);
   font-size: clamp(1.02rem, 1.18vw, 1.2rem);
-  line-height: 1.28;
+  line-height: 1.48;
 }
 
 .studio-kan-intro-image {
@@ -3328,6 +3332,17 @@ main {
   border-bottom: 1px solid var(--line-strong);
 }
 
+.exhibition-title-scroll-nav {
+  position: sticky;
+  top: 92px;
+  z-index: 20;
+  background: var(--white);
+}
+
+.exhibition-title-link {
+  text-decoration: none;
+}
+
 .exhibition-title-row {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr) 72px 28px;
@@ -3390,6 +3405,26 @@ main {
 
 .exhibition-title-row.is-active img {
   border-color: rgba(255, 255, 255, 0.35);
+}
+
+.exhibition-title-row:hover,
+.exhibition-title-row:focus-visible {
+  background: #f5f5f5;
+  outline: none;
+}
+
+.exhibition-project-header {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.exhibition-project-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .exhibition-placeholder-panel {
