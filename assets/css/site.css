@@ -4412,6 +4412,60 @@ figcaption {
   justify-items: center;
 }
 
+.punio-story-start {
+  display: grid;
+  gap: clamp(14px, 1.8vw, 24px);
+}
+
+.punio-story-card .media-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.punio-story-card .gallery-media {
+  width: 100%;
+  display: block;
+  background: #fff;
+  object-fit: contain;
+}
+
+.punio-story-card-wide .gallery-media {
+  aspect-ratio: 16 / 8;
+}
+
+.punio-story-card-poster {
+  max-width: min(100%, 760px);
+  margin-inline: auto;
+}
+
+.punio-story-card-poster .gallery-media {
+  max-height: 94vh;
+  aspect-ratio: auto;
+}
+
+.punio-story-title {
+  text-align: center;
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  margin-top: 2px;
+}
+
+.punio-story-title h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+.punio-story-title p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+}
+
 .punio-statement-copy {
   max-width: 78ch;
 }
