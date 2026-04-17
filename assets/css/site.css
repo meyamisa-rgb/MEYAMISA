@@ -4436,8 +4436,8 @@ figcaption {
 }
 
 .punio-story-card-poster {
-  max-width: min(100%, 760px);
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .punio-story-card-poster .gallery-media {
