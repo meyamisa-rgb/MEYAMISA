@@ -4424,6 +4424,10 @@ figcaption {
   padding: 0;
 }
 
+.punio-story-card {
+  margin: 0;
+}
+
 .punio-story-card .gallery-media {
   width: 100%;
   display: block;
@@ -4441,9 +4445,12 @@ figcaption {
 }
 
 .punio-story-card-poster .gallery-media {
-  aspect-ratio: 16 / 8;
-  object-fit: cover;
-  object-position: top center;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .punio-story-title {
