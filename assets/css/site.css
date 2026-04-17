@@ -4474,6 +4474,47 @@ figcaption {
   font-size: clamp(0.95rem, 1.5vw, 1.2rem);
 }
 
+.punio-wa-doubles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+}
+
+.punio-wa-doubles .gallery-media {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.punio-wa-solos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+}
+
+.punio-wa-solo .gallery-media {
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+}
+
+.punio-wa-solo:first-child {
+  grid-column: span 2;
+}
+
+.punio-wa-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.punio-wa-gallery .gallery-media {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.punio-wa-gallery .punio-story-card:nth-child(5n + 1) {
+  grid-column: span 2;
+}
+
 .punio-statement-copy {
   max-width: 78ch;
 }
@@ -4669,12 +4710,28 @@ figcaption {
   .punio-process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .punio-wa-solos,
+  .punio-wa-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .punio-wa-solo:first-child,
+  .punio-wa-gallery .punio-story-card:nth-child(5n + 1) {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 520px) {
   .punio-install-grid,
   .punio-visitors-grid,
   .punio-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .punio-wa-doubles,
+  .punio-wa-solos,
+  .punio-wa-gallery {
     grid-template-columns: minmax(0, 1fr);
   }
 }
