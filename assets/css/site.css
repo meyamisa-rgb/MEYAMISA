@@ -3064,6 +3064,16 @@ main {
   margin-bottom: clamp(10px, 1.4vw, 20px);
 }
 
+.deviations-statement-after {
+  margin-top: clamp(28px, 3.6vw, 56px);
+  margin-bottom: clamp(8px, 1.2vw, 16px);
+}
+
+.deviations-statement-after .deviations-statement {
+  margin-bottom: 0;
+  text-align: left;
+}
+
 .studio-kan-intro-text h3 {
   font-family: var(--font-display);
   font-weight: 700;
