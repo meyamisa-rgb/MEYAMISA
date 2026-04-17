@@ -3041,12 +3041,12 @@ main {
 }
 
 .studio-kan-intro-panel {
-  border: 1px solid var(--line);
-  background: var(--white);
-  padding: clamp(12px, 1.8vw, 18px);
+  border: 0;
+  background: transparent;
+  padding: 0;
   gap: clamp(20px, 2.4vw, 30px);
   align-items: start;
-  margin-top: clamp(16px, 2.2vw, 28px);
+  margin-top: clamp(26px, 3.2vw, 48px);
 }
 
 .studio-kan-intro-stack {
@@ -3057,7 +3057,11 @@ main {
   border: 0;
   padding: 0;
   max-width: 46ch;
-  gap: 10px;
+  gap: clamp(14px, 1.8vw, 22px);
+}
+
+.deviations-statement {
+  margin-bottom: clamp(10px, 1.4vw, 20px);
 }
 
 .studio-kan-intro-text h3 {
@@ -3091,7 +3095,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 2.2vw, 28px);
-  margin-top: clamp(8px, 1.2vw, 14px);
+  margin-top: clamp(18px, 2.4vw, 32px);
 }
 
 .studio-kan-statement-gallery .media-trigger {
