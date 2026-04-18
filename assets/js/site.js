@@ -1,6 +1,27 @@
 (function () {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const timeNodes = document.querySelectorAll("[data-local-time]");
+  const removeBlockedExhibitionCopy = () => {
+    if (currentPage !== "exhibition.html") {
+      return;
+    }
+
+    const blockedPhrases = [
+      "ongoing collaboration to introduce the arc",
+      "localized design",
+      "japanese audience",
+    ];
+
+    document.querySelectorAll("p, div, span, figcaption").forEach((node) => {
+      const value = (node.textContent || "").toLowerCase().replace(/\s+/g, " ").trim();
+      if (!value) {
+        return;
+      }
+      if (blockedPhrases.some((phrase) => value.includes(phrase))) {
+        node.remove();
+      }
+    });
+  };
 
   function updateTime() {
     if (!timeNodes.length) {
@@ -21,6 +42,7 @@
   }
 
   updateTime();
+  removeBlockedExhibitionCopy();
   setInterval(updateTime, 30000);
 
   const pageKey = currentPage.replace(/\.html$/, "");
