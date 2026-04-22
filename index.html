@@ -13,48 +13,34 @@
   <body class="oneflow-home">
     <div class="site-shell">
       <div class="site-frame">
-        <header class="site-header">
-          <div class="header-inner">
-            <a class="brand" href="index.html">Mey Amisa</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
-            <nav class="site-nav" id="site-nav" aria-label="Primary">
-              <a href="#about">About me</a>
-              <a href="#projects">Experimental design</a>
-              <a href="pages/exhibition.html">Exhibitions</a>
-              <a href="#projects">Projects</a>
-              <a href="pages/words-on-ink.html">Words on ink</a>
-              <a href="#contact">Contact</a>
-            </nav>
-          </div>
-        </header>
-
         <main>
           <section class="oneflow-intro" aria-label="Intro">
             <div class="oneflow-intro-copy">
               <p class="eyebrow">Mey Amisa Studio</p>
-              <h1>Experimental Design<br />Archive Flow</h1>
+              <h1>Experimental Design</h1>
             </div>
-            <div class="oneflow-intro-links">
+            <nav class="oneflow-intro-links" aria-label="Section navigation">
               <a href="#projects">Projects</a>
               <a href="#about">About me</a>
               <a href="#contact">Contact</a>
-            </div>
+            </nav>
           </section>
 
           <section class="oneflow-projects" id="projects" aria-label="Projects">
             <div class="oneflow-section-head">
-              <p class="eyebrow">Works</p>
-              <h2>Project Grid</h2>
+              <p class="eyebrow">Projects</p>
+              <h2>Experimental Design</h2>
             </div>
 
-            <div class="project-wall">
+            <div class="project-wall" data-project-wall>
               <button
                 class="project-wall-card portrait"
                 type="button"
                 data-project-card
                 data-title="TSUKUMO Process 01"
-                data-meta="Poster / Process still"
-                data-description="Placeholder description for project archive details. Replace with final artwork text."
+                data-meta="Plakat, 2023"
+                data-description="A project entry placeholder in the studio archive. Replace with final project text and context."
+                data-facts="Artist: Mey Amisa|Format: Poster / Process|Location: Tokyo / Cologne|Year: 2023"
                 data-image="assets/images/home/projects/project-01.jpeg"
               >
                 <img src="assets/images/home/projects/project-01.jpeg" alt="Project placeholder 01" />
@@ -65,8 +51,9 @@
                 type="button"
                 data-project-card
                 data-title="TSUKUMO Process 02"
-                data-meta="Poster / Motion-ready still"
-                data-description="Placeholder description for mixed vertical project tiles with equal poster-height behavior."
+                data-meta="Poster, 2023"
+                data-description="Vertical placeholder card with motion behavior for touch and click interactions."
+                data-facts="Artist: Mey Amisa|Format: Poster|Location: Tokyo|Year: 2023"
                 data-image="assets/images/home/projects/project-02.jpeg"
               >
                 <img src="assets/images/home/projects/project-02.jpeg" alt="Project placeholder 02" />
@@ -77,8 +64,9 @@
                 type="button"
                 data-project-card
                 data-title="TSUKUMO Process 03"
-                data-meta="Landscape tile / Installation context"
-                data-description="Placeholder description for horizontal formats inside the same project wall."
+                data-meta="Installation still, 2023"
+                data-description="Landscape placeholder card for wider visuals in the same grid rhythm."
+                data-facts="Artist: Mey Amisa|Format: Installation still|Location: Tokyo|Year: 2023"
                 data-image="assets/images/home/projects/project-03.jpeg"
               >
                 <img src="assets/images/home/projects/project-03.jpeg" alt="Project placeholder 03" />
@@ -88,9 +76,10 @@
                 class="project-wall-card portrait"
                 type="button"
                 data-project-card
-                data-title="EGUIDE Reference Frame"
-                data-meta="Reference style tile"
-                data-description="Layout reference placeholder tile inspired by eGuide spacing and grid rhythm."
+                data-title="Reference Frame 04"
+                data-meta="Research tile"
+                data-description="Reference placeholder inspired by archive-based project interfaces."
+                data-facts="Artist: Mey Amisa|Format: Research tile|Location: Studio|Year: 2026"
                 data-image="assets/images/home/projects/project-ref-eguide.png"
               >
                 <img src="assets/images/home/projects/project-ref-eguide.png" alt="Project reference tile" />
@@ -102,7 +91,8 @@
                 data-project-card
                 data-title="Placeholder Poster 05"
                 data-meta="Poster"
-                data-description="Use this slot for future project poster."
+                data-description="Placeholder slot prepared for a new vertical poster project."
+                data-facts="Artist: Mey Amisa|Format: Poster|Location: Archive|Year: 2026"
                 data-image="assets/images/exhibition/punio/punio-poster.png"
               >
                 <img src="assets/images/exhibition/punio/punio-poster.png" alt="Placeholder poster 05" />
@@ -112,9 +102,10 @@
                 class="project-wall-card landscape motion"
                 type="button"
                 data-project-card
-                data-title="Placeholder Motion Tile 06"
-                data-meta="Motion / Installation"
-                data-description="Motion-capable tile placeholder. On touch or click opens full image and project description."
+                data-title="Placeholder Motion 06"
+                data-meta="Motion still"
+                data-description="Touch-ready placeholder with larger horizontal composition."
+                data-facts="Artist: Mey Amisa|Format: Motion still|Location: Archive|Year: 2026"
                 data-image="assets/images/exhibition/deviations-hero-collage.png"
               >
                 <img src="assets/images/exhibition/deviations-hero-collage.png" alt="Placeholder tile 06" />
@@ -126,7 +117,8 @@
                 data-project-card
                 data-title="Placeholder Poster 07"
                 data-meta="Poster"
-                data-description="Replace with new project material."
+                data-description="Replace this card with a final project entry."
+                data-facts="Artist: Mey Amisa|Format: Poster|Location: Studio|Year: 2026"
                 data-image="assets/images/home/projects/project-01.jpeg"
               >
                 <img src="assets/images/home/projects/project-01.jpeg" alt="Placeholder poster 07" />
@@ -138,7 +130,8 @@
                 data-project-card
                 data-title="Placeholder Poster 08"
                 data-meta="Poster"
-                data-description="Replace with exhibition poster or publication."
+                data-description="Replace this card with exhibition or publication material."
+                data-facts="Artist: Mey Amisa|Format: Poster|Location: Studio|Year: 2026"
                 data-image="assets/images/home/projects/project-02.jpeg"
               >
                 <img src="assets/images/home/projects/project-02.jpeg" alt="Placeholder poster 08" />
@@ -149,8 +142,9 @@
                 type="button"
                 data-project-card
                 data-title="Placeholder Landscape 09"
-                data-meta="Installation / Wide still"
-                data-description="Use for horizontal artwork or process images."
+                data-meta="Installation"
+                data-description="Wider project entry placeholder for process documentation."
+                data-facts="Artist: Mey Amisa|Format: Installation|Location: Archive|Year: 2026"
                 data-image="assets/images/home/projects/project-03.jpeg"
               >
                 <img src="assets/images/home/projects/project-03.jpeg" alt="Placeholder landscape 09" />
@@ -162,7 +156,8 @@
                 data-project-card
                 data-title="Placeholder Motion Poster 10"
                 data-meta="Motion poster"
-                data-description="Poster slot with subtle movement effect."
+                data-description="Poster slot with subtle movement effect and touch interaction."
+                data-facts="Artist: Mey Amisa|Format: Motion poster|Location: Studio|Year: 2026"
                 data-image="assets/images/home/projects/project-ref-eguide.png"
               >
                 <img src="assets/images/home/projects/project-ref-eguide.png" alt="Placeholder motion poster 10" />
@@ -175,15 +170,14 @@
               <p class="eyebrow">About</p>
               <h2>Mey Amisa</h2>
             </div>
+
             <div class="oneflow-about-grid">
-              <p>
-                Placeholder text for Mey Amisa. This section can hold your final artist text in a clean, minimal
-                format with generous white space and strong readability.
-              </p>
-              <p>
-                Replace this with your final biography, language profile, and current practice focus. The layout is
-                made to keep text clear while staying visually quiet.
-              </p>
+              <figure class="about-media about-media-text">
+                <img src="assets/images/about/art-001.png" alt="Mey Amisa text image" loading="lazy" />
+              </figure>
+              <figure class="about-media">
+                <img src="assets/images/about/about-photo-01.jpeg" alt="Mey Amisa portrait" loading="lazy" />
+              </figure>
             </div>
           </section>
 
@@ -207,24 +201,53 @@
             <figure class="project-overlay-media">
               <img src="" alt="" data-project-image />
             </figure>
-            <div class="project-overlay-copy">
+
+            <div class="project-overlay-head">
               <p class="eyebrow" data-project-meta></p>
               <h3 data-project-title></h3>
-              <p data-project-description></p>
+            </div>
+
+            <div class="project-overlay-grid">
+              <div class="project-overlay-text">
+                <p data-project-description></p>
+              </div>
+              <dl class="project-overlay-facts" data-project-facts></dl>
+            </div>
+
+            <div class="project-overlay-accordion">
+              <details>
+                <summary>Literatur</summary>
+                <p>Placeholder literature and references for this project.</p>
+              </details>
+              <details>
+                <summary>Legenden</summary>
+                <p>Placeholder legend and captions for image context.</p>
+              </details>
+              <details>
+                <summary>Ausstellungstext</summary>
+                <p>Placeholder exhibition text and curatorial framing.</p>
+              </details>
             </div>
           </article>
         </div>
-
-        <footer class="site-footer">
-          <span>meyamisa02@gmail.com</span>
-          <div class="footer-links">
-            <a href="pages/impressum.html">Impressum</a>
-            <a href="pages/datenschutz.html">Datenschutz</a>
-          </div>
-        </footer>
       </div>
     </div>
 
-    <script src="assets/js/studio.js?v=dev-flow-1"></script>
+    <template id="project-placeholder-template">
+      <button
+        class="project-wall-card portrait"
+        type="button"
+        data-project-card
+        data-title=""
+        data-meta=""
+        data-description=""
+        data-facts=""
+        data-image=""
+      >
+        <img src="" alt="" loading="lazy" />
+      </button>
+    </template>
+
+    <script src="assets/js/studio.js?v=dev-flow-2"></script>
   </body>
 </html>
