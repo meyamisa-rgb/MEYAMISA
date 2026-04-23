@@ -1071,6 +1071,25 @@ main {
   margin-bottom: clamp(40px, 5vw, 76px);
 }
 
+.oneflow-media-placeholders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+  margin-bottom: clamp(34px, 4vw, 54px);
+}
+
+.media-placeholder-card {
+  min-height: clamp(90px, 9vw, 120px);
+  border: 1px dashed var(--line-strong);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .break-gallery-card {
   border: 0;
   padding: 0;
@@ -1186,6 +1205,7 @@ main {
   margin: 0;
   border: 0;
   background: #fff;
+  position: relative;
 }
 
 .project-overlay-media img {
@@ -1193,6 +1213,41 @@ main {
   height: auto;
   max-height: 60vh;
   object-fit: contain;
+}
+
+.project-overlay-media video {
+  width: 100%;
+  max-height: 60vh;
+  display: block;
+  background: #000;
+}
+
+.overlay-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #1e1e1e;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.overlay-prev {
+  left: 10px;
+}
+
+.overlay-next {
+  right: 10px;
+}
+
+.overlay-nav:hover,
+.overlay-nav:focus-visible {
+  background: #fff;
+  outline: 1px solid var(--line-strong);
 }
 
 .project-overlay-head {
@@ -1272,6 +1327,42 @@ main {
   font-size: 0.92rem;
 }
 
+.overlay-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 8px;
+}
+
+.overlay-gallery-thumb {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+  min-height: 68px;
+  overflow: hidden;
+}
+
+.overlay-gallery-thumb.is-active {
+  border-color: var(--line-strong);
+}
+
+.overlay-gallery-thumb img {
+  width: 100%;
+  height: 68px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-gallery-thumb.video {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .project-overlay-copy h3 {
   margin: 0 0 6px;
   font-family: var(--font-display);
@@ -1302,6 +1393,10 @@ main {
   }
 
   .oneflow-break-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .oneflow-media-placeholders {
     grid-template-columns: 1fr;
   }
 }

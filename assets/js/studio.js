@@ -21,10 +21,16 @@
 
   const overlay = document.querySelector('[data-project-overlay]');
   const overlayImage = document.querySelector('[data-project-image]');
+  const overlayVideo = document.querySelector('[data-project-video]');
   const overlayTitle = document.querySelector('[data-project-title]');
   const overlayMeta = document.querySelector('[data-project-meta]');
   const overlayDescription = document.querySelector('[data-project-description]');
   const overlayFacts = document.querySelector('[data-project-facts]');
+  const overlayPrev = document.querySelector('[data-overlay-prev]');
+  const overlayNext = document.querySelector('[data-overlay-next]');
+  const overlayStrip = document.querySelector('[data-overlay-strip]');
+  let activeGallery = [];
+  let activeIndex = 0;
 
   const projectWall = document.querySelector('[data-project-wall]');
   const projectPlaceholderTemplate = document.querySelector('#project-placeholder-template');
@@ -80,12 +86,82 @@
 
   const closeOverlay = () => {
     if (!overlay) return;
+    if (overlayVideo) {
+      overlayVideo.pause();
+      overlayVideo.removeAttribute('src');
+      overlayVideo.load();
+    }
     overlay.hidden = true;
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };
 
-  if (overlay && overlayImage && overlayTitle && overlayMeta && overlayDescription && overlayFacts) {
+  const renderActiveMedia = () => {
+    if (!overlayImage || !overlayVideo) return;
+    const item = activeGallery[activeIndex];
+    if (!item) return;
+
+    if (item.type === 'video') {
+      overlayImage.hidden = true;
+      overlayVideo.hidden = false;
+      overlayVideo.src = item.src;
+      overlayVideo.load();
+      overlayVideo.play().catch(() => {});
+    } else {
+      overlayVideo.pause();
+      overlayVideo.hidden = true;
+      overlayVideo.removeAttribute('src');
+      overlayVideo.load();
+      overlayImage.hidden = false;
+      overlayImage.src = item.src;
+      overlayImage.alt = item.label || 'Project media';
+    }
+
+    if (overlayStrip) {
+      overlayStrip.querySelectorAll('.overlay-gallery-thumb').forEach((thumb, index) => {
+        thumb.classList.toggle('is-active', index === activeIndex);
+      });
+    }
+  };
+
+  const renderGalleryStrip = () => {
+    if (!overlayStrip) return;
+    overlayStrip.textContent = '';
+    activeGallery.forEach((item, index) => {
+      const thumb = document.createElement('button');
+      thumb.type = 'button';
+      thumb.className = `overlay-gallery-thumb${item.type === 'video' ? ' video' : ''}`;
+      if (item.type === 'video') {
+        thumb.textContent = 'Video';
+      } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.label || 'Gallery image';
+        thumb.appendChild(img);
+      }
+      thumb.addEventListener('click', () => {
+        activeIndex = index;
+        renderActiveMedia();
+      });
+      overlayStrip.appendChild(thumb);
+    });
+  };
+
+  const stepGallery = (direction) => {
+    if (!activeGallery.length) return;
+    activeIndex = (activeIndex + direction + activeGallery.length) % activeGallery.length;
+    renderActiveMedia();
+  };
+
+  if (overlayPrev) {
+    overlayPrev.addEventListener('click', () => stepGallery(-1));
+  }
+
+  if (overlayNext) {
+    overlayNext.addEventListener('click', () => stepGallery(1));
+  }
+
+  if (overlay && overlayImage && overlayVideo && overlayTitle && overlayMeta && overlayDescription && overlayFacts) {
     document.querySelectorAll('[data-project-card]').forEach((card) => {
       card.addEventListener('click', () => {
         const image = card.getAttribute('data-image') || '';
@@ -94,9 +170,25 @@
         const description = card.getAttribute('data-description') || '';
         const facts = card.getAttribute('data-facts') || '';
         const isVideo = card.getAttribute('data-video') === 'true';
+        const galleryImages = (card.getAttribute('data-gallery-images') || '')
+          .split('|')
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .map((src) => ({ type: 'image', src, label: title }));
+        const galleryVideos = (card.getAttribute('data-gallery-videos') || '')
+          .split('|')
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .map((src) => ({ type: 'video', src, label: title }));
 
-        overlayImage.src = image;
-        overlayImage.alt = title;
+        activeGallery = [...galleryImages, ...galleryVideos];
+        if (!activeGallery.length) {
+          activeGallery = [{ type: isVideo ? 'video' : 'image', src: image, label: title }];
+        }
+        activeIndex = 0;
+        renderGalleryStrip();
+        renderActiveMedia();
+
         overlayTitle.textContent = title;
         overlayMeta.textContent = isVideo ? `${meta} · loop preview` : meta;
         overlayDescription.textContent = description;
