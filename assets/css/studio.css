@@ -888,12 +888,7 @@ main {
 }
 
 .oneflow-intro-copy h1 {
-  margin: 6px 0 0;
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  line-height: 1;
-  font-size: clamp(1.08rem, 2.1vw, 1.7rem);
-  text-transform: uppercase;
+  display: none;
 }
 
 .oneflow-intro-links {
@@ -931,8 +926,8 @@ main {
 
 .project-wall {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(10px, 1.2vw, 16px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(12px, 1.35vw, 18px);
   margin-bottom: clamp(34px, 5vw, 70px);
 }
 
@@ -943,7 +938,8 @@ main {
   padding: 0;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 180ms ease, border-color 180ms ease;
+  text-align: left;
+  transition: transform 180ms ease;
 }
 
 .project-wall-card:hover,
@@ -952,18 +948,104 @@ main {
   outline: none;
 }
 
+.project-wall-card .card-media {
+  border: 1px solid var(--line);
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
 .project-wall-card img {
   width: 100%;
-  height: clamp(250px, 28vw, 340px);
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.project-wall-card.portrait {
-  grid-column: span 1;
+.project-wall-card .card-caption {
+  padding-top: 8px;
 }
 
-.project-wall-card.landscape {
+.project-wall-card .card-caption strong {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+.project-wall-card .card-caption span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.frame-v-xl {
+  grid-column: span 3;
+}
+
+.frame-v-xl .card-media {
+  height: clamp(420px, 42vw, 560px);
+}
+
+.frame-h-xl {
+  grid-column: span 6;
+}
+
+.frame-h-xl .card-media {
+  height: clamp(280px, 25vw, 360px);
+}
+
+.frame-h {
+  grid-column: span 4;
+}
+
+.frame-h .card-media {
+  height: clamp(220px, 20vw, 290px);
+}
+
+.frame-small {
   grid-column: span 2;
+}
+
+.frame-small .card-media {
+  height: clamp(170px, 15vw, 220px);
+}
+
+.video-placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, #f8f8f8 0%, #efefef 100%);
+  position: relative;
+}
+
+.video-placeholder::before {
+  content: "";
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #cbcbcb;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.video-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 16px solid #1f1f1f;
+}
+
+.video-placeholder span {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .project-wall-card.motion img {
@@ -980,6 +1062,34 @@ main {
 .oneflow-contact {
   padding-top: clamp(16px, 2vw, 24px);
   margin-bottom: clamp(34px, 5vw, 70px);
+}
+
+.oneflow-break-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-bottom: clamp(40px, 5vw, 76px);
+}
+
+.break-gallery-card {
+  border: 0;
+  padding: 0;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.break-gallery-card .card-media {
+  border: 1px solid var(--line);
+  height: clamp(280px, 28vw, 390px);
+  overflow: hidden;
+}
+
+.break-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .oneflow-about-grid {
@@ -1175,7 +1285,24 @@ main {
 
 @media (max-width: 1080px) {
   .project-wall {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .frame-v-xl {
+    grid-column: span 4;
+  }
+
+  .frame-h-xl,
+  .frame-h {
+    grid-column: span 4;
+  }
+
+  .frame-small {
+    grid-column: span 2;
+  }
+
+  .oneflow-break-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1192,13 +1319,18 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .project-wall-card.landscape,
-  .project-wall-card.portrait {
+  .frame-v-xl,
+  .frame-h-xl,
+  .frame-h,
+  .frame-small {
     grid-column: span 1;
   }
 
-  .project-wall-card img {
-    height: 250px;
+  .frame-v-xl .card-media,
+  .frame-h-xl .card-media,
+  .frame-h .card-media,
+  .frame-small .card-media {
+    height: 240px;
   }
 
   .oneflow-about-grid {

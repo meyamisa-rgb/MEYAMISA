@@ -41,12 +41,15 @@
     for (let i = 11; i <= 30; i += 1) {
       const clone = projectPlaceholderTemplate.content.firstElementChild.cloneNode(true);
       const isLandscape = i % 5 === 0;
+      const isWide = i % 7 === 0;
       const isMotion = i % 4 === 0;
       const imgPath = placeholderImages[i % placeholderImages.length];
       const title = `Placeholder Project ${String(i).padStart(2, '0')}`;
 
-      clone.classList.toggle('landscape', isLandscape);
-      clone.classList.toggle('portrait', !isLandscape);
+      clone.classList.remove('frame-small');
+      clone.classList.toggle('frame-h', isLandscape && !isWide);
+      clone.classList.toggle('frame-h-xl', isWide);
+      clone.classList.toggle('frame-small', !isLandscape && !isWide);
       clone.classList.toggle('motion', isMotion);
       clone.setAttribute('data-title', title);
       clone.setAttribute('data-meta', `Archive placeholder, 2026`);
@@ -56,11 +59,20 @@
       );
       clone.setAttribute('data-facts', 'Artist: Mey Amisa|Format: Placeholder|Location: Studio|Year: 2026');
       clone.setAttribute('data-image', imgPath);
+      clone.setAttribute('data-video', String(isMotion));
 
-      const img = clone.querySelector('img');
+      const img = clone.querySelector('.card-media img');
+      const captionTitle = clone.querySelector('.card-caption strong');
+      const captionMeta = clone.querySelector('.card-caption span');
       if (img) {
         img.src = imgPath;
         img.alt = title;
+      }
+      if (captionTitle) {
+        captionTitle.textContent = title;
+      }
+      if (captionMeta) {
+        captionMeta.textContent = isMotion ? 'Video' : 'Placeholder';
       }
       projectWall.appendChild(clone);
     }
@@ -81,11 +93,12 @@
         const meta = card.getAttribute('data-meta') || '';
         const description = card.getAttribute('data-description') || '';
         const facts = card.getAttribute('data-facts') || '';
+        const isVideo = card.getAttribute('data-video') === 'true';
 
         overlayImage.src = image;
         overlayImage.alt = title;
         overlayTitle.textContent = title;
-        overlayMeta.textContent = meta;
+        overlayMeta.textContent = isVideo ? `${meta} · loop preview` : meta;
         overlayDescription.textContent = description;
         overlayFacts.textContent = '';
         facts
