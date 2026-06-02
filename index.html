@@ -3,193 +3,269 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mey Amisa — Studio Flow</title>
-    <meta name="description" content="One-page portfolio flow with projects, about, and contact for Mey Amisa." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <title>meyamisa design</title>
+    <meta name="description" content="Projects, exhibitions, about, and contact by meyamisa design." />
     <link rel="stylesheet" href="assets/css/studio.css" />
   </head>
-  <body class="oneflow-home">
-    <div class="site-shell">
-      <div class="site-frame">
-        <main>
-          <section class="oneflow-intro" aria-label="Intro">
-            <div class="oneflow-intro-copy">
-              <p class="eyebrow">Mey Amisa Studio</p>
-            </div>
-            <nav class="oneflow-intro-links" aria-label="Section navigation">
-              <a href="#projects">Projects</a>
-              <a href="#about">About me</a>
-              <a href="#contact">Contact</a>
-            </nav>
-          </section>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">meyamisa design</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="is-current" href="#projects">projects</a>
+        <a href="#exhibitions">exhibitions</a>
+        <a href="#about">about me</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </header>
 
-          <section class="oneflow-projects" id="projects" aria-label="Projects">
-            <div class="project-wall" data-project-wall>
-              <button class="project-wall-card frame-v-xl" type="button" data-project-card data-title="Identity Matrix" data-meta="Poster Series, 2026" data-description="Structured placeholder for a major vertical poster project." data-facts="Artist: Mey Amisa|Format: Vertical frame|Category: Experimental design|Year: 2026" data-image="assets/images/home/projects/project-01.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-01.jpeg" alt="Identity Matrix" /></div>
-                <div class="card-caption"><strong>Identity Matrix</strong><span>Poster Series</span></div>
-              </button>
+    <main>
+      <section class="project-index" id="projects" aria-label="Projects">
+        <div class="billboard-grid" aria-label="Billboard projects">
+          <button
+            class="project-card billboard-card"
+            type="button"
+            data-project-card
+            data-title="Billboard Space 01"
+            data-meta="billboard placeholder / wide format"
+            data-description="Placeholder for a wide billboard project in a clean presentation mockup with white space around it."
+            data-images="assets/images/home/references/art-lolk-billboard.png|assets/images/amygdala/amygdala-final-250126.jpg|assets/images/amygdala/installation-01.jpeg"
+            data-videos=""
+          >
+            <figure><img src="assets/images/home/references/art-lolk-billboard.png" alt="Billboard placeholder 01" /></figure>
+            <strong>Billboard Space 01</strong>
+            <em>wide billboard slot</em>
+          </button>
 
-              <button class="project-wall-card frame-h-xl" type="button" data-project-card data-title="Amygdala - Body as archive" data-meta="B.A Thesis 2026" data-description="Amygdala body as archive explores the development of an alternative communication system aimed at transmitting the emotional truth of dysregulated states, particularly those triggered by the amygdala. Focusing on nonverbal design, including movement, rhythm, and visual abstraction, it investigates how to communicate preverbal emotions like anxiety and trauma-states that are often inaccessible through language. By combining neurobiological insights with experimental practices like asemic writing and choreography, the goal is to offer a deeper understanding of emotional experiences, bypassing traditional communication methods to convey a more authentic and embodied truth." data-facts="Supervision: Prof. Holger Jacobs|Supervision: Daniela Geogervia|Format: B.A Thesis|Year: 2026|Focus: Nonverbal communication system" data-image="assets/images/amygdala/amygdala-final-250126.jpg" data-gallery-images="assets/images/amygdala/installation-01.jpeg|assets/images/amygdala/installation-02-replacement.jpeg|assets/images/amygdala/installation-03-replacement.jpeg|assets/images/amygdala/installation-04-replacement.jpeg|assets/images/amygdala/installation-05-aya.png|assets/images/amygdala/installation-06-a-installation-002.jpeg|assets/images/amygdala/installation-07.jpeg|assets/images/amygdala/visitor-01.jpeg|assets/images/amygdala/visitor-03.jpeg|assets/images/amygdala/visitor-10-daniela-001.jpeg|assets/images/amygdala/visitor-12-rena-and-mey.jpeg|assets/images/amygdala/cansu-01.jpeg|assets/images/amygdala/cansu-02.jpeg|assets/images/amygdala/cansu-03.jpeg|assets/images/amygdala/cansu-04.jpeg|assets/images/amygdala/cansu-05.jpeg|assets/images/amygdala/cansu-06.jpeg" data-gallery-videos="assets/videos/amygdala/amygdala-in-type.mp4|assets/videos/amygdala/directors-cut-01-high-road.mp4|assets/videos/amygdala/motion-in-motion.mov|assets/videos/amygdala/process-01.mp4|assets/videos/amygdala/process-02.mp4|assets/videos/amygdala/process-03.mp4|assets/videos/amygdala/process-04.mp4|assets/videos/amygdala/process-05.mp4">
-                <div class="card-media"><img src="assets/images/amygdala/amygdala-final-250126.jpg" alt="Amygdala - Body as archive" /></div>
-                <div class="card-caption"><strong>Amygdala - Body as archive</strong><span>B.A Thesis 2026</span></div>
-              </button>
+          <button
+            class="project-card billboard-card"
+            type="button"
+            data-project-card
+            data-title="Billboard Space 02"
+            data-meta="billboard placeholder / wide format"
+            data-description="Second horizontal billboard slot for a future project, designed to hold a panoramic image with short title and meta."
+            data-images="assets/images/amygdala/amygdala-final-250126.jpg|assets/images/home/references/art-lolk-billboard.png|assets/images/amygdala/thesis-hero.png"
+            data-videos=""
+          >
+            <figure><img src="assets/images/amygdala/amygdala-final-250126.jpg" alt="Billboard placeholder 02" /></figure>
+            <strong>Billboard Space 02</strong>
+            <em>panorama image</em>
+          </button>
 
-              <button class="project-wall-card frame-v-xl" type="button" data-project-card data-title="Assemic Module" data-meta="Poster, 2026" data-description="Placeholder for a high-contrast experimental composition." data-facts="Artist: Mey Amisa|Format: Vertical frame|Category: Asemic writing|Year: 2026" data-image="assets/images/home/projects/project-02.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-02.jpeg" alt="Assemic Module" /></div>
-                <div class="card-caption"><strong>Assemic Module</strong><span>Poster</span></div>
-              </button>
-
-              <button class="project-wall-card frame-h video-card" type="button" data-project-card data-title="Motion Placeholder 01" data-meta="Video placeholder" data-description="Placeholder video frame for future moving image work." data-facts="Artist: Mey Amisa|Format: Video placeholder|Category: Motion|Year: 2026" data-image="assets/images/exhibition/deviations-hero-collage.png" data-video="true">
-                <div class="card-media video-placeholder"><span>Video</span></div>
-                <div class="card-caption"><strong>Motion Placeholder 01</strong><span>Video</span></div>
-              </button>
-
-              <button class="project-wall-card frame-v-xl" type="button" data-project-card data-title="Blue Construction" data-meta="Plakat, 2026" data-description="Placeholder for a bold typographic print project." data-facts="Artist: Mey Amisa|Format: Vertical frame|Category: Poster|Year: 2026" data-image="assets/images/home/projects/project-03.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-03.jpeg" alt="Blue Construction" /></div>
-                <div class="card-caption"><strong>Blue Construction</strong><span>Plakat</span></div>
-              </button>
-
-              <button class="project-wall-card frame-h" type="button" data-project-card data-title="Object and Ornament" data-meta="Archive still, 2026" data-description="A compact wide tile for archive documentation." data-facts="Artist: Mey Amisa|Format: Horizontal frame|Category: Archive still|Year: 2026" data-image="assets/images/exhibition/punio/punio-poster.png">
-                <div class="card-media"><img src="assets/images/exhibition/punio/punio-poster.png" alt="Object and Ornament" /></div>
-                <div class="card-caption"><strong>Object and Ornament</strong><span>Archive Still</span></div>
-              </button>
-
-              <button class="project-wall-card frame-v-xl" type="button" data-project-card data-title="Heavy Type" data-meta="Poster, 2026" data-description="Placeholder for typographic identity exploration." data-facts="Artist: Mey Amisa|Format: Vertical frame|Category: Typography|Year: 2026" data-image="assets/images/home/projects/project-01.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-01.jpeg" alt="Heavy Type" /></div>
-                <div class="card-caption"><strong>Heavy Type</strong><span>Typography</span></div>
-              </button>
-
-              <button class="project-wall-card frame-small" type="button" data-project-card data-title="Small Study 01" data-meta="Study" data-description="Small-format placeholder project card." data-facts="Artist: Mey Amisa|Format: Small frame|Category: Study|Year: 2026" data-image="assets/images/home/projects/project-02.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-02.jpeg" alt="Small Study 01" /></div>
-                <div class="card-caption"><strong>Small Study 01</strong><span>Study</span></div>
-              </button>
-
-              <button class="project-wall-card frame-small video-card" type="button" data-project-card data-title="Motion Placeholder 02" data-meta="Video placeholder" data-description="Small placeholder video tile for rhythm and balance." data-facts="Artist: Mey Amisa|Format: Video placeholder|Category: Motion|Year: 2026" data-image="assets/images/home/projects/project-03.jpeg" data-video="true">
-                <div class="card-media video-placeholder"><span>Video</span></div>
-                <div class="card-caption"><strong>Motion Placeholder 02</strong><span>Video</span></div>
-              </button>
-
-              <button class="project-wall-card frame-h" type="button" data-project-card data-title="Pegelfont" data-meta="Concept" data-description="Placeholder horizontal project for layout contrast." data-facts="Artist: Mey Amisa|Format: Horizontal frame|Category: Concept|Year: 2026" data-image="assets/images/home/projects/project-ref-eguide.png">
-                <div class="card-media"><img src="assets/images/home/projects/project-ref-eguide.png" alt="Pegelfont" /></div>
-                <div class="card-caption"><strong>Pegelfont</strong><span>Concept</span></div>
-              </button>
-
-              <button class="project-wall-card frame-small" type="button" data-project-card data-title="Small Study 02" data-meta="Archive" data-description="Placeholder for compact archive material." data-facts="Artist: Mey Amisa|Format: Small frame|Category: Archive|Year: 2026" data-image="assets/images/home/projects/project-01.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-01.jpeg" alt="Small Study 02" /></div>
-                <div class="card-caption"><strong>Small Study 02</strong><span>Archive</span></div>
-              </button>
-
-              <button class="project-wall-card frame-small video-card" type="button" data-project-card data-title="Motion Placeholder 03" data-meta="Video placeholder" data-description="Placeholder video tile for future project loop." data-facts="Artist: Mey Amisa|Format: Video placeholder|Category: Motion|Year: 2026" data-image="assets/images/home/projects/project-02.jpeg" data-video="true">
-                <div class="card-media video-placeholder"><span>Video</span></div>
-                <div class="card-caption"><strong>Motion Placeholder 03</strong><span>Video</span></div>
-              </button>
-
-              <button class="project-wall-card frame-h" type="button" data-project-card data-title="Timewriter" data-meta="Data visual" data-description="Placeholder horizontal tile for publication-style project work." data-facts="Artist: Mey Amisa|Format: Horizontal frame|Category: Data visual|Year: 2026" data-image="assets/images/home/projects/project-03.jpeg">
-                <div class="card-media"><img src="assets/images/home/projects/project-03.jpeg" alt="Timewriter" /></div>
-                <div class="card-caption"><strong>Timewriter</strong><span>Data Visual</span></div>
-              </button>
-
-              <button class="project-wall-card frame-small" type="button" data-project-card data-title="Small Study 03" data-meta="Draft" data-description="Placeholder draft tile for future curation." data-facts="Artist: Mey Amisa|Format: Small frame|Category: Draft|Year: 2026" data-image="assets/images/home/projects/project-ref-eguide.png">
-                <div class="card-media"><img src="assets/images/home/projects/project-ref-eguide.png" alt="Small Study 03" /></div>
-                <div class="card-caption"><strong>Small Study 03</strong><span>Draft</span></div>
-              </button>
-
-              <button class="project-wall-card frame-h video-card" type="button" data-project-card data-title="Motion Placeholder 04" data-meta="Video placeholder" data-description="Wide placeholder video frame for exhibition documentation." data-facts="Artist: Mey Amisa|Format: Video placeholder|Category: Motion|Year: 2026" data-image="assets/images/home/projects/project-01.jpeg" data-video="true">
-                <div class="card-media video-placeholder"><span>Video</span></div>
-                <div class="card-caption"><strong>Motion Placeholder 04</strong><span>Video</span></div>
-              </button>
-            </div>
-          </section>
-
-          <section class="oneflow-break-gallery" aria-label="Featured gallery">
-            <button class="break-gallery-card" type="button" data-project-card data-title="Gallery Frame 01" data-meta="Featured" data-description="Large gallery placeholder before the About section." data-facts="Artist: Mey Amisa|Format: Large frame|Category: Gallery|Year: 2026" data-image="assets/images/home/projects/project-03.jpeg">
-              <div class="card-media"><img src="assets/images/home/projects/project-03.jpeg" alt="Featured gallery 01" /></div>
-            </button>
-            <button class="break-gallery-card" type="button" data-project-card data-title="Gallery Frame 02" data-meta="Featured" data-description="Second large gallery frame in balanced composition." data-facts="Artist: Mey Amisa|Format: Large frame|Category: Gallery|Year: 2026" data-image="assets/images/home/projects/project-ref-eguide.png">
-              <div class="card-media"><img src="assets/images/home/projects/project-ref-eguide.png" alt="Featured gallery 02" /></div>
-            </button>
-            <button class="break-gallery-card video-card" type="button" data-project-card data-title="Gallery Motion" data-meta="Featured video placeholder" data-description="Large video placeholder in gallery mode before About." data-facts="Artist: Mey Amisa|Format: Video placeholder|Category: Gallery motion|Year: 2026" data-image="assets/images/exhibition/deviations-hero-collage.png" data-video="true">
-              <div class="card-media video-placeholder"><span>Video</span></div>
-            </button>
-          </section>
-
-          <section class="oneflow-media-placeholders" aria-label="Media placeholders">
-            <div class="media-placeholder-card">Photo Slot 01</div>
-            <div class="media-placeholder-card">Video Slot 01</div>
-            <div class="media-placeholder-card">Photo Slot 02</div>
-            <div class="media-placeholder-card">Video Slot 02</div>
-            <div class="media-placeholder-card">Photo Slot 03</div>
-            <div class="media-placeholder-card">Video Slot 03</div>
-          </section>
-
-          <section class="oneflow-about" id="about" aria-label="About me">
-            <div class="oneflow-about-grid">
-              <figure class="about-media about-media-text">
-                <img src="assets/images/about/art-001.png" alt="Mey Amisa text image" loading="lazy" />
-              </figure>
-              <figure class="about-media">
-                <img src="assets/images/about/about-photo-02.jpeg" alt="Mey Amisa portrait in exhibition space" loading="lazy" />
-              </figure>
-            </div>
-          </section>
-
-          <section class="oneflow-contact" id="contact" aria-label="Contact">
-            <div class="oneflow-section-head">
-              <h2>Contact</h2>
-            </div>
-            <div class="oneflow-contact-grid">
-              <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
-              <a href="https://www.instagram.com/mey.amisa/" target="_blank" rel="noreferrer">Instagram</a>
-              <a href="https://www.behance.net/meyamisa1#" target="_blank" rel="noreferrer">Behance</a>
-            </div>
-          </section>
-        </main>
-
-        <div class="project-overlay" data-project-overlay hidden aria-hidden="true">
-          <div class="project-overlay-backdrop" data-project-close></div>
-          <article class="project-overlay-panel" role="dialog" aria-modal="true" aria-label="Project detail">
-            <button class="project-overlay-close" type="button" data-project-close aria-label="Close">×</button>
-            <figure class="project-overlay-media">
-              <img src="" alt="" data-project-image />
-              <video data-project-video playsinline muted loop controls hidden></video>
-              <button class="overlay-nav overlay-prev" type="button" data-overlay-prev aria-label="Previous media">‹</button>
-              <button class="overlay-nav overlay-next" type="button" data-overlay-next aria-label="Next media">›</button>
-            </figure>
-
-            <div class="project-overlay-head">
-              <p class="eyebrow" data-project-meta></p>
-              <h3 data-project-title></h3>
-            </div>
-
-            <div class="project-overlay-grid">
-              <div class="project-overlay-text">
-                <p data-project-description></p>
-              </div>
-              <dl class="project-overlay-facts" data-project-facts></dl>
-            </div>
-
-            <div class="project-overlay-accordion">
-              <details>
-                <summary>Project Statement</summary>
-                <p>Placeholder project statement and curatorial framing.</p>
-              </details>
-            </div>
-            <div class="overlay-gallery-strip" data-overlay-strip></div>
-          </article>
+          <button
+            class="project-card billboard-card"
+            type="button"
+            data-project-card
+            data-title="Billboard Space 03"
+            data-meta="billboard placeholder / installation"
+            data-description="Third wide slot for exhibition documentation, wall graphics, motion stills, or public-facing graphic systems."
+            data-images="assets/images/amygdala/installation-01.jpeg|assets/images/home/references/art-lolk-billboard.png|assets/images/amygdala/installation-03-replacement.jpeg"
+            data-videos=""
+          >
+            <figure><img src="assets/images/amygdala/installation-01.jpeg" alt="Billboard placeholder 03" /></figure>
+            <strong>Billboard Space 03</strong>
+            <em>installation wide</em>
+          </button>
         </div>
-      </div>
+
+        <div class="type-marquee" aria-label="Moving type animation">
+          <div class="type-track">
+            <span>itgirl / meyamisa design / asemic notes / ghost words / soft archive / billboard / motion / exhibition / </span>
+            <span>ITGIRL / MEYAMISA DESIGN / ///---/// / open forms / text-body / image-noise / poster loop / </span>
+          </div>
+        </div>
+
+        <div class="a4-grid" aria-label="A4 poster projects">
+          <button
+            class="project-card a4-card"
+            type="button"
+            data-project-card
+            data-title="A4 Poster 01"
+            data-meta="A4 poster placeholder"
+            data-description="A4-sized poster slot based on the ART LOLK poster proportion."
+            data-images="assets/images/home/references/art-lolk-a4.png|assets/images/home/references/art-lolk-billboard.png"
+            data-videos=""
+          >
+            <figure><img src="assets/images/home/references/art-lolk-a4.png" alt="A4 poster placeholder 01" /></figure>
+            <strong>A4 Poster 01</strong>
+            <em>poster slot</em>
+          </button>
+
+          <button
+            class="project-card a4-card"
+            type="button"
+            data-project-card
+            data-title="A4 Poster 02"
+            data-meta="A4 poster placeholder"
+            data-description="A4 poster placeholder for print, event graphics, typographic image, or archive poster."
+            data-images="assets/images/home/projects/project-02.jpeg|assets/images/home/projects/project-03.jpeg|assets/images/amygdala/design-cover.jpg"
+            data-videos=""
+          >
+            <figure><img src="assets/images/home/projects/project-02.jpeg" alt="A4 poster placeholder 02" /></figure>
+            <strong>A4 Poster 02</strong>
+            <em>poster slot</em>
+          </button>
+
+          <button
+            class="project-card a4-card"
+            type="button"
+            data-project-card
+            data-title="A4 Poster 03"
+            data-meta="A4 poster placeholder"
+            data-description="A4 poster placeholder for a future project image, poster system, or printed publication cover."
+            data-images="assets/images/home/projects/project-01.jpeg|assets/images/home/projects/project-02.jpeg|assets/images/home/projects/project-03.jpeg|assets/images/home/projects/project-ref-eguide.png"
+            data-videos=""
+          >
+            <figure><img src="assets/images/home/projects/project-ref-eguide.png" alt="A4 poster placeholder 03" /></figure>
+            <strong>A4 Poster 03</strong>
+            <em>poster slot</em>
+          </button>
+
+          <button
+            class="project-card a4-card"
+            type="button"
+            data-project-card
+            data-title="A4 Poster 04"
+            data-meta="A4 poster placeholder"
+            data-description="A4 poster placeholder for experimental typography and graphic research."
+            data-images="assets/images/amygdala/design-cover.jpg|assets/images/amygdala/process-reference.png|assets/images/amygdala/amygdala-layout-reference.png"
+            data-videos=""
+          >
+            <figure><img src="assets/images/amygdala/design-cover.jpg" alt="A4 poster placeholder 04" /></figure>
+            <strong>A4 Poster 04</strong>
+            <em>poster slot</em>
+          </button>
+
+          <button
+            class="project-card a4-card"
+            type="button"
+            data-project-card
+            data-title="A4 Poster 05"
+            data-meta="A4 poster placeholder"
+            data-description="Fifth A4 poster placeholder for a project, exhibition poster, or printed artifact."
+            data-images="assets/images/amygdala/process-reference.png|assets/images/amygdala/storyboard-01.png|assets/images/amygdala/storyboard-02.png"
+            data-videos=""
+          >
+            <figure><img src="assets/images/amygdala/process-reference.png" alt="A4 poster placeholder 05" /></figure>
+            <strong>A4 Poster 05</strong>
+            <em>poster slot</em>
+          </button>
+        </div>
+      </section>
+
+      <section class="exhibition-section" id="exhibitions" aria-label="Exhibitions">
+        <div class="section-label">exhibitions</div>
+        <div class="exhibition-list">
+          <button
+            type="button"
+            class="exhibition-card"
+            data-project-card
+            data-title="AMYGDALA Exhibition"
+            data-meta="exhibition placeholder / 2026"
+            data-description="Short description placeholder. This exhibition detail can hold installation pictures, videos, documentation, and notes."
+            data-images="assets/images/amygdala/installation-01.jpeg|assets/images/amygdala/visitor-01.jpeg|assets/images/amygdala/installation-03-replacement.jpeg"
+            data-videos="assets/videos/amygdala/installation-01.mp4|assets/videos/amygdala/installation-02.mp4"
+            aria-label="Open AMYGDALA exhibition"
+          >
+            <div class="exhibition-copy">
+              <strong>AMYGDALA</strong>
+              <span>graduation exhibition / 2026</span>
+              <p>Text description placeholder for the exhibition. Add the short concept, context, venue, date, and what the viewer will see.</p>
+            </div>
+            <div class="exhibition-preview">
+              <img src="assets/images/amygdala/installation-01.jpeg" alt="AMYGDALA exhibition placeholder" loading="lazy" />
+              <span>video</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="exhibition-card"
+            data-project-card
+            data-title="Body as Archive Exhibition"
+            data-meta="exhibition placeholder"
+            data-description="Short description placeholder for images, videos, installation views, and process documentation."
+            data-images="assets/images/amygdala/installation-03.jpeg|assets/images/amygdala/installation-04.jpeg|assets/images/amygdala/installation-05.jpeg"
+            data-videos=""
+            aria-label="Open Body as Archive exhibition"
+          >
+            <div class="exhibition-copy">
+              <strong>Body as Archive</strong>
+              <span>installation archive</span>
+              <p>Text description placeholder first, then image and video documentation after it.</p>
+            </div>
+            <div class="exhibition-preview">
+              <img src="assets/images/amygdala/installation-03.jpeg" alt="Body as Archive exhibition placeholder" loading="lazy" />
+              <span>photo</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="exhibition-card"
+            data-project-card
+            data-title="Process Room Exhibition"
+            data-meta="exhibition placeholder"
+            data-description="Short description placeholder for process images, research fragments, moving-image tests, and exhibition context."
+            data-images="assets/images/amygdala/process-reference.png|assets/images/amygdala/cansu-01.jpeg|assets/images/amygdala/cansu-02.jpeg"
+            data-videos="assets/videos/amygdala/process-01.mp4|assets/videos/amygdala/process-02.mp4"
+            aria-label="Open Process Room exhibition"
+          >
+            <div class="exhibition-copy">
+              <strong>Process Room</strong>
+              <span>research, tests, documentation</span>
+              <p>Text description placeholder for process notes, experiments, moving image tests, and research fragments.</p>
+            </div>
+            <div class="exhibition-preview">
+              <img src="assets/images/amygdala/process-reference.png" alt="Process Room exhibition placeholder" loading="lazy" />
+              <span>video</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-label="About me">
+        <div class="section-label">about me</div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              This index collects projects, exhibitions, process fragments, and contact links in one open structure.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/images/about/about-photo-02.jpeg" alt="Mey Amisa portrait in exhibition space" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-label="Contact">
+        <div class="section-label">contact</div>
+        <div class="contact-grid">
+          <a href="mailto:meyamisa02@gmail.com">meyamisa02@gmail.com</a>
+          <a href="https://www.instagram.com/mey.amisa/" target="_blank" rel="noreferrer">instagram . mey.amisa</a>
+          <a href="https://www.behance.net/meyamisa1#" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-viewer" data-project-viewer hidden aria-hidden="true">
+      <button class="viewer-backdrop" type="button" data-viewer-close aria-label="Close project viewer"></button>
+      <article class="viewer-panel" role="dialog" aria-modal="true" aria-label="Project viewer">
+        <button class="viewer-close" type="button" data-viewer-close>Close</button>
+        <div class="viewer-copy">
+          <p data-viewer-meta></p>
+          <h2 data-viewer-title></h2>
+          <p data-viewer-description></p>
+        </div>
+        <figure class="viewer-media">
+          <img src="" alt="" data-viewer-image />
+          <video data-viewer-video playsinline muted loop controls hidden></video>
+        </figure>
+        <div class="viewer-controls">
+          <button type="button" data-viewer-prev>Previous</button>
+          <button type="button" data-viewer-next>Next</button>
+        </div>
+        <div class="viewer-strip" data-viewer-strip></div>
+      </article>
     </div>
 
-    <template id="project-placeholder-template">
-      <button class="project-wall-card frame-small" type="button" data-project-card data-title="" data-meta="" data-description="" data-facts="" data-image="">
-        <div class="card-media"><img src="" alt="" loading="lazy" /></div>
-        <div class="card-caption"><strong></strong><span></span></div>
-      </button>
-    </template>
-
-    <script src="assets/js/studio.js?v=dev-flow-3"></script>
+    <script src="assets/js/studio.js"></script>
   </body>
 </html>
