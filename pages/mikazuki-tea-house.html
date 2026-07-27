@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mikazuki Tea House — meyamisa design</title>
+    <meta
+      name="description"
+      content="Mikazuki Tea House: a quiet identity, packaging, and menu system commissioned by Kirameki Earth."
+    />
+    <link rel="stylesheet" href="../assets/css/studio.css?v=branding-4" />
+  </head>
+  <body class="project-page mikazuki-page">
+    <header class="site-header project-page-header">
+      <a class="brand" href="../index.html">meyamisa design</a>
+      <nav class="site-nav" aria-label="Project navigation">
+        <a class="is-current" href="../index.html#projects">projects</a>
+        <a href="../index.html#exhibitions">exhibitions</a>
+        <a href="writing.html">writing</a>
+        <a href="../index.html#about">about me</a>
+        <a href="../index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="mikazuki-story">
+      <div class="story-return mikazuki-return">
+        <a href="../index.html#projects">← Back to projects</a>
+      </div>
+
+      <header class="mikazuki-title">
+        <p>Brand identity · packaging · menu design</p>
+        <h1>Mikazuki Tea House</h1>
+      </header>
+
+      <figure class="mikazuki-hero">
+        <img
+          src="../assets/images/branding/mikazuki/mikazuki-rice-paper.jpg"
+          alt="Mikazuki Tea House experience title printed on circular rice paper"
+        />
+      </figure>
+
+      <section class="mikazuki-work-section" aria-labelledby="mikazuki-brand-title">
+        <header class="mikazuki-section-heading">
+          <p>01 · Identity and packaging</p>
+          <h2 id="mikazuki-brand-title">A visual system shaped by the crescent moon.</h2>
+        </header>
+
+        <div class="mikazuki-hd-gallery">
+          <figure class="mikazuki-image mikazuki-image-wide">
+            <img
+              src="../assets/images/branding/mikazuki/hd/mikazuki-packaging-hero-hd.png"
+              alt="Mikazuki Tea House wooden tea packaging presented as a complete set"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="mikazuki-image">
+            <img
+              src="../assets/images/branding/mikazuki/hd/mikazuki-package-front-hd.jpg"
+              alt="Front of the circular Mikazuki wooden tea box"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="mikazuki-image">
+            <img
+              src="../assets/images/branding/mikazuki/hd/mikazuki-package-back-hd.jpg"
+              alt="Back of the Mikazuki tea box with moon-shaped openings"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="mikazuki-image">
+            <img
+              src="../assets/images/branding/mikazuki/hd/mikazuki-package-open-hd.jpg"
+              alt="Open Mikazuki wooden tea container"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="mikazuki-image">
+            <img
+              src="../assets/images/branding/mikazuki/hd/mikazuki-moon-detail-hd.jpg"
+              alt="Moon phase openings revealing tea leaves"
+              loading="lazy"
+            />
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="mikazuki-menu-section" aria-labelledby="mikazuki-menu-title">
+        <header class="mikazuki-section-heading">
+          <p>02 · Menu</p>
+          <h2 id="mikazuki-menu-title">A quiet menu for a slow tea experience.</h2>
+        </header>
+
+        <button
+          class="mikazuki-menu-zoom"
+          type="button"
+          aria-label="Open the complete Mikazuki Tea House menu in a larger view"
+          aria-haspopup="dialog"
+        >
+          <img
+            src="../assets/images/branding/mikazuki/hd/mikazuki-menu-hd-v5.png"
+            alt="Complete Mikazuki Tea House menu"
+            loading="lazy"
+          />
+        </button>
+      </section>
+
+      <section class="mikazuki-description" aria-labelledby="mikazuki-description-title">
+        <p>Commissioned by Kirameki Earth</p>
+        <div>
+          <h2 id="mikazuki-description-title">Tea, moonlight, and the passage of time.</h2>
+          <p>
+            Kirameki Earth commissioned me to create a minimal menu and visual direction for Mikazuki Tea House in
+            Kitahiroshima. Mikazuki means crescent moon, so the identity follows the moon as a quiet measure of
+            time. Circular packaging, crescent-shaped openings, and the movement from closed to open evoke changing
+            lunar phases, while the tea experience unfolds at an equally unhurried pace.
+          </p>
+          <p>
+            A translucent rice-paper layer gives the system softness and connects it to Kitahiroshima’s strong
+            rice-growing culture and its celebrations of rice and harvest. Restrained typography, warm wood, and
+            natural materials form a calm, tactile identity in which tea becomes a way of noticing time.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="mikazuki-menu-dialog" aria-label="Complete Mikazuki Tea House menu">
+      <button class="mikazuki-menu-close" type="button" aria-label="Close enlarged menu">Close</button>
+      <img
+        src="../assets/images/branding/mikazuki/hd/mikazuki-menu-hd-v5.png"
+        alt="Complete Mikazuki Tea House menu in a larger view"
+      />
+    </dialog>
+
+    <script>
+      const menuZoom = document.querySelector(".mikazuki-menu-zoom");
+      const menuDialog = document.querySelector(".mikazuki-menu-dialog");
+      const menuClose = document.querySelector(".mikazuki-menu-close");
+
+      menuZoom?.addEventListener("click", () => menuDialog.showModal());
+      menuClose?.addEventListener("click", () => menuDialog.close());
+      menuDialog?.addEventListener("click", (event) => {
+        if (event.target === menuDialog) menuDialog.close();
+      });
+    </script>
+  </body>
+</html>

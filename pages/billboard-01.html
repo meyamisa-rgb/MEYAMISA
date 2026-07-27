@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ART LOLK — meyamisa design</title>
+    <meta name="description" content="ART LOLK project by meyamisa design." />
+    <link rel="stylesheet" href="../assets/css/studio.css?v=art-lolk-type-1" />
+  </head>
+  <body class="project-page art-lolk-page">
+    <header class="site-header project-page-header">
+      <a class="brand" href="../index.html">meyamisa design</a>
+      <nav class="site-nav" aria-label="Project navigation">
+        <a href="../index.html#projects">projects</a>
+        <a href="../index.html#exhibitions">exhibitions</a>
+        <a href="writing.html">writing</a>
+        <a href="../index.html#about">about me</a>
+        <a href="../index.html#contact">contact</a>
+      </nav>
+    </header>
+
+    <main class="project-story">
+      <div class="story-return">
+        <a href="../index.html#projects">← Back to projects</a>
+      </div>
+
+      <figure class="story-hero">
+        <img src="../assets/images/home/references/art-lolk-billboard.png" alt="ART LOLK billboard artwork" />
+      </figure>
+
+      <section class="type-playground" aria-label="Interactive experimental typography">
+        <div class="type-playground-copy">
+          <p>interactive type study</p>
+          <h2>touch the type until it starts to merge</h2>
+        </div>
+        <button class="type-stage" type="button" data-type-stage aria-label="Change experimental type composition">
+          <span class="type-orbit type-orbit-horizontal" data-type-word>ART LOLK</span>
+          <span class="type-orbit type-orbit-horizontal type-orbit-reverse" data-type-word>BOOK MARKET</span>
+          <span class="type-orbit type-orbit-vertical" data-type-word>TOKYO</span>
+          <span class="type-orbit type-orbit-vertical type-orbit-reverse" data-type-word>TYPOGRAPHY</span>
+          <span class="type-merge-core" data-type-core>LOLK</span>
+        </button>
+      </section>
+
+      <section class="story-text">
+        <h1 class="story-title">ART LOLK</h1>
+        <p>
+          ART LOLK is presented as a public-facing graphic system: a landscape of books, language, information,
+          and movement. The project uses the billboard format as a place where typography and illustration can
+          become immediate, generous, and visible from a distance.
+        </p>
+      </section>
+
+      <section class="story-gallery story-gallery-balanced">
+        <figure><img src="../assets/images/home/references/art-lolk-a4.png" alt="ART LOLK A4 poster" /></figure>
+        <figure><img src="../assets/images/home/projects/project-02.jpeg" alt="ART LOLK poster placeholder" /></figure>
+        <figure><img src="../assets/images/home/projects/project-01.jpeg" alt="ART LOLK photo placeholder" /></figure>
+        <figure><img src="../assets/images/home/projects/project-03.jpeg" alt="ART LOLK photo placeholder" /></figure>
+        <figure><img src="../assets/images/home/projects/project-ref-eguide.png" alt="ART LOLK photo placeholder" /></figure>
+        <figure><img src="../assets/images/home/references/art-lolk-billboard.png" alt="ART LOLK billboard detail" /></figure>
+      </section>
+
+      <a class="next-project" href="billboard-02.html">
+        <figure><img src="../assets/images/amygdala/amygdala-final-250126.jpg" alt="AMYGDALA Body as Archive artwork" /></figure>
+        <strong>AMYGDALA — BODY AS ARCHIVE</strong>
+      </a>
+    </main>
+    <script>
+      const stage = document.querySelector('[data-type-stage]');
+      const words = [...document.querySelectorAll('[data-type-word]')];
+      const core = document.querySelector('[data-type-core]');
+      const sets = [
+        ['ART LOLK', 'BOOK MARKET', 'TOKYO', 'TYPOGRAPHY', 'LOLK'],
+        ['TYPE', 'IMAGE', 'OBJECT', 'PUBLIC SPACE', 'MERGE'],
+        ['LETTER', 'POSTER', 'NOISE', 'READING', 'FORM'],
+        ['ZINE', 'BOOK', 'SIGN', 'MOVEMENT', 'LOOP'],
+      ];
+      let typeState = 0;
+
+      const updateType = () => {
+        typeState = (typeState + 1) % sets.length;
+        words.forEach((word, index) => {
+          word.textContent = sets[typeState][index];
+        });
+        core.textContent = sets[typeState][4];
+        stage.dataset.intensity = String(typeState);
+      };
+
+      stage.addEventListener('click', updateType);
+    </script>
+  </body>
+</html>
