@@ -5615,165 +5615,348 @@ figure {
 
 /* Dearly */
 
-.dearly-page,
-.dearly-page * {
-  font-family: var(--optima);
-}
-
 .dearly-page {
+  --dearly-blue: #062f8f;
+  --dearly-blue-dark: #031841;
+  --dearly-paper: #f3f1ec;
   overflow-x: clip;
+  background: var(--dearly-paper);
 }
 
 .dearly-story {
-  padding-bottom: clamp(110px, 15vw, 240px);
+  padding: 0 12px;
+  font-family: "Azeret Mono", "Courier New", monospace;
+}
+
+.dearly-story * {
+  font-family: inherit;
 }
 
 .dearly-return {
   width: min(92vw, 1500px);
+  margin-top: 26px;
+  font-size: clamp(0.72rem, 0.75vw, 0.84rem);
+  letter-spacing: -0.03em;
 }
 
-.dearly-title {
-  width: min(88vw, 1360px);
-  margin: clamp(44px, 6vw, 94px) auto clamp(80px, 10vw, 160px);
+.dearly-cover {
+  width: min(94vw, 1660px);
+  min-height: clamp(540px, 78vh, 960px);
+  margin: clamp(24px, 3vw, 48px) auto clamp(16px, 1.6vw, 26px);
+  padding: clamp(24px, 3.2vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background: var(--dearly-blue);
 }
 
-.dearly-title p {
-  margin: 0 0 clamp(24px, 3vw, 44px);
-  color: #355895;
-  font-size: clamp(0.82rem, 0.92vw, 0.98rem);
-  letter-spacing: 0.08em;
+.dearly-cover p,
+.dearly-cover h1 {
+  margin: 0;
+}
+
+.dearly-cover-topline,
+.dearly-cover-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: clamp(0.67rem, 0.74vw, 0.8rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
   text-transform: uppercase;
 }
 
-.dearly-title h1 {
+.dearly-cover-topline p:last-child,
+.dearly-cover-bottom p:last-child {
+  text-align: right;
+}
+
+.dearly-wordmark {
+  width: max-content;
+  max-width: 100%;
+  font-family: "Space Mono", "Azeret Mono", monospace;
+  font-size: clamp(5.1rem, 17vw, 18.5rem);
+  font-weight: 700;
+  letter-spacing: -0.17em;
+  line-height: 0.7;
+  text-transform: lowercase;
+  transform: scaleX(0.92);
+  transform-origin: left center;
+}
+
+.dearly-frame {
   margin: 0;
-  color: #073d9f;
-  font-size: clamp(5.8rem, 14vw, 17rem);
-  font-weight: 400;
-  letter-spacing: -0.095em;
-  line-height: 0.78;
 }
 
-.dearly-hero {
-  width: min(94vw, 1660px);
-  margin: 0 auto clamp(190px, 24vw, 380px);
-}
-
-.dearly-hero img,
-.dearly-image img {
-  display: block;
+.dearly-frame img {
   width: 100%;
   height: auto;
 }
 
-.dearly-section {
-  width: min(90vw, 1500px);
-  margin: 0 auto;
+.dearly-frame figcaption {
+  max-width: 62ch;
+  margin-top: 12px;
+  color: inherit;
+  font-size: clamp(0.65rem, 0.7vw, 0.76rem);
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 }
 
-.dearly-section-heading {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.35fr) minmax(0, 1.65fr);
-  gap: clamp(42px, 7vw, 120px);
-  align-items: start;
-  margin-bottom: clamp(90px, 12vw, 190px);
+.dearly-frame-full {
+  width: min(94vw, 1660px);
+  margin-inline: auto;
 }
 
-.dearly-section-heading p,
-.dearly-section-heading h2 {
+.dearly-opening-image {
+  margin-bottom: clamp(150px, 18vw, 310px);
+}
+
+.dearly-label {
   margin: 0;
-}
-
-.dearly-section-heading p {
-  color: #355895;
-  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
-  letter-spacing: 0.07em;
+  color: var(--dearly-blue);
+  font-size: clamp(0.67rem, 0.74vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-.dearly-section-heading h2 {
-  max-width: 15ch;
-  font-size: clamp(2.8rem, 5.4vw, 6.4rem);
-  font-weight: 400;
-  letter-spacing: -0.062em;
-  line-height: 0.94;
-}
-
-.dearly-image {
-  margin: 0;
-  background: #fff;
-}
-
-.dearly-image-wide {
-  width: min(100%, 1420px);
-}
-
-.dearly-system {
-  margin-top: clamp(220px, 28vw, 450px);
-}
-
-.dearly-type-study {
-  width: min(78vw, 1120px);
-  margin: 0 auto clamp(220px, 28vw, 430px);
-}
-
-.dearly-object-grid {
+.dearly-introduction {
+  width: min(86vw, 1320px);
+  margin: 0 auto clamp(190px, 23vw, 390px);
   display: grid;
-  grid-template-columns: minmax(260px, 0.76fr) minmax(0, 1.24fr);
-  gap: clamp(80px, 12vw, 210px) clamp(36px, 7vw, 120px);
-  align-items: center;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
 }
 
-.dearly-poster {
-  width: min(100%, 620px);
+.dearly-introduction > .dearly-label {
+  grid-column: 1 / span 3;
 }
 
-.dearly-print {
+.dearly-copy {
+  grid-column: 5 / -1;
+}
+
+.dearly-copy h2,
+.dearly-copy p,
+.dearly-chapter-heading h2,
+.dearly-chapter-heading p,
+.dearly-participation-copy h3,
+.dearly-participation-copy p,
+.dearly-process-copy p,
+.dearly-poster-intro p,
+.dearly-endnote p {
+  margin: 0;
+}
+
+.dearly-copy h2,
+.dearly-chapter-heading h2 {
+  font-size: clamp(2.7rem, 5.2vw, 6.6rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.075em;
+}
+
+.dearly-copy h2 {
+  max-width: 12ch;
+  margin-bottom: clamp(48px, 6vw, 90px);
+  color: var(--dearly-blue);
+}
+
+.dearly-copy p {
+  max-width: 54ch;
+  margin-top: 1.45em;
+  font-size: clamp(0.92rem, 1.18vw, 1.22rem);
+  line-height: 1.55;
+  letter-spacing: -0.04em;
+}
+
+.dearly-copy p:first-of-type {
+  margin-top: 0;
+}
+
+.dearly-chapter {
   width: 100%;
 }
 
-.dearly-description {
-  width: min(84vw, 1240px);
-  margin: clamp(240px, 30vw, 480px) auto 0;
+.dearly-chapter-heading {
+  width: min(86vw, 1320px);
+  margin: 0 auto clamp(88px, 10vw, 170px);
   display: grid;
-  grid-template-columns: minmax(190px, 0.38fr) minmax(0, 1.62fr);
-  gap: clamp(42px, 8vw, 130px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
   align-items: start;
-  padding-bottom: clamp(110px, 15vw, 240px);
 }
 
-.dearly-description > p,
-.dearly-description h2,
-.dearly-description div > p {
-  margin: 0;
+.dearly-chapter-heading .dearly-label {
+  grid-column: 1 / span 3;
 }
 
-.dearly-description > p {
-  color: #355895;
-  font-size: clamp(0.82rem, 0.92vw, 0.98rem);
-  line-height: 1.35;
+.dearly-chapter-heading h2 {
+  grid-column: 5 / -1;
+  max-width: 12ch;
 }
 
-.dearly-description h2 {
-  max-width: 13ch;
-  margin-bottom: clamp(40px, 5vw, 76px);
-  color: #073d9f;
-  font-size: clamp(2.8rem, 5.4vw, 6.4rem);
-  font-weight: 400;
-  letter-spacing: -0.062em;
-  line-height: 0.94;
+.dearly-frame-editorial {
+  width: min(77vw, 1180px);
+  margin: clamp(170px, 21vw, 350px) 6vw 0 auto;
 }
 
-.dearly-description div > p {
-  max-width: 44ch;
-  margin-top: 1.3em;
-  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
-  letter-spacing: -0.02em;
-  line-height: 1.45;
+.dearly-poster-intro {
+  width: min(78vw, 1130px);
+  margin: clamp(180px, 23vw, 380px) auto clamp(90px, 11vw, 180px);
+  display: grid;
+  grid-template-columns: minmax(170px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(30px, 6vw, 100px);
+  align-items: start;
 }
 
-.dearly-description div > p:first-of-type {
-  margin-top: 0;
+.dearly-poster-intro > p:last-child {
+  max-width: 38ch;
+  font-size: clamp(1rem, 1.45vw, 1.5rem);
+  line-height: 1.42;
+  letter-spacing: -0.045em;
+}
+
+.dearly-frame-square {
+  width: min(68vw, 1030px);
+  margin: 0 7vw 0 auto;
+}
+
+.dearly-frame-posters {
+  width: min(92vw, 1580px);
+  margin: clamp(180px, 22vw, 360px) auto 0;
+}
+
+.dearly-frame-station {
+  width: min(62vw, 900px);
+  margin: clamp(170px, 20vw, 330px) 5vw 0 auto;
+}
+
+.dearly-environment {
+  margin: clamp(220px, 29vw, 480px) -12px 0;
+  padding: clamp(100px, 13vw, 210px) 12px clamp(150px, 19vw, 310px);
+  color: #fff;
+  background: var(--dearly-blue-dark);
+}
+
+.dearly-chapter-heading-light .dearly-label {
+  color: #8aaaff;
+}
+
+.dearly-night-pair {
+  width: min(82vw, 1280px);
+  margin: clamp(150px, 19vw, 310px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 72px);
+  align-items: start;
+}
+
+.dearly-night-pair-lower {
+  margin-top: clamp(90px, 12vw, 190px);
+}
+
+.dearly-participation-copy {
+  width: min(82vw, 1280px);
+  margin: clamp(180px, 23vw, 380px) auto clamp(84px, 10vw, 160px);
+  display: grid;
+  grid-template-columns: minmax(170px, 0.38fr) minmax(0, 1fr);
+  gap: clamp(32px, 7vw, 120px);
+  align-items: start;
+}
+
+.dearly-participation-copy .dearly-label {
+  color: #8aaaff;
+}
+
+.dearly-participation-copy h3 {
+  max-width: 14ch;
+  font-size: clamp(2.3rem, 4.4vw, 5.3rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+}
+
+.dearly-participation-copy div > p {
+  max-width: 48ch;
+  margin-top: clamp(38px, 4vw, 62px);
+  color: #bfd0ff;
+  font-size: clamp(0.9rem, 1.08vw, 1.14rem);
+  line-height: 1.52;
+  letter-spacing: -0.04em;
+}
+
+.dearly-frame-wall {
+  width: min(78vw, 1260px);
+  margin: 0 auto;
+}
+
+.dearly-frame-wall + .dearly-frame-full {
+  margin-top: clamp(150px, 19vw, 310px);
+}
+
+.dearly-frame-night {
+  width: min(62vw, 900px);
+  margin: clamp(170px, 22vw, 350px) auto 0 6vw;
+}
+
+.dearly-process {
+  width: 100%;
+  padding: clamp(170px, 22vw, 350px) 0 clamp(150px, 18vw, 300px);
+}
+
+.dearly-process-copy {
+  width: min(70vw, 1040px);
+  margin: 0 7vw clamp(120px, 15vw, 250px) auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(34px, 6vw, 100px);
+}
+
+.dearly-process-copy p {
+  font-size: clamp(0.88rem, 1.05vw, 1.08rem);
+  line-height: 1.55;
+  letter-spacing: -0.04em;
+}
+
+.dearly-process-grid {
+  width: min(82vw, 1280px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(32px, 6vw, 100px);
+  align-items: start;
+}
+
+.dearly-process-type {
+  margin-top: clamp(100px, 12vw, 190px);
+}
+
+.dearly-endnote {
+  margin: 0 -12px;
+  min-height: clamp(460px, 66vh, 800px);
+  padding: clamp(30px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background: var(--dearly-blue);
+}
+
+.dearly-endnote > p:first-child {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+}
+
+.dearly-wordmark-small {
+  color: #fff;
+  font-size: clamp(4.5rem, 14vw, 14rem);
 }
 
 /* Mikazuki Tea House */
@@ -6014,37 +6197,56 @@ figure {
     margin-left: 0;
   }
 
-  .dearly-title,
-  .dearly-section {
-    width: min(92vw, 760px);
+  .dearly-cover {
+    min-height: 68vh;
   }
 
-  .dearly-title h1 {
-    font-size: clamp(5rem, 22vw, 9rem);
+  .dearly-wordmark {
+    font-size: clamp(4.4rem, 21vw, 10rem);
   }
 
-  .dearly-section-heading,
-  .dearly-description {
+  .dearly-introduction,
+  .dearly-chapter-heading {
+    width: min(90vw, 720px);
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 34px;
   }
 
-  .dearly-type-study {
-    width: min(88vw, 680px);
+  .dearly-introduction > .dearly-label,
+  .dearly-copy,
+  .dearly-chapter-heading .dearly-label,
+  .dearly-chapter-heading h2 {
+    grid-column: auto;
   }
 
-  .dearly-object-grid {
-    grid-template-columns: 1fr;
-    gap: 100px;
-  }
-
-  .dearly-poster {
-    width: min(76vw, 520px);
+  .dearly-frame-editorial,
+  .dearly-frame-square,
+  .dearly-frame-station,
+  .dearly-frame-night {
+    width: min(86vw, 720px);
     margin-inline: auto;
   }
 
-  .dearly-description {
-    width: min(88vw, 720px);
+  .dearly-poster-intro,
+  .dearly-participation-copy {
+    width: min(86vw, 720px);
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .dearly-night-pair {
+    width: min(86vw, 720px);
+    gap: 20px;
+  }
+
+  .dearly-process-copy {
+    width: min(82vw, 720px);
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .dearly-process-grid {
+    width: min(86vw, 720px);
   }
 
   .mikazuki-title,
@@ -6086,16 +6288,56 @@ figure {
     text-align: left;
   }
 
-  .dearly-hero {
-    width: 100vw;
+  .dearly-cover {
+    width: 100%;
+    min-height: 520px;
+    padding: 22px 18px;
   }
 
-  .dearly-type-study {
-    width: 92vw;
+  .dearly-cover-topline,
+  .dearly-cover-bottom {
+    display: grid;
+    gap: 8px;
   }
 
-  .dearly-poster {
-    width: min(82vw, 440px);
+  .dearly-cover-topline p:last-child,
+  .dearly-cover-bottom p:last-child {
+    text-align: left;
+  }
+
+  .dearly-wordmark {
+    font-size: 22vw;
+  }
+
+  .dearly-opening-image {
+    width: 100%;
+  }
+
+  .dearly-night-pair,
+  .dearly-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dearly-night-pair-lower,
+  .dearly-process-type {
+    margin-top: 0;
+  }
+
+  .dearly-frame-wall,
+  .dearly-frame-posters,
+  .dearly-frame-full {
+    width: 100%;
+  }
+
+  .dearly-frame-editorial,
+  .dearly-frame-square,
+  .dearly-frame-station,
+  .dearly-frame-night,
+  .dearly-poster-intro,
+  .dearly-participation-copy,
+  .dearly-process-copy,
+  .dearly-process-grid {
+    width: min(90vw, 480px);
   }
 
   .mikazuki-hd-gallery {
