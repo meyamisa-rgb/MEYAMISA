@@ -8,7 +8,7 @@
       name="description"
       content="UDTYPE is an experimental type collection, with an in-depth specimen of Audax across motion, scale, detail, and an interactive type tester."
     />
-    <link rel="stylesheet" href="../assets/css/studio.css?v=udtype-6" />
+    <link rel="stylesheet" href="../assets/css/studio.css?v=udtype-7" />
     <script src="../assets/js/udtype.js?v=udtype-1" defer></script>
   </head>
   <body class="project-page human-typography-page udtype-page">
@@ -50,80 +50,111 @@
         </div>
       </section>
 
-      <nav class="udtype-section-index" aria-label="UDTYPE page sections">
-        <a href="#udtype-families"><span>01</span><strong>Five families</strong></a>
-        <a href="#udtype-motion"><span>02</span><strong>Motion</strong></a>
-        <a href="#udtype-full-set"><span>03</span><strong>Full set</strong></a>
-        <a href="#udtype-details"><span>04</span><strong>Details</strong></a>
-        <a href="#udtype-tester"><span>05</span><strong>Type tester</strong></a>
-      </nav>
-
-      <section class="udtype-families" id="udtype-families" aria-labelledby="udtype-families-title">
-        <header class="udtype-section-heading">
-          <p>Original collection</p>
-          <h2 id="udtype-families-title">Five families, five voices</h2>
-          <p>Complete uppercase studies</p>
-        </header>
-        <div class="udtype-family-list">
-          <article class="udtype-family-card">
-            <header><span>01</span><h3>Audax</h3><p>Hard geometry</p></header>
-            <div
-              class="udtype-family-visual is-audax"
-              role="img"
-              aria-label="Audax uppercase alphabet built from hard geometric shapes"
-            ></div>
-          </article>
-          <article class="udtype-family-card">
-            <header><span>02</span><h3>Compulsive</h3><p>Restless gesture</p></header>
-            <div
-              class="udtype-family-visual is-compulsive"
-              role="img"
-              aria-label="Compulsive uppercase alphabet drawn with nervous overlapping lines"
-            ></div>
-          </article>
-          <article class="udtype-family-card">
-            <header><span>03</span><h3>Lines Moving</h3><p>Stroke in motion</p></header>
-            <div
-              class="udtype-family-visual is-lines"
-              role="img"
-              aria-label="Lines Moving uppercase alphabet made from shifting linear strokes"
-            ></div>
-          </article>
-          <article class="udtype-family-card">
-            <header><span>04</span><h3>Primitive</h3><p>Raw mass</p></header>
-            <div
-              class="udtype-family-visual is-primitive"
-              role="img"
-              aria-label="Primitive uppercase alphabet made from rough heavy black forms"
-            ></div>
-          </article>
-          <article class="udtype-family-card">
-            <header><span>05</span><h3>Curbas</h3><p>Loop and curve</p></header>
-            <div
-              class="udtype-family-visual is-curbas"
-              role="img"
-              aria-label="Curbas uppercase alphabet made from looping handwritten curves"
-            ></div>
-          </article>
-        </div>
+      <section class="udtype-family-stack" id="udtype-families" aria-label="The five complete UDTYPE families">
+        <article class="udtype-family-sheet">
+          <h2>UDTYPE.LETTERS: AUDAX</h2>
+          <div
+            class="udtype-family-sheet-image is-audax"
+            role="img"
+            aria-label="Complete Audax uppercase alphabet"
+          ></div>
+        </article>
+        <article class="udtype-family-sheet">
+          <h2>UDTYPE.LETTERS: COMPULSIVE</h2>
+          <div
+            class="udtype-family-sheet-image is-compulsive"
+            role="img"
+            aria-label="Complete Compulsive uppercase alphabet"
+          ></div>
+        </article>
+        <article class="udtype-family-sheet">
+          <h2>UDTYPE.LETTERS: LINES MOVING</h2>
+          <div
+            class="udtype-family-sheet-image is-lines"
+            role="img"
+            aria-label="Complete Lines Moving uppercase alphabet"
+          ></div>
+        </article>
+        <article class="udtype-family-sheet">
+          <h2>UDTYPE.LETTERS: PRIMITIVE</h2>
+          <div
+            class="udtype-family-sheet-image is-primitive"
+            role="img"
+            aria-label="Complete Primitive uppercase alphabet"
+          ></div>
+        </article>
+        <article class="udtype-family-sheet">
+          <h2>UDTYPE.LETTERS: CURBAS</h2>
+          <div
+            class="udtype-family-sheet-image is-curbas"
+            role="img"
+            aria-label="Complete Curbas uppercase alphabet"
+          ></div>
+        </article>
       </section>
 
-      <section class="udtype-audax-intro" aria-labelledby="udtype-audax-title">
-        <div class="udtype-audax-index">
-          <p>Selected family</p>
-          <p>01 / 05</p>
-        </div>
-        <div class="udtype-audax-copy">
-          <h2 id="udtype-audax-title">AUDAX</h2>
-          <p class="udtype-audax-lead">
-            An uppercase display alphabet built from hard geometry, interrupted strokes, and shifting mass.
-            Each glyph balances recognition with rupture.
-          </p>
-          <dl class="udtype-audax-facts">
-            <div><dt>Character set</dt><dd>A–Z</dd></div>
-            <div><dt>Extended set</dt><dd>Lowercase · numerals · punctuation</dd></div>
-            <div><dt>Classification</dt><dd>Experimental display</dd></div>
-          </dl>
+      <section class="udtype-letter-details" id="udtype-details" aria-labelledby="udtype-detail-title">
+        <h2 id="udtype-detail-title">LETTER DETAILS</h2>
+        <div class="udtype-detail-family-stack">
+          <article class="udtype-detail-family">
+            <h3>AUDAX</h3>
+            <div class="udtype-detail-pair">
+              <div class="udtype-letter-crop audax-a" role="img" aria-label="Audax letter A detail"></div>
+              <div class="udtype-letter-crop audax-q" role="img" aria-label="Audax letter Q detail"></div>
+            </div>
+          </article>
+          <article class="udtype-detail-family">
+            <h3>COMPULSIVE</h3>
+            <div class="udtype-detail-pair">
+              <div
+                class="udtype-letter-crop compulsive-b"
+                role="img"
+                aria-label="Compulsive letter B detail"
+              ></div>
+              <div
+                class="udtype-letter-crop compulsive-r"
+                role="img"
+                aria-label="Compulsive letter R detail"
+              ></div>
+            </div>
+          </article>
+          <article class="udtype-detail-family">
+            <h3>LINES MOVING</h3>
+            <div class="udtype-detail-pair">
+              <div
+                class="udtype-letter-crop lines-e"
+                role="img"
+                aria-label="Lines Moving letter E detail"
+              ></div>
+              <div
+                class="udtype-letter-crop lines-r"
+                role="img"
+                aria-label="Lines Moving letter R detail"
+              ></div>
+            </div>
+          </article>
+          <article class="udtype-detail-family">
+            <h3>PRIMITIVE</h3>
+            <div class="udtype-detail-pair">
+              <div
+                class="udtype-letter-crop primitive-a"
+                role="img"
+                aria-label="Primitive letter A detail"
+              ></div>
+              <div
+                class="udtype-letter-crop primitive-g"
+                role="img"
+                aria-label="Primitive letter G detail"
+              ></div>
+            </div>
+          </article>
+          <article class="udtype-detail-family">
+            <h3>CURBAS</h3>
+            <div class="udtype-detail-pair">
+              <div class="udtype-letter-crop curbas-b" role="img" aria-label="Curbas letter B detail"></div>
+              <div class="udtype-letter-crop curbas-r" role="img" aria-label="Curbas letter R detail"></div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -132,10 +163,7 @@
         id="udtype-motion"
         aria-label="Audax letterforms moving from left to right"
       >
-        <header class="udtype-section-label udtype-section-label-inverse">
-          <p>Motion specimen</p>
-          <p>Direction / rhythm / repetition</p>
-        </header>
+        <h2 class="udtype-simple-title udtype-simple-title-inverse">AUDAX IN MOTION</h2>
         <div class="udtype-audax-motion-row" aria-hidden="true">
           <div class="udtype-audax-motion-track" data-udtype-marquee="AUDAX / AUDAX / "></div>
         </div>
@@ -144,59 +172,9 @@
         </div>
       </section>
 
-      <section class="udtype-audax-specimen" id="udtype-full-set" aria-labelledby="udtype-system-title">
-        <header class="udtype-section-heading">
-          <p>Complete specimen</p>
-          <h2 id="udtype-system-title">The complete system</h2>
-          <p>Uppercase · lowercase · numerals · punctuation</p>
-        </header>
-        <img
-          src="../assets/images/udtype/udtype-alphabet-geometric-sharp.png"
-          alt="Complete Audax character set with uppercase, lowercase, numerals, and punctuation"
-          loading="lazy"
-        />
-      </section>
-
-      <section class="udtype-audax-detail-section" id="udtype-details" aria-labelledby="udtype-detail-title">
-        <header class="udtype-section-heading">
-          <p>Detail studies</p>
-          <h2 id="udtype-detail-title">A letter is also an image.</h2>
-          <p>Three recurring constructions in the Audax system</p>
-        </header>
-        <div class="udtype-audax-details">
-          <figure>
-            <div
-              class="udtype-audax-detail udtype-audax-detail-a"
-              role="img"
-              aria-label="Close detail of the Audax letter A"
-            ></div>
-            <figcaption><span>A / 01</span><span>Apex + interrupted crossbar</span></figcaption>
-          </figure>
-          <figure>
-            <div
-              class="udtype-audax-detail udtype-audax-detail-q is-inverse"
-              role="img"
-              aria-label="Close detail of the Audax letter Q in white on black"
-            ></div>
-            <figcaption><span>Q / 17</span><span>Circular mass + escaping tail</span></figcaption>
-          </figure>
-          <figure>
-            <div
-              class="udtype-audax-detail udtype-audax-detail-x"
-              role="img"
-              aria-label="Close detail of the Audax letter X"
-            ></div>
-            <figcaption><span>X / 24</span><span>Collision + counter-form</span></figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section class="udtype-tester" id="udtype-tester" aria-labelledby="udtype-tester-title">
         <header class="udtype-tester-header">
-          <div>
-            <p>Interactive specimen</p>
-            <h2 id="udtype-tester-title">Write with Audax</h2>
-          </div>
+          <h2 id="udtype-tester-title">WRITE WITH AUDAX</h2>
           <label class="udtype-size-control">
             <span>Size <output data-udtype-size-output>92 px</output></span>
             <input
@@ -227,7 +205,6 @@
         >
           <span class="udtype-tester-fallback">FORM FOLLOWS FEELING</span>
         </div>
-        <p class="udtype-tester-note">A–Z · spaces and line breaks supported</p>
       </section>
 
     </main>
