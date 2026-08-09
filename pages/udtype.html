@@ -50,16 +50,63 @@
         </div>
       </section>
 
-      <figure class="udtype-family-archive">
-        <img
-          src="../assets/images/udtype/udtype-letter-families.png"
-          alt="Original UDTYPE family sheet showing the Audax, Compulsive, Lines Moving, Primitive, and Curbas alphabets"
-        />
-        <figcaption>
-          <span>Original family sheet</span>
-          <span>Audax · Compulsive · Lines Moving · Primitive · Curbas</span>
-        </figcaption>
-      </figure>
+      <nav class="udtype-section-index" aria-label="UDTYPE page sections">
+        <a href="#udtype-families"><span>01</span><strong>Five families</strong></a>
+        <a href="#udtype-motion"><span>02</span><strong>Motion</strong></a>
+        <a href="#udtype-full-set"><span>03</span><strong>Full set</strong></a>
+        <a href="#udtype-details"><span>04</span><strong>Details</strong></a>
+        <a href="#udtype-tester"><span>05</span><strong>Type tester</strong></a>
+      </nav>
+
+      <section class="udtype-families" id="udtype-families" aria-labelledby="udtype-families-title">
+        <header class="udtype-section-heading">
+          <p>Original collection</p>
+          <h2 id="udtype-families-title">Five families, five voices</h2>
+          <p>Complete uppercase studies</p>
+        </header>
+        <div class="udtype-family-list">
+          <article class="udtype-family-card">
+            <header><span>01</span><h3>Audax</h3><p>Hard geometry</p></header>
+            <div
+              class="udtype-family-visual is-audax"
+              role="img"
+              aria-label="Audax uppercase alphabet built from hard geometric shapes"
+            ></div>
+          </article>
+          <article class="udtype-family-card">
+            <header><span>02</span><h3>Compulsive</h3><p>Restless gesture</p></header>
+            <div
+              class="udtype-family-visual is-compulsive"
+              role="img"
+              aria-label="Compulsive uppercase alphabet drawn with nervous overlapping lines"
+            ></div>
+          </article>
+          <article class="udtype-family-card">
+            <header><span>03</span><h3>Lines Moving</h3><p>Stroke in motion</p></header>
+            <div
+              class="udtype-family-visual is-lines"
+              role="img"
+              aria-label="Lines Moving uppercase alphabet made from shifting linear strokes"
+            ></div>
+          </article>
+          <article class="udtype-family-card">
+            <header><span>04</span><h3>Primitive</h3><p>Raw mass</p></header>
+            <div
+              class="udtype-family-visual is-primitive"
+              role="img"
+              aria-label="Primitive uppercase alphabet made from rough heavy black forms"
+            ></div>
+          </article>
+          <article class="udtype-family-card">
+            <header><span>05</span><h3>Curbas</h3><p>Loop and curve</p></header>
+            <div
+              class="udtype-family-visual is-curbas"
+              role="img"
+              aria-label="Curbas uppercase alphabet made from looping handwritten curves"
+            ></div>
+          </article>
+        </div>
+      </section>
 
       <section class="udtype-audax-intro" aria-labelledby="udtype-audax-title">
         <div class="udtype-audax-index">
@@ -80,7 +127,11 @@
         </div>
       </section>
 
-      <section class="udtype-audax-motion" aria-label="Audax letterforms moving from left to right">
+      <section
+        class="udtype-audax-motion"
+        id="udtype-motion"
+        aria-label="Audax letterforms moving from left to right"
+      >
         <header class="udtype-section-label udtype-section-label-inverse">
           <p>Motion specimen</p>
           <p>Direction / rhythm / repetition</p>
@@ -93,7 +144,7 @@
         </div>
       </section>
 
-      <section class="udtype-audax-specimen" aria-labelledby="udtype-system-title">
+      <section class="udtype-audax-specimen" id="udtype-full-set" aria-labelledby="udtype-system-title">
         <header class="udtype-section-heading">
           <p>Complete specimen</p>
           <h2 id="udtype-system-title">The complete system</h2>
@@ -106,7 +157,7 @@
         />
       </section>
 
-      <section class="udtype-audax-detail-section" aria-labelledby="udtype-detail-title">
+      <section class="udtype-audax-detail-section" id="udtype-details" aria-labelledby="udtype-detail-title">
         <header class="udtype-section-heading">
           <p>Detail studies</p>
           <h2 id="udtype-detail-title">A letter is also an image.</h2>
@@ -140,7 +191,7 @@
         </div>
       </section>
 
-      <section class="udtype-tester" aria-labelledby="udtype-tester-title">
+      <section class="udtype-tester" id="udtype-tester" aria-labelledby="udtype-tester-title">
         <header class="udtype-tester-header">
           <div>
             <p>Interactive specimen</p>
@@ -179,39 +230,6 @@
         <p class="udtype-tester-note">A–Z · spaces and line breaks supported</p>
       </section>
 
-      <section class="udtype-related" aria-labelledby="udtype-related-title">
-        <header class="udtype-section-heading">
-          <p>Collection index</p>
-          <h2 id="udtype-related-title">Other directions</h2>
-          <p>Gesture · found form · fragmentation</p>
-        </header>
-        <div class="udtype-related-grid">
-          <figure>
-            <img
-              src="../assets/images/udtype/udtype-alphabet-line-original.png"
-              alt="UDTYPE Compulsive line alphabet"
-              loading="lazy"
-            />
-            <figcaption><span>02</span><span>Compulsive</span></figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../assets/images/udtype/udtype-alphabet-found-clean.png"
-              alt="UDTYPE found-form alphabet"
-              loading="lazy"
-            />
-            <figcaption><span>03</span><span>Found forms</span></figcaption>
-          </figure>
-          <figure>
-            <img
-              src="../assets/images/udtype/udtype-alphabet-fragmented-clean.png"
-              alt="UDTYPE fragmented alphabet"
-              loading="lazy"
-            />
-            <figcaption><span>04</span><span>Fragmented</span></figcaption>
-          </figure>
-        </div>
-      </section>
     </main>
   </body>
 </html>
