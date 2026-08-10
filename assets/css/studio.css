@@ -5487,19 +5487,26 @@ figure {
 }
 
 .monsters-intro {
-  width: min(84vw, 1260px);
+  width: min(92vw, 1500px);
   margin: clamp(56px, 7vw, 110px) auto clamp(90px, 11vw, 170px);
   display: grid;
   grid-template-columns: minmax(190px, 0.45fr) minmax(0, 1.55fr);
-  gap: clamp(42px, 7vw, 120px);
+  column-gap: clamp(42px, 7vw, 120px);
+  row-gap: clamp(36px, 5vw, 72px);
   align-items: start;
 }
 
 .monsters-kicker {
+  grid-column: 1;
+  grid-row: 1;
   margin: 0;
   color: var(--muted);
   font-size: clamp(0.82rem, 0.95vw, 1rem);
   line-height: 1.3;
+}
+
+.monsters-intro-content {
+  display: contents;
 }
 
 .monsters-visually-hidden {
@@ -5515,7 +5522,10 @@ figure {
 }
 
 .monsters-title-image {
-  margin: 0 0 clamp(46px, 5vw, 78px);
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: min(84vw, 1260px);
+  margin: 0 auto;
 }
 
 .monsters-title-image img {
@@ -5525,6 +5535,8 @@ figure {
 }
 
 .monsters-lead {
+  grid-column: 2;
+  grid-row: 3;
   max-width: 43ch;
   margin: 0;
   font-size: clamp(1.25rem, 2vw, 2.15rem);
@@ -5609,7 +5621,12 @@ figure {
   }
 
   .monsters-title-image {
-    margin-bottom: 42px;
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .monsters-lead {
+    grid-column: 1;
   }
 
   .monsters-process-image {
