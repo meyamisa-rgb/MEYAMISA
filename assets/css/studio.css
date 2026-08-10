@@ -5335,43 +5335,64 @@ figure {
   background: #fff;
 }
 
-.udtype-motion-row + .udtype-motion-row {
-  margin-top: clamp(18px, 2vw, 34px);
-}
-
 .udtype-motion-track {
+  --udtype-motion-gap: clamp(18px, 2.4vw, 40px);
   width: max-content;
   display: flex;
-  animation: udtype-motion-left 48s linear infinite;
+  gap: var(--udtype-motion-gap);
+  padding: clamp(18px, 2.4vw, 40px) 0;
+  animation: udtype-motion-left 44s linear infinite;
   will-change: transform;
 }
 
-.udtype-motion-row-reverse .udtype-motion-track {
-  animation-name: udtype-motion-right;
-  animation-duration: 56s;
+.udtype-motion-glyph {
+  width: clamp(160px, 18vw, 280px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  display: block;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: var(--glyph-x) var(--glyph-y);
 }
 
-.udtype-motion-track img {
-  width: clamp(440px, 51vw, 820px);
-  aspect-ratio: 3 / 2;
-  flex: 0 0 auto;
-  padding: 0 clamp(10px, 1.3vw, 22px);
-  background: #fff;
-  object-fit: contain;
+.udtype-motion-glyph.is-re {
+  background-image: url("../images/udtype/udtype-alphabet-found-no-dot.png");
+  background-size: 900% auto;
+}
+
+.udtype-motion-glyph.is-arch {
+  background-image: url("../images/udtype/udtype-alphabet-fragmented-clean.png");
+  background-size: 900% auto;
+}
+
+.udtype-motion-glyph.is-tmlab {
+  background-image: url("../images/udtype/udtype-alphabet-line-original.png");
+  background-size: 900% auto;
+}
+
+.udtype-motion-glyph.is-amisa {
+  background-image: url("../images/udtype/udtype-alphabet-geometric-clean.png");
+  background-size: 900% auto;
+}
+
+.udtype-motion-glyph.is-audax {
+  background-image: url("../images/udtype/udtype-audax.jpg");
+  background-size: 500% auto;
+}
+
+.udtype-motion-glyph.is-primitive {
+  background-image: url("../images/udtype/udtype-primitive.jpg");
+  background-size: 600% auto;
+}
+
+.udtype-motion-glyph.is-moving {
+  background-image: url("../images/udtype/udtype-moving-lines.jpg");
+  background-size: 600% auto;
 }
 
 @keyframes udtype-motion-left {
   to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes udtype-motion-right {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
+    transform: translateX(calc(-50% - (var(--udtype-motion-gap) / 2)));
   }
 }
 
@@ -5418,15 +5439,70 @@ figure {
   object-fit: contain;
 }
 
+.udtype-text-poster {
+  width: min(90vw, 1120px);
+  margin: 0 auto clamp(170px, 22vw, 350px);
+}
+
+.udtype-text-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.udtype-asemic {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-bottom: clamp(140px, 17vw, 270px);
+  overflow: hidden;
+}
+
+.udtype-asemic h2 {
+  width: min(90vw, 1440px);
+  margin: 0 auto clamp(56px, 8vw, 120px);
+  font-size: clamp(3.6rem, 9vw, 10.5rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.86;
+}
+
+.udtype-asemic-stage {
+  width: min(94vw, 1500px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.udtype-asemic-stage img {
+  width: 108%;
+  max-width: none;
+  height: auto;
+  display: block;
+  margin-left: -4%;
+  transform-origin: center;
+  animation: udtype-asemic-drift 16s cubic-bezier(0.45, 0, 0.25, 1) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes udtype-asemic-drift {
+  from {
+    transform: translate3d(-2.5%, 0, 0) scale(1.02) rotate(-0.12deg);
+  }
+  to {
+    transform: translate3d(2.5%, -1.5%, 0) scale(1.075) rotate(0.12deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .udtype-motion-track {
+  .udtype-motion-track,
+  .udtype-asemic-stage img {
     animation-play-state: paused;
   }
 }
 
 @media (max-width: 800px) {
-  .udtype-motion-track img {
-    width: 76vw;
+  .udtype-motion-glyph {
+    width: 46vw;
   }
 
   .udtype-specimen header {
@@ -5436,6 +5512,10 @@ figure {
 
   .udtype-specimen h2 {
     font-size: clamp(3.5rem, 16vw, 7rem);
+  }
+
+  .udtype-asemic h2 {
+    font-size: clamp(3rem, 14vw, 6.5rem);
   }
 }
 
