@@ -5396,10 +5396,10 @@ figure {
 }
 
 .udtype-specimen h2 {
-  font-size: clamp(4.2rem, 10vw, 12rem);
+  font-size: clamp(2.3rem, 5.2vw, 6rem);
   font-weight: 400;
-  letter-spacing: -0.075em;
-  line-height: 0.84;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
 }
 
 .udtype-specimen > img {
@@ -5430,62 +5430,30 @@ figure {
 .udtype-asemic h2 {
   width: min(90vw, 1440px);
   margin: 0 auto clamp(56px, 8vw, 120px);
-  font-size: clamp(3.6rem, 9vw, 10.5rem);
+  font-size: clamp(2.2rem, 4.8vw, 5.6rem);
   font-weight: 400;
-  letter-spacing: -0.075em;
-  line-height: 0.86;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
 }
 
 .udtype-asemic-stage {
-  width: min(90vw, 1200px);
+  width: min(86vw, 1120px);
   margin: 0 auto;
   background: #fff;
 }
 
-.udtype-asemic-sheet {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1170 / 1366;
-}
-
-.udtype-asemic-line {
-  position: absolute;
-  inset: 0;
+.udtype-asemic-vector {
   display: block;
-  background: url("../images/udtype/asemic-writing-ink.png") center / 100% 100% no-repeat;
-  clip-path: inset(var(--line-top) 100% var(--line-bottom) 0);
-  opacity: 0;
-  animation: udtype-asemic-write 14s cubic-bezier(0.55, 0, 0.2, 1) var(--line-delay) infinite;
-  will-change: clip-path, opacity;
-}
-
-@keyframes udtype-asemic-write {
-  0%, 7% {
-    clip-path: inset(var(--line-top) 100% var(--line-bottom) 0);
-    opacity: 0;
-  }
-  11% {
-    opacity: 1;
-  }
-  52%, 84% {
-    clip-path: inset(var(--line-top) 0 var(--line-bottom) 0);
-    opacity: 1;
-  }
-  98%, 100% {
-    clip-path: inset(var(--line-top) 0 var(--line-bottom) 0);
-    opacity: 0;
-  }
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1170 / 1366;
+  border: 0;
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .udtype-motion-track,
-  .udtype-asemic-line {
+  .udtype-motion-track {
     animation-play-state: paused;
-  }
-
-  .udtype-asemic-line {
-    clip-path: inset(var(--line-top) 0 var(--line-bottom) 0);
-    opacity: 1;
   }
 }
 
@@ -5500,11 +5468,11 @@ figure {
   }
 
   .udtype-specimen h2 {
-    font-size: clamp(3.5rem, 16vw, 7rem);
+    font-size: clamp(2.1rem, 9vw, 4rem);
   }
 
   .udtype-asemic h2 {
-    font-size: clamp(3rem, 14vw, 6.5rem);
+    font-size: clamp(2rem, 8vw, 3.8rem);
   }
 }
 
