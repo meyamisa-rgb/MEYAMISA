@@ -1910,7 +1910,7 @@ figure {
 .human-typography-motion-title {
   width: min(95.45%, 1240px);
   margin: 0 auto clamp(58px, 7vw, 104px);
-  font-size: clamp(2.8rem, 6.4vw, 7rem);
+  font-size: clamp(2.2rem, 4.4vw, 4.8rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.92;
@@ -1923,8 +1923,8 @@ figure {
   background: transparent;
 }
 
-.human-typography-video-portrait {
-  width: min(76vw, 820px);
+.human-typography-video-dance {
+  width: min(84vw, 1100px);
 }
 
 .human-typography-video-landscape {
@@ -1949,10 +1949,6 @@ figure {
   transform-origin: center;
 }
 
-.human-typography-video-portrait video {
-  transform: scale(1.055);
-}
-
 .human-typography-sound-toggle {
   position: absolute;
   z-index: 2;
@@ -1973,7 +1969,7 @@ figure {
   transition: background-color 180ms ease, box-shadow 180ms ease;
 }
 
-.human-typography-video-portrait .human-typography-sound-toggle {
+.human-typography-video-dance .human-typography-sound-toggle {
   right: auto;
   left: calc(100% + 18px);
 }
@@ -2031,6 +2027,15 @@ figure {
   margin: 0;
   font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   line-height: 1.4;
+}
+
+.human-typography-credits .human-typography-credit-link {
+  margin-top: 16px;
+}
+
+.human-typography-credit-link a {
+  color: inherit;
+  text-underline-offset: 4px;
 }
 
 .story-video-grid {
@@ -4903,17 +4908,17 @@ figure {
     margin-bottom: 130px;
   }
 
-  .human-typography-video-portrait {
+  .human-typography-video-dance {
     width: 88vw;
   }
 
   .human-typography-motion-title {
     width: 95.45%;
     margin-bottom: 54px;
-    font-size: clamp(2.8rem, 12vw, 5.5rem);
+    font-size: clamp(2.1rem, 8vw, 3.5rem);
   }
 
-  .human-typography-video-portrait .human-typography-sound-toggle,
+  .human-typography-video-dance .human-typography-sound-toggle,
   .human-typography-sound-toggle {
     top: auto;
     right: 12px;
