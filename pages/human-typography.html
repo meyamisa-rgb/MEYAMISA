@@ -8,7 +8,7 @@
       name="description"
       content="The Human Typography by Ayamey Peil Gonzalez, an experimental typography project translating feelings, gestures, and movement into visual language."
     />
-    <link rel="stylesheet" href="../assets/css/studio.css?v=human-type-4" />
+    <link rel="stylesheet" href="../assets/css/studio.css?v=human-type-5" />
   </head>
   <body class="project-page human-typography-page">
     <header class="site-header project-page-header">
@@ -40,7 +40,7 @@
         </header>
         <div class="human-typography-copy">
           <p class="human-typography-lead">
-            Our body is always in motion—a breathing typography. Movement and body language reveal hidden intentions
+            Our body is always in motion, a breathing typography. Movement and body language reveal hidden intentions
             and emotions, often before words can.
           </p>
           <p>
@@ -61,15 +61,26 @@
 
       <section class="human-typography-motion human-typography-motion-dance" aria-label="Dance movement study">
         <figure class="human-typography-video human-typography-video-portrait">
-          <video
-            src="../assets/videos/human-typography/human-typography-dance.mov"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="Ayamey Peil Gonzalez performing a body typography movement study"
-          ></video>
+          <div class="human-typography-video-frame">
+            <video
+              id="human-typography-dance-video"
+              src="../assets/videos/human-typography/human-typography-dance.mov"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Ayamey Peil Gonzalez performing a body typography movement study"
+            ></video>
+          </div>
+          <button
+            class="human-typography-sound-toggle"
+            type="button"
+            aria-controls="human-typography-dance-video"
+            aria-pressed="false"
+          >
+            <span>Sound on</span>
+          </button>
         </figure>
       </section>
 
@@ -127,17 +138,34 @@
         </div>
       </section>
 
-      <section class="human-typography-motion human-typography-motion-animation" aria-label="Body typography animation">
+      <section
+        class="human-typography-motion human-typography-motion-animation"
+        aria-labelledby="human-typography-animation-title"
+      >
+        <h2 class="human-typography-motion-title" id="human-typography-animation-title">
+          The Communication Within
+        </h2>
         <figure class="human-typography-video human-typography-video-landscape">
-          <video
-            src="../assets/videos/human-typography/human-typography-animation.mov"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="Animated body typography forms moving across a white field"
-          ></video>
+          <div class="human-typography-video-frame">
+            <video
+              id="human-typography-animation-video"
+              src="../assets/videos/human-typography/human-typography-animation.mov"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Animated body typography forms moving across a white field"
+            ></video>
+          </div>
+          <button
+            class="human-typography-sound-toggle"
+            type="button"
+            aria-controls="human-typography-animation-video"
+            aria-pressed="false"
+          >
+            <span>Sound on</span>
+          </button>
         </figure>
       </section>
 
@@ -166,5 +194,34 @@
         <p>Ayamey Peil Gonzalez · Prof. Holger Jacobs</p>
       </footer>
     </main>
+
+    <script>
+      const soundButtons = document.querySelectorAll(".human-typography-sound-toggle");
+
+      const updateSoundButton = (button, soundIsOn) => {
+        button.setAttribute("aria-pressed", String(soundIsOn));
+        button.querySelector("span").textContent = soundIsOn ? "Sound off" : "Sound on";
+      };
+
+      soundButtons.forEach((button) => {
+        const video = document.getElementById(button.getAttribute("aria-controls"));
+
+        button.addEventListener("click", () => {
+          const turnSoundOn = video.muted;
+
+          soundButtons.forEach((otherButton) => {
+            const otherVideo = document.getElementById(otherButton.getAttribute("aria-controls"));
+            if (otherVideo !== video) {
+              otherVideo.muted = true;
+              updateSoundButton(otherButton, false);
+            }
+          });
+
+          video.muted = !turnSoundOn;
+          updateSoundButton(button, turnSoundOn);
+          video.play().catch(() => {});
+        });
+      });
+    </script>
   </body>
 </html>

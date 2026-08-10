@@ -1513,10 +1513,7 @@ figure {
 .human-typography-intro {
   margin-top: clamp(76px, 9vw, 140px);
   margin-bottom: clamp(120px, 14vw, 220px);
-  display: grid;
-  grid-template-columns: minmax(280px, 0.78fr) minmax(360px, 1fr);
-  gap: clamp(56px, 9vw, 150px);
-  align-items: start;
+  display: block;
 }
 
 .human-typography-intro h1,
@@ -1539,14 +1536,17 @@ figure {
 }
 
 .human-typography-intro h1 {
-  max-width: 11ch;
-  font-size: clamp(3.7rem, 6.3vw, 7.3rem);
+  max-width: none;
+  font-size: clamp(2rem, 7.2vw, 7.2rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.9;
+  white-space: nowrap;
 }
 
 .human-typography-copy {
+  width: min(100%, 760px);
+  margin-top: clamp(48px, 6vw, 88px);
   display: grid;
   gap: 1.55em;
 }
@@ -1907,18 +1907,33 @@ figure {
   margin-top: clamp(150px, 18vw, 280px);
 }
 
+.human-typography-motion-title {
+  width: min(95.45%, 1240px);
+  margin: 0 auto clamp(58px, 7vw, 104px);
+  font-size: clamp(2.8rem, 6.4vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+
 .human-typography-video {
+  position: relative;
   margin: 0 auto;
-  overflow: hidden;
-  background: #fff;
+  overflow: visible;
+  background: transparent;
 }
 
 .human-typography-video-portrait {
-  width: min(66vw, 620px);
+  width: min(76vw, 820px);
 }
 
 .human-typography-video-landscape {
   width: 100%;
+}
+
+.human-typography-video-frame {
+  overflow: hidden;
+  background: #fff;
 }
 
 .human-typography-video video {
@@ -1930,6 +1945,49 @@ figure {
   outline: 0;
   object-fit: contain;
   background: #fff;
+  transform: scale(1.025);
+  transform-origin: center;
+}
+
+.human-typography-video-portrait video {
+  transform: scale(1.055);
+}
+
+.human-typography-sound-toggle {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 18px;
+  padding: 10px 13px 9px;
+  border: 0;
+  border-radius: 999px;
+  color: #111;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+  font: inherit;
+  font-size: clamp(0.72rem, 0.8vw, 0.84rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.human-typography-video-portrait .human-typography-sound-toggle {
+  right: auto;
+  left: calc(100% + 18px);
+}
+
+.human-typography-sound-toggle:hover,
+.human-typography-sound-toggle:focus-visible,
+.human-typography-sound-toggle[aria-pressed="true"] {
+  background: #fff;
+  box-shadow: 0 3px 22px rgba(0, 0, 0, 0.18);
+}
+
+.human-typography-sound-toggle:focus-visible {
+  outline: 1px solid #111;
+  outline-offset: 3px;
 }
 
 .human-typography-source {
@@ -4803,13 +4861,16 @@ figure {
   }
 
   .human-typography-intro {
-    gap: 46px;
     margin-top: 72px;
     margin-bottom: 120px;
   }
 
   .human-typography-intro h1 {
-    font-size: clamp(3.35rem, 15.5vw, 5.8rem);
+    font-size: 7.2vw;
+  }
+
+  .human-typography-copy {
+    margin-top: 46px;
   }
 
   .human-typography-section-heading,
@@ -4843,7 +4904,22 @@ figure {
   }
 
   .human-typography-video-portrait {
-    width: min(82vw, 520px);
+    width: 88vw;
+  }
+
+  .human-typography-motion-title {
+    width: 95.45%;
+    margin-bottom: 54px;
+    font-size: clamp(2.8rem, 12vw, 5.5rem);
+  }
+
+  .human-typography-video-portrait .human-typography-sound-toggle,
+  .human-typography-sound-toggle {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+    left: auto;
+    transform: none;
   }
 
   .human-typography-closing-image {
