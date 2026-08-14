@@ -4058,6 +4058,40 @@ figure {
   white-space: nowrap;
 }
 
+.writing-card-optima .writing-card-copy h3,
+.writing-card-optima .writing-card-copy span {
+  font-family: var(--optima);
+}
+
+.writing-card-optima .writing-card-copy h3 {
+  font-size: clamp(1.8rem, 3.7vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.writing-card-optima .writing-card-copy span {
+  font-size: clamp(0.95rem, 1.25vw, 1.3rem);
+  letter-spacing: -0.02em;
+}
+
+.writing-card-book figure {
+  background: #fff;
+}
+
+.writing-card-book img {
+  object-fit: contain;
+}
+
+.writing-card-memories figure {
+  width: min(84%, 1240px);
+  aspect-ratio: 3 / 2;
+  margin-inline: auto;
+}
+
+.writing-card-maverick figure {
+  aspect-ratio: 2964 / 1080;
+}
+
 .writing-card-placeholder figure {
   background: #f3f3f1;
 }
@@ -4084,6 +4118,25 @@ figure {
 .writing-project-selection .writing-card-copy {
   padding-top: 0;
   border-top: 0;
+}
+
+.writing-card-copy-stacked {
+  grid-template-columns: 1fr;
+  gap: 7px;
+  align-items: start;
+}
+
+.writing-card-copy-stacked > * {
+  grid-column: 1;
+  text-align: left;
+}
+
+.writing-card-copy.writing-card-copy-stacked > span {
+  text-align: left;
+}
+
+.writing-card-copy-stacked h3 {
+  margin-bottom: 3px;
 }
 
 .writing-card-copy p,
@@ -4566,6 +4619,10 @@ figure {
     font-size: clamp(1.25rem, 5vw, 2.5rem);
   }
 
+  .writing-card-memories figure {
+    width: 92%;
+  }
+
   .writing-group-heading {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -4624,6 +4681,15 @@ figure {
 
   .writing-card figure {
     aspect-ratio: 4 / 3;
+  }
+
+  .writing-card-memories figure {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .writing-card-maverick figure {
+    aspect-ratio: 2964 / 1080;
   }
 
   .writing-card-collaboration figure {
