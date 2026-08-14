@@ -931,10 +931,6 @@ img[src*="artwork-07-archive.jpg"] {
   clip-path: inset(0 2px 0 0);
 }
 
-img[src*="artwork-10-chumchuda.jpg"] {
-  clip-path: inset(3px 0 0 3px);
-}
-
 img[src*="geoje-02-installation-setup.png"] {
   clip-path: inset(0 0 10px 0);
 }
@@ -995,6 +991,18 @@ img[src*="geoje-02-installation-setup.png"] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-left: auto;
   margin-right: auto;
+}
+
+.timeline-artwork-static-grid-final {
+  width: min(100%, 1240px);
+  gap: clamp(48px, 7vw, 110px);
+}
+
+.timeline-artwork-static-grid-final .timeline-artwork-card img {
+  aspect-ratio: 809 / 566;
+  object-fit: cover;
+  clip-path: none;
+  transform: scale(1.025);
 }
 
 .timeline-artwork-static-grid .timeline-artwork-card {
@@ -5833,7 +5841,7 @@ figure {
   }
 }
 
-/* Branding and friends */
+/* Branding */
 
 .branding-friends {
   width: min(92vw, 1500px);
