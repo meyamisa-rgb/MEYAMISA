@@ -6175,6 +6175,13 @@ figure {
   width: 100%;
 }
 
+.dearly-identity {
+  width: auto;
+  margin-inline: -12px;
+  padding-inline: 12px;
+  background: #fff;
+}
+
 .dearly-chapter-heading {
   width: min(86vw, 1320px);
   margin: 0 auto clamp(88px, 10vw, 170px);
@@ -6193,9 +6200,34 @@ figure {
   max-width: 12ch;
 }
 
-.dearly-frame-editorial {
-  width: min(77vw, 1180px);
-  margin: clamp(170px, 21vw, 350px) 6vw 0 auto;
+.dearly-identity-showcase img {
+  display: block;
+  background: #fff;
+}
+
+.dearly-instagram-gallery {
+  width: min(82vw, 1280px);
+  margin: clamp(170px, 21vw, 350px) auto 0;
+  display: grid;
+  gap: clamp(130px, 16vw, 260px);
+}
+
+.dearly-instagram-card {
+  width: min(34vw, 440px);
+  background: #fff;
+}
+
+.dearly-instagram-card:nth-child(even) {
+  margin-left: auto;
+}
+
+.dearly-instagram-card:nth-child(3) {
+  margin-left: clamp(20px, 7vw, 120px);
+}
+
+.dearly-instagram-card img {
+  display: block;
+  background: #fff;
 }
 
 .dearly-poster-intro {
@@ -6298,8 +6330,10 @@ figure {
 }
 
 .dearly-process {
-  width: 100%;
-  padding: clamp(170px, 22vw, 350px) 0 clamp(150px, 18vw, 300px);
+  width: auto;
+  margin-inline: -12px;
+  padding: clamp(170px, 22vw, 350px) 12px clamp(150px, 18vw, 300px);
+  background: #fff;
 }
 
 .dearly-process-copy {
@@ -6323,6 +6357,11 @@ figure {
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   gap: clamp(32px, 6vw, 100px);
   align-items: start;
+}
+
+.dearly-process-grid .dearly-frame,
+.dearly-process-grid img {
+  background: #fff;
 }
 
 .dearly-process-type {
@@ -6622,12 +6661,16 @@ figure {
     grid-column: auto;
   }
 
-  .dearly-frame-editorial,
+  .dearly-instagram-gallery,
   .dearly-frame-square,
   .dearly-frame-station,
   .dearly-frame-night {
     width: min(86vw, 720px);
     margin-inline: auto;
+  }
+
+  .dearly-instagram-card {
+    width: min(52vw, 420px);
   }
 
   .dearly-poster-intro,
@@ -6745,7 +6788,7 @@ figure {
     width: 100%;
   }
 
-  .dearly-frame-editorial,
+  .dearly-instagram-gallery,
   .dearly-frame-square,
   .dearly-frame-station,
   .dearly-frame-night,
@@ -6754,6 +6797,16 @@ figure {
   .dearly-process-copy,
   .dearly-process-grid {
     width: min(90vw, 480px);
+  }
+
+  .dearly-instagram-gallery {
+    gap: 90px;
+  }
+
+  .dearly-instagram-card,
+  .dearly-instagram-card:nth-child(3) {
+    width: min(78vw, 380px);
+    margin-inline: auto;
   }
 
   .mikazuki-hd-gallery {
