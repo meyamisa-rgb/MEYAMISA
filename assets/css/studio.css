@@ -2393,6 +2393,7 @@ figure {
 .memories-page .memories-one-page-identity,
 .memories-page .memories-one-page-project,
 .memories-page .memories-one-page-artworks,
+.memories-page .memories-book-placeholders,
 .memories-page .memories-collaboration-contact,
 .memories-page .viewer-panel,
 .memories-page .viewer-media {
@@ -2773,6 +2774,29 @@ figure {
   width: min(64vw, 760px);
   margin-right: auto !important;
   margin-left: auto !important;
+}
+
+.memories-book-placeholders {
+  display: grid;
+  width: min(92vw, 1500px);
+  margin: 0 auto clamp(180px, 22vw, 360px);
+  gap: clamp(140px, 18vw, 300px);
+}
+
+.memories-book-placeholder {
+  display: grid;
+  min-height: clamp(360px, 52vw, 760px);
+  place-items: center;
+  text-align: center;
+}
+
+.memories-book-placeholder h2 {
+  margin: 0;
+  font-family: var(--optima);
+  font-size: clamp(1.05rem, 1.6vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .memories-one-page-mockups figure {
