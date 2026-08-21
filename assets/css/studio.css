@@ -8488,6 +8488,8 @@ figure {
 }
 
 .moy2-poem h2 {
+  position: relative;
+  z-index: 2;
   width: min-content;
   margin: 0 auto clamp(130px, 18vw, 300px);
   color: var(--moy2-yellow);
@@ -8501,10 +8503,50 @@ figure {
 }
 
 .moy2-poem-flow {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(100px, 15vw, 250px) clamp(18px, 3vw, 54px);
   align-items: start;
+}
+
+.moy2-poem-thread {
+  --moy2-thread-flip: 1;
+  --moy2-thread-turn: 0deg;
+  position: absolute;
+  z-index: 1;
+  width: min(76vw, 1220px);
+  max-width: none;
+  pointer-events: none;
+  opacity: 0.22;
+  filter: saturate(0.9) brightness(1.12);
+  transform: rotate(var(--moy2-thread-turn)) scaleX(var(--moy2-thread-flip));
+  transform-origin: center;
+  animation: moy2-poem-thread-flow 18s ease-in-out infinite alternate;
+}
+
+.moy2-poem-thread-one {
+  --moy2-thread-turn: 14deg;
+  top: 14%;
+  left: -38%;
+}
+
+.moy2-poem-thread-two {
+  --moy2-thread-flip: -1;
+  --moy2-thread-turn: -11deg;
+  top: 48%;
+  right: -36%;
+  animation-delay: -7s;
+}
+
+.moy2-poem-thread-three {
+  --moy2-thread-turn: 7deg;
+  right: auto;
+  bottom: 5%;
+  left: -30%;
+  opacity: 0.16;
+  animation-delay: -12s;
 }
 
 .moy2-stanza {
@@ -8719,6 +8761,16 @@ figure {
   }
 }
 
+@keyframes moy2-poem-thread-flow {
+  from {
+    transform: translate3d(-3%, -2%, 0) rotate(var(--moy2-thread-turn)) scaleX(var(--moy2-thread-flip));
+  }
+
+  to {
+    transform: translate3d(4%, 3%, 0) rotate(calc(var(--moy2-thread-turn) + 2deg)) scaleX(var(--moy2-thread-flip));
+  }
+}
+
 @media (max-width: 900px) {
   .moy2-gallery > header,
   .moy2-book > header {
@@ -8820,6 +8872,26 @@ figure {
     margin-bottom: 140px;
   }
 
+  .moy2-poem-thread {
+    width: 165vw;
+    opacity: 0.17;
+  }
+
+  .moy2-poem-thread-one {
+    top: 16%;
+    left: -108%;
+  }
+
+  .moy2-poem-thread-two {
+    top: 51%;
+    right: -108%;
+  }
+
+  .moy2-poem-thread-three {
+    bottom: 3%;
+    left: -96%;
+  }
+
   .moy2-stanza,
   .moy2-stanza-right,
   .moy2-stanza-wide,
@@ -8871,7 +8943,8 @@ figure {
 
 @media (prefers-reduced-motion: reduce) {
   .moy2-hero > img,
-  .moy2-thread {
+  .moy2-thread,
+  .moy2-poem-thread {
     animation: none;
   }
 
