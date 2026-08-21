@@ -170,82 +170,16 @@
 }
 
 .net5-storyboard-track {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 1.5vw, 26px);
-  width: 100%;
-  padding: 0 24vw clamp(18px, 2vw, 32px) 4vw;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: x proximity;
-  scrollbar-color: var(--ink) var(--soft);
-  scrollbar-width: thin;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 1.8vw, 32px);
+  width: min(94vw, 1760px);
+  margin: 0 auto;
 }
 
 .net5-storyboard-track figure {
-  flex: 0 0 auto;
+  min-width: 0;
   margin: 0;
-  scroll-snap-align: start;
-}
-
-.net5-storyboard-track figure:nth-child(1) {
-  width: min(52vw, 900px);
-}
-
-.net5-storyboard-track figure:nth-child(2) {
-  width: min(40vw, 700px);
-}
-
-.net5-storyboard-track figure:nth-child(3) {
-  width: min(32vw, 560px);
-}
-
-.net5-storyboard-track figure:nth-child(4) {
-  width: min(27vw, 470px);
-}
-
-.net5-storyboard-track figure:nth-child(5) {
-  width: min(23vw, 400px);
-}
-
-.net5-storyboard-track figure:nth-child(6) {
-  width: min(20vw, 350px);
-}
-
-.net5-storyboard-track figure:nth-child(7) {
-  width: min(17vw, 300px);
-}
-
-.net5-storyboard-track figure:nth-child(8) {
-  width: min(15.5vw, 275px);
-}
-
-.net5-storyboard-track figure:nth-child(9) {
-  width: min(14.5vw, 255px);
-}
-
-.net5-storyboard-track figure:nth-child(10) {
-  width: min(13.5vw, 235px);
-}
-
-.net5-storyboard-track figure:nth-child(11) {
-  width: min(12.5vw, 220px);
-}
-
-.net5-storyboard-track figure:nth-child(12) {
-  width: min(11.5vw, 205px);
-}
-
-.net5-storyboard-track figure:nth-child(13) {
-  width: min(10.75vw, 190px);
-}
-
-.net5-storyboard-track figure:nth-child(14) {
-  width: min(10vw, 175px);
-}
-
-.net5-storyboard-track figure:nth-child(15) {
-  width: min(9.25vw, 160px);
 }
 
 .net5-storyboard-track img {
@@ -305,67 +239,8 @@
   }
 
   .net5-storyboard-track {
-    padding-right: 18vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(1) {
-    width: 84vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(2) {
-    width: 70vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(3) {
-    width: 60vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(4) {
-    width: 52vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(5) {
-    width: 46vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(6) {
-    width: 42vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(7) {
-    width: 38vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(8) {
-    width: 35vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(9) {
-    width: 33vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(10) {
-    width: 31vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(11) {
-    width: 29vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(12) {
-    width: 27vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(13) {
-    width: 25vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(14) {
-    width: 23vw;
-  }
-
-  .net5-storyboard-track figure:nth-child(15) {
-    width: 21vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 92vw;
   }
 }
 
@@ -395,6 +270,11 @@
 
   .net5-storyboard > header,
   .net5-credits {
+    width: 90vw;
+  }
+
+  .net5-storyboard-track {
+    grid-template-columns: 1fr;
     width: 90vw;
   }
 
