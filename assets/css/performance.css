@@ -216,6 +216,26 @@
   width: min(17vw, 300px);
 }
 
+.net5-storyboard-track figure:nth-child(8) {
+  width: min(15.5vw, 275px);
+}
+
+.net5-storyboard-track figure:nth-child(9) {
+  width: min(14.5vw, 255px);
+}
+
+.net5-storyboard-track figure:nth-child(10) {
+  width: min(13.5vw, 235px);
+}
+
+.net5-storyboard-track figure:nth-child(11) {
+  width: min(12.5vw, 220px);
+}
+
+.net5-storyboard-track figure:nth-child(12) {
+  width: min(11.5vw, 205px);
+}
+
 .net5-storyboard-track img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -302,6 +322,26 @@
 
   .net5-storyboard-track figure:nth-child(7) {
     width: 38vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(8) {
+    width: 35vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(9) {
+    width: 33vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(10) {
+    width: 31vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(11) {
+    width: 29vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(12) {
+    width: 27vw;
   }
 }
 
