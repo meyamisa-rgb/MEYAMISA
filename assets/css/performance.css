@@ -62,11 +62,6 @@
   font-weight: 400;
 }
 
-.performance-feature-caption span {
-  color: var(--muted);
-  text-align: right;
-}
-
 .net5-story {
   overflow: hidden;
   padding: clamp(18px, 2vw, 34px) 0 clamp(90px, 12vw, 190px);
@@ -100,7 +95,7 @@
 
 .net5-intro {
   width: min(92vw, 1500px);
-  margin: clamp(44px, 6vw, 96px) auto clamp(140px, 18vw, 290px);
+  margin: clamp(44px, 6vw, 96px) auto clamp(70px, 9vw, 145px);
   display: grid;
   grid-template-columns: minmax(0, 0.62fr) minmax(240px, 0.38fr);
   gap: clamp(28px, 5vw, 90px);
@@ -120,14 +115,6 @@
   line-height: 0.72;
 }
 
-.net5-intro .net5-kicker {
-  margin-bottom: clamp(20px, 2.6vw, 42px);
-  color: var(--muted);
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .net5-intro > p {
   max-width: 28ch;
   padding-bottom: 0.15em;
@@ -135,6 +122,20 @@
   font-size: clamp(1.15rem, 1.8vw, 2rem);
   letter-spacing: -0.035em;
   line-height: 1.15;
+}
+
+.net5-hook {
+  width: min(86vw, 1280px);
+  margin: 0 auto clamp(130px, 17vw, 280px);
+}
+
+.net5-hook p {
+  max-width: 30ch;
+  margin: 0;
+  font-family: var(--optima);
+  font-size: clamp(1.9rem, 3.5vw, 4.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
 }
 
 .net5-storyboard {
@@ -145,14 +146,9 @@
 .net5-storyboard > header {
   width: min(92vw, 1500px);
   margin: 0 auto clamp(38px, 5vw, 78px);
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: baseline;
 }
 
-.net5-storyboard h2,
-.net5-storyboard p {
+.net5-storyboard h2 {
   margin: 0;
   font-family: var(--optima);
   font-weight: 400;
@@ -164,14 +160,10 @@
   line-height: 0.94;
 }
 
-.net5-storyboard p {
-  color: var(--muted);
-  font-size: clamp(0.8rem, 1vw, 1rem);
-}
-
 .net5-storyboard-track {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
   gap: clamp(18px, 1.8vw, 32px);
   width: min(94vw, 1760px);
   margin: 0 auto;
@@ -183,21 +175,14 @@
 }
 
 .net5-storyboard-track img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.net5-storyboard-track figcaption {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  height: auto;
 }
 
 .net5-credits {
   width: min(92vw, 1500px);
-  margin: 0 auto;
+  margin: 0 auto clamp(130px, 17vw, 280px);
   border-top: 1px solid var(--line);
 }
 
@@ -215,6 +200,60 @@
   color: var(--muted);
 }
 
+.net5-archive {
+  width: 100%;
+}
+
+.net5-archive-pair figure {
+  margin: 0;
+}
+
+.net5-archive-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 34px);
+  width: min(92vw, 1400px);
+  margin: 0 auto clamp(70px, 9vw, 150px);
+}
+
+.net5-archive-pair img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.net5-group-photo {
+  width: min(92vw, 1400px);
+  margin: 0 auto clamp(38px, 5vw, 80px);
+}
+
+.net5-group-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.net5-press-link {
+  display: block;
+  width: min(92vw, 1400px);
+  margin: 0 auto;
+  padding: clamp(18px, 2.2vw, 32px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  font-family: var(--optima);
+  font-size: clamp(1.15rem, 2vw, 2.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.net5-press-link:hover,
+.net5-press-link:focus-visible {
+  text-decoration: underline;
+}
+
 @media (max-width: 800px) {
   .performance-feature-card {
     width: 92vw;
@@ -227,7 +266,7 @@
 
   .net5-intro {
     grid-template-columns: 1fr;
-    margin-bottom: 150px;
+    margin-bottom: 90px;
   }
 
   .net5-intro h1 {
@@ -238,6 +277,11 @@
     max-width: 22ch;
   }
 
+  .net5-hook {
+    width: 92vw;
+    margin-bottom: 150px;
+  }
+
   .net5-storyboard-track {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 92vw;
@@ -245,14 +289,9 @@
 }
 
 @media (max-width: 520px) {
-  .performance-feature-caption,
-  .net5-storyboard > header {
+  .performance-feature-caption {
     display: grid;
     gap: 5px;
-  }
-
-  .performance-feature-caption span {
-    text-align: left;
   }
 
   .net5-story {
@@ -268,6 +307,11 @@
     margin-top: 42px;
   }
 
+  .net5-hook {
+    width: 90vw;
+    margin-bottom: 120px;
+  }
+
   .net5-storyboard > header,
   .net5-credits {
     width: 90vw;
@@ -276,6 +320,17 @@
   .net5-storyboard-track {
     grid-template-columns: 1fr;
     width: 90vw;
+  }
+
+  .net5-archive-pair,
+  .net5-group-photo,
+  .net5-press-link {
+    width: 90vw;
+  }
+
+  .net5-archive-pair {
+    gap: 10px;
+    margin-bottom: 70px;
   }
 
   .net5-credits p {
