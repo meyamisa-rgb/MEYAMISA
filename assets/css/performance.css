@@ -236,6 +236,18 @@
   width: min(11.5vw, 205px);
 }
 
+.net5-storyboard-track figure:nth-child(13) {
+  width: min(10.75vw, 190px);
+}
+
+.net5-storyboard-track figure:nth-child(14) {
+  width: min(10vw, 175px);
+}
+
+.net5-storyboard-track figure:nth-child(15) {
+  width: min(9.25vw, 160px);
+}
+
 .net5-storyboard-track img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -342,6 +354,18 @@
 
   .net5-storyboard-track figure:nth-child(12) {
     width: 27vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(13) {
+    width: 25vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(14) {
+    width: 23vw;
+  }
+
+  .net5-storyboard-track figure:nth-child(15) {
+    width: 21vw;
   }
 }
 
