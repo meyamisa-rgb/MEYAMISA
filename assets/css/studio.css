@@ -6463,6 +6463,17 @@ figure {
   mix-blend-mode: multiply;
 }
 
+.dearly-process-type {
+  width: min(48vw, 620px);
+  margin: clamp(100px, 13vw, 220px) 10vw 0 auto;
+}
+
+.dearly-process-type img {
+  display: block;
+  filter: grayscale(1) contrast(1.35);
+  mix-blend-mode: multiply;
+}
+
 .dearly-project-note-band {
   margin: 0 -12px;
   padding: clamp(70px, 9vw, 150px) 12px clamp(130px, 16vw, 250px);
@@ -6863,6 +6874,11 @@ figure {
     margin-inline: auto;
   }
 
+  .dearly-process-type {
+    width: min(62vw, 480px);
+    margin-inline: auto;
+  }
+
   .dearly-project-note {
     width: min(82vw, 720px);
     grid-template-columns: 1fr;
@@ -6960,6 +6976,10 @@ figure {
   .dearly-participation-copy,
   .dearly-process-copy,
   .dearly-process-grid {
+    width: min(90vw, 480px);
+  }
+
+  .dearly-process-type {
     width: min(90vw, 480px);
   }
 
