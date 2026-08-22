@@ -1,0 +1,339 @@
+/* Performance — NET 5 */
+
+.performance-index {
+  width: min(92vw, 1500px);
+  margin: 0 auto;
+  scroll-margin-top: 84px;
+}
+
+.performance-index h2 {
+  margin: 0 0 clamp(70px, 9vw, 140px);
+  font-family: var(--optima);
+  font-size: clamp(2.6rem, 5.6vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.performance-feature-card {
+  display: block;
+  width: min(86vw, 1320px);
+  margin-left: auto;
+  color: inherit;
+  text-decoration: none;
+}
+
+.performance-feature-card figure {
+  aspect-ratio: 1170 / 650;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.performance-feature-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 260ms ease, opacity 260ms ease;
+}
+
+.performance-feature-card:hover video,
+.performance-feature-card:focus-visible video {
+  opacity: 0.92;
+  transform: scale(1.012);
+}
+
+.performance-feature-card:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 6px;
+}
+
+.performance-feature-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 14px;
+  font-family: var(--optima);
+  font-size: clamp(0.9rem, 1.1vw, 1.15rem);
+  line-height: 1.25;
+}
+
+.performance-feature-caption strong {
+  font-weight: 400;
+}
+
+.net5-story {
+  overflow: hidden;
+  padding: clamp(18px, 2vw, 34px) 0 clamp(90px, 12vw, 190px);
+}
+
+.net5-page .project-page-header .site-nav a:first-child {
+  text-decoration: none;
+}
+
+.net5-page .project-page-header .site-nav a:first-child:hover,
+.net5-page .project-page-header .site-nav a:first-child:focus-visible {
+  text-decoration: underline;
+}
+
+.net5-return {
+  margin-bottom: clamp(22px, 3vw, 42px);
+}
+
+.net5-film {
+  width: min(96vw, 1680px);
+  margin: 0 auto;
+  background: #000;
+}
+
+.net5-film video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+}
+
+.net5-intro {
+  width: min(92vw, 1500px);
+  margin: clamp(44px, 6vw, 96px) auto clamp(70px, 9vw, 145px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(240px, 0.38fr);
+  gap: clamp(28px, 5vw, 90px);
+  align-items: end;
+}
+
+.net5-intro h1,
+.net5-intro p {
+  margin: 0;
+}
+
+.net5-intro h1 {
+  font-family: var(--optima);
+  font-size: clamp(5rem, 13vw, 12.5rem);
+  font-weight: 400;
+  letter-spacing: -0.09em;
+  line-height: 0.72;
+}
+
+.net5-intro > p {
+  max-width: 28ch;
+  padding-bottom: 0.15em;
+  font-family: var(--optima);
+  font-size: clamp(1.15rem, 1.8vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.net5-hook {
+  width: min(86vw, 1280px);
+  margin: 0 auto clamp(130px, 17vw, 280px);
+}
+
+.net5-hook p {
+  max-width: 30ch;
+  margin: 0;
+  font-family: var(--optima);
+  font-size: clamp(1.9rem, 3.5vw, 4.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.net5-gallery {
+  width: 100%;
+  margin: 0 0 clamp(160px, 20vw, 330px);
+}
+
+.net5-film-stills,
+.net5-portrait-stills {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 4.5vw, 82px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.net5-film-stills {
+  width: min(94vw, 1600px);
+  margin-bottom: clamp(130px, 17vw, 280px);
+}
+
+.net5-portrait-stills {
+  width: min(94vw, 1170px);
+}
+
+.net5-film-stills figure,
+.net5-portrait-stills figure {
+  margin: 0;
+}
+
+.net5-film-stills img,
+.net5-portrait-stills img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.net5-credits {
+  width: min(92vw, 1500px);
+  margin: clamp(130px, 17vw, 280px) auto 0;
+  border-top: 1px solid var(--line);
+}
+
+.net5-credits p {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.72fr);
+  gap: 24px;
+  margin: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(0.82rem, 1vw, 1rem);
+}
+
+.net5-credits span {
+  color: var(--muted);
+}
+
+.net5-archive {
+  width: 100%;
+}
+
+.net5-archive-pair figure {
+  margin: 0;
+}
+
+.net5-archive-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.47fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(14px, 2vw, 34px);
+  width: min(94vw, 1850px);
+  margin: 0 auto clamp(70px, 9vw, 150px);
+}
+
+.net5-archive-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.net5-group-photo {
+  width: min(92vw, 1170px);
+  margin: 0 auto clamp(38px, 5vw, 80px);
+}
+
+.net5-group-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.net5-press-link {
+  display: block;
+  width: min(92vw, 1400px);
+  margin: 0 auto;
+  padding: clamp(18px, 2.2vw, 32px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  font-family: var(--optima);
+  font-size: clamp(1.15rem, 2vw, 2.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.net5-press-link:hover,
+.net5-press-link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .performance-feature-card {
+    width: 92vw;
+    margin-left: 0;
+  }
+
+  .net5-film {
+    width: 100vw;
+  }
+
+  .net5-intro {
+    grid-template-columns: 1fr;
+    margin-bottom: 90px;
+  }
+
+  .net5-intro h1 {
+    line-height: 0.8;
+  }
+
+  .net5-intro > p {
+    max-width: 22ch;
+  }
+
+  .net5-hook {
+    width: 92vw;
+    margin-bottom: 150px;
+  }
+
+  .net5-film-stills,
+  .net5-portrait-stills {
+    width: 92vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .performance-feature-caption {
+    display: grid;
+    gap: 5px;
+  }
+
+  .net5-story {
+    padding-top: 10px;
+  }
+
+  .net5-return {
+    width: 94vw;
+  }
+
+  .net5-intro {
+    width: 90vw;
+    margin-top: 42px;
+  }
+
+  .net5-hook {
+    width: 90vw;
+    margin-bottom: 120px;
+  }
+
+  .net5-credits {
+    width: 90vw;
+  }
+
+  .net5-film-stills,
+  .net5-portrait-stills {
+    width: 90vw;
+  }
+
+  .net5-archive-pair,
+  .net5-group-photo,
+  .net5-press-link {
+    width: 90vw;
+  }
+
+  .net5-archive-pair {
+    gap: 10px;
+    margin-bottom: 70px;
+  }
+
+  .net5-credits p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .performance-feature-card video {
+    transition: none;
+  }
+}

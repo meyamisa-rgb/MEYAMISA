@@ -1,4 +1,70 @@
 (function () {
+  const lazyVideos = Array.from(document.querySelectorAll('video[data-lazy-video]'));
+  const autoplayVideos = Array.from(document.querySelectorAll('video[data-autoplay]'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const loadVideo = (video) => {
+    if (video.dataset.loaded === 'true') return;
+
+    if (video.dataset.src) {
+      video.src = video.dataset.src;
+      video.removeAttribute('data-src');
+    }
+
+    video.querySelectorAll('source[data-src]').forEach((source) => {
+      source.src = source.dataset.src;
+      source.removeAttribute('data-src');
+    });
+
+    video.dataset.loaded = 'true';
+    video.load();
+  };
+
+  autoplayVideos.forEach((video) => {
+    if (!video.hasAttribute('data-lazy-video')) video.dataset.loaded = 'true';
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach(loadVideo);
+    if (!reduceMotion) {
+      autoplayVideos.forEach((video) => video.play().catch(() => {}));
+    }
+    return;
+  }
+
+  const preloadObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadVideo(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '500px 0px' }
+  );
+
+  lazyVideos.forEach((video) => preloadObserver.observe(video));
+
+  const playbackObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!entry.isIntersecting || reduceMotion) {
+          video.pause();
+          return;
+        }
+
+        loadVideo(video);
+        video.play().catch(() => {});
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  autoplayVideos.forEach((video) => playbackObserver.observe(video));
+})();
+
+(function () {
   const viewer = document.querySelector('[data-project-viewer]');
   const viewerImage = document.querySelector('[data-viewer-image]');
   const viewerVideo = document.querySelector('[data-viewer-video]');

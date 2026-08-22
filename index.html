@@ -6,12 +6,14 @@
     <title>meyamisa design</title>
     <meta name="description" content="Projects, exhibitions, writing, about, and contact by meyamisa design." />
     <link rel="stylesheet" href="assets/css/studio.css?v=branding-10" />
+    <link rel="stylesheet" href="assets/css/performance.css?v=performance-7" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html">meyamisa design</a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a class="is-current" href="#projects">projects</a>
+        <a href="#performance">performance</a>
         <a href="#exhibitions">exhibitions</a>
         <a href="pages/writing.html">writing</a>
         <a href="#about">about me</a>
@@ -24,7 +26,16 @@
         <div class="project-overview" aria-label="Projects">
           <a class="project-card project-link-card" href="pages/billboard-02.html">
             <figure>
-              <video src="assets/videos/amygdala/amygdala-typeinmotion.mov" autoplay muted loop playsinline></video>
+              <video
+                src="assets/videos/amygdala/amygdala-typeinmotion-web.mp4"
+                poster="assets/images/amygdala/amygdala-typeinmotion-poster.webp"
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Amygdala — Body as Archive motion preview"
+              ></video>
             </figure>
             <div class="project-caption">
               <strong>AMYGDALA — BODY AS ARCHIVE</strong>
@@ -34,7 +45,7 @@
           <a class="project-card project-link-card project-link-card-human" href="pages/human-typography.html">
             <figure>
               <img
-                src="assets/images/human-typography/human-typography-01-cover.png"
+                src="assets/images/human-typography/human-typography-01-cover-web.webp"
                 alt="The Human Typography, a black and white composition of body gestures and drawn marks"
                 loading="lazy"
               />
@@ -47,7 +58,7 @@
           <a class="project-card project-link-card project-link-card-udtype" href="pages/udtype.html">
             <figure>
               <img
-                src="assets/images/udtype/udtype-alphabet-geometric-clean.png"
+                src="assets/images/udtype/udtype-alphabet-geometric-web.webp"
                 alt="UDTYPE geometric experimental alphabet"
                 loading="lazy"
               />
@@ -60,12 +71,14 @@
           <a class="project-card project-link-card project-link-card-henshin" href="pages/henshin-gallery.html">
             <figure>
               <video
-                src="assets/videos/henshin/henshin-cover.mp4"
-                autoplay
+                data-src="assets/videos/henshin/henshin-cover-web.mp4"
+                poster="assets/images/henshin/henshin-cover-poster.webp"
+                data-lazy-video
+                data-autoplay
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
               ></video>
             </figure>
             <div class="project-caption">
@@ -87,6 +100,28 @@
           </a>
 
         </div>
+
+        <section class="performance-index" id="performance" aria-labelledby="performance-title">
+          <h2 id="performance-title">Performance</h2>
+          <a class="performance-feature-card" href="pages/net5.html">
+            <figure>
+              <video
+                data-src="assets/videos/performance/net5-preview-web.mp4"
+                poster="assets/images/performance/net5/net5-still-04.jpg"
+                data-lazy-video
+                data-autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-label="Net 5 performance film preview"
+              ></video>
+            </figure>
+            <div class="performance-feature-caption">
+              <strong>NET 5 — by Daniela Georgieva</strong>
+            </div>
+          </a>
+        </section>
 
         <section class="branding-friends" aria-labelledby="branding-friends-title">
           <h2 id="branding-friends-title">Branding</h2>
@@ -382,17 +417,17 @@
                 <img src="assets/images/exhibitions/timeline/germany-06-tools.png" alt="Brushes and folded paper used during the performance" loading="lazy" />
               </button>
               <div class="timeline-video-grid timeline-video-grid-aachen" aria-label="Aachen performance videos">
-                <video class="timeline-video-card" autoplay muted loop playsinline poster="assets/images/exhibitions/timeline/aachen-video-01-poster.jpg" aria-label="Aachen live performance video 1">
-                  <source src="assets/videos/exhibitions/aachen/aachen-performance-01.mp4" type="video/mp4" />
+                <video class="timeline-video-card" data-lazy-video data-autoplay muted loop playsinline preload="none" poster="assets/images/exhibitions/timeline/aachen-video-01-poster.jpg" aria-label="Aachen live performance video 1">
+                  <source data-src="assets/videos/exhibitions/aachen/aachen-performance-01.mp4" type="video/mp4" />
                 </video>
-                <video class="timeline-video-card" autoplay muted loop playsinline poster="assets/images/exhibitions/timeline/aachen-video-02-poster.jpg" aria-label="Aachen live performance video 2">
-                  <source src="assets/videos/exhibitions/aachen/aachen-performance-02.mp4" type="video/mp4" />
+                <video class="timeline-video-card" data-lazy-video data-autoplay muted loop playsinline preload="none" poster="assets/images/exhibitions/timeline/aachen-video-02-poster.jpg" aria-label="Aachen live performance video 2">
+                  <source data-src="assets/videos/exhibitions/aachen/aachen-performance-02.mp4" type="video/mp4" />
                 </video>
-                <video class="timeline-video-card" autoplay muted loop playsinline poster="assets/images/exhibitions/timeline/aachen-video-03-poster.jpg" aria-label="Aachen live performance video 3">
-                  <source src="assets/videos/exhibitions/aachen/aachen-performance-03.mp4" type="video/mp4" />
+                <video class="timeline-video-card" data-lazy-video data-autoplay muted loop playsinline preload="none" poster="assets/images/exhibitions/timeline/aachen-video-03-poster.jpg" aria-label="Aachen live performance video 3">
+                  <source data-src="assets/videos/exhibitions/aachen/aachen-performance-03.mp4" type="video/mp4" />
                 </video>
-                <video class="timeline-video-card" autoplay muted loop playsinline poster="assets/images/exhibitions/timeline/aachen-video-04-poster.jpg" aria-label="Aachen live performance video 4">
-                  <source src="assets/videos/exhibitions/aachen/aachen-performance-04.mp4" type="video/mp4" />
+                <video class="timeline-video-card" data-lazy-video data-autoplay muted loop playsinline preload="none" poster="assets/images/exhibitions/timeline/aachen-video-04-poster.jpg" aria-label="Aachen live performance video 4">
+                  <source data-src="assets/videos/exhibitions/aachen/aachen-performance-04.mp4" type="video/mp4" />
                 </video>
               </div>
               <p class="timeline-photo-credit">Photography and video documentation <span>Christian Scholz</span></p>
@@ -480,6 +515,6 @@
       </article>
     </div>
 
-    <script src="assets/js/studio.js?v=6"></script>
+    <script src="assets/js/studio.js?v=7"></script>
   </body>
 </html>
