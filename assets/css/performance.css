@@ -138,6 +138,113 @@
   line-height: 1.02;
 }
 
+.net5-documentation,
+.net5-live {
+  width: 100%;
+  margin-bottom: clamp(160px, 20vw, 330px);
+}
+
+.net5-section-heading {
+  display: grid;
+  grid-template-columns: minmax(38px, 0.12fr) minmax(0, 0.58fr) minmax(220px, 0.3fr);
+  gap: clamp(18px, 3vw, 54px);
+  align-items: baseline;
+  width: min(92vw, 1500px);
+  margin: 0 auto clamp(52px, 7vw, 110px);
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.net5-section-heading h2,
+.net5-section-heading p {
+  margin: 0;
+}
+
+.net5-section-heading h2 {
+  font-family: var(--optima);
+  font-size: clamp(2.2rem, 5vw, 6.25rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.net5-section-heading p {
+  font-size: clamp(0.78rem, 0.95vw, 0.98rem);
+  line-height: 1.35;
+}
+
+.net5-section-heading > p:last-child {
+  max-width: 42ch;
+}
+
+.net5-body-grid,
+.net5-live-triptych,
+.net5-live-duo,
+.net5-live-closing {
+  display: grid;
+  width: min(92vw, 1500px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.net5-body-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.8vw, 30px);
+}
+
+.net5-body-grid figure,
+.net5-live-features figure,
+.net5-live-triptych figure,
+.net5-live-duo figure,
+.net5-live-closing figure {
+  margin: 0;
+}
+
+.net5-body-grid img,
+.net5-live-features img,
+.net5-live-triptych img,
+.net5-live-duo img,
+.net5-live-closing img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.net5-live-features {
+  display: grid;
+  gap: clamp(70px, 10vw, 170px);
+  width: min(92vw, 1500px);
+  margin: 0 auto clamp(110px, 14vw, 230px);
+}
+
+.net5-live-features figure:first-child {
+  width: min(84%, 1170px);
+}
+
+.net5-live-features figure:last-child {
+  width: min(84%, 1170px);
+  margin-left: auto;
+}
+
+.net5-live-triptych {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 36px);
+  margin-bottom: clamp(110px, 14vw, 230px);
+}
+
+.net5-live-duo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 4vw, 72px);
+  width: min(78vw, 1180px);
+  margin-bottom: clamp(110px, 14vw, 230px);
+}
+
+.net5-live-closing {
+  grid-template-columns: minmax(0, 0.63fr) minmax(0, 1fr);
+  gap: clamp(14px, 2.5vw, 44px);
+  align-items: end;
+}
+
 .net5-gallery {
   width: 100%;
   margin: 0 0 clamp(160px, 20vw, 330px);
@@ -217,17 +324,6 @@
   height: auto;
 }
 
-.net5-group-photo {
-  width: min(92vw, 1170px);
-  margin: 0 auto clamp(38px, 5vw, 80px);
-}
-
-.net5-group-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .net5-press-link {
   display: block;
   width: min(92vw, 1400px);
@@ -276,6 +372,23 @@
     margin-bottom: 150px;
   }
 
+  .net5-section-heading {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .net5-section-heading > p:last-child {
+    grid-column: 2;
+  }
+
+  .net5-live-features figure:first-child,
+  .net5-live-features figure:last-child {
+    width: 92%;
+  }
+
+  .net5-live-duo {
+    width: 86vw;
+  }
+
   .net5-film-stills,
   .net5-portrait-stills {
     width: 92vw;
@@ -306,6 +419,55 @@
     margin-bottom: 120px;
   }
 
+  .net5-documentation,
+  .net5-live {
+    margin-bottom: 140px;
+  }
+
+  .net5-section-heading {
+    grid-template-columns: 28px minmax(0, 1fr);
+    width: 90vw;
+    margin-bottom: 42px;
+  }
+
+  .net5-body-grid,
+  .net5-live-triptych {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    gap: 18px;
+  }
+
+  .net5-live-features {
+    width: 100%;
+    gap: 54px;
+    margin-bottom: 90px;
+  }
+
+  .net5-live-features figure:first-child,
+  .net5-live-features figure:last-child {
+    width: 92vw;
+  }
+
+  .net5-live-features figure:last-child {
+    margin-left: auto;
+  }
+
+  .net5-live-triptych,
+  .net5-live-duo {
+    margin-bottom: 90px;
+  }
+
+  .net5-live-duo {
+    width: 90vw;
+    gap: 10px;
+  }
+
+  .net5-live-closing {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    gap: 28px;
+  }
+
   .net5-credits {
     width: 90vw;
   }
@@ -316,7 +478,6 @@
   }
 
   .net5-archive-pair,
-  .net5-group-photo,
   .net5-press-link {
     width: 90vw;
   }
