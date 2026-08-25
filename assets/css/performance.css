@@ -133,8 +133,6 @@
 .net5-section-heading {
   width: min(92vw, 1500px);
   margin: 0 auto clamp(52px, 7vw, 110px);
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
 }
 
 .net5-section-heading h2 {
