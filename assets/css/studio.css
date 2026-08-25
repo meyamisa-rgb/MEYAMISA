@@ -4105,6 +4105,44 @@ figure {
   margin-top: 0.9em;
 }
 
+.writing-wind-poem-garden {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.3fr) minmax(0, 1fr);
+  gap: clamp(38px, 7vw, 130px);
+  align-items: start;
+  margin-top: clamp(70px, 9vw, 150px);
+  padding: clamp(34px, 5vw, 78px) 0 clamp(130px, 16vw, 270px);
+  border-top: 1px solid var(--ink);
+}
+
+.writing-wind-poem-garden header {
+  margin-bottom: 0;
+}
+
+.writing-wind-poem-garden blockquote {
+  color: #315c43;
+  font-family: "Caveat Brush", "Caveat", "Bradley Hand", cursive;
+  font-size: clamp(2.25rem, 4vw, 5.5rem);
+  letter-spacing: -0.025em;
+  line-height: 0.96;
+  text-align: center;
+  transform: rotate(-0.18deg);
+}
+
+.writing-wind-poem-garden blockquote span:nth-child(4),
+.writing-wind-poem-garden blockquote span:nth-child(6) {
+  margin-top: 0.75em;
+}
+
+.writing-wind-poem-garden blockquote span:last-child {
+  margin-top: 0.12em;
+  color: #217046;
+  font-family: "Allura", "Caveat", cursive;
+  font-size: 1.35em;
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+
 @media (max-width: 900px) {
   .writing-wind-heading {
     grid-template-columns: 1fr auto;
@@ -4134,7 +4172,8 @@ figure {
   }
 
   .writing-wind-poem-tangerines,
-  .writing-wind-poem-truth {
+  .writing-wind-poem-truth,
+  .writing-wind-poem-garden {
     width: 100%;
     grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
   }
@@ -4160,7 +4199,8 @@ figure {
   }
 
   .writing-wind-poem-tangerines,
-  .writing-wind-poem-truth {
+  .writing-wind-poem-truth,
+  .writing-wind-poem-garden {
     grid-template-columns: 1fr;
     gap: 42px;
     margin-top: 130px;
@@ -4175,6 +4215,12 @@ figure {
   .writing-wind-poem-truth blockquote {
     font-size: clamp(2.35rem, 11vw, 4rem);
     line-height: 0.98;
+  }
+
+  .writing-wind-poem-garden blockquote {
+    font-size: clamp(2rem, 9.4vw, 3.2rem);
+    line-height: 1;
+    text-align: left;
   }
 }
 
