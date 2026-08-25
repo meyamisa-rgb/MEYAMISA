@@ -4144,6 +4144,71 @@ figure {
   line-height: inherit;
 }
 
+.writing-wind-poems {
+  margin-top: clamp(90px, 11vw, 180px);
+}
+
+.writing-wind-poem-entry {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.3fr) minmax(0, 1fr);
+  gap: clamp(38px, 7vw, 130px);
+  align-items: start;
+  margin-top: 0;
+  padding: clamp(34px, 5vw, 78px) 0 clamp(100px, 13vw, 210px);
+  border-top: 1px solid var(--ink);
+}
+
+.writing-wind-poem-entry + .writing-wind-poem-entry {
+  margin-top: clamp(70px, 9vw, 150px);
+}
+
+.writing-wind-poem-entry > header {
+  margin-bottom: 0;
+}
+
+.writing-wind-poem-page blockquote {
+  color: #315f86;
+  font-family: "Homemade Apple", "Bradley Hand", cursive;
+  font-size: clamp(1.45rem, 2.65vw, 3.7rem);
+  letter-spacing: 0.003em;
+  line-height: 1.5;
+  transform: rotate(-0.35deg);
+}
+
+.writing-wind-poem-page blockquote span:nth-child(4) {
+  margin-top: 0.72em;
+}
+
+.writing-wind-poem-recall blockquote {
+  max-width: 34ch;
+  color: #282a2f;
+  font-family: var(--optima);
+  font-size: clamp(1.35rem, 2.15vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  transform: none;
+}
+
+.writing-wind-poem-recall blockquote em {
+  font-family: "Arsenica Variable", "Arsenica", Georgia, serif;
+  font-size: 1.08em;
+}
+
+.writing-wind-poem-recall .writing-wind-stanza-start {
+  margin-top: 0.9em;
+}
+
+.writing-wind-closing-artwork {
+  width: min(72%, 1120px);
+  margin: clamp(40px, 6vw, 100px) auto 0;
+}
+
+.writing-wind-closing-artwork img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 900px) {
   .writing-wind-heading {
     grid-template-columns: 1fr auto;
@@ -4178,6 +4243,11 @@ figure {
     width: 100%;
     grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
   }
+
+  .writing-wind-poem-entry {
+    width: 100%;
+    grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 520px) {
@@ -4208,6 +4278,18 @@ figure {
     padding-top: 28px;
   }
 
+  .writing-wind-poem-entry,
+  .writing-wind-poem-entry + .writing-wind-poem-entry {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    margin-top: 110px;
+    padding-top: 28px;
+  }
+
+  .writing-wind-poem-entry:first-child {
+    margin-top: 0;
+  }
+
   .writing-wind-poem-tangerines blockquote {
     font-size: clamp(1.85rem, 8.4vw, 2.75rem);
     line-height: 1.06;
@@ -4222,6 +4304,20 @@ figure {
     font-size: clamp(1.4rem, 6.4vw, 2.25rem);
     line-height: 1.25;
     text-align: left;
+  }
+
+  .writing-wind-poem-page blockquote {
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 1.55;
+  }
+
+  .writing-wind-poem-recall blockquote {
+    font-size: clamp(1.15rem, 5.3vw, 1.75rem);
+    line-height: 1.28;
+  }
+
+  .writing-wind-closing-artwork {
+    width: 100%;
   }
 }
 
