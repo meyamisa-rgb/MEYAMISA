@@ -5262,24 +5262,6 @@ figure {
   margin: 0 auto;
 }
 
-.henshin-process {
-  width: min(84vw, 1240px);
-  margin: 0 auto clamp(110px, 14vw, 210px);
-  display: grid;
-  gap: clamp(10px, 1.3vw, 20px);
-}
-
-.henshin-process figure {
-  margin: 0;
-  overflow: hidden;
-}
-
-.henshin-process img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .henshin-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -5335,12 +5317,6 @@ figure {
   .henshin-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 42px 18px;
-  }
-
-  .henshin-process {
-    width: min(88vw, 720px);
-    margin-bottom: 110px;
-    gap: 8px;
   }
 
   .henshin-motion {
