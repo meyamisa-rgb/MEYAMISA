@@ -98,8 +98,7 @@
   margin: clamp(44px, 6vw, 96px) auto clamp(70px, 9vw, 145px);
 }
 
-.net5-intro h1,
-.net5-intro p {
+.net5-intro h1 {
   margin: 0;
 }
 
@@ -109,12 +108,6 @@
   font-weight: 400;
   letter-spacing: -0.09em;
   line-height: 0.72;
-}
-
-.net5-intro .net5-intro-date {
-  margin-top: clamp(18px, 2vw, 32px);
-  font-size: clamp(0.78rem, 0.95vw, 0.98rem);
-  line-height: 1.35;
 }
 
 .net5-hook {
@@ -138,18 +131,13 @@
 }
 
 .net5-section-heading {
-  display: grid;
-  grid-template-columns: minmax(38px, 0.12fr) minmax(0, 0.58fr) minmax(220px, 0.3fr);
-  gap: clamp(18px, 3vw, 54px);
-  align-items: baseline;
   width: min(92vw, 1500px);
   margin: 0 auto clamp(52px, 7vw, 110px);
   padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
-.net5-section-heading h2,
-.net5-section-heading p {
+.net5-section-heading h2 {
   margin: 0;
 }
 
@@ -159,15 +147,6 @@
   font-weight: 400;
   letter-spacing: -0.06em;
   line-height: 0.95;
-}
-
-.net5-section-heading p {
-  font-size: clamp(0.78rem, 0.95vw, 0.98rem);
-  line-height: 1.35;
-}
-
-.net5-section-heading > p:last-child {
-  max-width: 42ch;
 }
 
 .net5-body-grid,
@@ -399,14 +378,6 @@
     margin-bottom: 150px;
   }
 
-  .net5-section-heading {
-    grid-template-columns: 42px minmax(0, 1fr);
-  }
-
-  .net5-section-heading > p:last-child {
-    grid-column: 2;
-  }
-
   .net5-live-features figure:first-child,
   .net5-live-features figure:last-child {
     width: 92%;
@@ -452,7 +423,6 @@
   }
 
   .net5-section-heading {
-    grid-template-columns: 28px minmax(0, 1fr);
     width: 90vw;
     margin-bottom: 42px;
   }
