@@ -6255,7 +6255,7 @@ figure {
 .dearly-applications {
   width: auto;
   margin-inline: -12px;
-  padding: clamp(170px, 22vw, 350px) 12px clamp(190px, 24vw, 390px);
+  padding: 0 12px clamp(190px, 24vw, 390px);
   background: #fff;
 }
 
