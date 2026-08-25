@@ -1911,6 +1911,24 @@ figure {
   margin-bottom: clamp(150px, 18vw, 280px);
 }
 
+.human-typography-process {
+  width: min(84vw, 1240px);
+  margin: 0 auto clamp(150px, 18vw, 280px);
+  display: grid;
+  gap: clamp(10px, 1.3vw, 20px);
+}
+
+.human-typography-process-image {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.human-typography-process-image img {
+  width: 100%;
+  height: auto;
+}
+
 .human-typography-motion-animation {
   margin-top: clamp(150px, 18vw, 280px);
 }
@@ -5054,6 +5072,12 @@ figure {
     margin-bottom: 130px;
   }
 
+  .human-typography-process {
+    width: 88vw;
+    margin-bottom: 130px;
+    gap: 8px;
+  }
+
   .human-typography-video-dance {
     width: 88vw;
   }
@@ -5986,98 +6010,6 @@ figure {
   background: #052b7d;
 }
 
-/* Just Posters */
-
-.just-posters {
-  width: min(86vw, 1320px);
-  margin: clamp(170px, 21vw, 340px) auto clamp(190px, 24vw, 390px);
-}
-
-.just-posters h2 {
-  margin: 0 0 clamp(70px, 9vw, 140px);
-  font-family: var(--optima);
-  font-size: clamp(2.6rem, 5.6vw, 6.5rem);
-  font-weight: 400;
-  letter-spacing: -0.065em;
-  line-height: 0.94;
-}
-
-.just-posters-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(120px, 14vw, 230px) clamp(48px, 6vw, 110px);
-  align-items: start;
-}
-
-.just-poster-card {
-  min-width: 0;
-}
-
-.just-poster-card figure {
-  position: relative;
-  aspect-ratio: 707 / 1000;
-  margin: 0;
-  overflow: hidden;
-  background: #fff;
-}
-
-.just-poster-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.just-poster-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding-top: 12px;
-}
-
-.just-poster-caption strong,
-.just-poster-caption span {
-  font-family: var(--optima);
-  font-size: clamp(0.78rem, 0.92vw, 0.98rem);
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.just-poster-caption span {
-  color: var(--muted);
-  text-align: right;
-}
-
-.just-poster-placeholder figure {
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(135deg, transparent calc(50% - 0.5px), #e5e5e5 50%, transparent calc(50% + 0.5px)),
-    #fafafa;
-}
-
-.just-poster-placeholder figure span,
-.just-poster-placeholder figure small {
-  position: absolute;
-  left: clamp(14px, 1.5vw, 24px);
-  font-family: var(--sans);
-  font-weight: 400;
-  text-transform: lowercase;
-}
-
-.just-poster-placeholder figure span {
-  top: clamp(12px, 1.5vw, 24px);
-  color: #b5b5b5;
-  font-size: clamp(2rem, 3.5vw, 4.2rem);
-  letter-spacing: -0.08em;
-  line-height: 1;
-}
-
-.just-poster-placeholder figure small {
-  bottom: clamp(14px, 1.5vw, 24px);
-  color: #8d8d8d;
-  font-size: clamp(0.65rem, 0.76vw, 0.8rem);
-  letter-spacing: 0.02em;
-}
-
 /* Dearly */
 
 .dearly-page {
@@ -6787,16 +6719,6 @@ figure {
     margin-left: 0;
   }
 
-  .just-posters {
-    width: min(88vw, 720px);
-    margin-top: 170px;
-  }
-
-  .just-posters-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 100px clamp(28px, 6vw, 52px);
-  }
-
   .dearly-cover {
     min-height: 68vh;
   }
@@ -6921,19 +6843,6 @@ figure {
   }
 
   .branding-friends-card span {
-    text-align: left;
-  }
-
-  .just-posters-grid {
-    gap: 70px 20px;
-  }
-
-  .just-poster-caption {
-    display: grid;
-    gap: 3px;
-  }
-
-  .just-poster-caption span {
     text-align: left;
   }
 
