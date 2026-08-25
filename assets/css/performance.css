@@ -96,10 +96,6 @@
 .net5-intro {
   width: min(92vw, 1500px);
   margin: clamp(44px, 6vw, 96px) auto clamp(70px, 9vw, 145px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(240px, 0.38fr);
-  gap: clamp(28px, 5vw, 90px);
-  align-items: end;
 }
 
 .net5-intro h1,
@@ -115,13 +111,10 @@
   line-height: 0.72;
 }
 
-.net5-intro > p {
-  max-width: 28ch;
-  padding-bottom: 0.15em;
-  font-family: var(--optima);
-  font-size: clamp(1.15rem, 1.8vw, 2rem);
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+.net5-intro .net5-intro-date {
+  margin-top: clamp(18px, 2vw, 32px);
+  font-size: clamp(0.78rem, 0.95vw, 0.98rem);
+  line-height: 1.35;
 }
 
 .net5-hook {
@@ -192,6 +185,11 @@
   gap: clamp(10px, 1.8vw, 30px);
 }
 
+.net5-body-grid figure {
+  aspect-ratio: 570 / 550;
+  overflow: hidden;
+}
+
 .net5-body-grid figure,
 .net5-live-features figure,
 .net5-live-triptych figure,
@@ -208,6 +206,12 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.net5-body-grid img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .net5-live-features {
@@ -240,9 +244,20 @@
 }
 
 .net5-live-closing {
-  grid-template-columns: minmax(0, 0.63fr) minmax(0, 1fr);
-  gap: clamp(14px, 2.5vw, 44px);
-  align-items: end;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 4vw, 72px);
+  width: min(78vw, 1180px);
+  margin-bottom: clamp(110px, 14vw, 230px);
+}
+
+.net5-live-closing figure {
+  aspect-ratio: 731 / 468;
+  overflow: hidden;
+}
+
+.net5-live-closing img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .net5-gallery {
@@ -279,6 +294,23 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+.net5-portrait-stills .net5-crop-top {
+  overflow: hidden;
+}
+
+.net5-portrait-stills .net5-crop-top img {
+  transform: scale(var(--net5-crop-scale));
+  transform-origin: center bottom;
+}
+
+.net5-crop-top-light {
+  --net5-crop-scale: 1.03;
+}
+
+.net5-crop-top-deep {
+  --net5-crop-scale: 1.05;
 }
 
 .net5-credits {
@@ -355,16 +387,11 @@
   }
 
   .net5-intro {
-    grid-template-columns: 1fr;
     margin-bottom: 90px;
   }
 
   .net5-intro h1 {
     line-height: 0.8;
-  }
-
-  .net5-intro > p {
-    max-width: 22ch;
   }
 
   .net5-hook {
@@ -453,7 +480,8 @@
   }
 
   .net5-live-triptych,
-  .net5-live-duo {
+  .net5-live-duo,
+  .net5-live-closing {
     margin-bottom: 90px;
   }
 
