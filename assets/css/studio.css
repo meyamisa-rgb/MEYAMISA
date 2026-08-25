@@ -3954,7 +3954,7 @@ figure {
 
 .writing-wind-heading {
   display: grid;
-  grid-template-columns: minmax(90px, 0.22fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(90px, 0.22fr) minmax(0, 1fr);
   gap: 18px clamp(24px, 4vw, 72px);
   align-items: baseline;
   padding-top: 13px;
@@ -3969,14 +3969,14 @@ figure {
 
 .writing-wind-heading p {
   color: var(--muted);
-  font-family: var(--mono);
+  font-family: var(--optima);
   font-size: 0.72rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .writing-wind-heading h1 {
-  font-family: "Arsenica Variable", "Arsenica", "Bodoni 72 Display", Didot, Georgia, serif;
+  font-family: var(--optima);
   font-optical-sizing: auto;
   font-size: clamp(3.2rem, 7.5vw, 10.5rem);
   font-weight: 400;
@@ -4012,7 +4012,7 @@ figure {
 
 .writing-wind-poem header p {
   color: var(--muted);
-  font-family: var(--mono);
+  font-family: var(--optima);
   font-size: 0.7rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -4027,7 +4027,7 @@ figure {
 
 .writing-wind-poem blockquote {
   color: #172b22;
-  font-family: "Homemade Apple", "Bradley Hand", cursive;
+  font-family: var(--optima);
   font-size: clamp(1.55rem, 2.65vw, 3.75rem);
   letter-spacing: 0.003em;
   line-height: 1.56;
@@ -4064,7 +4064,7 @@ figure {
 
 .writing-wind-poem-tangerines blockquote {
   color: #b45f2b;
-  font-family: "Caveat", "Bradley Hand", cursive;
+  font-family: var(--optima);
   font-size: clamp(2.15rem, 3.4vw, 4.6rem);
   font-weight: 520;
   letter-spacing: 0.005em;
@@ -4092,7 +4092,7 @@ figure {
 
 .writing-wind-poem-truth blockquote {
   color: #242321;
-  font-family: "Arsenica Variable", "Arsenica", "Bodoni 72 Display", Didot, Georgia, serif;
+  font-family: var(--optima);
   font-optical-sizing: auto;
   font-size: clamp(2.5rem, 5vw, 7rem);
   font-weight: 400;
@@ -4121,7 +4121,7 @@ figure {
 
 .writing-wind-poem-garden blockquote {
   color: #315c43;
-  font-family: var(--mono);
+  font-family: var(--optima);
   font-size: clamp(1.55rem, 2.85vw, 3.8rem);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -4168,7 +4168,7 @@ figure {
 
 .writing-wind-poem-page blockquote {
   color: #315f86;
-  font-family: "Homemade Apple", "Bradley Hand", cursive;
+  font-family: var(--optima);
   font-size: clamp(1.45rem, 2.65vw, 3.7rem);
   letter-spacing: 0.003em;
   line-height: 1.5;
@@ -4191,7 +4191,7 @@ figure {
 }
 
 .writing-wind-poem-recall blockquote em {
-  font-family: "Arsenica Variable", "Arsenica", Georgia, serif;
+  font-family: var(--optima);
   font-size: 1.08em;
 }
 
