@@ -1911,6 +1911,24 @@ figure {
   margin-bottom: clamp(150px, 18vw, 280px);
 }
 
+.human-typography-process {
+  width: min(84vw, 1240px);
+  margin: 0 auto clamp(150px, 18vw, 280px);
+  display: grid;
+  gap: clamp(10px, 1.3vw, 20px);
+}
+
+.human-typography-process-image {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.human-typography-process-image img {
+  width: 100%;
+  height: auto;
+}
+
 .human-typography-motion-animation {
   margin-top: clamp(150px, 18vw, 280px);
 }
@@ -5052,6 +5070,12 @@ figure {
     width: 88vw;
     margin-top: 0;
     margin-bottom: 130px;
+  }
+
+  .human-typography-process {
+    width: 88vw;
+    margin-bottom: 130px;
+    gap: 8px;
   }
 
   .human-typography-video-dance {
