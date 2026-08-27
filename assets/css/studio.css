@@ -4247,6 +4247,41 @@ figure {
   height: auto;
 }
 
+.writing-wind-opportunities {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px clamp(36px, 7vw, 120px);
+  align-items: end;
+  margin-top: clamp(50px, 7vw, 110px);
+  padding-top: clamp(22px, 2.5vw, 38px);
+  border-top: 1px solid #ddb4bc;
+  color: #b87f8b;
+  font-family: var(--optima);
+}
+
+.writing-wind-opportunities h2,
+.writing-wind-opportunities p {
+  margin: 0;
+}
+
+.writing-wind-opportunities h2 {
+  max-width: 28ch;
+  font-size: clamp(1.55rem, 2.5vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.writing-wind-opportunities p {
+  font-size: clamp(0.82rem, 1vw, 1rem);
+  line-height: 1.5;
+}
+
+.writing-wind-opportunities a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
 @media (max-width: 900px) {
   .writing-wind-heading {
     grid-template-columns: 1fr auto;
@@ -4356,6 +4391,11 @@ figure {
 
   .writing-wind-closing-artwork {
     width: 100%;
+  }
+
+  .writing-wind-opportunities {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 }
 
