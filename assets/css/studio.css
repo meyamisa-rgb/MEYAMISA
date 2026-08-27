@@ -4419,10 +4419,6 @@ figure {
     grid-template-columns: 1fr;
   }
 
-  .writing-wind-poem-artwork-hundred {
-    width: min(74%, 340px);
-    height: 260px;
-  }
 }
 
 /* Writing collection: one consistent voice */
@@ -4480,9 +4476,30 @@ figure {
   height: clamp(210px, 26vw, 360px);
 }
 
+.writing-wind-poem-artwork-recall {
+  grid-column: 2;
+  width: min(100%, 420px);
+  height: clamp(360px, 50vw, 560px);
+  margin: clamp(28px, 4vw, 58px) 0 0 auto;
+}
+
 .writing-wind-contact-details {
   display: grid;
   gap: 18px;
+}
+
+@media (max-width: 520px) {
+  .writing-wind-poem-artwork-hundred {
+    width: min(74%, 340px);
+    height: 260px;
+  }
+
+  .writing-wind-poem-artwork-recall {
+    grid-column: 1 / -1;
+    width: min(72%, 420px);
+    height: 480px;
+    margin-inline: auto;
+  }
 }
 
 .writing-group,
