@@ -4184,7 +4184,8 @@ figure {
   text-transform: none;
 }
 
-.writing-wind-prologue .writing-wind-stanza-start {
+.writing-wind-prologue .writing-wind-stanza-start,
+.writing-wind-stanzaed .writing-wind-stanza-start {
   margin-top: 0.9em;
 }
 
