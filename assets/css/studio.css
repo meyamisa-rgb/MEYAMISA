@@ -4484,6 +4484,10 @@ figure {
   margin: clamp(28px, 4vw, 58px) 0 0 auto;
 }
 
+.writing-wind-poem-artwork-recall {
+  margin: clamp(28px, 4vw, 58px) auto 0;
+}
+
 .writing-wind-contact-details {
   display: grid;
   gap: 18px;
