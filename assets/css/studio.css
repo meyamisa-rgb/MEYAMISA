@@ -4418,6 +4418,11 @@ figure {
   .writing-wind-rights {
     grid-template-columns: 1fr;
   }
+
+  .writing-wind-poem-artwork-hundred {
+    width: min(74%, 340px);
+    height: 260px;
+  }
 }
 
 /* Writing collection: one consistent voice */
@@ -4468,6 +4473,16 @@ figure {
   max-height: 100%;
   min-height: 0;
   object-fit: contain;
+}
+
+.writing-wind-poem-artwork-hundred {
+  width: min(58%, 560px);
+  height: clamp(210px, 26vw, 360px);
+}
+
+.writing-wind-contact-details {
+  display: grid;
+  gap: 18px;
 }
 
 .writing-group,
