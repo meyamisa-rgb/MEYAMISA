@@ -4476,7 +4476,8 @@ figure {
   height: clamp(210px, 26vw, 360px);
 }
 
-.writing-wind-poem-artwork-recall {
+.writing-wind-poem-artwork-recall,
+.writing-wind-poem-artwork-flowers {
   grid-column: 2;
   width: min(100%, 420px);
   height: clamp(360px, 50vw, 560px);
@@ -4494,7 +4495,8 @@ figure {
     height: 260px;
   }
 
-  .writing-wind-poem-artwork-recall {
+  .writing-wind-poem-artwork-recall,
+  .writing-wind-poem-artwork-flowers {
     grid-column: 1 / -1;
     width: min(72%, 420px);
     height: 480px;
