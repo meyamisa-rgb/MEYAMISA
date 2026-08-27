@@ -4190,14 +4190,15 @@ figure {
 }
 
 .writing-wind-collection-title {
-  max-width: 18ch;
+  max-width: none;
   margin: clamp(36px, 5vw, 80px) 0 0;
   font-family: var(--optima);
-  font-size: clamp(2.4rem, 5.4vw, 7.4rem);
+  font-size: clamp(2.2rem, 4.35vw, 6.4rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.98;
   text-align: left;
+  white-space: nowrap;
 }
 
 .writing-wind-collection-title + .writing-wind-poem-entry {
@@ -4295,6 +4296,10 @@ figure {
 }
 
 @media (max-width: 900px) {
+  .writing-wind-collection-title {
+    white-space: normal;
+  }
+
   .writing-wind-heading {
     grid-template-columns: 1fr auto;
   }
@@ -4444,6 +4449,25 @@ figure {
   font-weight: inherit;
   letter-spacing: inherit;
   line-height: inherit;
+}
+
+.writing-wind-poem-artwork {
+  grid-column: 1 / -1;
+  width: min(100%, 920px);
+  height: clamp(300px, 38vw, 520px);
+  margin: clamp(36px, 5vw, 78px) auto 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.writing-wind-poem-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  min-height: 0;
+  object-fit: contain;
 }
 
 .writing-group,
